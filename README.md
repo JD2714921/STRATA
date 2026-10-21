@@ -1,0 +1,2 @@
+# STRATA
+Trading Engine
