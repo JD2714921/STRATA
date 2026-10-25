@@ -1,0 +1,186 @@
+[
+  {
+    "id": "H01",
+    "name": "Direction / trend extraction",
+    "implemented": true,
+    "status": "Implemented and run as unapproved descriptive research; incomplete for execution",
+    "executionValidated": false,
+    "reason": "See methods and validation records"
+  },
+  {
+    "id": "H02",
+    "name": "Liquidity grab / sweep",
+    "implemented": true,
+    "status": "Implemented and run as unapproved descriptive research; incomplete for execution",
+    "executionValidated": false,
+    "reason": "See methods and validation records"
+  },
+  {
+    "id": "H03",
+    "name": "Reversal / retest",
+    "implemented": true,
+    "status": "Implemented and run as unapproved descriptive research; incomplete for execution",
+    "executionValidated": false,
+    "reason": "See methods and validation records"
+  },
+  {
+    "id": "H04",
+    "name": "SMT divergence",
+    "implemented": true,
+    "status": "Implemented and run as unapproved descriptive research; incomplete for execution",
+    "executionValidated": false,
+    "reason": "See methods and validation records"
+  },
+  {
+    "id": "H05",
+    "name": "FVG",
+    "implemented": true,
+    "status": "Implemented and run as unapproved descriptive research; incomplete for execution",
+    "executionValidated": false,
+    "reason": "See methods and validation records"
+  },
+  {
+    "id": "H06",
+    "name": "IFVG",
+    "implemented": true,
+    "status": "Implemented and run as unapproved descriptive research; incomplete for execution",
+    "executionValidated": false,
+    "reason": "See methods and validation records"
+  },
+  {
+    "id": "H07",
+    "name": "ATR",
+    "implemented": true,
+    "status": "Implemented and run as unapproved descriptive research; incomplete for execution",
+    "executionValidated": false,
+    "reason": "See methods and validation records"
+  },
+  {
+    "id": "H08",
+    "name": "Range / volatility",
+    "implemented": true,
+    "status": "Implemented and run as unapproved descriptive research; incomplete for execution",
+    "executionValidated": false,
+    "reason": "See methods and validation records"
+  },
+  {
+    "id": "H09",
+    "name": "Correlation / inverse",
+    "implemented": true,
+    "status": "Implemented and run as unapproved descriptive research; incomplete for execution",
+    "executionValidated": false,
+    "reason": "See methods and validation records"
+  },
+  {
+    "id": "H10",
+    "name": "Rolling correlation / dislocation",
+    "implemented": true,
+    "status": "Implemented and run as unapproved descriptive research; incomplete for execution",
+    "executionValidated": false,
+    "reason": "See methods and validation records"
+  },
+  {
+    "id": "H11",
+    "name": "Opening range / Judas proxy",
+    "implemented": true,
+    "status": "Implemented and run as unapproved descriptive research; incomplete for execution",
+    "executionValidated": false,
+    "reason": "See methods and validation records"
+  },
+  {
+    "id": "H12",
+    "name": "Session transitions",
+    "implemented": false,
+    "status": "Deferred / unavailable",
+    "executionValidated": false,
+    "reason": "Not required for this minimum engine or lacks defined data/rules"
+  },
+  {
+    "id": "H13",
+    "name": "Economic-release surprise",
+    "implemented": true,
+    "status": "Implemented and run as unapproved descriptive research; incomplete for execution",
+    "executionValidated": false,
+    "reason": "See methods and validation records"
+  },
+  {
+    "id": "H14",
+    "name": "Scheduled / shock event response",
+    "implemented": true,
+    "status": "Implemented and run as unapproved descriptive research; incomplete for execution",
+    "executionValidated": false,
+    "reason": "See methods and validation records"
+  },
+  {
+    "id": "H15",
+    "name": "Elastication response classification",
+    "implemented": false,
+    "status": "Deferred / unavailable",
+    "executionValidated": false,
+    "reason": "Expected price-response magnitude / benchmark not defined"
+  },
+  {
+    "id": "H16",
+    "name": "Demand elasticity",
+    "implemented": false,
+    "status": "Deferred / unavailable",
+    "executionValidated": false,
+    "reason": "No measured quantity variable; excluded from price-elastication scope"
+  },
+  {
+    "id": "H17",
+    "name": "Failed breakout",
+    "implemented": true,
+    "status": "Implemented and run as unapproved descriptive research; incomplete for execution",
+    "executionValidated": false,
+    "reason": "See methods and validation records"
+  },
+  {
+    "id": "H18",
+    "name": "Post-news rejection",
+    "implemented": false,
+    "status": "Deferred / unavailable",
+    "executionValidated": false,
+    "reason": "Not required for this minimum engine or lacks defined data/rules"
+  },
+  {
+    "id": "H19",
+    "name": "Continuation / exhaustion",
+    "implemented": false,
+    "status": "Deferred / unavailable",
+    "executionValidated": false,
+    "reason": "Not required for this minimum engine or lacks defined data/rules"
+  },
+  {
+    "id": "H20",
+    "name": "Accumulation-manipulation-distribution",
+    "implemented": false,
+    "status": "Deferred / unavailable",
+    "executionValidated": false,
+    "reason": "Not required for this minimum engine or lacks defined data/rules"
+  },
+  {
+    "id": "H21",
+    "name": "Invalidation / reward-risk",
+    "implemented": true,
+    "status": "Implemented and run as unapproved descriptive research; incomplete for execution",
+    "executionValidated": false,
+    "reason": "See methods and validation records"
+  },
+  {
+    "id": "H22",
+    "name": "Conditional probability",
+    "implemented": false,
+    "status": "Deferred / unavailable",
+    "executionValidated": false,
+    "reason": "No calibrated probability model"
+  },
+  {
+    "id": "H23",
+    "name": "Analogue similarity",
+    "implemented": false,
+    "status": "Deferred / unavailable",
+    "executionValidated": false,
+    "reason": "Not essential before basic feature validation"
+  }
+]

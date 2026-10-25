@@ -1,0 +1,42 @@
+{
+  "sourceCommit": "387742eab62c7bbe480aaa10fdd4a88db435bf63",
+  "sourceType": "Fresh snapshot, private Git history not exported",
+  "purpose": "Visual upgrade handoff; no deployment or integration activation",
+  "privateDestinationIdentifiersRedacted": 20,
+  "changedForPrivacy": [
+    "data/operations/notion-destination.json",
+    "docs/round8/HANDOFF.md",
+    "docs/round8/NATIVE_READ_RECEIPTS.json",
+    "docs/round8/NOTION_SCHEMA.md",
+    "docs/round8/samples/ledger-would-write.json"
+  ],
+  "credentialsIncluded": false,
+  "liveFinancialRecordsIncluded": false,
+  "originalSourceTests": {
+    "passed": 148,
+    "failed": 0
+  },
+  "productionUnchanged": {
+    "version": 25,
+    "commit": "bedbe6bf54e1f89adb6a5ff5460ad814d7f15446"
+  },
+  "publicExportChecks": {
+    "tests": {
+      "passed": 148,
+      "failed": 0
+    },
+    "typescript": "passed",
+    "lint": {
+      "errors": 0,
+      "warnings": 0
+    },
+    "build": "passed",
+    "buildNote": "Sandbox denied regeneration of generated dist/.openai/drizzle. The unchanged build passed outside the sandbox; no application code repair or deployment was performed."
+  },
+  "githubUpload": {
+    "status": "blocked",
+    "target": "https://github.com/JD2714921/STRATA",
+    "reason": "GitHub connector create_blob returned 403 Resource not accessible by integration; local Git has no authenticated credentials",
+    "remoteBaseline": "f274ddf94c54a0629c8ea2afa106e73f2f704e1b"
+  }
+}

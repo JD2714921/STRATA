@@ -1,0 +1,27 @@
+# 1997–2026 Corpus ingestion
+
+907 supplied records are source-versioned with the STRATA repository: 1997 (31), 1998 (35), 1999 (30), 2000 (30), 2001 (29), 2002 (34), 2003 (29), 2004 (28), 2005 (30), 2006 (30), 2007 (29), 2008 (37), 2009 (23), 2010 (29), 2011 (29), 2012 (27), 2013 (27), 2014 (33), 2015 (29), 2016 (29), 2017 (28), 2018 (28), 2019 (32), 2020 (32), 2021 (28), 2022 (35), 2023 (31), 2024 (31), 2025 (33), and 2026 (31). Original UTF-8 attachments are retained byte-for-byte in data/corpus/sources. Normalised records retain the full parsed object, source row, SHA-256 checksums, stable record ID, batch ID and ingestion timestamp. Each source file is immutable; a conflicting revision is rejected rather than overwriting an existing batch.
+
+The Python owner-operated ingestion command validates required fields, UTC date format, numeric ranges, lists, nullable notes and elasticity, and duplicate identities. Annual files must match their filename year; mixed-year source batches retain and validate each record's own year. Re-running the same files accepts zero new records and skips all existing records. The Site's read provider exposes these persisted records. Runtime public write ingestion remains disabled; additional owner batches are applied through scripts/ingest-corpus.py and a new saved Site source version.
+
+All records are user-provided and externally unverified. Relevance is not confidence. The supplied middle_circle and outer_circle remain separate narrative fields. The 54 obscure-event records include user-supplied numeric elasticity values, method labels and region tags; the other 853 elasticity fields remain null. STRATA preserves these supplied values but does not treat them as independently verified model outputs. No numeric response, direction, trading session, market regime, empirical probability or similarity score has been invented by the ingestion process. Probability and similarity providers return no computed results until the quantitative methodology and verified input series are provided.
+
+The four mixed-year obscure-event source files add 54 records across 1997–2026. They are retained as four separate immutable batches so their original row order, checksums and provenance remain inspectable.
+
+The uploaded 2001 source contains one bare `longitude` property key and is therefore not strict JSON as supplied. Ingestion applies one explicit parse-only repair by quoting that key, flags every 2001 record with the repair note, and retains the uploaded source bytes unchanged. Null `notes` values in the 2001 and 2002 batches are also preserved.
+
+The uploaded 2019–2026 sources use typographic quotation marks as JSON delimiters. Ingestion converts those delimiters to standard quotes during parsing, flags all 233 affected records, and retains all uploaded source files byte-for-byte unchanged. The 2023 source also contains nested typographic quotations inside a description; these remain quoted text rather than being mistaken for delimiters.
+
+Five 2006 records use a supplied day value of `00`. Their original timestamps remain untouched in the source and raw record; STRATA uses day `01` only for chronological display and date navigation, with a visible review flag and a separate normalised timestamp field.
+
+One hundred eighty-six records contain at least one non-specific textual source description. Four hundred twenty-two records carry review flags in total, including the 28 records parsed from the malformed 2001 source, five day-00 timestamps from 2006, and 233 records parsed from typographic-quote sources. Earlier flags for a pre-1999 EURUSD reference and the Hong Kong handover timestamp remain. Original records are not excluded. Source links are rendered safely as external HTTP(S) references, not fetched or marked verified.
+
+Exact/context-safe alias mapping is limited to named indices and exact FX references. Original instrument strings are always preserved. Unmapped historical assets remain visible in All historical markets; there is no silent FX inversion, index substitution, bond-price/yield conversion or futures-to-CMC-cash conversion. Geographic and event-category display fields use explicit simple heuristics, marked rule-derived and unverified. They do not become market facts.
+
+Atlas clusters events sharing coordinates; repeated cluster selection cycles through their events. Corpus opens in Historical / All historical markets, supports year selection, global search, source inspection and pagination. The event inspector shows original expectations, outcomes, notes, source URLs/descriptions, review flags, mapping status, provenance and full original JSON. Surface displays data readiness rather than fabricated probabilities. Log includes each ingestion batch.
+
+This update is saved as a draft under the same Site. Publishing requires the owner's explicit publishing instruction for the existing Site.
+
+## Atlas date stepping
+
+The location dots support a Step through dates toggle. Off shows all events matching the global filters; on shows only the selected UTC calendar date. Previous/Next advance across actual event-bearing dates (not empty calendar days). A date selector supports direct jumps. Year and global filters constrain available dates; an out-of-range selected date resolves to the earliest available date, and an empty result disables navigation. The event focus panel and historical ribbon use the same dated event set as the globe. Multiple events at a coordinate remain clustered and selectable by repeated clicks.

@@ -1,0 +1,83 @@
+{
+  "version": "owner-routing-2026-10-21-v1",
+  "verifiedAt": "2026-10-21 15:42:58 UTC",
+  "accountScope": "Owner-selected Live GBP spread betting; account identifiers omitted",
+  "products": [
+    {
+      "query": "Gold - Cash",
+      "isError": false,
+      "matches": [
+        {
+          "name": "Gold - Cash",
+          "productType": "SB",
+          "currency": "USD"
+        },
+        {
+          "name": "Gold Weekend (rolls into Gold - Cash at close)",
+          "productType": "SB",
+          "currency": "USD"
+        }
+      ],
+      "count": 2
+    },
+    {
+      "query": "Silver - Cash",
+      "isError": false,
+      "matches": [
+        {
+          "name": "Silver - Cash",
+          "productType": "SB",
+          "currency": "USD"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "query": "Sugar Raw - Cash",
+      "isError": false,
+      "matches": [],
+      "count": 0
+    },
+    {
+      "query": "Crude Oil - Cash",
+      "isError": false,
+      "matches": [],
+      "count": 0
+    },
+    {
+      "query": "US NDAQ 100 - Cash",
+      "isError": false,
+      "matches": [
+        {
+          "name": "US NDAQ 100 - Cash",
+          "productType": "SB",
+          "currency": "USD"
+        }
+      ],
+      "count": 1
+    }
+  ],
+  "trading212": {
+    "siteEnvironmentRevision": 0,
+    "credentialsConfiguredAtInspection": false,
+    "connectorToolExposedInSession": false,
+    "localReadOnlyAdapterFound": true,
+    "publicApiDocs": "https://docs.trading212.com/api",
+    "openApi": "https://docs.trading212.com/_bundle/api.json?download=",
+    "accountTypes": [
+      "Invest",
+      "Stocks ISA"
+    ],
+    "generalQuoteOrOHLCFeed": "not in inspected contract",
+    "spotForex": "enum present; accessible feed not verified"
+  },
+  "news": {
+    "configuredPreferencesOnly": true,
+    "livePublisherAccessVerified": false
+  },
+  "ownerChanges": {
+    "gold": "Explicitly enabled BUY/SELL",
+    "ndaq": "CMC US NDAQ 100 - Cash; SELL ONLY retained",
+    "targets": "Suggestive TP1 nearest entry, TP2 and TP3 successively farther; no fixed levels or fractions inferred"
+  }
+}

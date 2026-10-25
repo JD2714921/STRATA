@@ -1,0 +1,2456 @@
+{
+  "schemaVersion": "strata.provider-discovery.v1",
+  "generatedAt": "2026-10-19T21:56:14.412Z",
+  "round": 1,
+  "scope": "Read-only bounded chat-native discovery. No hosted test, production wiring, unattended monitoring, broker mutation, data purchase or trade execution.",
+  "matrix": [
+    {
+      "id": "cmc-accounts",
+      "provider": "CMC Markets",
+      "informationNeed": "Resolve authoritative account wrapper and account scope",
+      "connectorAction": "get_accounts",
+      "accountSecurityScope": "Owner explicitly selected the active GBP Live spread-betting account after discovery",
+      "sourceFormat": "JSON + text",
+      "structured": true,
+      "narrative": false,
+      "availableIntervalHistory": "Current account catalogue only",
+      "declaredDelay": null,
+      "eventTimestamp": null,
+      "receiptTimestamp": "2026-10-19T21:51:38.335Z",
+      "timestampNote": "receiptTimestamp here is call-start; response completed in same batched call within 3.3 seconds",
+      "entitlement": "Account discovery succeeded",
+      "observedTestResult": "verified: account discovery and explicit owner selection; downstream reads performed",
+      "readiness": "verified",
+      "fallback": "Owner selects friendly account in authenticated UI",
+      "nextRoundBlocker": "Persist selected account securely without exposing internal identifier",
+      "hostedSitesEligibility": "unknown; separate Sites inventory and request-scoped test required",
+      "hostedReadVerified": false,
+      "visitorConsent": "unknown; not tested",
+      "unattendedCapability": "not tested; no monitoring authorised or activated",
+      "refreshPath": "manual bounded chat read only in this receipt",
+      "rateLimits": null,
+      "costLimits": null
+    },
+    {
+      "id": "cmc-prices",
+      "provider": "CMC Markets",
+      "informationNeed": "Broker product identity and quote availability",
+      "connectorAction": "find_products → get_products → get_delayed_price",
+      "accountSecurityScope": "Owner-selected Live GBP SB; Silver - Cash verified query match, Russell candidate provisional, Sugar/Oil unresolved",
+      "sourceFormat": "JSON exact decimal source strings",
+      "structured": true,
+      "narrative": false,
+      "availableIntervalHistory": "One Silver delayed snapshot",
+      "declaredDelay": {
+        "minutes": 15,
+        "status": "tool schema verified this session"
+      },
+      "eventTimestamp": "2026-10-19T21:00:00.650Z",
+      "receiptTimestamp": "2026-10-19T21:55:14.121Z",
+      "entitlement": "Silver delayed quote and Silver/Russell metadata succeeded",
+      "observedTestResult": "Silver 15-minute-labelled quote is ~55m old at receipt; NotTradable/Valid are separate fields. Sugar Cash no result. Crude commodity query empty.",
+      "readiness": "verified",
+      "fallback": "No current execution quote; retain existing authorised feed only if independently verified",
+      "nextRoundBlocker": "Final product mapping/units and market/session logic; delayed data cannot satisfy 2m gate",
+      "hostedSitesEligibility": "unknown; separate Sites inventory and request-scoped test required",
+      "hostedReadVerified": false,
+      "visitorConsent": "unknown; not tested",
+      "unattendedCapability": "not tested; no monitoring authorised or activated",
+      "refreshPath": "manual bounded chat read only in this receipt",
+      "rateLimits": null,
+      "costLimits": null
+    },
+    {
+      "id": "cmc-bars",
+      "provider": "CMC Markets",
+      "informationNeed": "2m/10m and higher historical OHLC",
+      "connectorAction": "get_price_history; get_ohlc_data only for raw-candle request",
+      "accountSecurityScope": "Owner-selected Live GBP SB; Silver - Cash only",
+      "sourceFormat": "JSON bid/ask/mid candles as source strings, t, optional volume; normalized variant numeric",
+      "structured": true,
+      "narrative": false,
+      "availableIntervalHistory": "5 TWO_MIN candles (20:50–20:58Z) and 5 TEN_MIN candles (20:10–20:50Z); bid/ask/mid; limited bounded probe only",
+      "declaredDelay": null,
+      "eventTimestamp": "Latest source t: 20:58Z for 2m / 20:50Z for 10m on 2026-10-19",
+      "receiptTimestamp": "2026-10-19T21:55:14.066Z",
+      "entitlement": "Silver TWO_MIN and TEN_MIN succeeded",
+      "observedTestResult": "Actual 2m and 10m OHLC data verified; latest timestamps stale at receipt. Volume absent; closed state and timestamp boundary semantics not returned.",
+      "readiness": "verified",
+      "fallback": "Keep last-good verified bars stale; never derive intraday from daily",
+      "nextRoundBlocker": "Other instrument coverage, exact stamp boundary/closed semantics, available depth, session gaps/recency, units and final mapping",
+      "hostedSitesEligibility": "unknown; separate Sites inventory and request-scoped test required",
+      "hostedReadVerified": false,
+      "visitorConsent": "unknown; not tested",
+      "unattendedCapability": "not tested; no monitoring authorised or activated",
+      "refreshPath": "manual bounded chat read only in this receipt",
+      "rateLimits": null,
+      "costLimits": null
+    },
+    {
+      "id": "cmc-positions",
+      "provider": "CMC Markets",
+      "informationNeed": "Open positions and order visibility",
+      "connectorAction": "get_positions / get_position_orders / get_pending_orders",
+      "accountSecurityScope": "Owner-selected Live GBP SB",
+      "sourceFormat": "JSON",
+      "structured": true,
+      "narrative": false,
+      "availableIntervalHistory": "Current snapshot; hierarchy Account → category → position → position order → contingent order",
+      "declaredDelay": null,
+      "eventTimestamp": "No position evaluation timestamps because returned positions array is empty",
+      "receiptTimestamp": "2026-10-19T21:54:55.171Z",
+      "entitlement": "Positions read succeeded",
+      "observedTestResult": "Verified empty positions array at receipt only; do not treat receipt as a fresh operational feed or ongoing zero",
+      "readiness": "verified",
+      "fallback": "Manual owner observation with explicit as-of; unknown must not become zero",
+      "nextRoundBlocker": "Hosted authenticated selected-account path, refresh/freshness policy, count semantics on non-empty positions",
+      "hostedSitesEligibility": "unknown; separate Sites inventory and request-scoped test required",
+      "hostedReadVerified": false,
+      "visitorConsent": "unknown; not tested",
+      "unattendedCapability": "not tested; no monitoring authorised or activated",
+      "refreshPath": "manual bounded chat read only in this receipt",
+      "rateLimits": null,
+      "costLimits": null
+    },
+    {
+      "id": "bigdata-identities",
+      "provider": "Bigdata.com",
+      "informationNeed": "Issuer and ETF identity resolution",
+      "connectorAction": "find_securities",
+      "accountSecurityScope": "Amazon issuer and iShares Russell 2000 ETF candidates; no broker identity reconciliation",
+      "sourceFormat": "JSON encoded in text",
+      "structured": true,
+      "narrative": false,
+      "availableIntervalHistory": "Point-in-time identity catalogue; response metadata timestamp",
+      "declaredDelay": null,
+      "eventTimestamp": "2026-10-19T21:51:39.004724+00:00",
+      "receiptTimestamp": "2026-10-19T21:51:38.353Z",
+      "entitlement": "Two lookups succeeded",
+      "observedTestResult": "Amazon.com Inc PUBLIC COMPANY resolved; matching-name ETF candidate has conflicting description and multiple listing variants",
+      "readiness": "verified",
+      "fallback": "Issuer/exchange official identifier source; preserve ambiguous labels",
+      "nextRoundBlocker": "Reconcile broker listing/wrapper; do not promote IWM candidate to execution mapping",
+      "hostedSitesEligibility": "unknown; separate Sites inventory and request-scoped test required",
+      "hostedReadVerified": false,
+      "visitorConsent": "unknown; not tested",
+      "unattendedCapability": "not tested; no monitoring authorised or activated",
+      "refreshPath": "manual bounded chat read only in this receipt",
+      "rateLimits": null,
+      "costLimits": "Each identity response reported 250 knowledge_graph_tokens; monetary pricing unknown"
+    },
+    {
+      "id": "bigdata-company",
+      "provider": "Bigdata.com",
+      "informationNeed": "Portfolio issuer earnings and dated catalysts",
+      "connectorAction": "find_securities → bigdata_company_tearsheet; bigdata_events_calendar corporate_calendar",
+      "accountSecurityScope": "Amazon.com Inc. PUBLIC COMPANY only; issuer scope not broker holdings",
+      "sourceFormat": "Markdown + structured JSON",
+      "structured": true,
+      "narrative": true,
+      "availableIntervalHistory": "Latest earnings and future calendar; this call Q2 2026 baseline/Q3-Q4 calendar",
+      "declaredDelay": null,
+      "eventTimestamp": "2026-07-30 latest reporting date; Q3 call 2026-10-29T21:00:00Z",
+      "receiptTimestamp": "2026-10-19T21:52:06.345Z",
+      "entitlement": "Company sections and calendar succeeded",
+      "observedTestResult": "Verified transport and sourced output; figures not audited and not execution signals",
+      "readiness": "verified",
+      "fallback": "Issuer IR/SEC, retain exact period and source IDs",
+      "nextRoundBlocker": "Per-field observed timestamps, consensus basis, primary-source audit, hosted consent and connector test",
+      "hostedSitesEligibility": "unknown; separate Sites inventory and request-scoped test required",
+      "hostedReadVerified": false,
+      "visitorConsent": "unknown; not tested",
+      "unattendedCapability": "not tested; no monitoring authorised or activated",
+      "refreshPath": "manual bounded chat read only in this receipt",
+      "rateLimits": null,
+      "costLimits": null
+    },
+    {
+      "id": "bigdata-etf",
+      "provider": "Bigdata.com",
+      "informationNeed": "Separate ETF research: fund identity/holdings/exposure",
+      "connectorAction": "find_securities (ETF) → bigdata_etf_tearsheet",
+      "accountSecurityScope": "Research candidate iShares Russell 2000 ETF/IWM; not final CMC product",
+      "sourceFormat": "Markdown tables",
+      "structured": false,
+      "narrative": true,
+      "availableIntervalHistory": "Snapshot + daily-derived return/risk summaries; not raw intraday bars",
+      "declaredDelay": null,
+      "eventTimestamp": "Document generated 2026-10-19 21:52 UTC; underlying field dates not consistently supplied",
+      "receiptTimestamp": "2026-10-19T21:52:06.130Z",
+      "entitlement": "ETF tearsheet succeeded",
+      "observedTestResult": "FMP research output returned; official iShares page places same NAV on 2026-10-16, demonstrating generation timestamp is not field observation time",
+      "readiness": "verified",
+      "fallback": "Official iShares factsheet/holdings with own as-of date",
+      "nextRoundBlocker": "Broker mapping; per-field as-of metadata; discrepancy review; source-license checks",
+      "hostedSitesEligibility": "unknown; separate Sites inventory and request-scoped test required",
+      "hostedReadVerified": false,
+      "visitorConsent": "unknown; not tested",
+      "unattendedCapability": "not tested; no monitoring authorised or activated",
+      "refreshPath": "manual bounded chat read only in this receipt",
+      "rateLimits": null,
+      "costLimits": null
+    },
+    {
+      "id": "bigdata-macro",
+      "provider": "Bigdata.com",
+      "informationNeed": "Economic release schedule and provider consensus",
+      "connectorAction": "bigdata_events_calendar economic_calendar",
+      "accountSecurityScope": "US/GB HIGH-impact 2026-10-19 through 2026-10-23",
+      "sourceFormat": "Markdown + structured JSON",
+      "structured": true,
+      "narrative": true,
+      "availableIntervalHistory": "Bounded event window, 13 rows; no completeness claim",
+      "declaredDelay": null,
+      "eventTimestamp": "Per-event date, period_date and period_type; future actuals null",
+      "receiptTimestamp": "2026-10-19T21:52:24.550Z",
+      "entitlement": "Calendar succeeded",
+      "observedTestResult": "13 upcoming rows from FXStreet; missing consensus remains null; potency and units preserved",
+      "readiness": "verified",
+      "fallback": "ONS/BLS/Fed/BoE release calendars and releases; consensus unavailable if not independently sourced",
+      "nextRoundBlocker": "Hosted read, source event IDs, revision timestamps, calendar coverage/completeness, freeze-before-response workflow",
+      "hostedSitesEligibility": "unknown; separate Sites inventory and request-scoped test required",
+      "hostedReadVerified": false,
+      "visitorConsent": "unknown; not tested",
+      "unattendedCapability": "not tested; no monitoring authorised or activated",
+      "refreshPath": "manual bounded chat read only in this receipt",
+      "rateLimits": null,
+      "costLimits": null
+    },
+    {
+      "id": "bigdata-news",
+      "provider": "Bigdata.com",
+      "informationNeed": "Sourced issuer material news and filing/transcript discovery",
+      "connectorAction": "search → fetch",
+      "accountSecurityScope": "Amazon recent developments; one issuer-authored document fetched",
+      "sourceFormat": "Search metadata JSON + full document text",
+      "structured": true,
+      "narrative": true,
+      "availableIntervalHistory": "Search-selected recent documents; no complete wire history claim",
+      "declaredDelay": null,
+      "eventTimestamp": "Search timestamps have no explicit timezone suffix; fetched issuer text says distributed 2026-10-19 12:46 UTC",
+      "receiptTimestamp": "2026-10-19T21:52:24.823Z",
+      "entitlement": "Search and document fetch succeeded",
+      "observedTestResult": "19 result rows including repeated nuclear/analyst story coverage and an irrelevant item; one issuer release retrieved",
+      "readiness": "verified",
+      "fallback": "Original issuer/regulator source; dedupe related coverage before evidence counting",
+      "nextRoundBlocker": "First-seen vs publication timestamps, event clustering, primary URL resolution and hosted test",
+      "hostedSitesEligibility": "unknown; separate Sites inventory and request-scoped test required",
+      "hostedReadVerified": false,
+      "visitorConsent": "unknown; not tested",
+      "unattendedCapability": "not tested; no monitoring authorised or activated",
+      "refreshPath": "manual bounded chat read only in this receipt",
+      "rateLimits": null,
+      "costLimits": null
+    },
+    {
+      "id": "fd-macro",
+      "provider": "Financial Datasets",
+      "informationNeed": "Policy rates/macro series",
+      "connectorAction": "get_macro_data interest_rates",
+      "accountSecurityScope": "Latest central-bank policy-rate snapshot; no account data",
+      "sourceFormat": "Tool text error inside isError=false response",
+      "structured": false,
+      "narrative": true,
+      "availableIntervalHistory": "Schema: daily policy history, weekly source update and latest 2–9 days behind; actual unavailable",
+      "declaredDelay": "Schema says policy daily series published weekly, newest day 2–9 days behind",
+      "eventTimestamp": null,
+      "receiptTimestamp": "2026-10-19T21:51:38.353Z",
+      "entitlement": "Blocked: current API credit balance $0.00",
+      "observedTestResult": "Error fetching macro data: credit balance $0.00; no macro observation returned",
+      "readiness": "blocked",
+      "fallback": "Official central banks/statistical agencies or existing verified source",
+      "nextRoundBlocker": "Entitlement decision only if needed; no purchase requested or required for shell",
+      "hostedSitesEligibility": "unknown; separate Sites inventory and request-scoped test required",
+      "hostedReadVerified": false,
+      "visitorConsent": "unknown; not tested",
+      "unattendedCapability": "not tested; no monitoring authorised or activated",
+      "refreshPath": "manual bounded chat read only in this receipt",
+      "rateLimits": null,
+      "costLimits": null
+    },
+    {
+      "id": "fd-price-fundamentals",
+      "provider": "Financial Datasets",
+      "informationNeed": "Issuer fundamentals, filings, fund holdings, price histories",
+      "connectorAction": "get_company_facts / get_filings / get_index_fund / get_stock_prices",
+      "accountSecurityScope": "Supported issuer/security coverage not verified",
+      "sourceFormat": "Schema-documented structured data",
+      "structured": true,
+      "narrative": false,
+      "availableIntervalHistory": "Price schema supports second/minute/day/week/month/year plus multiplier; actual markets and intervals untested",
+      "declaredDelay": null,
+      "eventTimestamp": "Timestamp semantics not verified",
+      "receiptTimestamp": null,
+      "entitlement": "Unknown for these actions; macro call credit failure makes further probing unjustified",
+      "observedTestResult": "Schema inspected; no extra paid probes after credit failure",
+      "readiness": "blocked",
+      "fallback": "Bigdata research plus official issuer sources; no broker equivalence",
+      "nextRoundBlocker": "Entitlement, geography, interval and as-of tests; distinguish source observations from retrieval",
+      "hostedSitesEligibility": "unknown; separate Sites inventory and request-scoped test required",
+      "hostedReadVerified": false,
+      "visitorConsent": "unknown; not tested",
+      "unattendedCapability": "not tested; no monitoring authorised or activated",
+      "refreshPath": "manual bounded chat read only in this receipt",
+      "rateLimits": null,
+      "costLimits": null
+    },
+    {
+      "id": "newsify",
+      "provider": "Newsify",
+      "informationNeed": "Broad trend discovery",
+      "connectorAction": "get_trend_news limit=1 GB/en",
+      "accountSecurityScope": "General GB trends",
+      "sourceFormat": "Text summary + structured JSON",
+      "structured": true,
+      "narrative": true,
+      "availableIntervalHistory": "Today's trends; page/cursor; no low-latency wire or calendar guarantee",
+      "declaredDelay": null,
+      "eventTimestamp": "createdAt/updatedAt 2026-10-19T21:33:08.197Z are aggregation metadata; original publication/first-seen unknown",
+      "receiptTimestamp": "2026-10-19T21:52:04.913Z",
+      "entitlement": "Read succeeded",
+      "observedTestResult": "One beauty trend, unrelated to mapped market need; sourceUrl null. Rejected as market evidence. No grid resource was returned to this tool execution.",
+      "readiness": "verified",
+      "fallback": "Bigdata issuer news/official release; omit irrelevant trend",
+      "nextRoundBlocker": "Original source/time, relevance filter, syndicated-story dedupe and hosted eligibility",
+      "hostedSitesEligibility": "unknown; separate Sites inventory and request-scoped test required",
+      "hostedReadVerified": false,
+      "visitorConsent": "unknown; not tested",
+      "unattendedCapability": "not tested; no monitoring authorised or activated",
+      "refreshPath": "manual bounded chat read only in this receipt",
+      "rateLimits": null,
+      "costLimits": null
+    },
+    {
+      "id": "trading212",
+      "provider": "Trading 212",
+      "informationNeed": "Portfolio/account/history and replaceable pie reconciliation",
+      "connectorAction": "Future read-only API adapter; manual/import seed in Round 1",
+      "accountSecurityScope": "No API connected/provided; owner explicitly says no API yet",
+      "sourceFormat": "Future API JSON; provenance-preserving manual import now",
+      "structured": true,
+      "narrative": false,
+      "availableIntervalHistory": "Official API beta for Invest and Stocks ISA; cursor history; pie endpoints deprecated",
+      "declaredDelay": null,
+      "eventTimestamp": null,
+      "receiptTimestamp": null,
+      "entitlement": "Not connected; no key requested",
+      "observedTestResult": "Official docs read only; no broker call",
+      "readiness": "configured but untested",
+      "fallback": "Five pie/58-line owner snapshots; preserve observed vs target vs future broker-reconciled",
+      "nextRoundBlocker": "Optional secure server-side setup if owner later chooses; account selection, exact instruments, replacement for deprecated pies",
+      "hostedSitesEligibility": "unknown; separate Sites inventory and request-scoped test required",
+      "hostedReadVerified": false,
+      "visitorConsent": "unknown; not tested",
+      "unattendedCapability": "not tested; no monitoring authorised or activated",
+      "refreshPath": "Manual versioned import; API deferred",
+      "rateLimits": "Official docs: per-account, endpoint-specific limits with x-ratelimit headers; exact endpoint budgets not inspected",
+      "costLimits": null
+    },
+    {
+      "id": "weather",
+      "provider": "Tomorrow.io Weather",
+      "informationNeed": "Location-specific context only for explicit commodity/energy exposure",
+      "connectorAction": "weather_upcoming schema inspected",
+      "accountSecurityScope": "No relevant production area/location resolved",
+      "sourceFormat": "Tool-dependent weather summary",
+      "structured": null,
+      "narrative": true,
+      "availableIntervalHistory": "Hourly/daily short-term forecasts by coordinates per schema",
+      "declaredDelay": null,
+      "eventTimestamp": null,
+      "receiptTimestamp": null,
+      "entitlement": "unknown; no read attempted",
+      "observedTestResult": "Deferred: no identified location-specific gap; default user location would be irrelevant",
+      "readiness": "configured but untested",
+      "fallback": "Official meteorological/agricultural sources tied to resolved geography",
+      "nextRoundBlocker": "Explicit region, agronomic/energy mechanism and exposure; no automatic price direction",
+      "hostedSitesEligibility": "unknown; separate Sites inventory and request-scoped test required",
+      "hostedReadVerified": false,
+      "visitorConsent": "unknown; not tested",
+      "unattendedCapability": "not tested; no monitoring authorised or activated",
+      "refreshPath": "manual bounded chat read only in this receipt",
+      "rateLimits": null,
+      "costLimits": null
+    }
+  ],
+  "receipts": [
+    {
+      "id": "CMC-ACCOUNT-DISCOVERY-20261019",
+      "action": "get_accounts",
+      "status": "verified",
+      "startedAt": "2026-10-19T21:51:38.335Z",
+      "completedAtPrecision": "within same 3.3s batch; exact response time not recorded",
+      "sanitizedAccounts": [
+        {
+          "function": "Demo",
+          "type": "Standard",
+          "currency": "GBP",
+          "region": "GB",
+          "productTypes": [
+            "CFD",
+            "Option"
+          ],
+          "status": "Active"
+        },
+        {
+          "function": "Live",
+          "type": "Standard",
+          "currency": "GBP",
+          "region": "GB",
+          "productTypes": [
+            "SB"
+          ],
+          "status": "Active"
+        }
+      ],
+      "selectedAccount": null,
+      "note": "Internal IDs, names and backend selectors intentionally omitted. Multiple-account prerequisite prevents downstream calls.",
+      "selectionResolution": "Initially unresolved; owner subsequently selected Live spread-betting account. Downstream receipts below supersede initial blocker."
+    },
+    {
+      "id": "bigdata_amazon_identity",
+      "action": "find_securities",
+      "startedAt": "2026-10-19T21:51:38.353Z",
+      "response": {
+        "results": [
+          {
+            "security_type": "COMPANY",
+            "id": "0157B1",
+            "name": "Amazon.com Inc.",
+            "description": "Amazon.com Inc. is a multinational technology company focusing in e-commerce, cloud computing, and artificial intelligence. The company was incorporated on July 5, 1994.",
+            "country": "United States",
+            "sector": "Consumer Services",
+            "industry_group": "General Retailers",
+            "industry": "Internet & Direct Marketing Retail",
+            "favicon": "http://www.amazon.com/favicon.ico",
+            "webpage": "http://www.amazon.com",
+            "isin_values": [
+              "AU0000048530",
+              "CA02314W1068",
+              "CA02315E1051",
+              "TH0150121307",
+              "TH0241124500",
+              "TH0809121401",
+              "TH0842120105",
+              "TH3932124607",
+              "TH8483126000",
+              "US0231351067"
+            ],
+            "cusip_values": [
+              "023135106",
+              "02314W106",
+              "02315E105",
+              "P0R686174",
+              "Q3R79Y207",
+              "Y100G4345",
+              "Y408JC762",
+              "Y476JC223",
+              "Y49876231",
+              "Y689DP558",
+              "Y985L7254"
+            ],
+            "sedol_values": [
+              "2000019",
+              "2436368",
+              "B01YWR1",
+              "B58WM62",
+              "BJ9K865",
+              "BNC31M6",
+              "BR1WCN0",
+              "BS55S01",
+              "BS7ZCZ2",
+              "BSRHGN4",
+              "BVBDDH2",
+              "BVPV9S5",
+              "BWTQGH1"
+            ],
+            "listing_values": [
+              "XBKK:AMZN01",
+              "XBKK:AMZN06",
+              "XBKK:AMZN80",
+              "XBOG:AMZN",
+              "XLIM:AMZN",
+              "XMEX:AMZN",
+              "XNAS:AMZN",
+              "XNMS:AMZN"
+            ],
+            "listing_type": "PUBLIC"
+          },
+          {
+            "security_type": "COMPANY",
+            "id": "C4CFC3",
+            "name": "Amazon Web Services Inc.",
+            "description": "Amazon Web Services Inc. provides information technology services. The Company offers website hosting, backup, digital marketing, analytics, application integration, blockchain, networking, and other related services. Amazon Web Services serves clients worldwide. The company was founded on the 3rd of May 2006 as a wholly-owned subsidiary of Amazon.com Inc.",
+            "country": "United States",
+            "sector": "Technology",
+            "industry_group": "Computer Services",
+            "industry": "Computer Services",
+            "webpage": "http://www.aws.amazon.com",
+            "isin_values": [],
+            "cusip_values": [],
+            "sedol_values": [],
+            "listing_values": [],
+            "listing_type": "PRIVATE"
+          },
+          {
+            "security_type": "COMPANY",
+            "id": "N13N0W",
+            "name": "Amazon Alexa Fund",
+            "description": "Amazon.com Inc. was founded in 2000 in the United States. The company specializes in investing in startups focused on voice technology, artificial intelligence, and other innovative software solutions.",
+            "country": "United States",
+            "sector": "Technology",
+            "industry_group": "Software",
+            "industry": "Software",
+            "webpage": "http://alexafund.com",
+            "isin_values": [],
+            "cusip_values": [],
+            "sedol_values": [],
+            "listing_values": [],
+            "listing_type": "PRIVATE"
+          },
+          {
+            "security_type": "COMPANY",
+            "id": "NBA66N",
+            "name": "Amazon Seller Services Pvt. Ltd.",
+            "description": "Amazon Seller Services Pvt. Ltd. operates a marketplace that helps sellers to sell their products online. The company was incorporated on April 16, 2010, as a subsidiary of Amazon.com Inc.",
+            "country": "India",
+            "sector": "Consumer Services",
+            "industry_group": "General Retailers",
+            "industry": "Internet & Direct Marketing Retail",
+            "webpage": "https://www.amazonappbuilder.com",
+            "isin_values": [],
+            "cusip_values": [],
+            "sedol_values": [],
+            "listing_values": [],
+            "listing_type": "PRIVATE"
+          },
+          {
+            "security_type": "COMPANY",
+            "id": "2475BB",
+            "name": "Amazon Technologies Inc.",
+            "description": "Amazon Technologies Inc. was founded on July 11, 2003. Since its inception, the company operates as a wholly-owned subsidiary of Amazon.com Inc.",
+            "country": "United States",
+            "sector": "Consumer Services",
+            "industry_group": "General Retailers",
+            "industry": "Specialty Retailers",
+            "webpage": "https://climatepledgearena.com/",
+            "isin_values": [],
+            "cusip_values": [],
+            "sedol_values": [],
+            "listing_values": [],
+            "listing_type": "PRIVATE"
+          }
+        ],
+        "metadata": {
+          "request_id": "d3cf67ad-b804-4381-b4ad-d654a9318b18",
+          "timestamp": "2026-10-19T21:51:39.004724+00:00",
+          "usage": {
+            "knowledge_graph_tokens": 250
+          }
+        }
+      },
+      "status": "verified",
+      "note": "Issuer scope only; exact portfolio listing unresolved"
+    },
+    {
+      "id": "bigdata_russell_candidates",
+      "action": "find_securities",
+      "startedAt": "2026-10-19T21:51:38.353Z",
+      "response": {
+        "results": [
+          {
+            "security_type": "ETF",
+            "id": "279228",
+            "name": "iShares Russell 2000 ETF",
+            "description": "SPDR Gold Trust is an exchange-traded fund that invests in public equity markets of the United States. It was formed on May 22, 2000, as a trading unit of BlackRock Finance Inc.",
+            "country": "United States",
+            "sector": "Financials",
+            "industry_group": "Nonequity Investment Instruments",
+            "industry": "Nonequity Investment Instruments",
+            "webpage": "https://www.ishares.com/us/products/239710/ishares-russell-2000-etf",
+            "isin_values": [
+              "US4642876555"
+            ],
+            "cusip_values": [
+              "464287655"
+            ],
+            "sedol_values": [
+              "2622059",
+              "B0BJPG6",
+              "B5NGGP6"
+            ],
+            "listing_values": [
+              "ARCX:IWM",
+              "XMEX:IWM",
+              "XSGO:IWM"
+            ]
+          },
+          {
+            "security_type": "ETF",
+            "id": "8401C8",
+            "name": "iShares Russell 2000 Growth ETF",
+            "description": "iShares Russell 2000 Growth ETF seeks investment returns that correspond to the performance of the Russell 2000 Growth Index, which measures the performance of the small-capitalization growth sector of the U.S. equity market. Managed by BlackRock Investments LLC, the ETF was launched on July 24, 2000.",
+            "country": "United States",
+            "sector": "Financials",
+            "industry_group": "Nonequity Investment Instruments",
+            "industry": "Nonequity Investment Instruments",
+            "isin_values": [
+              "US4642876480"
+            ],
+            "cusip_values": [
+              "464287648"
+            ],
+            "sedol_values": [
+              "2713276",
+              "B59ZC82"
+            ],
+            "listing_values": [
+              "ARCX:IWO",
+              "XSGO:IWO"
+            ]
+          },
+          {
+            "security_type": "ETF",
+            "id": "PK0M3C",
+            "name": "iShares Russell 2000 Buywrite ETF",
+            "description": "The iShares Russell 2000 Buywrite ETF seeks to generate income and enhance returns by investing in a portfolio of small-cap stocks and writing covered call options on those stocks. It aims to provide investors with exposure to the potential growth of small-cap companies while also mitigating risk through the use of options strategies.",
+            "country": "United States",
+            "sector": "Financials",
+            "industry_group": "Investment Instruments",
+            "industry": "Investment Instruments",
+            "isin_values": [
+              "US46438G6952"
+            ],
+            "cusip_values": [
+              "46438G695"
+            ],
+            "sedol_values": [
+              "BP2DNP7"
+            ],
+            "listing_values": [
+              "XCBO:IWMW"
+            ]
+          },
+          {
+            "security_type": "ETF",
+            "id": "PPB4SL",
+            "name": "iShares Russell 2000 Value ETF",
+            "description": "The iShares Russell 2000 Value ETF value focuses on providing investors with exposure to small-cap companies in the US that are considered undervalued, with the goal of achieving long-term capital growth. This ETF offers a diversified portfolio of value stocks, allowing investors to potentially benefit from the growth potential of smaller companies while also mitigating risk through a value investing approach.",
+            "country": "United States",
+            "sector": "Financials",
+            "industry_group": "Investment Instruments",
+            "industry": "Investment Instruments",
+            "isin_values": [
+              "US4642876308"
+            ],
+            "cusip_values": [
+              "464287630"
+            ],
+            "sedol_values": [
+              "2689719"
+            ],
+            "listing_values": [
+              "XNYS:IWN",
+              "XPSE:IWN"
+            ]
+          },
+          {
+            "security_type": "ETF",
+            "id": "F1DRKE",
+            "name": "iShares Russell 2000 Swap UCITS ETF",
+            "description": "The iShares Russell 2000 Swap UCITS ETF is designed to track the performance of the Russell 2000 Index, which represents small-cap companies in the US. It offers investors exposure to a broad range of small-cap stocks and aims to provide long-term capital growth. It was launched on October 03, 2024 by BlackRock Asset Management Ireland Ltd.",
+            "country": "Ireland",
+            "sector": "Financials",
+            "industry_group": "Equity Investment Instruments",
+            "industry": "Equity Investment Instruments",
+            "isin_values": [
+              "IE0007O06KL9",
+              "IE000OYABFQ2"
+            ],
+            "cusip_values": [
+              "G4954P741",
+              "G4954P790"
+            ],
+            "sedol_values": [
+              "BP39HH4",
+              "BQ2N7S5",
+              "BRV49M4",
+              "BSLSHH4",
+              "BSPR2K5"
+            ],
+            "listing_values": [
+              "XAMS:RU2K",
+              "XLON:RU2K",
+              "XMEX:RU2K",
+              "XMIL:RU2E",
+              "XSWX:RU2K"
+            ]
+          }
+        ],
+        "metadata": {
+          "request_id": "f9764e78-055f-418f-b8ae-bbe9bd1dd484",
+          "timestamp": "2026-10-19T21:51:39.185256+00:00",
+          "usage": {
+            "knowledge_graph_tokens": 250
+          }
+        }
+      },
+      "status": "verified",
+      "note": "Candidate research only; conflicting description flagged; exact broker identity unresolved"
+    },
+    {
+      "id": "bigdata_amazon_tearsheet",
+      "startedAt": "2026-10-19T21:52:03.848Z",
+      "receivedAt": "2026-10-19T21:52:06.119Z",
+      "status": "verified",
+      "sourceFormat": "structured + markdown",
+      "response": {
+        "latest_earnings": {
+          "reporting_date": "2026-07-30",
+          "fiscal_year": 2026,
+          "reporting_period": "Q2",
+          "eps": {
+            "estimated": 1.82,
+            "actual": 5.75,
+            "surprise_pct": 215.93406593406593
+          },
+          "revenue": {
+            "estimated": 197034800000,
+            "actual": 200606000000,
+            "surprise_pct": 1.8124717055058293
+          },
+          "source": {
+            "id": "CA9FA3",
+            "name": "Corporate Fundamentals",
+            "provider_id": "FMP"
+          }
+        },
+        "events_calendar": [
+          {
+            "category": "earnings-call",
+            "transcript_event_datetime": "2027-02-04T21:00:00.000Z",
+            "title": "Q4 2026",
+            "fiscal_year": 2026,
+            "fiscal_period": "Q4",
+            "provider_collection_id": 772864,
+            "provider_primary_entity_id": 4762,
+            "rp_collection_id": "dc0861dd3767a97bd3b9c3ee6fb41054",
+            "rp_provider_id": "QRTR",
+            "source": {
+              "id": "B1E8F9",
+              "name": "Corporate Calendar",
+              "provider_id": "QRTR"
+            },
+            "updated_at": "2026-10-15T22:35:36Z",
+            "created_at": "2026-10-15T22:35:35Z",
+            "backlink_url": "https://quartr.com/companies/amazoncom-inc_4762?utm_source=api&utm_medium=25"
+          },
+          {
+            "category": "earnings-call",
+            "transcript_event_datetime": "2026-10-29T21:00:00.000Z",
+            "title": "Q3 2026",
+            "fiscal_year": 2026,
+            "fiscal_period": "Q3",
+            "provider_collection_id": 720308,
+            "provider_primary_entity_id": 4762,
+            "rp_collection_id": "328afb3355611dc05405865968995fc1",
+            "rp_provider_id": "QRTR",
+            "source": {
+              "id": "B1E8F9",
+              "name": "Corporate Calendar",
+              "provider_id": "QRTR"
+            },
+            "updated_at": "2026-10-16T18:38:23Z",
+            "created_at": "2026-07-29T22:47:40Z",
+            "backlink_url": "https://quartr.com/companies/amazoncom-inc_4762?utm_source=api&utm_medium=25"
+          }
+        ]
+      },
+      "sourceAttribution": "FMP latest earnings; Quartr earnings calendar via Bigdata.com"
+    },
+    {
+      "id": "bigdata_amazon_calendar",
+      "startedAt": "2026-10-19T21:52:03.848Z",
+      "receivedAt": "2026-10-19T21:52:06.345Z",
+      "status": "verified",
+      "sourceFormat": "structured + markdown",
+      "response": {
+        "events": [
+          {
+            "rp_entity_id": "0157B1",
+            "company_name": "Amazon.com Inc.",
+            "ticker": "AMZN",
+            "category": "earnings-call",
+            "title": "Q3 2026",
+            "event_datetime": "2026-10-29T21:00:00Z",
+            "fiscal_year": 2026,
+            "fiscal_period": "Q3",
+            "rp_collection_id": "328afb3355611dc05405865968995fc1",
+            "source_url": "https://quartr.com/companies/amazoncom-inc_4762?utm_source=api&utm_medium=25"
+          }
+        ],
+        "pagination": {
+          "cursor": null,
+          "has_cursor": false
+        }
+      },
+      "sourceAttribution": "Quartr via Bigdata.com"
+    },
+    {
+      "id": "bigdata_macro_calendar",
+      "startedAt": "2026-10-19T21:52:22.550Z",
+      "receivedAt": "2026-10-19T21:52:24.550Z",
+      "status": "verified",
+      "sourceFormat": "structured + markdown",
+      "response": {
+        "events": [
+          {
+            "date": "2026-10-20T06:00:00Z",
+            "country": "GB",
+            "name": "Claimant Count Change",
+            "impact": "HIGH",
+            "category": "labor-market",
+            "period_date": "2026-09-01",
+            "period_type": "MONTH",
+            "actual": null,
+            "consensus": 19.4,
+            "previous": 27.8,
+            "revised": null,
+            "surprise": null,
+            "surprise_unit": null,
+            "is_better_than_expected": null,
+            "metric_unit": null,
+            "potency": "K"
+          },
+          {
+            "date": "2026-10-20T06:00:00Z",
+            "country": "GB",
+            "name": "Employment Change (3M)",
+            "impact": "HIGH",
+            "category": "labor-market",
+            "period_date": "2026-08-01",
+            "period_type": "MONTH",
+            "actual": null,
+            "consensus": null,
+            "previous": 67,
+            "revised": null,
+            "surprise": null,
+            "surprise_unit": null,
+            "is_better_than_expected": null,
+            "metric_unit": null,
+            "potency": "K"
+          },
+          {
+            "date": "2026-10-20T06:00:00Z",
+            "country": "GB",
+            "name": "ILO Unemployment Rate (3M)",
+            "impact": "HIGH",
+            "category": "labor-market",
+            "period_date": "2026-08-01",
+            "period_type": "MONTH",
+            "actual": null,
+            "consensus": 4.9,
+            "previous": 4.9,
+            "revised": null,
+            "surprise": null,
+            "surprise_unit": null,
+            "is_better_than_expected": null,
+            "metric_unit": "%",
+            "potency": null
+          },
+          {
+            "date": "2026-10-21T06:00:00Z",
+            "country": "GB",
+            "name": "Consumer Price Index (MoM)",
+            "impact": "HIGH",
+            "category": "inflation",
+            "period_date": "2026-09-01",
+            "period_type": "MONTH",
+            "actual": null,
+            "consensus": 0.3,
+            "previous": 0.5,
+            "revised": null,
+            "surprise": null,
+            "surprise_unit": null,
+            "is_better_than_expected": null,
+            "metric_unit": "%",
+            "potency": "ZERO"
+          },
+          {
+            "date": "2026-10-21T06:00:00Z",
+            "country": "GB",
+            "name": "Consumer Price Index (YoY)",
+            "impact": "HIGH",
+            "category": "inflation",
+            "period_date": "2026-09-01",
+            "period_type": "MONTH",
+            "actual": null,
+            "consensus": 3.4,
+            "previous": 3.1,
+            "revised": null,
+            "surprise": null,
+            "surprise_unit": null,
+            "is_better_than_expected": null,
+            "metric_unit": "%",
+            "potency": "ZERO"
+          },
+          {
+            "date": "2026-10-21T06:00:00Z",
+            "country": "GB",
+            "name": "Core Consumer Price Index (YoY)",
+            "impact": "HIGH",
+            "category": "inflation",
+            "period_date": "2026-09-01",
+            "period_type": "MONTH",
+            "actual": null,
+            "consensus": 2.8,
+            "previous": 2.6,
+            "revised": null,
+            "surprise": null,
+            "surprise_unit": null,
+            "is_better_than_expected": null,
+            "metric_unit": "%",
+            "potency": "ZERO"
+          },
+          {
+            "date": "2026-10-22T10:50:00Z",
+            "country": "GB",
+            "name": "BoE's Governor Bailey speech",
+            "impact": "HIGH",
+            "category": "central-banks",
+            "period_date": null,
+            "period_type": null,
+            "actual": null,
+            "consensus": null,
+            "previous": null,
+            "revised": null,
+            "surprise": null,
+            "surprise_unit": null,
+            "is_better_than_expected": null,
+            "metric_unit": null,
+            "potency": null
+          },
+          {
+            "date": "2026-10-23T06:00:00Z",
+            "country": "GB",
+            "name": "Retail Sales (MoM)",
+            "impact": "HIGH",
+            "category": "consumption",
+            "period_date": "2026-09-01",
+            "period_type": "MONTH",
+            "actual": null,
+            "consensus": -0.2,
+            "previous": 0.5,
+            "revised": null,
+            "surprise": null,
+            "surprise_unit": null,
+            "is_better_than_expected": null,
+            "metric_unit": "%",
+            "potency": "ZERO"
+          },
+          {
+            "date": "2026-10-23T08:30:00Z",
+            "country": "GB",
+            "name": "S&P Global Composite PMI",
+            "impact": "HIGH",
+            "category": "economic-activity",
+            "period_date": "2026-10-01",
+            "period_type": "MONTH",
+            "actual": null,
+            "consensus": null,
+            "previous": 52,
+            "revised": null,
+            "surprise": null,
+            "surprise_unit": null,
+            "is_better_than_expected": null,
+            "metric_unit": null,
+            "potency": "ZERO"
+          },
+          {
+            "date": "2026-10-23T08:30:00Z",
+            "country": "GB",
+            "name": "S&P Global Manufacturing PMI",
+            "impact": "HIGH",
+            "category": "economic-activity",
+            "period_date": "2026-10-01",
+            "period_type": "MONTH",
+            "actual": null,
+            "consensus": 51.8,
+            "previous": 51.9,
+            "revised": null,
+            "surprise": null,
+            "surprise_unit": null,
+            "is_better_than_expected": null,
+            "metric_unit": null,
+            "potency": "ZERO"
+          },
+          {
+            "date": "2026-10-23T08:30:00Z",
+            "country": "GB",
+            "name": "S&P Global Services PMI",
+            "impact": "HIGH",
+            "category": "economic-activity",
+            "period_date": "2026-10-01",
+            "period_type": "MONTH",
+            "actual": null,
+            "consensus": 51.8,
+            "previous": 52.1,
+            "revised": null,
+            "surprise": null,
+            "surprise_unit": null,
+            "is_better_than_expected": null,
+            "metric_unit": null,
+            "potency": "ZERO"
+          },
+          {
+            "date": "2026-10-23T13:45:00Z",
+            "country": "US",
+            "name": "S&P Global Manufacturing PMI",
+            "impact": "HIGH",
+            "category": "economic-activity",
+            "period_date": "2026-10-01",
+            "period_type": "MONTH",
+            "actual": null,
+            "consensus": 55.6,
+            "previous": 55.9,
+            "revised": null,
+            "surprise": null,
+            "surprise_unit": null,
+            "is_better_than_expected": null,
+            "metric_unit": null,
+            "potency": "ZERO"
+          },
+          {
+            "date": "2026-10-23T13:45:00Z",
+            "country": "US",
+            "name": "S&P Global Services PMI",
+            "impact": "HIGH",
+            "category": "economic-activity",
+            "period_date": "2026-10-01",
+            "period_type": "MONTH",
+            "actual": null,
+            "consensus": 57.9,
+            "previous": 58.8,
+            "revised": null,
+            "surprise": null,
+            "surprise_unit": null,
+            "is_better_than_expected": null,
+            "metric_unit": null,
+            "potency": "ZERO"
+          }
+        ]
+      },
+      "sourceAttribution": "FXStreet via Bigdata.com"
+    },
+    {
+      "id": "bigdata_russell_etf",
+      "startedAt": "2026-10-19T21:52:03.848Z",
+      "receivedAt": "2026-10-19T21:52:06.130Z",
+      "status": "verified",
+      "scope": "IWM research candidate, not confirmed broker mapping",
+      "responseMarkdown": "*Last Updated: October 19, 2026 09:52 PM UTC*\n\n# ETF Snapshot: iShares Russell 2000 ETF (IWM)\n\n## Fund Overview\n\n*Source: [FMP](https://site.financialmodelingprep.com)*\n\n*As of October 19, 2026 09:52 PM UTC*\n\n| Field | Value |\n|-----|-----|\n| ISIN | US4642876555 |\n| Asset Class | Equity |\n| Currency | USD |\n| Net Asset Value (NAV) | 270.43 |\n| Assets Under Management (AUM) | 75.15B |\n| Expense Ratio (TER) | 0.1900% |\n| Holdings Count | 1,983 |\n| Inception Date | 2000-05-22 |\n| Domicile | US |\n| Provider | IShares |\n| Average Volume | 23,094,805 |\n| Listing Exchange | AMEX |\n\n### Description\n\niShares Trust - iShares Russell 2000 ETF is an exchange traded fund launched by BlackRock, Inc. It is managed by BlackRock Fund Advisors. The fund invests in public equity markets of the United States. It invests in stocks of companies operating across diversified sectors. The fund invests in growth and value stocks of small-cap companies. The fund seeks to track the performance of the Russell 2000 Index, by using representative sampling technique. iShares Trust - iShares Russell 2000 ETF was formed on May 22, 2000 and is domiciled in the United States.\n\n## Top 10 Holdings\n\n*Source: [FMP](https://site.financialmodelingprep.com)*\n\n*As of October 19, 2026 09:52 PM UTC*\n\n| Rank | Asset | Shares | Market Value | Weight |\n|----|-----|------|------------|------|\n| 1 | MOOG INC CLASS A | 737,023 | 271.67M | 0.36% |\n| 2 | BRIGHTSPRING HEALTH SERVICES INC | 4,339,222 | 264.13M | 0.35% |\n| 3 | UMB FINANCIAL | 1,914,791 | 251.03M | 0.34% |\n| 4 | SM ENERGY | 6,291,990 | 248.53M | 0.33% |\n| 5 | GLAUKOS | 1,487,123 | 245.14M | 0.33% |\n| 6 | JFROG | 2,814,116 | 237.26M | 0.32% |\n| 7 | BRINKER INTERNATIONAL INC | 1,120,106 | 228.66M | 0.31% |\n| 8 | FIRSTCASH HOLDINGS INC | 1,062,100 | 228.63M | 0.31% |\n| 9 | OLD NATIONAL BANCORP | 9,130,473 | 228.35M | 0.31% |\n| 10 | CARETRUST REIT | 6,199,113 | 226.58M | 0.30% |\n\n| Metric | Value |\n|------|-----|\n| Top-10 Weight | 3.26% |\n| HHI (Concentration) | 11.97 |\n\n*Herfindahl-Hirschman Index (HHI): sum of each holding's weight squared. Higher values indicate greater concentration.*\n\n## Price Performance\n\n*Source: [FMP](https://site.financialmodelingprep.com)*\n\n*As of October 19, 2026 09:52 PM UTC*\n\n| Metric | Value |\n|------|-----|\n| Currency | USD |\n| Last Price | 271.29 |\n| Day Change | +0.85 (+0.31%) |\n| Market Cap | 75.39B |\n| 52-Week High | 305.18 |\n| 52-Week Low | 228.90 |\n| 50-Day MA | 289.07 |\n| 200-Day MA | 277.65 |\n| Premium/Discount to NAV | +0.32% |\n\n*Premium/Discount to NAV: (price − NAV) / NAV. Positive = premium, negative = discount.*\n\n## Returns Overview\n\n*Source: [FMP](https://site.financialmodelingprep.com)*\n\n*As of October 19, 2026 09:52 PM UTC*\n\n| Period | Return |\n|------|------|\n| 1D | +0.31% |\n| 5D | -0.03% |\n| 1M | -4.51% |\n| 3M | -7.19% |\n| 6M | -1.63% |\n| YTD | +10.21% |\n| 1Y | +11.45% |\n| 3Y | +63.00% |\n\n## Dividends\n\n*Source: [FMP](https://site.financialmodelingprep.com)*\n\n*As of October 19, 2026 09:52 PM UTC*\n\n| Date | Amount | Adjusted | Yield | Declaration | Record | Payment | Frequency |\n|----|------|--------|-----|-----------|------|-------|---------|\n| 2026-09-15 | 0.7504 | 0.7504 | 0.96% | 2025-09-05 | 2026-09-15 | 2026-09-18 | Quarterly |\n| 2026-06-15 | 0.6951 | 0.6951 | 0.90% | 2025-09-05 | 2026-06-15 | 2026-06-18 | Quarterly |\n| 2026-03-17 | 0.4420 | 0.4420 | 1.01% | 2025-09-05 | 2026-03-17 | 2026-03-20 | Quarterly |\n| 2025-12-16 | 0.8425 | 0.8425 | 1.02% | 2024-07-04 | 2025-12-16 | 2025-12-19 | Quarterly |\n| 2025-09-16 | 0.6768 | 0.6768 | 1.01% | 2024-07-04 | 2025-09-16 | 2025-09-19 | Quarterly |\n| 2025-06-16 | 0.5756 | 0.5756 | 1.18% | 2024-07-04 | 2025-06-16 | 2025-06-20 | Quarterly |\n| 2025-03-18 | 0.4598 | 0.4598 | 1.21% | 2024-07-04 | 2025-03-18 | 2025-03-21 | Quarterly |\n| 2024-12-17 | 0.6940 | 0.6940 | 1.10% | 2023-11-24 | 2024-12-17 | 2024-12-20 | Quarterly |\n\n## Risk & Technical\n\n*Source: [FMP](https://site.financialmodelingprep.com)*\n\n*As of October 19, 2026 09:52 PM UTC*\n\n| Metric | Value |\n|------|-----|\n| Realized Volatility (20D) | 14.59% |\n| Realized Volatility (60D) | 14.11% |\n| Max Drawdown (1Y) | -11.36% |\n\n| Period | RSI (14) |\n|------|--------|\n| Current | 33.76 |\n| 1D | 31.85 |\n| 5D | 28.17 |\n| 1M | 34.36 |\n| 3M | 47.24 |\n| 6M | 72.88 |\n| 1Y | 51.67 |\n\n*Relative Strength Index (RSI): 14-period Wilder smoothing on daily close prices.*\n\n## Sector Breakdown\n\n*Source: [FMP](https://site.financialmodelingprep.com)*\n\n*As of October 19, 2026 09:52 PM UTC*\n\n| Sector | Weight |\n|------|------|\n| Health Care | 20.21% |\n| Financials | 19.40% |\n| Industrials | 13.74% |\n| Information Technology | 13.20% |\n| Consumer Discretionary | 9.25% |\n| Energy | 6.83% |\n| Real Estate | 5.79% |\n| Materials | 4.12% |\n| Utilities | 2.80% |\n| Communication | 2.39% |\n| Consumer Staples | 2.03% |\n| Cash and/or Derivatives | 0.23% |\n\n## Country Allocation\n\n*Source: [FMP](https://site.financialmodelingprep.com)*\n\n*As of October 19, 2026 09:52 PM UTC*\n\n| Country | Weight |\n|-------|------|\n| United States | 94.77% |\n| Bermuda | 1.80% |\n| United Kingdom | 0.64% |\n| Switzerland | 0.47% |\n| Canada | 0.39% |\n| Other | 0.35% |\n| Ireland | 0.32% |\n| Puerto Rico | 0.30% |\n| Monaco | 0.18% |\n| Brazil | 0.16% |\n| France | 0.11% |\n| Cayman Islands | 0.10% |\n| Luxembourg | 0.09% |\n| Bahamas | 0.08% |\n| Panama | 0.06% |\n| Israel | 0.05% |\n| Uruguay | 0.05% |\n| Singapore | 0.04% |\n| Italy | 0.02% |\n| British Virgin Islands | 0.02% |\n| Belgium | 0.01% |\n| Gibraltar | 0.00% |\n| Japan | 0.00% |\n",
+      "sourceAttribution": "FMP via Bigdata.com",
+      "qualityFlags": [
+        "lookup-description-conflicts-with-name",
+        "generated-at-not-field-as-of",
+        "official-exchange-NYSE-Arca-versus-provider-AMEX",
+        "not-execution-data"
+      ]
+    },
+    {
+      "id": "bigdata_amazon_news",
+      "startedAt": "2026-10-19T21:52:03.848Z",
+      "receivedAt": "2026-10-19T21:52:06.363Z",
+      "status": "verified",
+      "response": {
+        "results": [
+          {
+            "id": "8CAA177EB1815DADE1D14751407CC679",
+            "title": "X-energy Inc. - X-energy, Amazon, American Electric Power Partner to Bring SMR Project to Indiana",
+            "url": "https://app.bigdata.com/documents/8CAA177EB1815DADE1D14751407CC679?cnum=1&cnum=2",
+            "timestamp": "2026-10-19T13:34:35"
+          },
+          {
+            "id": "234E2094735C582620B610461EA4A210",
+            "title": "3M Company Enters Expanded Strategic Commercial Relationship With Amazon Subsidiary On Oct 19, 2026;  Issues Warrant To Amazon Subsidiary For 3,162,015 Shares At $164.89 Per Share; 85% Of Warrant Shares Vest With Amazon Payments; Full Vesting At $6B Cumulative Payments",
+            "url": "https://app.bigdata.com/documents/234E2094735C582620B610461EA4A210?cnum=1",
+            "timestamp": "2026-10-19T20:59:09"
+          },
+          {
+            "id": "7580D4ACE446556CE27065BAE54EBEE1",
+            "title": "Amazon.com shares are trading higher after Morgan Stanley maintained an Overweight rating on the stock and raised its price target from $335 to $350. The company announced a partnership with X-Energy and American Electric Power to bring a SMR project to Indiana.",
+            "url": "https://app.bigdata.com/documents/7580D4ACE446556CE27065BAE54EBEE1?cnum=1",
+            "timestamp": "2026-10-19T16:48:00"
+          },
+          {
+            "id": "7CC3146678EE1197535295559532171A",
+            "title": "Amazon rises after Morgan Stanley raises price target",
+            "url": "https://app.bigdata.com/documents/7CC3146678EE1197535295559532171A?cnum=1",
+            "timestamp": "2026-10-19T14:28:29"
+          },
+          {
+            "id": "17F1120C1A1C9E35B22F3E34629C7061",
+            "title": "American Electric Power (AEP) partners with Amazon and X-energy to develop 960 MW advanced nuclear power project",
+            "url": "https://app.bigdata.com/documents/17F1120C1A1C9E35B22F3E34629C7061?cnum=1",
+            "timestamp": "2026-10-19T12:31:41"
+          },
+          {
+            "id": "123078B7FE8130E703CD0EF690681D78",
+            "title": "3M Issues Warrant to Amazon Subsidiary for Up to 3.16 Million Shares",
+            "url": "https://app.bigdata.com/documents/123078B7FE8130E703CD0EF690681D78?cnum=1",
+            "timestamp": "2026-10-19T21:32:56"
+          },
+          {
+            "id": "D6E916D8A6050D64A75D563C3186E6D6",
+            "title": "X-energy, American Electric and Amazon partner to bring SMR project to Indiana ",
+            "url": "https://app.bigdata.com/documents/D6E916D8A6050D64A75D563C3186E6D6?cnum=1",
+            "timestamp": "2026-10-19T13:10:14"
+          },
+          {
+            "id": "8607E4E6A46AF63360E63B069AB3C069",
+            "title": "Amazon, AEP, and X-Energy Partner to Build Small Modular Reactor Plant in Indiana",
+            "url": "https://app.bigdata.com/documents/8607E4E6A46AF63360E63B069AB3C069?cnum=1",
+            "timestamp": "2026-10-19T13:42:32"
+          },
+          {
+            "id": "E48B270EEAD43387D9F11A0020CF3033",
+            "title": "Genesis Energy Limited: 2026 Annual General Meeting on Oct 19, 2026 - Slides",
+            "url": "https://app.bigdata.com/documents/E48B270EEAD43387D9F11A0020CF3033?cnum=66",
+            "timestamp": "2026-10-19T20:54:11"
+          },
+          {
+            "id": "1335007A20A66D451B4F324D71EE016A",
+            "title": "Amazon Stock Edges Higher Monday: What's Going On?",
+            "url": "https://app.bigdata.com/documents/1335007A20A66D451B4F324D71EE016A?cnum=1",
+            "timestamp": "2026-10-19T13:16:12"
+          },
+          {
+            "id": "4B9D2E1078A91BB82584F5F033595734",
+            "title": "Amazon's stock gain widens to 5%",
+            "url": "https://app.bigdata.com/documents/4B9D2E1078A91BB82584F5F033595734?cnum=1",
+            "timestamp": "2026-10-19T15:04:17"
+          },
+          {
+            "id": "94A3F6A513F9E6D801C558E342348DFB",
+            "title": "Amazon.com price target raised to $350, named a Top Pick at Morgan Stanley",
+            "url": "https://app.bigdata.com/documents/94A3F6A513F9E6D801C558E342348DFB?cnum=1",
+            "timestamp": "2026-10-19T12:01:29"
+          },
+          {
+            "id": "51C8D2500E50C7C8A2E1056CD155E456",
+            "title": "Amazon is a top pick and will get a big boost from a slew of catalysts, says Morgan Stanley",
+            "url": "https://app.bigdata.com/documents/51C8D2500E50C7C8A2E1056CD155E456?cnum=1",
+            "timestamp": "2026-10-19T10:57:19"
+          },
+          {
+            "id": "B47F3980B9A62716F950060241D9246B",
+            "title": "Fraud charges: Man made $75K in personal payments using American Legion's credit card, bank account",
+            "url": "https://app.bigdata.com/documents/B47F3980B9A62716F950060241D9246B?cnum=1",
+            "timestamp": "2026-10-19T21:44:26"
+          },
+          {
+            "id": "29110395FA2D773A0888898385C97796",
+            "title": "Amazon.com Inc. - Amazon invests in nuclear energy project targeting nearly 1 gigawatt of carbon-free energy for Indiana",
+            "url": "https://app.bigdata.com/documents/29110395FA2D773A0888898385C97796?cnum=1",
+            "timestamp": "2026-10-19T12:46:23"
+          },
+          {
+            "id": "89BE3F961CE6476A276803108C3B96D3",
+            "title": "Morgan Stanley Maintains Overweight on Amazon.com, Raises Price Target to $350",
+            "url": "https://app.bigdata.com/documents/89BE3F961CE6476A276803108C3B96D3?cnum=1",
+            "timestamp": "2026-10-19T16:42:01"
+          },
+          {
+            "id": "C797F2403AB28198322135B18AC6B91C",
+            "title": "Sandisk, Datadog, Amazon Lead S&P 500 As AI Stocks Rebound",
+            "url": "https://app.bigdata.com/documents/C797F2403AB28198322135B18AC6B91C?cnum=1",
+            "timestamp": "2026-10-19T20:31:18"
+          },
+          {
+            "id": "1B87A5C12B71F0E2266E4FD86A0847F9",
+            "title": "Amazon Just Found a Way Around Nvidia's Biggest Moat",
+            "url": "https://app.bigdata.com/documents/1B87A5C12B71F0E2266E4FD86A0847F9?cnum=1",
+            "timestamp": "2026-10-19T20:05:44"
+          },
+          {
+            "id": "9AAD6EA54FA2EB1D3028B064F304AA8D",
+            "title": "AEP - AEP Partners with Amazon and X-energy to Explore Advanced Nuclear Energy in Indiana",
+            "url": "https://app.bigdata.com/documents/9AAD6EA54FA2EB1D3028B064F304AA8D?cnum=1",
+            "timestamp": "2026-10-19T12:45:52"
+          }
+        ]
+      },
+      "qualityFlags": [
+        "repeated-coverage-needs-clustering",
+        "one-irrelevant-result",
+        "timestamp-timezone-not-explicit"
+      ]
+    },
+    {
+      "id": "bigdata_amazon_release",
+      "startedAt": "2026-10-19T21:52:22.550Z",
+      "receivedAt": "2026-10-19T21:52:24.823Z",
+      "status": "verified",
+      "sourceId": "29110395FA2D773A0888898385C97796",
+      "sourceUrl": "https://app.bigdata.com/documents/29110395FA2D773A0888898385C97796",
+      "title": "Amazon.com Inc. - Amazon invests in nuclear energy project targeting nearly 1 gigawatt of carbon-free energy for Indiana",
+      "documentPublisher": "Amazon.com Inc.; distributed by Public Technologies",
+      "publisherDate": "2026-10-19",
+      "distributionAt": "2026-10-19T12:46:00Z",
+      "originalPublisherUrl": null,
+      "summary": "Issuer reports an agreement with X-energy and AEP to explore an Indiana nuclear project targeting 960 MW. The statement is a plan, not delivered capacity, and is portfolio research rather than a trading signal."
+    },
+    {
+      "id": "fd_policy_rates",
+      "startedAt": "2026-10-19T21:51:38.353Z",
+      "status": "blocked",
+      "isErrorEnvelope": false,
+      "payload": "Error fetching macro data (interest_rates): Your current balance is $0.00. Please add more credits to continue using the API.",
+      "note": "Error payload overrides successful transport envelope; no observation exists."
+    },
+    {
+      "id": "newsify_context",
+      "startedAt": "2026-10-19T21:52:03.848Z",
+      "receivedAt": "2026-10-19T21:52:04.913Z",
+      "status": "transport verified; evidence rejected",
+      "response": {
+        "geo": "GB",
+        "language": "english",
+        "items": [
+          {
+            "id": "797bcd4c-154c-405f-9d33-2125c3f6ef2e",
+            "content": "No98 Beauty gained significant momentum following Zendaya's endorsement, with its debut skincare product The Mask being used backstage at the 2026 Victoria's Secret Fashion Show. Facialist Michaella Bolder applied the £14 treatment to supermodel Ashley Graham before she walked the runway displaying glowing skin that drew attention away from her lingerie and wings. While British influencer Lorna Luxe established the brand, it does not feature prominently in its marketing strategy. The product has also been used by Zendaya's stylist on various red carpet appearances and is being adopted across different age groups.",
+            "title": "Ashley Graham Glows After Using No98 Beauty At VS Show",
+            "geo": "GB",
+            "trendId": "3b9adc89-a81e-4b6c-a016-59fabaa50975",
+            "importanceScore": 70,
+            "language": "english",
+            "newsItemsFingerprint": "0289db23",
+            "reviewStatus": null,
+            "reviewReason": null,
+            "reviewNotes": null,
+            "reviewedAt": null,
+            "createdAt": "2026-10-19T21:33:08.197Z",
+            "updatedAt": "2026-10-19T21:33:08.197Z",
+            "trendTitle": "ashley graham",
+            "trendTraffic": 100,
+            "trendDescription": null,
+            "importanceTier": 2,
+            "displayImportanceTier": 1,
+            "excerpt": "No98 Beauty gained significant momentum following Zendaya's endorsement, with its debut skincare product The Mask being used backstage at the 2026 Victoria's Secret Fashion Show. Facialist Michaella Bolder applied the £14 treatment to supermodel Ashley Graham before she walked the runway displaying glowing skin that drew attention away from her lingerie and wings. While British influencer Lorna Luxe established the brand, it does not feature prominently in its marketing strategy. The product has also been used by Zendaya's stylist on various red carpet appearances and is being adopted across different age groups.",
+            "detailUrl": "https://newsify.today/english/GB/article/ashley-graham/797bcd4c-154c-405f-9d33-2125c3f6ef2e/ashley-graham-glows-after-using-no98-beauty-at-vs-show",
+            "newsifyUrl": "https://newsify.today/english/GB/article/ashley-graham/797bcd4c-154c-405f-9d33-2125c3f6ef2e/ashley-graham-glows-after-using-no98-beauty-at-vs-show",
+            "sourceUrl": null
+          }
+        ],
+        "itemCount": 1,
+        "streamLimit": 1,
+        "initialPendingCount": 0,
+        "offset": 0,
+        "nextOffset": 1,
+        "hasMore": true,
+        "excludeIds": [
+          "3b9adc89-a81e-4b6c-a016-59fabaa50975"
+        ],
+        "paginated": false,
+        "nextCursor": "358a5e42cba2"
+      },
+      "reason": "No material link to selected markets/holdings; original source and publication unknown."
+    },
+    {
+      "id": "cmc_product_Sugar Cash",
+      "startedAt": "2026-10-19T21:54:54.008Z",
+      "receivedAt": "2026-10-19T21:54:56.153Z",
+      "status": "verified read",
+      "accountScope": {
+        "function": "Live",
+        "type": "Standard",
+        "currency": "GBP",
+        "region": "GB",
+        "productTypes": [
+          "SB"
+        ],
+        "status": "Active",
+        "ownerSelected": true,
+        "selectedAt": "2026-10-19",
+        "accountIdentifierStored": false
+      },
+      "requestQuery": "Sugar Cash",
+      "productTypes": [
+        "SB"
+      ],
+      "matches": [],
+      "totalMatches": 0,
+      "continuation": {
+        "has_next_page": false
+      },
+      "note": null
+    },
+    {
+      "id": "cmc_product_Silver Cash",
+      "startedAt": "2026-10-19T21:54:54.008Z",
+      "receivedAt": "2026-10-19T21:54:55.088Z",
+      "status": "verified read",
+      "accountScope": {
+        "function": "Live",
+        "type": "Standard",
+        "currency": "GBP",
+        "region": "GB",
+        "productTypes": [
+          "SB"
+        ],
+        "status": "Active",
+        "ownerSelected": true,
+        "selectedAt": "2026-10-19",
+        "accountIdentifierStored": false
+      },
+      "requestQuery": "Silver Cash",
+      "productTypes": [
+        "SB"
+      ],
+      "matches": [
+        {
+          "display_name": "Silver - Cash",
+          "product_type": "SB",
+          "ticker": "SI",
+          "currency": "USD",
+          "exchange": "",
+          "exchange_timezone": "America/New_York",
+          "asset_class": "Commodities",
+          "asset_sector": "Precious Metals",
+          "country": "Global",
+          "country_code": "ZZ",
+          "region": "Global",
+          "trading_view": {
+            "code": "SILVER",
+            "description": "Silver - Cash, Silver Spot, XAG, XAG/USD, Precious Metal, Bullion, COMEX Silver",
+            "group": "Commodities"
+          },
+          "label": "Silver - Cash"
+        }
+      ],
+      "totalMatches": 1,
+      "continuation": {
+        "has_next_page": false
+      },
+      "note": null
+    },
+    {
+      "id": "cmc_product_Crude Oil",
+      "startedAt": "2026-10-19T21:54:54.008Z",
+      "receivedAt": "2026-10-19T21:54:55.125Z",
+      "status": "verified read",
+      "accountScope": {
+        "function": "Live",
+        "type": "Standard",
+        "currency": "GBP",
+        "region": "GB",
+        "productTypes": [
+          "SB"
+        ],
+        "status": "Active",
+        "ownerSelected": true,
+        "selectedAt": "2026-10-19",
+        "accountIdentifierStored": false
+      },
+      "requestQuery": "Crude Oil",
+      "productTypes": [
+        "SB"
+      ],
+      "matches": [
+        {
+          "display_name": "ETFS WTI Crude Oil",
+          "product_type": "SB",
+          "ticker": "CRUD",
+          "currency": "USD",
+          "exchange": "LSE",
+          "exchange_timezone": "Europe/London",
+          "asset_class": "ETFs",
+          "asset_sector": "Commodity",
+          "country": "UK",
+          "country_code": "GB",
+          "region": "Europe",
+          "trading_view": {
+            "code": "LSE_CRUD",
+            "description": "ETFS WTI Crude Oil",
+            "group": "Shares_Europe"
+          },
+          "label": "ETFS WTI Crude Oil"
+        },
+        {
+          "display_name": "NEXT FUNDS NOMURA Crude Oil Long Index Linked Exchange Traded Fund",
+          "product_type": "SB",
+          "ticker": "1699",
+          "currency": "JPY",
+          "exchange": "JPX",
+          "exchange_timezone": "Asia/Tokyo",
+          "asset_class": "ETFs",
+          "asset_sector": "Commodity",
+          "country": "Japan",
+          "country_code": "JP",
+          "region": "Asia",
+          "trading_view": {
+            "code": "TKS_1699",
+            "description": "NEXT FUNDS NOMURA Crude Oil Long Index Linked Exchange Traded Fund",
+            "group": "Shares_APAC"
+          },
+          "label": "NEXT FUNDS NOMURA Crude Oil Long Index Linked Exchange Traded Fund"
+        },
+        {
+          "display_name": "Onyx Spot Return Crude Oil",
+          "product_type": "SB",
+          "ticker": "OIL",
+          "currency": "USD",
+          "exchange": "LSE",
+          "exchange_timezone": "Europe/London",
+          "asset_class": "ETFs",
+          "asset_sector": "Equity",
+          "country": "UK",
+          "country_code": "GB",
+          "region": "Europe",
+          "trading_view": {
+            "code": "LSE_OIL",
+            "description": "Alerian Midstream Energy Dividend UCITS ETF Dis (USD)",
+            "group": "Shares_Europe"
+          },
+          "label": "Onyx Spot Return Crude Oil"
+        },
+        {
+          "display_name": "ProShares K-1 Free Crude Oil Strategy ETF",
+          "product_type": "SB",
+          "ticker": "OILK",
+          "currency": "USD",
+          "exchange": "CBOE",
+          "exchange_timezone": "America/New_York",
+          "asset_class": "ETFs",
+          "asset_sector": "Equity",
+          "country": "US",
+          "country_code": "US",
+          "region": "America",
+          "trading_view": {
+            "code": "BZX_OILK",
+            "description": "ProShares K-1 Free Crude Oil Strategy ETF",
+            "group": "Shares_North_America"
+          },
+          "label": "ProShares K-1 Free Crude Oil Strategy ETF"
+        },
+        {
+          "display_name": "WisdomTree Brent Crude Oil - GBP Daily Hedged",
+          "product_type": "SB",
+          "ticker": "PBRT",
+          "currency": "GBP",
+          "exchange": "LSE",
+          "exchange_timezone": "Europe/London",
+          "asset_class": "ETFs",
+          "asset_sector": "None",
+          "country": "UK",
+          "country_code": "GB",
+          "region": "Europe",
+          "trading_view": {
+            "code": "LSE_PBRT",
+            "description": "",
+            "group": "Shares_Europe"
+          },
+          "label": "WisdomTree Brent Crude Oil - GBP Daily Hedged"
+        }
+      ],
+      "totalMatches": 8,
+      "continuation": {
+        "has_next_page": true,
+        "next_page": 2
+      },
+      "note": "ETF results do not resolve owner Crude Oil commodity benchmark"
+    },
+    {
+      "id": "cmc_product_iShares Russell 2000",
+      "startedAt": "2026-10-19T21:54:54.008Z",
+      "receivedAt": "2026-10-19T21:54:55.041Z",
+      "status": "verified read",
+      "accountScope": {
+        "function": "Live",
+        "type": "Standard",
+        "currency": "GBP",
+        "region": "GB",
+        "productTypes": [
+          "SB"
+        ],
+        "status": "Active",
+        "ownerSelected": true,
+        "selectedAt": "2026-10-19",
+        "accountIdentifierStored": false
+      },
+      "requestQuery": "iShares Russell 2000",
+      "productTypes": [
+        "SB"
+      ],
+      "matches": [
+        {
+          "display_name": "iShares Russell 2000 ETF",
+          "product_type": "SB",
+          "ticker": "IWM",
+          "currency": "USD",
+          "exchange": "NYSE",
+          "exchange_timezone": "America/New_York",
+          "asset_class": "ETFs",
+          "asset_sector": "Equity",
+          "country": "US",
+          "country_code": "US",
+          "region": "America",
+          "trading_view": {
+            "code": "ARC_IWM",
+            "description": "iShares Russell 2000 ETF",
+            "group": "Shares_North_America"
+          },
+          "label": "iShares Russell 2000 ETF"
+        },
+        {
+          "display_name": "Ishares Russell 2000 Buywrit",
+          "product_type": "SB",
+          "ticker": "IWMW",
+          "currency": "USD",
+          "exchange": "CBOE",
+          "exchange_timezone": "America/New_York",
+          "asset_class": "ETFs",
+          "asset_sector": "None",
+          "country": "US",
+          "country_code": "US",
+          "region": "America",
+          "label": "Ishares Russell 2000 Buywrit"
+        },
+        {
+          "display_name": "iShares Russell 2000 Growth ETF",
+          "product_type": "SB",
+          "ticker": "IWO",
+          "currency": "USD",
+          "exchange": "NYSE",
+          "exchange_timezone": "America/New_York",
+          "asset_class": "ETFs",
+          "asset_sector": "Equity",
+          "country": "US",
+          "country_code": "US",
+          "region": "America",
+          "trading_view": {
+            "code": "ARC_IWO",
+            "description": "iShares Russell 2000 Growth ETF",
+            "group": "Shares_North_America"
+          },
+          "label": "iShares Russell 2000 Growth ETF"
+        },
+        {
+          "display_name": "iShares Russell 2000 Value ETF",
+          "product_type": "SB",
+          "ticker": "IWN",
+          "currency": "USD",
+          "exchange": "NYSE",
+          "exchange_timezone": "America/New_York",
+          "asset_class": "ETFs",
+          "asset_sector": "Equity",
+          "country": "US",
+          "country_code": "US",
+          "region": "America",
+          "trading_view": {
+            "code": "ARC_IWN",
+            "description": "iShares Russell 2000 Value ETF",
+            "group": "Shares_North_America"
+          },
+          "label": "iShares Russell 2000 Value ETF"
+        }
+      ],
+      "totalMatches": 4,
+      "continuation": {
+        "has_next_page": false
+      },
+      "note": "Exact-name research candidate still needs listing/wrapper reconciliation; not automatic production mapping"
+    },
+    {
+      "id": "cmc_sugar_candidates",
+      "startedAt": "2026-10-19T21:55:13.047Z",
+      "receivedAt": "2026-10-19T21:55:14.091Z",
+      "status": "verified read",
+      "accountScope": {
+        "function": "Live",
+        "type": "Standard",
+        "currency": "GBP",
+        "region": "GB",
+        "productTypes": [
+          "SB"
+        ],
+        "status": "Active",
+        "ownerSelected": true,
+        "selectedAt": "2026-10-19",
+        "accountIdentifierStored": false
+      },
+      "requestQuery": "Sugar",
+      "productTypes": [
+        "SB"
+      ],
+      "matches": [
+        {
+          "display_name": "Ensuiko Sugar Refining Co",
+          "product_type": "SB",
+          "ticker": "2112",
+          "currency": "JPY",
+          "exchange": "JPX",
+          "exchange_timezone": "Asia/Tokyo",
+          "asset_class": "Shares",
+          "asset_sector": "None",
+          "country": "Japan",
+          "country_code": "JP",
+          "region": "Asia",
+          "label": "Ensuiko Sugar Refining Co"
+        },
+        {
+          "display_name": "Mitsui DM Sugar Co Ltd",
+          "product_type": "SB",
+          "ticker": "2109",
+          "currency": "JPY",
+          "exchange": "JPX",
+          "exchange_timezone": "Asia/Tokyo",
+          "asset_class": "Shares",
+          "asset_sector": "None",
+          "country": "Japan",
+          "country_code": "JP",
+          "region": "Asia",
+          "trading_view": {
+            "code": "TKS_2109",
+            "description": "Mitsui DM Sugar Co Ltd, 2109, Mitsui DM Sugar Co Ltd T, 2109 JP, TKS_2109",
+            "group": "Shares_APAC"
+          },
+          "label": "Mitsui DM Sugar Co Ltd"
+        },
+        {
+          "display_name": "Nitten Co Ltd",
+          "product_type": "SB",
+          "ticker": "2108",
+          "currency": "JPY",
+          "exchange": "JPX",
+          "exchange_timezone": "Asia/Tokyo",
+          "asset_class": "Shares",
+          "asset_sector": "Food & Staples",
+          "country": "Japan",
+          "country_code": "JP",
+          "region": "Asia",
+          "trading_view": {
+            "code": "TKS_2108",
+            "description": "Nippon Beet Sugar Manufacturing Co Ltd, 2108, Nippon Beet Sugar Manufacturing Co Ltd T, 2108 JP, TKS_2108",
+            "group": "Shares_APAC"
+          },
+          "label": "Nitten Co Ltd"
+        },
+        {
+          "display_name": "Rogers Sugar Inc",
+          "product_type": "SB",
+          "ticker": "RSI",
+          "currency": "CAD",
+          "exchange": "TSX",
+          "exchange_timezone": "America/New_York",
+          "asset_class": "Shares",
+          "asset_sector": "Food & Staples",
+          "country": "Canada",
+          "country_code": "CA",
+          "region": "America",
+          "trading_view": {
+            "code": "TSX_RSI",
+            "description": "Rogers Sugar Inc, RSI, Rogers Sugar Inc TO, RSI CN, TSX_RSI",
+            "group": "Shares_North_America"
+          },
+          "label": "Rogers Sugar Inc"
+        }
+      ],
+      "totalMatches": 4,
+      "continuation": {
+        "has_next_page": false
+      },
+      "note": null
+    },
+    {
+      "id": "cmc_oil_candidates",
+      "startedAt": "2026-10-19T21:55:13.047Z",
+      "receivedAt": "2026-10-19T21:55:13.898Z",
+      "status": "verified read",
+      "accountScope": {
+        "function": "Live",
+        "type": "Standard",
+        "currency": "GBP",
+        "region": "GB",
+        "productTypes": [
+          "SB"
+        ],
+        "status": "Active",
+        "ownerSelected": true,
+        "selectedAt": "2026-10-19",
+        "accountIdentifierStored": false
+      },
+      "requestQuery": "Crude",
+      "productTypes": [
+        "SB"
+      ],
+      "matches": [],
+      "totalMatches": 0,
+      "continuation": {
+        "has_next_page": false
+      },
+      "note": null
+    },
+    {
+      "id": "cmc_metadata",
+      "startedAt": "2026-10-19T21:55:13.047Z",
+      "receivedAt": "2026-10-19T21:55:13.946Z",
+      "status": "verified read",
+      "accountScope": {
+        "function": "Live",
+        "type": "Standard",
+        "currency": "GBP",
+        "region": "GB",
+        "productTypes": [
+          "SB"
+        ],
+        "status": "Active",
+        "ownerSelected": true,
+        "selectedAt": "2026-10-19",
+        "accountIdentifierStored": false
+      },
+      "timezone": "Europe/London",
+      "products": [
+        {
+          "product_type": "SB",
+          "trading_hours": [
+            {
+              "open_time": "2026-10-18T23:00:00.000",
+              "close_time": "2026-10-19T22:00:00.000"
+            },
+            {
+              "open_time": "2026-10-19T23:00:00.000",
+              "close_time": "2026-10-20T22:00:00.000"
+            },
+            {
+              "open_time": "2026-10-20T23:00:00.000",
+              "close_time": "2026-10-21T22:00:00.000"
+            },
+            {
+              "open_time": "2026-10-21T23:00:00.000",
+              "close_time": "2026-10-22T22:00:00.000"
+            },
+            {
+              "open_time": "2026-10-22T23:00:00.000",
+              "close_time": "2026-10-23T22:00:00.000"
+            },
+            {
+              "open_time": "2026-10-25T22:00:00.000",
+              "close_time": "2026-10-26T21:00:00.000"
+            },
+            {
+              "open_time": "2026-10-26T22:00:00.000",
+              "close_time": "2026-10-27T21:00:00.000"
+            },
+            {
+              "open_time": "2026-10-27T22:00:00.000",
+              "close_time": "2026-10-28T21:00:00.000"
+            }
+          ],
+          "trade_size": {
+            "minimum": "5.00",
+            "maximum": "120000.00",
+            "status": "available"
+          },
+          "margin_rates": {
+            "tiers": [
+              {
+                "from": "0",
+                "to": "9223372036854775807",
+                "margin_rate": "100"
+              }
+            ],
+            "status": "available"
+          },
+          "holding_costs": {
+            "buy": null,
+            "sell": null,
+            "effective_at": null,
+            "status": "not_applicable"
+          },
+          "conversion": {
+            "conversion_factor_to_units": "158.73015873",
+            "fractional_part_ratio": null,
+            "lot_size": null,
+            "point_multiplier": 100,
+            "price_number_of_decimals": 3,
+            "quantity_number_of_decimals": 2,
+            "status": "available"
+          },
+          "displayNameFromResolvedSearch": "Silver - Cash"
+        },
+        {
+          "product_type": "SB",
+          "trading_hours": [
+            {
+              "open_time": "2026-10-19T01:00:00.000",
+              "close_time": "2026-10-20T01:00:00.000"
+            },
+            {
+              "open_time": "2026-10-20T01:00:00.000",
+              "close_time": "2026-10-21T01:00:00.000"
+            },
+            {
+              "open_time": "2026-10-21T01:00:00.000",
+              "close_time": "2026-10-22T01:00:00.000"
+            },
+            {
+              "open_time": "2026-10-22T01:00:00.000",
+              "close_time": "2026-10-23T01:00:00.000"
+            },
+            {
+              "open_time": "2026-10-23T01:00:00.000",
+              "close_time": "2026-10-23T22:00:00.000"
+            },
+            {
+              "open_time": "2026-10-26T00:00:00.000",
+              "close_time": "2026-10-27T00:00:00.000"
+            },
+            {
+              "open_time": "2026-10-27T00:00:00.000",
+              "close_time": "2026-10-28T00:00:00.000"
+            }
+          ],
+          "trade_size": {
+            "minimum": "0.01",
+            "maximum": "4100.00",
+            "status": "available"
+          },
+          "margin_rates": {
+            "tiers": [
+              {
+                "from": "0",
+                "to": "9223372036854775807",
+                "margin_rate": "100"
+              }
+            ],
+            "status": "available"
+          },
+          "holding_costs": {
+            "buy": null,
+            "sell": null,
+            "effective_at": null,
+            "status": "not_applicable"
+          },
+          "conversion": {
+            "conversion_factor_to_units": "158.73015873",
+            "fractional_part_ratio": null,
+            "lot_size": null,
+            "point_multiplier": 100,
+            "price_number_of_decimals": 2,
+            "quantity_number_of_decimals": 2,
+            "status": "available"
+          },
+          "displayNameFromResolvedSearch": "iShares Russell 2000 ETF"
+        }
+      ],
+      "note": "Display names absent in detail response; joined using internal-only key from same lookup. Decimal strings preserved. These 100% source margin rates are account-specific, not risk sizing defaults; trading-hours timestamps are local to stated timezone without numeric offset."
+    },
+    {
+      "id": "cmc_silver_delayed",
+      "startedAt": "2026-10-19T21:55:13.048Z",
+      "receivedAt": "2026-10-19T21:55:14.121Z",
+      "status": "verified delayed historical observation",
+      "accountScope": {
+        "function": "Live",
+        "type": "Standard",
+        "currency": "GBP",
+        "region": "GB",
+        "productTypes": [
+          "SB"
+        ],
+        "status": "Active",
+        "ownerSelected": true,
+        "selectedAt": "2026-10-19",
+        "accountIdentifierStored": false
+      },
+      "displayName": "Silver - Cash",
+      "productType": "SB",
+      "response": {
+        "time": "2026-10-19T21:00:00.650Z",
+        "bidPrice": "57.081",
+        "midPrice": "57.094",
+        "askPrice": "57.106",
+        "price_status": "delayed",
+        "delay_minutes": 15,
+        "market_status": "NotTradable",
+        "price_state": "Valid",
+        "as_at": "2026-10-19T21:00:00.650Z",
+        "spread": {
+          "value": "0.025",
+          "status": "available"
+        }
+      },
+      "computedObservationAgeSeconds": 3313.471,
+      "eligibleFor2mFreshness": false,
+      "note": "Declared delay is 15m; actual age also reflects market/session state and is roughly 55m here. No live quote claim."
+    },
+    {
+      "id": "cmc_silver_two_min",
+      "startedAt": "2026-10-19T21:55:13.049Z",
+      "receivedAt": "2026-10-19T21:55:14.066Z",
+      "status": "verified historical bars",
+      "accountScope": {
+        "function": "Live",
+        "type": "Standard",
+        "currency": "GBP",
+        "region": "GB",
+        "productTypes": [
+          "SB"
+        ],
+        "status": "Active",
+        "ownerSelected": true,
+        "selectedAt": "2026-10-19",
+        "accountIdentifierStored": false
+      },
+      "displayName": "Silver - Cash",
+      "productType": "SB",
+      "interval": "TWO_MIN",
+      "requestBounds": {
+        "from": "2026-10-19T18:00:00Z",
+        "to": "2026-10-19T21:50:00Z",
+        "maxIntervals": 5
+      },
+      "response": {
+        "currency": "USD",
+        "dateFormat": "dateTime",
+        "data": [
+          {
+            "t": "2026-10-19T20:50:00Z",
+            "a": {
+              "o": "57.063",
+              "h": "57.068",
+              "l": "57.062",
+              "c": "57.063"
+            },
+            "b": {
+              "o": "57.038",
+              "h": "57.043",
+              "l": "57.037",
+              "c": "57.038"
+            },
+            "m": {
+              "o": "57.050",
+              "h": "57.055",
+              "l": "57.049",
+              "c": "57.050"
+            }
+          },
+          {
+            "t": "2026-10-19T20:52:00Z",
+            "a": {
+              "o": "57.067",
+              "h": "57.084",
+              "l": "57.063",
+              "c": "57.077"
+            },
+            "b": {
+              "o": "57.042",
+              "h": "57.059",
+              "l": "57.038",
+              "c": "57.052"
+            },
+            "m": {
+              "o": "57.054",
+              "h": "57.071",
+              "l": "57.050",
+              "c": "57.064"
+            }
+          },
+          {
+            "t": "2026-10-19T20:54:00Z",
+            "a": {
+              "o": "57.078",
+              "h": "57.105",
+              "l": "57.068",
+              "c": "57.091"
+            },
+            "b": {
+              "o": "57.053",
+              "h": "57.080",
+              "l": "57.043",
+              "c": "57.066"
+            },
+            "m": {
+              "o": "57.065",
+              "h": "57.092",
+              "l": "57.055",
+              "c": "57.078"
+            }
+          },
+          {
+            "t": "2026-10-19T20:56:00Z",
+            "a": {
+              "o": "57.098",
+              "h": "57.114",
+              "l": "57.098",
+              "c": "57.112"
+            },
+            "b": {
+              "o": "57.073",
+              "h": "57.089",
+              "l": "57.073",
+              "c": "57.087"
+            },
+            "m": {
+              "o": "57.085",
+              "h": "57.101",
+              "l": "57.085",
+              "c": "57.099"
+            }
+          },
+          {
+            "t": "2026-10-19T20:58:00Z",
+            "a": {
+              "o": "57.115",
+              "h": "57.119",
+              "l": "57.098",
+              "c": "57.106"
+            },
+            "b": {
+              "o": "57.090",
+              "h": "57.094",
+              "l": "57.073",
+              "c": "57.081"
+            },
+            "m": {
+              "o": "57.102",
+              "h": "57.106",
+              "l": "57.085",
+              "c": "57.093"
+            }
+          }
+        ]
+      },
+      "barTimestampMeaning": null,
+      "closedState": null,
+      "volume": null,
+      "eligibility": "Research preview only; stale and mapping units/boundaries incomplete"
+    },
+    {
+      "id": "cmc_silver_ten_min",
+      "startedAt": "2026-10-19T21:55:13.049Z",
+      "receivedAt": "2026-10-19T21:55:13.985Z",
+      "status": "verified historical bars",
+      "accountScope": {
+        "function": "Live",
+        "type": "Standard",
+        "currency": "GBP",
+        "region": "GB",
+        "productTypes": [
+          "SB"
+        ],
+        "status": "Active",
+        "ownerSelected": true,
+        "selectedAt": "2026-10-19",
+        "accountIdentifierStored": false
+      },
+      "displayName": "Silver - Cash",
+      "productType": "SB",
+      "interval": "TEN_MIN",
+      "requestBounds": {
+        "from": "2026-10-19T18:00:00Z",
+        "to": "2026-10-19T21:50:00Z",
+        "maxIntervals": 5
+      },
+      "response": {
+        "currency": "USD",
+        "dateFormat": "dateTime",
+        "data": [
+          {
+            "t": "2026-10-19T20:10:00Z",
+            "a": {
+              "o": "57.079",
+              "h": "57.097",
+              "l": "57.064",
+              "c": "57.080"
+            },
+            "b": {
+              "o": "57.054",
+              "h": "57.072",
+              "l": "57.039",
+              "c": "57.055"
+            },
+            "m": {
+              "o": "57.066",
+              "h": "57.084",
+              "l": "57.051",
+              "c": "57.067"
+            }
+          },
+          {
+            "t": "2026-10-19T20:20:00Z",
+            "a": {
+              "o": "57.078",
+              "h": "57.083",
+              "l": "57.051",
+              "c": "57.057"
+            },
+            "b": {
+              "o": "57.053",
+              "h": "57.058",
+              "l": "57.026",
+              "c": "57.032"
+            },
+            "m": {
+              "o": "57.065",
+              "h": "57.070",
+              "l": "57.038",
+              "c": "57.044"
+            }
+          },
+          {
+            "t": "2026-10-19T20:30:00Z",
+            "a": {
+              "o": "57.056",
+              "h": "57.086",
+              "l": "57.056",
+              "c": "57.081"
+            },
+            "b": {
+              "o": "57.031",
+              "h": "57.061",
+              "l": "57.031",
+              "c": "57.056"
+            },
+            "m": {
+              "o": "57.043",
+              "h": "57.073",
+              "l": "57.043",
+              "c": "57.068"
+            }
+          },
+          {
+            "t": "2026-10-19T20:40:00Z",
+            "a": {
+              "o": "57.083",
+              "h": "57.084",
+              "l": "57.058",
+              "c": "57.067"
+            },
+            "b": {
+              "o": "57.058",
+              "h": "57.059",
+              "l": "57.033",
+              "c": "57.042"
+            },
+            "m": {
+              "o": "57.070",
+              "h": "57.071",
+              "l": "57.045",
+              "c": "57.054"
+            }
+          },
+          {
+            "t": "2026-10-19T20:50:00Z",
+            "a": {
+              "o": "57.063",
+              "h": "57.119",
+              "l": "57.062",
+              "c": "57.106"
+            },
+            "b": {
+              "o": "57.038",
+              "h": "57.094",
+              "l": "57.037",
+              "c": "57.081"
+            },
+            "m": {
+              "o": "57.050",
+              "h": "57.106",
+              "l": "57.049",
+              "c": "57.093"
+            }
+          }
+        ]
+      },
+      "barTimestampMeaning": null,
+      "closedState": null,
+      "volume": null,
+      "eligibility": "Research preview only; stale and mapping units/boundaries incomplete"
+    },
+    {
+      "id": "cmc_positions",
+      "startedAt": "2026-10-19T21:54:54.008Z",
+      "receivedAt": "2026-10-19T21:54:55.171Z",
+      "status": "verified snapshot",
+      "accountScope": {
+        "function": "Live",
+        "type": "Standard",
+        "currency": "GBP",
+        "region": "GB",
+        "productTypes": [
+          "SB"
+        ],
+        "status": "Active",
+        "ownerSelected": true,
+        "selectedAt": "2026-10-19",
+        "accountIdentifierStored": false
+      },
+      "response": {
+        "account_currency": "GBP",
+        "totals": {
+          "cfd_unrealised_pnl": "0.00",
+          "spread_bet_unrealised_pnl": "0.00",
+          "option_unrealised_pnl": "0.00",
+          "equity_unrealised_pnl": "0.00",
+          "standard_margin_amount": "0.00",
+          "prime_margin_amount": "0.00",
+          "option_margin_amount": "0.00"
+        },
+        "positions": []
+      },
+      "positionCountAtReceipt": 0,
+      "currentPositionCount": null,
+      "note": "Known empty snapshot at this receipt. Not a continuously fresh account feed; future failed/missing reads must not become zero."
+    }
+  ],
+  "researchExamples": [
+    {
+      "id": "research-amazon-q3-2026-calendar",
+      "kind": "company-catalyst",
+      "provider": "Bigdata.com",
+      "upstream": "Quartr",
+      "entityType": "COMPANY",
+      "entityId": "0157B1",
+      "portfolioLabel": "Amazon",
+      "eventAt": "2026-10-29T21:00:00Z",
+      "eventTimePrecision": "second",
+      "receivedAt": "2026-10-19T21:52:06.345Z",
+      "title": "Amazon Q3 2026 earnings call",
+      "sourceId": "328afb3355611dc05405865968995fc1",
+      "sourceUrl": "https://quartr.com/companies/amazoncom-inc_4762?utm_source=api&utm_medium=25",
+      "evidenceType": "published event schedule",
+      "scope": "private bounded research snapshot",
+      "refreshMode": "none; manual re-read required",
+      "current": false,
+      "expectation": null,
+      "observedResponse": null
+    },
+    {
+      "id": "research-amazon-nuclear-plan-20261019",
+      "kind": "issuer-material-news",
+      "provider": "Bigdata.com",
+      "upstream": "Amazon via Public Technologies",
+      "entityType": "COMPANY",
+      "entityId": "0157B1",
+      "portfolioLabel": "Amazon",
+      "publishedAt": "2026-10-19",
+      "distributionAt": "2026-10-19T12:46:00Z",
+      "receivedAt": "2026-10-19T21:52:24.823Z",
+      "title": "Amazon reports Indiana nuclear development agreement",
+      "sourceId": "29110395FA2D773A0888898385C97796",
+      "sourceUrl": "https://app.bigdata.com/documents/29110395FA2D773A0888898385C97796",
+      "evidenceType": "issuer statement",
+      "scope": "private bounded research snapshot",
+      "current": false,
+      "expectation": null,
+      "observedResponse": null,
+      "clusterId": "amazon-xenergy-aep-indiana-20261019"
+    }
+  ],
+  "sourceRouting": [
+    "CMC: owner selected Live GBP SB. Silver delayed quote, 2m/10m bars and positions succeeded; preserve source receipts as dated research. Sugar and crude commodity identity unresolved. Reconcile Russell listing/wrapper. No 2m readiness from delayed/stale observations.",
+    "Bigdata: identity first; COMPANY and ETF routes stay distinct. Corporate schedule for portfolio; economic schedule for macro; search/fetch for source-linked narratives. Deduplicate common origin and do not count research sentiment as price confirmation.",
+    "Financial Datasets: preserve existing working app integration if verified elsewhere, but this fresh chat macro read is blocked by credits. Use official gap-specific sources. No purchase prerequisite.",
+    "Trading 212: manual/import portfolio seed now; eventual separate read-only account/positions/history adapter. Deprecated pies are replaceable. Never request keys in ordinary chat.",
+    "Newsify: optional broad situational discovery only. This probe failed relevance and original-source checks, so it supplies no market evidence.",
+    "Official sources: issuer/exchange for identity and dated facts; central banks/statistical agencies for macro gaps. Cross-check conflicting source fields without overwriting raw provenance.",
+    "Tomorrow.io: defer until a resolved crop/energy geography makes local weather relevant; a city forecast is not crop yield or price direction."
+  ],
+  "officialSources": [
+    {
+      "url": "https://docs.trading212.com/api",
+      "checkedAt": "2026-10-19T21:54:35.846Z",
+      "facts": [
+        "Beta API",
+        "Invest and Stocks ISA only",
+        "Pies (Deprecated) listed",
+        "API key/secret authentication",
+        "Rate limits apply per account",
+        "History cursor pagination"
+      ],
+      "limits": "Account/positions/deprecated-pies linked pages could not be read by web tool because response content type text/markdown was unsupported; no authenticated API call."
+    },
+    {
+      "url": "https://www.ishares.com/us/products/239710/ishares-russell-2000-etf",
+      "checkedAt": "2026-10-19T21:54:35.846Z",
+      "facts": [
+        "Public ETF IWM",
+        "NYSE Arca exchange",
+        "Russell 2000 Index benchmark",
+        "CUSIP 464287655",
+        "NAV 270.43 dated 2026-10-16"
+      ],
+      "limits": "Supports research candidate identity only; does not identify CMC spread-bet wrapper."
+    }
+  ],
+  "round2Probes": [
+    "Owner selected Live spread-betting during Round 1. Round 2 must securely retain that selected scope and verify hosted identity/consent before account reads.",
+    "CMC exact Sugar Cash, Silver Cash, Crude Oil benchmark, Russell listing/wrapper searches; no assumed raw sugar/Brent/IWM mappings.",
+    "CMC TWO_MIN and TEN_MIN bounded bar reads: entitlement, depth, timestamps, recency, closure and units; delayed-price restrictions separate.",
+    "CMC position count/hedging semantics and P&L evaluation time; unknown visibility remains unknown.",
+    "Sites inventory: exact eligible request-scoped connector/action, authenticated visitor consent, ownership, cache freshness, error envelope and hosted test; unavailable here is not disconnected there.",
+    "Bigdata source timestamps and revisions, consensus basis, primary URL and syndicated-event clustering; retain snapshot versus current distinction.",
+    "FD action-specific entitlement only if selected; price intervals and geographic coverage not inferred from schema.",
+    "Trading 212 secure optional read-only setup, server-side secret management and import reconciliation with replaceable pie membership; no keys required now.",
+    "Research expectation freeze and observed-response data joining require explicit method/horizon/benchmark and complete market mapping.",
+    "No recurring jobs until separately authorised in a later round."
+  ],
+  "ownerAccountSelection": {
+    "function": "Live",
+    "type": "Standard",
+    "currency": "GBP",
+    "region": "GB",
+    "productTypes": [
+      "SB"
+    ],
+    "status": "Active",
+    "ownerSelected": true,
+    "selectedAt": "2026-10-19",
+    "accountIdentifierStored": false
+  },
+  "marketDataExamples": [
+    {
+      "id": "research-cmc_silver_two_min",
+      "provider": "CMC Markets",
+      "accountScope": "Owner-selected Live GBP spread-betting account",
+      "instrumentOwnerLabel": "Silver Cash",
+      "brokerDisplayName": "Silver - Cash",
+      "brokerWrapper": "SB",
+      "mappingVersion": "candidate-cmc-read-20261019",
+      "mappingStatus": "query matched; final units/basis review pending",
+      "currency": "USD",
+      "basis": "mid",
+      "units": "source price units; unit definition not yet verified",
+      "intervalSeconds": 120,
+      "receivedAt": "2026-10-19T21:55:14.066Z",
+      "declaredDelaySeconds": null,
+      "timestampPrecision": "second",
+      "timestampMeaning": "provider source t; open/close anchoring not verified",
+      "hostedFeed": false,
+      "current": false,
+      "fixture": false,
+      "scope": "bounded historical chat-native research snapshot",
+      "bars": [
+        {
+          "sourceTimestamp": "2026-10-19T20:50:00Z",
+          "open": "57.050",
+          "high": "57.055",
+          "low": "57.049",
+          "close": "57.050",
+          "volume": null,
+          "isClosed": null
+        },
+        {
+          "sourceTimestamp": "2026-10-19T20:52:00Z",
+          "open": "57.054",
+          "high": "57.071",
+          "low": "57.050",
+          "close": "57.064",
+          "volume": null,
+          "isClosed": null
+        },
+        {
+          "sourceTimestamp": "2026-10-19T20:54:00Z",
+          "open": "57.065",
+          "high": "57.092",
+          "low": "57.055",
+          "close": "57.078",
+          "volume": null,
+          "isClosed": null
+        },
+        {
+          "sourceTimestamp": "2026-10-19T20:56:00Z",
+          "open": "57.085",
+          "high": "57.101",
+          "low": "57.085",
+          "close": "57.099",
+          "volume": null,
+          "isClosed": null
+        },
+        {
+          "sourceTimestamp": "2026-10-19T20:58:00Z",
+          "open": "57.102",
+          "high": "57.106",
+          "low": "57.085",
+          "close": "57.093",
+          "volume": null,
+          "isClosed": null
+        }
+      ],
+      "sourceReceiptId": "cmc_silver_two_min"
+    },
+    {
+      "id": "research-cmc_silver_ten_min",
+      "provider": "CMC Markets",
+      "accountScope": "Owner-selected Live GBP spread-betting account",
+      "instrumentOwnerLabel": "Silver Cash",
+      "brokerDisplayName": "Silver - Cash",
+      "brokerWrapper": "SB",
+      "mappingVersion": "candidate-cmc-read-20261019",
+      "mappingStatus": "query matched; final units/basis review pending",
+      "currency": "USD",
+      "basis": "mid",
+      "units": "source price units; unit definition not yet verified",
+      "intervalSeconds": 600,
+      "receivedAt": "2026-10-19T21:55:13.985Z",
+      "declaredDelaySeconds": null,
+      "timestampPrecision": "second",
+      "timestampMeaning": "provider source t; open/close anchoring not verified",
+      "hostedFeed": false,
+      "current": false,
+      "fixture": false,
+      "scope": "bounded historical chat-native research snapshot",
+      "bars": [
+        {
+          "sourceTimestamp": "2026-10-19T20:10:00Z",
+          "open": "57.066",
+          "high": "57.084",
+          "low": "57.051",
+          "close": "57.067",
+          "volume": null,
+          "isClosed": null
+        },
+        {
+          "sourceTimestamp": "2026-10-19T20:20:00Z",
+          "open": "57.065",
+          "high": "57.070",
+          "low": "57.038",
+          "close": "57.044",
+          "volume": null,
+          "isClosed": null
+        },
+        {
+          "sourceTimestamp": "2026-10-19T20:30:00Z",
+          "open": "57.043",
+          "high": "57.073",
+          "low": "57.043",
+          "close": "57.068",
+          "volume": null,
+          "isClosed": null
+        },
+        {
+          "sourceTimestamp": "2026-10-19T20:40:00Z",
+          "open": "57.070",
+          "high": "57.071",
+          "low": "57.045",
+          "close": "57.054",
+          "volume": null,
+          "isClosed": null
+        },
+        {
+          "sourceTimestamp": "2026-10-19T20:50:00Z",
+          "open": "57.050",
+          "high": "57.106",
+          "low": "57.049",
+          "close": "57.093",
+          "volume": null,
+          "isClosed": null
+        }
+      ],
+      "sourceReceiptId": "cmc_silver_ten_min"
+    }
+  ]
+}

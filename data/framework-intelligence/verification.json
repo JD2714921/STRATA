@@ -1,0 +1,100 @@
+{
+  "version": "framework-context-v1",
+  "recordedAt": "2026-10-22T02:35:17.572Z",
+  "baselineCommit": "f6448813b1db558e88edffe21572b1f3c8966ecd",
+  "scope": "local-only-not-deployed",
+  "frameworks": 5,
+  "concepts": 38,
+  "originalWorksIngested": 0,
+  "empiricallyValidatedFrameworkFeatures": 0,
+  "influenceLevel": 1,
+  "quantitativeSignalWeight": 0,
+  "executionAuthority": false,
+  "checks": {
+    "baselineTests": {
+      "pass": 94,
+      "fail": 0
+    },
+    "finalTests": {
+      "pass": 110,
+      "fail": 0,
+      "newFilTests": 16
+    },
+    "lint": {
+      "exitCode": 0,
+      "errors": 0,
+      "warnings": 0
+    },
+    "typescript": {
+      "exitCode": 0
+    },
+    "productionBuild": {
+      "exitCode": 0,
+      "completed": true
+    },
+    "protectedFiles": {
+      "checked": 32,
+      "mismatches": 0
+    },
+    "baselineOutputCases": {
+      "confluence": 11,
+      "readiness": 5
+    },
+    "serverRender": "passed",
+    "interactiveBrowser": "not-tested",
+    "responsiveLayouts": "not-tested",
+    "hostedRuntime": "not-tested",
+    "providerReads": "not-performed",
+    "frameworkPredictiveValidation": "not-performed"
+  },
+  "sourcePdf": {
+    "pages": 14,
+    "sha256": "22c1b6d5551ef25f35e1ef6105b2fbde9eae2c1e7bafd09e18b8ef8684ae2850"
+  },
+  "codeInputHashes": {
+    "app/framework-intelligence.tsx": "b0fb91ca1a6c4082630cf83e8d3e02297553408f1c2e0bb0434791ad8a3e8f99",
+    "app/workspace-v2.tsx": "32bc3a304dad70b322db5615d8f61b7cb624e353f108d1da8b9ec58f2887582f",
+    "app/workspace-views.tsx": "45885a239f6f3755cfca6fcaee8700b6d39ed537e327a2a647a3d855c8a84df6",
+    "lib/framework-intelligence/contracts.ts": "e8730bef6eca5a071bfd66d66def37939f5c619318f7ad1429175f077dfbff95",
+    "lib/framework-intelligence/engine.ts": "2cfd385848936a85c120822d0af5f5028dd297b2bc51122af720889a7df748ac",
+    "data/framework-intelligence/registry.json": "d1bad5c9a13ffa9c4d7712a3ac8f169aceadb84082b48d62908832bbabf0702a"
+  },
+  "logs": {
+    "baseline-tests": {
+      "path": "../strata-fil-verification/baseline-tests.log",
+      "sha256": "a046cb772b9c9354d34aa4667b46b8ea1680691380d7e88c1ec5823929456eeb"
+    },
+    "all-tests": {
+      "path": "../strata-fil-verification/all-tests.log",
+      "sha256": "7eee30f367c88d5e14d536024a1087269719052c5abe0eec0621bad228b4b9c7"
+    },
+    "lint": {
+      "path": "../strata-fil-verification/lint.log",
+      "sha256": "9d4ed79a683eccf54173b6034d4187b97e629a26e9f9dbedc55bc19d45839445"
+    },
+    "typescript": {
+      "path": "../strata-fil-verification/typescript.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "build": {
+      "path": "../strata-fil-verification/build.log",
+      "sha256": "5e0d62ba52f5ee46a9ee4e3d2ff7554da931f4f40bdc2ece14f1615d0b72e26b"
+    }
+  },
+  "newDependencies": [],
+  "databaseMigrations": [],
+  "deployments": [],
+  "trades": [],
+  "remaining": [
+    "Reviewed observable evidence adapter not wired to the UI; missing evidence is explicit",
+    "No original-book consultation or empirical feature validation",
+    "Browser interaction, export download and responsive layout QA not completed",
+    "Production intentionally unchanged"
+  ],
+  "buildAdvisories": [
+    "Vinext root route static classification is unknown; this is not an authentication verification",
+    "Nonfatal plugin-timing and bundle-size advisories retained in build log"
+  ],
+  "portableBaselineHashes": "LF-normalised checks; original raw byte receipts retained and verified unchanged",
+  "buildInputsAfterTestPortabilityChange": "identical to successful production build"
+}

@@ -1,0 +1,227 @@
+{
+  "label": "SIMULATED FINANCIAL FIXTURES. NOT WRITTEN TO NOTION. NOT ACTUAL BROKER ACTIVITY.",
+  "ledger": {
+    "cutoffAt": "2026-10-22T15:45:00.000Z",
+    "acceptedEvents": 3,
+    "daily": [
+      {
+        "day": "2026-10-22",
+        "timezone": "Europe/London",
+        "cutoffAt": "2026-10-22T15:45:00.000Z",
+        "status": "PARTIALLY RECONCILED",
+        "asAtStatus": "PROVISIONAL",
+        "originalAsAt": {
+          "cutoffAt": "2026-10-22T15:45:00.000Z",
+          "figures": [
+            {
+              "broker": "CMC",
+              "accountRef": "SIMULATED-ACCOUNT",
+              "observedAt": "2026-10-22T15:45:00.000Z",
+              "receivedAt": "2026-10-22T15:45:00.000Z",
+              "currency": "GBP",
+              "cash": null,
+              "valuation": null,
+              "unrealisedPnl": "-2.00",
+              "positions": [
+                {
+                  "instrument": "Gold - Cash",
+                  "productType": "Spread betting",
+                  "direction": "BUY",
+                  "quantity": "1",
+                  "entry": "100",
+                  "unrealisedPnl": "-2.00",
+                  "evaluationAt": "2026-10-22T15:45:00.000Z",
+                  "sourceId": "SIMULATED OPEN POSITION"
+                }
+              ],
+              "complete": false,
+              "sourceId": "SIMULATED POSITION / NOT ACTUAL BROKER ACTIVITY"
+            }
+          ],
+          "receivedAfterCutoff": true
+        },
+        "reconciledAt": "2026-10-22T16:00:00.000Z",
+        "reconciliationCutoff": "2026-10-22T15:45:00.000Z",
+        "knownAmounts": {
+          "Trading 212 / GBP": {
+            "deposit": "100.00"
+          },
+          "CMC / GBP": {
+            "realisedPnl": "5.00"
+          }
+        },
+        "accessibleActivityCount": 3,
+        "totalActivityCount": null,
+        "coverage": {
+          "cmcClosedHistory": false,
+          "trading212History": false,
+          "paginationComplete": true
+        },
+        "issues": [
+          "SIMULATED fixtures only; no actual transaction or balance represented"
+        ],
+        "events": [
+          "Trading 212:SIMULATED-ACCOUNT:cash-event:SIMULATED-DEPOSIT",
+          "Trading 212:SIMULATED-ACCOUNT:execution:SIMULATED-PURCHASE-FILL",
+          "CMC:SIMULATED-ACCOUNT:execution:SIMULATED-CLOSED-FILL"
+        ],
+        "runId": "strata:2026-10-22:16:45",
+        "notionStatus": "pending-or-blocked",
+        "fullDayStatement": false
+      }
+    ],
+    "financialWriteMode": "outbox-only",
+    "notionWritten": false,
+    "blocked": false,
+    "retryPending": false
+  },
+  "records": [
+    {
+      "outboxKey": "daily:2026-10-22",
+      "dataSource": "collection://00000000-0000-4000-8000-000000000005",
+      "kind": "daily",
+      "key": "2026-10-22",
+      "dailyKey": "2026-10-22",
+      "properties": {
+        "Name": "daily / 2026-10-22",
+        "Record key": "2026-10-22",
+        "Record type": "daily",
+        "date:Source at:start": "2026-10-22T15:45:00.000Z",
+        "date:Source at:is_datetime": 1,
+        "Status": "PARTIALLY RECONCILED",
+        "Broker": null,
+        "Account reference": null,
+        "Currency": null,
+        "Amount exact": null,
+        "Realised P&L exact": null,
+        "Fees exact": null,
+        "date:Trading date:start": "2026-10-22",
+        "date:Trading date:is_datetime": 0,
+        "date:Cutoff:start": "2026-10-22T15:45:00.000Z",
+        "date:Cutoff:is_datetime": 1
+      },
+      "content": "Broker evidence; amounts retain original currency.\n```json\n{\n  \"day\": \"2026-10-22\",\n  \"timezone\": \"Europe/London\",\n  \"cutoffAt\": \"2026-10-22T15:45:00.000Z\",\n  \"status\": \"PARTIALLY RECONCILED\",\n  \"asAtStatus\": \"PROVISIONAL\",\n  \"originalAsAt\": {\n    \"cutoffAt\": \"2026-10-22T15:45:00.000Z\",\n    \"figures\": [\n      {\n        \"broker\": \"CMC\",\n        \"accountRef\": \"SIMULATED-ACCOUNT\",\n        \"observedAt\": \"2026-10-22T15:45:00.000Z\",\n        \"receivedAt\": \"2026-10-22T15:45:00.000Z\",\n        \"currency\": \"GBP\",\n        \"cash\": null,\n        \"valuation\": null,\n        \"unrealisedPnl\": \"-2.00\",\n        \"positions\": [\n          {\n            \"instrument\": \"Gold - Cash\",\n            \"productType\": \"Spread betting\",\n            \"direction\": \"BUY\",\n            \"quantity\": \"1\",\n            \"entry\": \"100\",\n            \"unrealisedPnl\": \"-2.00\",\n            \"evaluationAt\": \"2026-10-22T15:45:00.000Z\",\n            \"sourceId\": \"SIMULATED OPEN POSITION\"\n          }\n        ],\n        \"complete\": false,\n        \"sourceId\": \"SIMULATED POSITION / NOT ACTUAL BROKER ACTIVITY\"\n      }\n    ],\n    \"receivedAfterCutoff\": true\n  },\n  \"reconciledAt\": \"2026-10-22T16:00:00.000Z\",\n  \"reconciliationCutoff\": \"2026-10-22T15:45:00.000Z\",\n  \"knownAmounts\": {\n    \"Trading 212 / GBP\": {\n      \"deposit\": \"100.00\"\n    },\n    \"CMC / GBP\": {\n      \"realisedPnl\": \"5.00\"\n    }\n  },\n  \"accessibleActivityCount\": 3,\n  \"totalActivityCount\": null,\n  \"coverage\": {\n    \"cmcClosedHistory\": false,\n    \"trading212History\": false,\n    \"paginationComplete\": true\n  },\n  \"issues\": [\n    \"SIMULATED fixtures only; no actual transaction or balance represented\"\n  ],\n  \"events\": [\n    \"Trading 212:SIMULATED-ACCOUNT:cash-event:SIMULATED-DEPOSIT\",\n    \"Trading 212:SIMULATED-ACCOUNT:execution:SIMULATED-PURCHASE-FILL\",\n    \"CMC:SIMULATED-ACCOUNT:execution:SIMULATED-CLOSED-FILL\"\n  ],\n  \"runId\": \"strata:2026-10-22:16:45\",\n  \"notionStatus\": \"pending-or-blocked\",\n  \"fullDayStatement\": false\n}\n```",
+      "relationRequirement": null
+    },
+    {
+      "outboxKey": "snapshot:CMC:SIMULATED-ACCOUNT:2026-10-22T15:45:00.000Z",
+      "dataSource": "collection://00000000-0000-4000-8000-000000000007",
+      "kind": "snapshot",
+      "key": "CMC:SIMULATED-ACCOUNT:2026-10-22T15:45:00.000Z",
+      "dailyKey": "2026-10-22",
+      "properties": {
+        "Name": "snapshot / CMC:SIMULATED-ACCOUNT:2026-10-22T15:45:00.000Z",
+        "Record key": "CMC:SIMULATED-ACCOUNT:2026-10-22T15:45:00.000Z",
+        "Record type": "snapshot",
+        "date:Source at:start": "2026-10-22T15:45:00.000Z",
+        "date:Source at:is_datetime": 1,
+        "Status": "PARTIALLY RECONCILED",
+        "Broker": "CMC",
+        "Account reference": "SIMULATED-ACCOUNT",
+        "Currency": "GBP",
+        "Amount exact": null,
+        "Realised P&L exact": null,
+        "Fees exact": null,
+        "Cash exact": null,
+        "Portfolio value exact": null,
+        "Unrealised P&L exact": "-2.00",
+        "Freshness": "OBSERVED"
+      },
+      "content": "Broker evidence; amounts retain original currency.\n```json\n{\n  \"broker\": \"CMC\",\n  \"accountRef\": \"SIMULATED-ACCOUNT\",\n  \"observedAt\": \"2026-10-22T15:45:00.000Z\",\n  \"receivedAt\": \"2026-10-22T15:45:00.000Z\",\n  \"currency\": \"GBP\",\n  \"cash\": null,\n  \"valuation\": null,\n  \"unrealisedPnl\": \"-2.00\",\n  \"positions\": [\n    {\n      \"instrument\": \"Gold - Cash\",\n      \"productType\": \"Spread betting\",\n      \"direction\": \"BUY\",\n      \"quantity\": \"1\",\n      \"entry\": \"100\",\n      \"unrealisedPnl\": \"-2.00\",\n      \"evaluationAt\": \"2026-10-22T15:45:00.000Z\",\n      \"sourceId\": \"SIMULATED OPEN POSITION\"\n    }\n  ],\n  \"complete\": false,\n  \"sourceId\": \"SIMULATED POSITION / NOT ACTUAL BROKER ACTIVITY\"\n}\n```",
+      "relationRequirement": "Daily log must contain actual returned daily page URL after the parent write succeeds"
+    },
+    {
+      "outboxKey": "transaction:CMC:SIMULATED-ACCOUNT:execution:SIMULATED-CLOSED-FILL",
+      "dataSource": "collection://00000000-0000-4000-8000-000000000006",
+      "kind": "transaction",
+      "key": "CMC:SIMULATED-ACCOUNT:execution:SIMULATED-CLOSED-FILL",
+      "dailyKey": "2026-10-22",
+      "properties": {
+        "Name": "transaction / CMC:SIMULATED-ACCOUNT:execution:SIMULATED-CLOSED-FILL",
+        "Record key": "CMC:SIMULATED-ACCOUNT:execution:SIMULATED-CLOSED-FILL",
+        "Record type": "transaction",
+        "date:Source at:start": "2026-10-22T14:00:00Z",
+        "date:Source at:is_datetime": 1,
+        "Status": "confirmed",
+        "Broker": "CMC",
+        "Account reference": "SIMULATED-ACCOUNT",
+        "Currency": "GBP",
+        "Amount exact": null,
+        "Realised P&L exact": "5.00",
+        "Fees exact": null,
+        "Instrument": "Silver - Cash",
+        "Product type": "Spread betting",
+        "Direction": "SELL",
+        "Category": "realised-pnl",
+        "Quantity exact": "1",
+        "Execution price exact": "100",
+        "Price currency": "USD",
+        "Broker event ID": "SIMULATED-CLOSED-FILL"
+      },
+      "content": "Broker evidence; amounts retain original currency.\n```json\n{\n  \"broker\": \"CMC\",\n  \"accountRef\": \"SIMULATED-ACCOUNT\",\n  \"eventId\": \"SIMULATED-CLOSED-FILL\",\n  \"parentId\": \"SIMULATED-POSITION\",\n  \"grain\": \"execution\",\n  \"instrument\": \"Silver - Cash\",\n  \"productType\": \"Spread betting\",\n  \"direction\": \"SELL\",\n  \"category\": \"realised-pnl\",\n  \"openClose\": \"close\",\n  \"effectiveAt\": \"2026-10-22T14:00:00Z\",\n  \"receivedAt\": \"2026-10-22T15:44:00Z\",\n  \"quantity\": \"1\",\n  \"price\": \"100\",\n  \"priceCurrency\": \"USD\",\n  \"amount\": null,\n  \"fees\": null,\n  \"realisedPnl\": \"5.00\",\n  \"currency\": \"GBP\",\n  \"status\": \"confirmed\",\n  \"replacesEventId\": null,\n  \"sourceId\": \"SIMULATED STATEMENT / NOT ACTUAL BROKER ACTIVITY\",\n  \"sourceUrl\": null\n}\n```",
+      "relationRequirement": "Daily log must contain actual returned daily page URL after the parent write succeeds"
+    },
+    {
+      "outboxKey": "transaction:Trading 212:SIMULATED-ACCOUNT:cash-event:SIMULATED-DEPOSIT",
+      "dataSource": "collection://00000000-0000-4000-8000-000000000006",
+      "kind": "transaction",
+      "key": "Trading 212:SIMULATED-ACCOUNT:cash-event:SIMULATED-DEPOSIT",
+      "dailyKey": "2026-10-22",
+      "properties": {
+        "Name": "transaction / Trading 212:SIMULATED-ACCOUNT:cash-event:SIMULATED-DEPOSIT",
+        "Record key": "Trading 212:SIMULATED-ACCOUNT:cash-event:SIMULATED-DEPOSIT",
+        "Record type": "transaction",
+        "date:Source at:start": "2026-10-22T14:00:00Z",
+        "date:Source at:is_datetime": 1,
+        "Status": "confirmed",
+        "Broker": "Trading 212",
+        "Account reference": "SIMULATED-ACCOUNT",
+        "Currency": "GBP",
+        "Amount exact": "100.00",
+        "Realised P&L exact": null,
+        "Fees exact": null,
+        "Instrument": null,
+        "Product type": null,
+        "Direction": null,
+        "Category": "deposit",
+        "Quantity exact": null,
+        "Execution price exact": null,
+        "Price currency": null,
+        "Broker event ID": "SIMULATED-DEPOSIT"
+      },
+      "content": "Broker evidence; amounts retain original currency.\n```json\n{\n  \"broker\": \"Trading 212\",\n  \"accountRef\": \"SIMULATED-ACCOUNT\",\n  \"eventId\": \"SIMULATED-DEPOSIT\",\n  \"parentId\": null,\n  \"grain\": \"cash-event\",\n  \"instrument\": null,\n  \"productType\": null,\n  \"direction\": null,\n  \"category\": \"deposit\",\n  \"openClose\": \"unknown\",\n  \"effectiveAt\": \"2026-10-22T14:00:00Z\",\n  \"receivedAt\": \"2026-10-22T15:44:00Z\",\n  \"quantity\": null,\n  \"price\": null,\n  \"priceCurrency\": null,\n  \"amount\": \"100.00\",\n  \"fees\": null,\n  \"realisedPnl\": null,\n  \"currency\": \"GBP\",\n  \"status\": \"confirmed\",\n  \"replacesEventId\": null,\n  \"sourceId\": \"SIMULATED T212 CASH EVENT\",\n  \"sourceUrl\": null\n}\n```",
+      "relationRequirement": "Daily log must contain actual returned daily page URL after the parent write succeeds"
+    },
+    {
+      "outboxKey": "transaction:Trading 212:SIMULATED-ACCOUNT:execution:SIMULATED-PURCHASE-FILL",
+      "dataSource": "collection://00000000-0000-4000-8000-000000000006",
+      "kind": "transaction",
+      "key": "Trading 212:SIMULATED-ACCOUNT:execution:SIMULATED-PURCHASE-FILL",
+      "dailyKey": "2026-10-22",
+      "properties": {
+        "Name": "transaction / Trading 212:SIMULATED-ACCOUNT:execution:SIMULATED-PURCHASE-FILL",
+        "Record key": "Trading 212:SIMULATED-ACCOUNT:execution:SIMULATED-PURCHASE-FILL",
+        "Record type": "transaction",
+        "date:Source at:start": "2026-10-22T14:00:00Z",
+        "date:Source at:is_datetime": 1,
+        "Status": "confirmed",
+        "Broker": "Trading 212",
+        "Account reference": "SIMULATED-ACCOUNT",
+        "Currency": "GBP",
+        "Amount exact": "-50.00",
+        "Realised P&L exact": null,
+        "Fees exact": null,
+        "Instrument": "Simulated investment",
+        "Product type": null,
+        "Direction": "BUY",
+        "Category": "purchase",
+        "Quantity exact": "5",
+        "Execution price exact": "10",
+        "Price currency": "USD",
+        "Broker event ID": "SIMULATED-PURCHASE-FILL"
+      },
+      "content": "Broker evidence; amounts retain original currency.\n```json\n{\n  \"broker\": \"Trading 212\",\n  \"accountRef\": \"SIMULATED-ACCOUNT\",\n  \"eventId\": \"SIMULATED-PURCHASE-FILL\",\n  \"parentId\": \"SIMULATED-ORDER\",\n  \"grain\": \"execution\",\n  \"instrument\": \"Simulated investment\",\n  \"productType\": null,\n  \"direction\": \"BUY\",\n  \"category\": \"purchase\",\n  \"openClose\": \"open\",\n  \"effectiveAt\": \"2026-10-22T14:00:00Z\",\n  \"receivedAt\": \"2026-10-22T15:44:00Z\",\n  \"quantity\": \"5\",\n  \"price\": \"10\",\n  \"priceCurrency\": \"USD\",\n  \"amount\": \"-50.00\",\n  \"fees\": null,\n  \"realisedPnl\": null,\n  \"currency\": \"GBP\",\n  \"status\": \"confirmed\",\n  \"replacesEventId\": null,\n  \"sourceId\": \"SIMULATED T212 FILL\",\n  \"sourceUrl\": null\n}\n```",
+      "relationRequirement": "Daily log must contain actual returned daily page URL after the parent write succeeds"
+    }
+  ]
+}

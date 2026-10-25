@@ -1,0 +1,4 @@
+import {CMC_EXECUTION_PRODUCTS} from '../strata-v2/source-policy';
+import {TARGET_POLICY} from '../strata-v2/targets';
+export const EXECUTION_PLAN=Object.freeze({version:'owner-plan-routing-2026-10-21-v2',source:'Owner provider/target clarification and explicit Gold BUY/SELL confirmation',instruments:CMC_EXECUTION_PRODUCTS.map(p=>({id:p.id,label:p.name,sides:p.sides})),executionMinutes:[2,5],directionMinimumMinutes:15,multidayMinimumMinutes:120,structureMinimumMinutes:5,atr:[{minutes:15,period:14},{minutes:5,period:9},{minutes:60,period:27,appliesTo:'1H+'}],minimumProposedRR:5,breakEvenAt:'TP1',tp1Definition:TARGET_POLICY,maxNewPositionsPerInstrumentUKDay:1,timezone:'Europe/London',defaultState:'STAND DOWN',windows:[['08:00','10:00'],['14:00','16:30']],canSubmitOrder:false});
+export const allowedSide=(id:string,side:string)=>EXECUTION_PLAN.instruments.some(i=>i.id===id&&i.sides.some(s=>s===side));

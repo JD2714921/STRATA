@@ -1,0 +1,69 @@
+{
+  "status": "PREPARED ONLY / NO NATIVE TASK IDS",
+  "timezone": "Europe/London",
+  "tasks": [
+    {
+      "title": "Strata / Overnight intelligence",
+      "localTime": "01:15",
+      "timezone": "Europe/London",
+      "nativeTaskId": null,
+      "nativeRequestId": null,
+      "enabled": false,
+      "prompt": "Assess the existing owner-private Strata research workspace at the 01:15 Europe/London occurrence. Use its authenticated Site tools and the shared assessment pipeline. Gather authorised evidence for the five CMC cash products only, supported news and materially relevant weather. Delayed prices remain delayed; missing inputs mean Stand Down. Reuse cached Trading 212 context; do not refresh its dashboard. Do not create a daily financial record. Preserve source timestamps, partial states and all risk gates. No orders or account changes."
+    },
+    {
+      "title": "Strata / London / European opening assessment",
+      "localTime": "07:45",
+      "timezone": "Europe/London",
+      "nativeTaskId": null,
+      "nativeRequestId": null,
+      "enabled": false,
+      "prompt": "Assess the existing owner-private Strata research workspace at the 07:45 Europe/London occurrence. Use its authenticated Site tools and the shared assessment pipeline. Gather authorised evidence for the five CMC cash products only, supported news and materially relevant weather. Delayed prices remain delayed; missing inputs mean Stand Down. Reuse cached Trading 212 context; do not refresh its dashboard. Do not create a daily financial record. Preserve source timestamps, partial states and all risk gates. No orders or account changes."
+    },
+    {
+      "title": "Strata / European session review",
+      "localTime": "10:15",
+      "timezone": "Europe/London",
+      "nativeTaskId": null,
+      "nativeRequestId": null,
+      "enabled": false,
+      "prompt": "Assess the existing owner-private Strata research workspace at the 10:15 Europe/London occurrence. Use its authenticated Site tools and the shared assessment pipeline. Gather authorised evidence for the five CMC cash products only, supported news and materially relevant weather. Delayed prices remain delayed; missing inputs mean Stand Down. Reuse cached Trading 212 context; do not refresh its dashboard. Do not create a daily financial record. Preserve source timestamps, partial states and all risk gates. No orders or account changes."
+    },
+    {
+      "title": "Strata / US data and pre-market assessment",
+      "localTime": "13:30",
+      "timezone": "Europe/London",
+      "nativeTaskId": null,
+      "nativeRequestId": null,
+      "enabled": false,
+      "prompt": "Assess the existing owner-private Strata research workspace at the 13:30 Europe/London occurrence. Use its authenticated Site tools and the shared assessment pipeline. Gather authorised evidence for the five CMC cash products only, supported news and materially relevant weather. Delayed prices remain delayed; missing inputs mean Stand Down. Reuse cached Trading 212 context; do not refresh its dashboard. Do not create a daily financial record. Preserve source timestamps, partial states and all risk gates. No orders or account changes."
+    },
+    {
+      "title": "Strata / US opening preparation",
+      "localTime": "14:25",
+      "timezone": "Europe/London",
+      "nativeTaskId": null,
+      "nativeRequestId": null,
+      "enabled": false,
+      "prompt": "Assess the existing owner-private Strata research workspace at the 14:25 Europe/London occurrence. Use its authenticated Site tools and the shared assessment pipeline. Gather authorised evidence for the five CMC cash products only, supported news and materially relevant weather. Delayed prices remain delayed; missing inputs mean Stand Down. Reuse cached Trading 212 context; do not refresh its dashboard. Do not create a daily financial record. Preserve source timestamps, partial states and all risk gates. No orders or account changes."
+    },
+    {
+      "title": "Strata / Intraday assessment and bookkeeping",
+      "localTime": "16:45",
+      "timezone": "Europe/London",
+      "nativeTaskId": null,
+      "nativeRequestId": null,
+      "enabled": false,
+      "prompt": "Assess the existing owner-private Strata research workspace at the 16:45 Europe/London occurrence. Use its authenticated Site tools and the shared assessment pipeline. Gather authorised evidence for the five CMC cash products only, supported news and materially relevant weather. Delayed prices remain delayed; missing inputs mean Stand Down. Reuse cached Trading 212 context; do not refresh its dashboard. Separately reconcile broker history through the cutoff. Write only the authorised Strata Notion ledger using current schemas, stable keys, reservations and actual write receipts; daily parents first. Retry failed ledger steps without repeating successful analysis. Preserve source timestamps, partial states and all risk gates. No orders or account changes."
+    },
+    {
+      "title": "Strata / US review and next-session preparation",
+      "localTime": "21:15",
+      "timezone": "Europe/London",
+      "nativeTaskId": null,
+      "nativeRequestId": null,
+      "enabled": false,
+      "prompt": "Assess the existing owner-private Strata research workspace at the 21:15 Europe/London occurrence. Use its authenticated Site tools and the shared assessment pipeline. Gather authorised evidence for the five CMC cash products only, supported news and materially relevant weather. Delayed prices remain delayed; missing inputs mean Stand Down. Reuse cached Trading 212 context; do not refresh its dashboard. Do not create a daily financial record. Preserve source timestamps, partial states and all risk gates. No orders or account changes."
+    }
+  ]
+}

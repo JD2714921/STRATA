@@ -1,0 +1,3 @@
+import {z} from 'zod';
+export const operationsViewSchema=z.object({activation:z.string(),serverTime:z.string(),schedules:z.array(z.object({time:z.string(),name:z.string(),status:z.string(),taskId:z.string().nullable(),previousExecution:z.null(),nextOccurrence:z.object({scheduledAt:z.string()}).passthrough()}).passthrough()),runs:z.array(z.record(z.unknown())),latestAssessment:z.unknown(),dailyLog:z.unknown(),portfolio:z.object({state:z.string(),refresh:z.string().nullable(),snapshot:z.unknown()}).passthrough(),outbox:z.array(z.unknown())}).passthrough();
+export const operationErrorSchema=z.object({error:z.string()}).passthrough();

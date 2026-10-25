@@ -1,0 +1,2613 @@
+{
+  "version": "framework-context-v1",
+  "ingested_at": "2026-10-22T02:09:20.251Z",
+  "scope": "secondary-synthesis-only",
+  "concepts": [
+    {
+      "concept_id": "graham:price-value",
+      "framework_id": "graham",
+      "name": "Price versus intrinsic value",
+      "author": "Benjamin Graham",
+      "originating_work": "The Intelligent Investor",
+      "original_claim": "A market quotation and a conservative estimate of business value answer different questions.",
+      "claim_kind": "secondary-summary",
+      "mechanism": "Compare price with independently supported cash-generation and impairment assumptions.",
+      "relevant_market_conditions": [
+        "Operating-business ownership and long-horizon allocation",
+        "Apparent discount supported by conservative fundamentals"
+      ],
+      "appropriate_timescales": [
+        "investment"
+      ],
+      "relevant_circles": [
+        "market"
+      ],
+      "topics": [
+        "valuation"
+      ],
+      "supporting_historical_examples": [],
+      "historical_example_status": "not-established-by-supplied-source",
+      "criticisms": [
+        "A value estimate can omit impairment, dilution and nonlinear downside.",
+        "Macro discount rates and institutional conditions can change an apparent valuation.",
+        "Cannot establish an intraday entry, stop or target."
+      ],
+      "contradictory_frameworks": [
+        "taleb",
+        "kahneman",
+        "dalio",
+        "institutions"
+      ],
+      "observable_data_needed": [
+        "Independently sourced financial statements, liabilities and dated price observations.",
+        "Conservative valuation assumptions with units, sensitivity ranges and impairment scenarios."
+      ],
+      "disregard_conditions": [
+        "Disregard for intraday timing or where no conservative valuation is available.",
+        "Disregard a cheapness explanation contradicted by verified fundamental impairment."
+      ],
+      "source_provenance": [
+        {
+          "source_id": "five-books-comparative-pdf",
+          "source_type": "secondary-synthesis",
+          "title": "Five Books Comparative Analysis — supplied comparative synthesis",
+          "sha256": "22c1b6d5551ef25f35e1ef6105b2fbde9eae2c1e7bafd09e18b8ef8684ae2850",
+          "pages": [
+            3,
+            13
+          ],
+          "available_at": "2026-10-22T02:09:20.251Z",
+          "original_work_consulted": false
+        }
+      ],
+      "applicability_rules_kind": "strata-inference",
+      "influence_level": 1,
+      "quantitative_signal_weight": 0,
+      "execution_authority": false,
+      "empirical_validation": "not-tested",
+      "required_evidence_topics": [
+        "valuation"
+      ]
+    },
+    {
+      "concept_id": "graham:safety",
+      "framework_id": "graham",
+      "name": "Margin of safety",
+      "author": "Benjamin Graham",
+      "originating_work": "The Intelligent Investor",
+      "original_claim": "A discount to a cautious value estimate may cushion analytical error.",
+      "claim_kind": "secondary-summary",
+      "mechanism": "Test adverse fundamental assumptions rather than treating a discount as guaranteed protection.",
+      "relevant_market_conditions": [
+        "Operating-business ownership and long-horizon allocation",
+        "Apparent discount supported by conservative fundamentals"
+      ],
+      "appropriate_timescales": [
+        "investment"
+      ],
+      "relevant_circles": [
+        "market"
+      ],
+      "topics": [
+        "valuation"
+      ],
+      "supporting_historical_examples": [],
+      "historical_example_status": "not-established-by-supplied-source",
+      "criticisms": [
+        "A value estimate can omit impairment, dilution and nonlinear downside.",
+        "Macro discount rates and institutional conditions can change an apparent valuation.",
+        "Cannot establish an intraday entry, stop or target."
+      ],
+      "contradictory_frameworks": [
+        "taleb",
+        "kahneman",
+        "dalio",
+        "institutions"
+      ],
+      "observable_data_needed": [
+        "Independently sourced financial statements, liabilities and dated price observations.",
+        "Conservative valuation assumptions with units, sensitivity ranges and impairment scenarios."
+      ],
+      "disregard_conditions": [
+        "Disregard for intraday timing or where no conservative valuation is available.",
+        "Disregard a cheapness explanation contradicted by verified fundamental impairment."
+      ],
+      "source_provenance": [
+        {
+          "source_id": "five-books-comparative-pdf",
+          "source_type": "secondary-synthesis",
+          "title": "Five Books Comparative Analysis — supplied comparative synthesis",
+          "sha256": "22c1b6d5551ef25f35e1ef6105b2fbde9eae2c1e7bafd09e18b8ef8684ae2850",
+          "pages": [
+            3,
+            13
+          ],
+          "available_at": "2026-10-22T02:09:20.251Z",
+          "original_work_consulted": false
+        }
+      ],
+      "applicability_rules_kind": "strata-inference",
+      "influence_level": 1,
+      "quantitative_signal_weight": 0,
+      "execution_authority": false,
+      "empirical_validation": "not-tested",
+      "required_evidence_topics": [
+        "valuation"
+      ]
+    },
+    {
+      "concept_id": "graham:mr-market",
+      "framework_id": "graham",
+      "name": "Mr. Market and emotional mispricing",
+      "author": "Benjamin Graham",
+      "originating_work": "The Intelligent Investor",
+      "original_claim": "Variable quotations can be treated as offers rather than authoritative value estimates.",
+      "claim_kind": "secondary-summary",
+      "mechanism": "Question whether price changes are supported by fundamentals; emotion remains an interpretation.",
+      "relevant_market_conditions": [
+        "Operating-business ownership and long-horizon allocation",
+        "Apparent discount supported by conservative fundamentals"
+      ],
+      "appropriate_timescales": [
+        "investment"
+      ],
+      "relevant_circles": [
+        "market"
+      ],
+      "topics": [
+        "valuation"
+      ],
+      "supporting_historical_examples": [],
+      "historical_example_status": "not-established-by-supplied-source",
+      "criticisms": [
+        "A value estimate can omit impairment, dilution and nonlinear downside.",
+        "Macro discount rates and institutional conditions can change an apparent valuation.",
+        "Cannot establish an intraday entry, stop or target."
+      ],
+      "contradictory_frameworks": [
+        "taleb",
+        "kahneman",
+        "dalio",
+        "institutions"
+      ],
+      "observable_data_needed": [
+        "Independently sourced financial statements, liabilities and dated price observations.",
+        "Conservative valuation assumptions with units, sensitivity ranges and impairment scenarios."
+      ],
+      "disregard_conditions": [
+        "Disregard for intraday timing or where no conservative valuation is available.",
+        "Disregard a cheapness explanation contradicted by verified fundamental impairment."
+      ],
+      "source_provenance": [
+        {
+          "source_id": "five-books-comparative-pdf",
+          "source_type": "secondary-synthesis",
+          "title": "Five Books Comparative Analysis — supplied comparative synthesis",
+          "sha256": "22c1b6d5551ef25f35e1ef6105b2fbde9eae2c1e7bafd09e18b8ef8684ae2850",
+          "pages": [
+            3,
+            13
+          ],
+          "available_at": "2026-10-22T02:09:20.251Z",
+          "original_work_consulted": false
+        }
+      ],
+      "applicability_rules_kind": "strata-inference",
+      "influence_level": 1,
+      "quantitative_signal_weight": 0,
+      "execution_authority": false,
+      "empirical_validation": "not-tested",
+      "required_evidence_topics": [
+        "valuation"
+      ]
+    },
+    {
+      "concept_id": "graham:investment-speculation",
+      "framework_id": "graham",
+      "name": "Investment versus speculation",
+      "author": "Benjamin Graham",
+      "originating_work": "The Intelligent Investor",
+      "original_claim": "Analysis and principal protection distinguish investing from a thesis based on the next price move.",
+      "claim_kind": "secondary-summary",
+      "mechanism": "Separate the purpose and horizon of ownership from short-term speculation.",
+      "relevant_market_conditions": [
+        "Operating-business ownership and long-horizon allocation",
+        "Apparent discount supported by conservative fundamentals"
+      ],
+      "appropriate_timescales": [
+        "investment"
+      ],
+      "relevant_circles": [
+        "market"
+      ],
+      "topics": [
+        "capital-preservation"
+      ],
+      "supporting_historical_examples": [],
+      "historical_example_status": "not-established-by-supplied-source",
+      "criticisms": [
+        "A value estimate can omit impairment, dilution and nonlinear downside.",
+        "Macro discount rates and institutional conditions can change an apparent valuation.",
+        "Cannot establish an intraday entry, stop or target."
+      ],
+      "contradictory_frameworks": [
+        "taleb",
+        "kahneman",
+        "dalio",
+        "institutions"
+      ],
+      "observable_data_needed": [
+        "Actual exposures, concentration, liability seniority and fundamental impairment evidence.",
+        "Independently configured loss capacity; no stop or size is inferred by FIL."
+      ],
+      "disregard_conditions": [
+        "Disregard for intraday timing or where no conservative valuation is available.",
+        "Disregard a cheapness explanation contradicted by verified fundamental impairment."
+      ],
+      "source_provenance": [
+        {
+          "source_id": "five-books-comparative-pdf",
+          "source_type": "secondary-synthesis",
+          "title": "Five Books Comparative Analysis — supplied comparative synthesis",
+          "sha256": "22c1b6d5551ef25f35e1ef6105b2fbde9eae2c1e7bafd09e18b8ef8684ae2850",
+          "pages": [
+            3,
+            13
+          ],
+          "available_at": "2026-10-22T02:09:20.251Z",
+          "original_work_consulted": false
+        }
+      ],
+      "applicability_rules_kind": "strata-inference",
+      "influence_level": 1,
+      "quantitative_signal_weight": 0,
+      "execution_authority": false,
+      "empirical_validation": "not-tested",
+      "required_evidence_topics": [
+        "capital-preservation"
+      ]
+    },
+    {
+      "concept_id": "graham:capital",
+      "framework_id": "graham",
+      "name": "Capital preservation and impairment",
+      "author": "Benjamin Graham",
+      "originating_work": "The Intelligent Investor",
+      "original_claim": "Risk review should include permanent impairment and concentration, beyond quotation variability.",
+      "claim_kind": "secondary-summary",
+      "mechanism": "Inspect liabilities, resilience and loss capacity rather than inferring safety from a calm price.",
+      "relevant_market_conditions": [
+        "Operating-business ownership and long-horizon allocation",
+        "Apparent discount supported by conservative fundamentals"
+      ],
+      "appropriate_timescales": [
+        "investment"
+      ],
+      "relevant_circles": [
+        "market"
+      ],
+      "topics": [
+        "capital-preservation"
+      ],
+      "supporting_historical_examples": [],
+      "historical_example_status": "not-established-by-supplied-source",
+      "criticisms": [
+        "A value estimate can omit impairment, dilution and nonlinear downside.",
+        "Macro discount rates and institutional conditions can change an apparent valuation.",
+        "Cannot establish an intraday entry, stop or target."
+      ],
+      "contradictory_frameworks": [
+        "taleb",
+        "kahneman",
+        "dalio",
+        "institutions"
+      ],
+      "observable_data_needed": [
+        "Actual exposures, concentration, liability seniority and fundamental impairment evidence.",
+        "Independently configured loss capacity; no stop or size is inferred by FIL."
+      ],
+      "disregard_conditions": [
+        "Disregard for intraday timing or where no conservative valuation is available.",
+        "Disregard a cheapness explanation contradicted by verified fundamental impairment."
+      ],
+      "source_provenance": [
+        {
+          "source_id": "five-books-comparative-pdf",
+          "source_type": "secondary-synthesis",
+          "title": "Five Books Comparative Analysis — supplied comparative synthesis",
+          "sha256": "22c1b6d5551ef25f35e1ef6105b2fbde9eae2c1e7bafd09e18b8ef8684ae2850",
+          "pages": [
+            3,
+            13
+          ],
+          "available_at": "2026-10-22T02:09:20.251Z",
+          "original_work_consulted": false
+        }
+      ],
+      "applicability_rules_kind": "strata-inference",
+      "influence_level": 1,
+      "quantitative_signal_weight": 0,
+      "execution_authority": false,
+      "empirical_validation": "not-tested",
+      "required_evidence_topics": [
+        "capital-preservation"
+      ]
+    },
+    {
+      "concept_id": "dalio:debt-accumulation",
+      "framework_id": "dalio",
+      "name": "Long-term debt accumulation",
+      "author": "Ray Dalio",
+      "originating_work": "How Countries Go Broke",
+      "original_claim": "Debt sustainability depends on obligations relative to refinancing capacity and productive resources.",
+      "claim_kind": "secondary-summary",
+      "mechanism": "Compare debt and maturity schedules with growth, revenue and funding conditions.",
+      "relevant_market_conditions": [
+        "Sovereign refinancing and fiscal-policy research",
+        "Bond issuance, debt service, interest-rate or currency pressure"
+      ],
+      "appropriate_timescales": [
+        "macro",
+        "multiday"
+      ],
+      "relevant_circles": [
+        "market",
+        "expectations"
+      ],
+      "topics": [
+        "debt"
+      ],
+      "supporting_historical_examples": [],
+      "historical_example_status": "not-established-by-supplied-source",
+      "criticisms": [
+        "Debt ratios alone do not identify an imminent crisis.",
+        "Historical sequences do not determine timing, direction or magnitude of an intraday move.",
+        "Currency sovereignty and political institutions can change transmission."
+      ],
+      "contradictory_frameworks": [
+        "taleb",
+        "institutions",
+        "graham"
+      ],
+      "observable_data_needed": [
+        "Debt stock and maturity schedule by liability currency; debt-service costs, tax revenue and growth.",
+        "Dated issuance, auctions, refinancing evidence and comparable historical false alarms."
+      ],
+      "disregard_conditions": [
+        "Disregard a crisis clock inferred solely from historical analogy.",
+        "Disregard when debt, maturity, funding or policy evidence is unavailable or contradicts the mechanism."
+      ],
+      "source_provenance": [
+        {
+          "source_id": "five-books-comparative-pdf",
+          "source_type": "secondary-synthesis",
+          "title": "Five Books Comparative Analysis — supplied comparative synthesis",
+          "sha256": "22c1b6d5551ef25f35e1ef6105b2fbde9eae2c1e7bafd09e18b8ef8684ae2850",
+          "pages": [
+            4,
+            13
+          ],
+          "available_at": "2026-10-22T02:09:20.251Z",
+          "original_work_consulted": false
+        }
+      ],
+      "applicability_rules_kind": "strata-inference",
+      "influence_level": 1,
+      "quantitative_signal_weight": 0,
+      "execution_authority": false,
+      "empirical_validation": "not-tested",
+      "required_evidence_topics": [
+        "debt"
+      ]
+    },
+    {
+      "concept_id": "dalio:funding",
+      "framework_id": "dalio",
+      "name": "Sovereign funding pressure",
+      "author": "Ray Dalio",
+      "originating_work": "How Countries Go Broke",
+      "original_claim": "Funding depends on investor demand and the capacity to refinance.",
+      "claim_kind": "secondary-summary",
+      "mechanism": "Examine issuance and credible funding evidence rather than a headline debt ratio.",
+      "relevant_market_conditions": [
+        "Sovereign refinancing and fiscal-policy research",
+        "Bond issuance, debt service, interest-rate or currency pressure"
+      ],
+      "appropriate_timescales": [
+        "macro",
+        "multiday"
+      ],
+      "relevant_circles": [
+        "market",
+        "expectations"
+      ],
+      "topics": [
+        "debt"
+      ],
+      "supporting_historical_examples": [],
+      "historical_example_status": "not-established-by-supplied-source",
+      "criticisms": [
+        "Debt ratios alone do not identify an imminent crisis.",
+        "Historical sequences do not determine timing, direction or magnitude of an intraday move.",
+        "Currency sovereignty and political institutions can change transmission."
+      ],
+      "contradictory_frameworks": [
+        "taleb",
+        "institutions",
+        "graham"
+      ],
+      "observable_data_needed": [
+        "Debt stock and maturity schedule by liability currency; debt-service costs, tax revenue and growth.",
+        "Dated issuance, auctions, refinancing evidence and comparable historical false alarms."
+      ],
+      "disregard_conditions": [
+        "Disregard a crisis clock inferred solely from historical analogy.",
+        "Disregard when debt, maturity, funding or policy evidence is unavailable or contradicts the mechanism."
+      ],
+      "source_provenance": [
+        {
+          "source_id": "five-books-comparative-pdf",
+          "source_type": "secondary-synthesis",
+          "title": "Five Books Comparative Analysis — supplied comparative synthesis",
+          "sha256": "22c1b6d5551ef25f35e1ef6105b2fbde9eae2c1e7bafd09e18b8ef8684ae2850",
+          "pages": [
+            4,
+            13
+          ],
+          "available_at": "2026-10-22T02:09:20.251Z",
+          "original_work_consulted": false
+        }
+      ],
+      "applicability_rules_kind": "strata-inference",
+      "influence_level": 1,
+      "quantitative_signal_weight": 0,
+      "execution_authority": false,
+      "empirical_validation": "not-tested",
+      "required_evidence_topics": [
+        "debt"
+      ]
+    },
+    {
+      "concept_id": "dalio:servicing",
+      "framework_id": "dalio",
+      "name": "Debt service and interest rates",
+      "author": "Ray Dalio",
+      "originating_work": "How Countries Go Broke",
+      "original_claim": "Higher funding costs can raise debt service and further borrowing needs.",
+      "claim_kind": "secondary-summary",
+      "mechanism": "Track interest costs relative to revenue and the repricing schedule.",
+      "relevant_market_conditions": [
+        "Sovereign refinancing and fiscal-policy research",
+        "Bond issuance, debt service, interest-rate or currency pressure"
+      ],
+      "appropriate_timescales": [
+        "macro",
+        "multiday"
+      ],
+      "relevant_circles": [
+        "market",
+        "expectations"
+      ],
+      "topics": [
+        "debt"
+      ],
+      "supporting_historical_examples": [],
+      "historical_example_status": "not-established-by-supplied-source",
+      "criticisms": [
+        "Debt ratios alone do not identify an imminent crisis.",
+        "Historical sequences do not determine timing, direction or magnitude of an intraday move.",
+        "Currency sovereignty and political institutions can change transmission."
+      ],
+      "contradictory_frameworks": [
+        "taleb",
+        "institutions",
+        "graham"
+      ],
+      "observable_data_needed": [
+        "Debt stock and maturity schedule by liability currency; debt-service costs, tax revenue and growth.",
+        "Dated issuance, auctions, refinancing evidence and comparable historical false alarms."
+      ],
+      "disregard_conditions": [
+        "Disregard a crisis clock inferred solely from historical analogy.",
+        "Disregard when debt, maturity, funding or policy evidence is unavailable or contradicts the mechanism."
+      ],
+      "source_provenance": [
+        {
+          "source_id": "five-books-comparative-pdf",
+          "source_type": "secondary-synthesis",
+          "title": "Five Books Comparative Analysis — supplied comparative synthesis",
+          "sha256": "22c1b6d5551ef25f35e1ef6105b2fbde9eae2c1e7bafd09e18b8ef8684ae2850",
+          "pages": [
+            4,
+            13
+          ],
+          "available_at": "2026-10-22T02:09:20.251Z",
+          "original_work_consulted": false
+        }
+      ],
+      "applicability_rules_kind": "strata-inference",
+      "influence_level": 1,
+      "quantitative_signal_weight": 0,
+      "execution_authority": false,
+      "empirical_validation": "not-tested",
+      "required_evidence_topics": [
+        "debt"
+      ]
+    },
+    {
+      "concept_id": "dalio:money-currency",
+      "framework_id": "dalio",
+      "name": "Monetary expansion and currency depreciation",
+      "author": "Ray Dalio",
+      "originating_work": "How Countries Go Broke",
+      "original_claim": "Nominal payment capacity does not establish preservation of real purchasing power.",
+      "claim_kind": "secondary-summary",
+      "mechanism": "Review actual monetary actions, liability currency and observed currency responses separately.",
+      "relevant_market_conditions": [
+        "Sovereign refinancing and fiscal-policy research",
+        "Bond issuance, debt service, interest-rate or currency pressure"
+      ],
+      "appropriate_timescales": [
+        "macro",
+        "multiday"
+      ],
+      "relevant_circles": [
+        "market",
+        "expectations"
+      ],
+      "topics": [
+        "currency"
+      ],
+      "supporting_historical_examples": [],
+      "historical_example_status": "not-established-by-supplied-source",
+      "criticisms": [
+        "Debt ratios alone do not identify an imminent crisis.",
+        "Historical sequences do not determine timing, direction or magnitude of an intraday move.",
+        "Currency sovereignty and political institutions can change transmission."
+      ],
+      "contradictory_frameworks": [
+        "taleb",
+        "institutions",
+        "graham"
+      ],
+      "observable_data_needed": [
+        "Timestamped exact FX observations with quote direction, source and units.",
+        "Liability currency and monetary-action evidence; a price move alone does not establish a transmission channel."
+      ],
+      "disregard_conditions": [
+        "Disregard a crisis clock inferred solely from historical analogy.",
+        "Disregard when debt, maturity, funding or policy evidence is unavailable or contradicts the mechanism."
+      ],
+      "source_provenance": [
+        {
+          "source_id": "five-books-comparative-pdf",
+          "source_type": "secondary-synthesis",
+          "title": "Five Books Comparative Analysis — supplied comparative synthesis",
+          "sha256": "22c1b6d5551ef25f35e1ef6105b2fbde9eae2c1e7bafd09e18b8ef8684ae2850",
+          "pages": [
+            4,
+            13
+          ],
+          "available_at": "2026-10-22T02:09:20.251Z",
+          "original_work_consulted": false
+        }
+      ],
+      "applicability_rules_kind": "strata-inference",
+      "influence_level": 1,
+      "quantitative_signal_weight": 0,
+      "execution_authority": false,
+      "empirical_validation": "not-tested",
+      "required_evidence_topics": [
+        "currency"
+      ]
+    },
+    {
+      "concept_id": "dalio:fiscal",
+      "framework_id": "dalio",
+      "name": "Fiscal sustainability",
+      "author": "Ray Dalio",
+      "originating_work": "How Countries Go Broke",
+      "original_claim": "Policy adjustments distribute costs among creditors, households and taxpayers.",
+      "claim_kind": "secondary-summary",
+      "mechanism": "Compare fiscal capacity and policy alternatives with verified institutional constraints.",
+      "relevant_market_conditions": [
+        "Sovereign refinancing and fiscal-policy research",
+        "Bond issuance, debt service, interest-rate or currency pressure"
+      ],
+      "appropriate_timescales": [
+        "macro",
+        "multiday"
+      ],
+      "relevant_circles": [
+        "market",
+        "expectations"
+      ],
+      "topics": [
+        "policy"
+      ],
+      "supporting_historical_examples": [],
+      "historical_example_status": "not-established-by-supplied-source",
+      "criticisms": [
+        "Debt ratios alone do not identify an imminent crisis.",
+        "Historical sequences do not determine timing, direction or magnitude of an intraday move.",
+        "Currency sovereignty and political institutions can change transmission."
+      ],
+      "contradictory_frameworks": [
+        "taleb",
+        "institutions",
+        "graham"
+      ],
+      "observable_data_needed": [
+        "Original dated official monetary/fiscal announcement and its implementation status.",
+        "Pre-release expectation vintage kept separate from realised release and subsequent revisions."
+      ],
+      "disregard_conditions": [
+        "Disregard a crisis clock inferred solely from historical analogy.",
+        "Disregard when debt, maturity, funding or policy evidence is unavailable or contradicts the mechanism."
+      ],
+      "source_provenance": [
+        {
+          "source_id": "five-books-comparative-pdf",
+          "source_type": "secondary-synthesis",
+          "title": "Five Books Comparative Analysis — supplied comparative synthesis",
+          "sha256": "22c1b6d5551ef25f35e1ef6105b2fbde9eae2c1e7bafd09e18b8ef8684ae2850",
+          "pages": [
+            4,
+            13
+          ],
+          "available_at": "2026-10-22T02:09:20.251Z",
+          "original_work_consulted": false
+        }
+      ],
+      "applicability_rules_kind": "strata-inference",
+      "influence_level": 1,
+      "quantitative_signal_weight": 0,
+      "execution_authority": false,
+      "empirical_validation": "not-tested",
+      "required_evidence_topics": [
+        "policy"
+      ]
+    },
+    {
+      "concept_id": "dalio:bond-demand",
+      "framework_id": "dalio",
+      "name": "Bond supply and investor demand",
+      "author": "Ray Dalio",
+      "originating_work": "How Countries Go Broke",
+      "original_claim": "Issuance and refinancing needs interact with willingness to hold sovereign debt.",
+      "claim_kind": "secondary-summary",
+      "mechanism": "Compare supply calendars, auction evidence and yields without assuming causality from one move.",
+      "relevant_market_conditions": [
+        "Sovereign refinancing and fiscal-policy research",
+        "Bond issuance, debt service, interest-rate or currency pressure"
+      ],
+      "appropriate_timescales": [
+        "macro",
+        "multiday"
+      ],
+      "relevant_circles": [
+        "market",
+        "expectations"
+      ],
+      "topics": [
+        "debt"
+      ],
+      "supporting_historical_examples": [],
+      "historical_example_status": "not-established-by-supplied-source",
+      "criticisms": [
+        "Debt ratios alone do not identify an imminent crisis.",
+        "Historical sequences do not determine timing, direction or magnitude of an intraday move.",
+        "Currency sovereignty and political institutions can change transmission."
+      ],
+      "contradictory_frameworks": [
+        "taleb",
+        "institutions",
+        "graham"
+      ],
+      "observable_data_needed": [
+        "Debt stock and maturity schedule by liability currency; debt-service costs, tax revenue and growth.",
+        "Dated issuance, auctions, refinancing evidence and comparable historical false alarms."
+      ],
+      "disregard_conditions": [
+        "Disregard a crisis clock inferred solely from historical analogy.",
+        "Disregard when debt, maturity, funding or policy evidence is unavailable or contradicts the mechanism."
+      ],
+      "source_provenance": [
+        {
+          "source_id": "five-books-comparative-pdf",
+          "source_type": "secondary-synthesis",
+          "title": "Five Books Comparative Analysis — supplied comparative synthesis",
+          "sha256": "22c1b6d5551ef25f35e1ef6105b2fbde9eae2c1e7bafd09e18b8ef8684ae2850",
+          "pages": [
+            4,
+            13
+          ],
+          "available_at": "2026-10-22T02:09:20.251Z",
+          "original_work_consulted": false
+        }
+      ],
+      "applicability_rules_kind": "strata-inference",
+      "influence_level": 1,
+      "quantitative_signal_weight": 0,
+      "execution_authority": false,
+      "empirical_validation": "not-tested",
+      "required_evidence_topics": [
+        "debt"
+      ]
+    },
+    {
+      "concept_id": "dalio:debt-regimes",
+      "framework_id": "dalio",
+      "name": "Historical debt crises and regime change",
+      "author": "Ray Dalio",
+      "originating_work": "How Countries Go Broke",
+      "original_claim": "Historical mechanisms can suggest vulnerabilities and competing scenarios.",
+      "claim_kind": "secondary-summary",
+      "mechanism": "Compare cases and false alarms; resemblance is not a timing model.",
+      "relevant_market_conditions": [
+        "Sovereign refinancing and fiscal-policy research",
+        "Bond issuance, debt service, interest-rate or currency pressure"
+      ],
+      "appropriate_timescales": [
+        "macro",
+        "multiday"
+      ],
+      "relevant_circles": [
+        "market",
+        "expectations"
+      ],
+      "topics": [
+        "debt"
+      ],
+      "supporting_historical_examples": [],
+      "historical_example_status": "not-established-by-supplied-source",
+      "criticisms": [
+        "Debt ratios alone do not identify an imminent crisis.",
+        "Historical sequences do not determine timing, direction or magnitude of an intraday move.",
+        "Currency sovereignty and political institutions can change transmission."
+      ],
+      "contradictory_frameworks": [
+        "taleb",
+        "institutions",
+        "graham"
+      ],
+      "observable_data_needed": [
+        "Debt stock and maturity schedule by liability currency; debt-service costs, tax revenue and growth.",
+        "Dated issuance, auctions, refinancing evidence and comparable historical false alarms."
+      ],
+      "disregard_conditions": [
+        "Disregard a crisis clock inferred solely from historical analogy.",
+        "Disregard when debt, maturity, funding or policy evidence is unavailable or contradicts the mechanism."
+      ],
+      "source_provenance": [
+        {
+          "source_id": "five-books-comparative-pdf",
+          "source_type": "secondary-synthesis",
+          "title": "Five Books Comparative Analysis — supplied comparative synthesis",
+          "sha256": "22c1b6d5551ef25f35e1ef6105b2fbde9eae2c1e7bafd09e18b8ef8684ae2850",
+          "pages": [
+            4,
+            13
+          ],
+          "available_at": "2026-10-22T02:09:20.251Z",
+          "original_work_consulted": false
+        }
+      ],
+      "applicability_rules_kind": "strata-inference",
+      "influence_level": 1,
+      "quantitative_signal_weight": 0,
+      "execution_authority": false,
+      "empirical_validation": "not-tested",
+      "required_evidence_topics": [
+        "debt"
+      ]
+    },
+    {
+      "concept_id": "kahneman:systems",
+      "framework_id": "kahneman",
+      "name": "System 1 and System 2",
+      "author": "Daniel Kahneman",
+      "originating_work": "Thinking, Fast and Slow",
+      "original_claim": "Fast impressions can be questioned by effortful deliberation.",
+      "claim_kind": "secondary-summary",
+      "mechanism": "Use an attributable decision record to separate an initial impression from a checked argument.",
+      "relevant_market_conditions": [
+        "Auditing an attributable decision or forecast",
+        "Checking assumptions, reference points and disconfirming evidence"
+      ],
+      "appropriate_timescales": [
+        "intraday",
+        "multiday",
+        "macro",
+        "investment",
+        "decision-review"
+      ],
+      "relevant_circles": [
+        "behaviour"
+      ],
+      "topics": [
+        "judgment"
+      ],
+      "supporting_historical_examples": [],
+      "historical_example_status": "not-established-by-supplied-source",
+      "criticisms": [
+        "A named bias is a hypothesis about judgment, not a measurement of market participants.",
+        "Some social-priming examples have replication limitations, as reported by the secondary synthesis; effects are not universally generalised here.",
+        "Debiasing does not replace fundamentals, calibration or tail-risk analysis."
+      ],
+      "contradictory_frameworks": [
+        "taleb",
+        "graham",
+        "dalio"
+      ],
+      "observable_data_needed": [
+        "Attributable decision/forecast record, original reference point and alternatives considered.",
+        "Disconfirming evidence, external reference sample and dated outcomes; no motives inferred from candles."
+      ],
+      "disregard_conditions": [
+        "Disregard claims about participant motives inferred from price alone.",
+        "Disregard causal bias labels unsupported by a decision record or appropriate experiment."
+      ],
+      "source_provenance": [
+        {
+          "source_id": "five-books-comparative-pdf",
+          "source_type": "secondary-synthesis",
+          "title": "Five Books Comparative Analysis — supplied comparative synthesis",
+          "sha256": "22c1b6d5551ef25f35e1ef6105b2fbde9eae2c1e7bafd09e18b8ef8684ae2850",
+          "pages": [
+            5,
+            13
+          ],
+          "available_at": "2026-10-22T02:09:20.251Z",
+          "original_work_consulted": false
+        }
+      ],
+      "applicability_rules_kind": "strata-inference",
+      "influence_level": 1,
+      "quantitative_signal_weight": 0,
+      "execution_authority": false,
+      "empirical_validation": "not-tested",
+      "required_evidence_topics": [
+        "judgment"
+      ]
+    },
+    {
+      "concept_id": "kahneman:loss-aversion",
+      "framework_id": "kahneman",
+      "name": "Loss aversion",
+      "author": "Daniel Kahneman",
+      "originating_work": "Thinking, Fast and Slow",
+      "original_claim": "Reference points can affect how gains and losses are evaluated.",
+      "claim_kind": "secondary-summary",
+      "mechanism": "Inspect stated reference points and alternative choices; do not infer loss aversion from a candle.",
+      "relevant_market_conditions": [
+        "Auditing an attributable decision or forecast",
+        "Checking assumptions, reference points and disconfirming evidence"
+      ],
+      "appropriate_timescales": [
+        "intraday",
+        "multiday",
+        "macro",
+        "investment",
+        "decision-review"
+      ],
+      "relevant_circles": [
+        "behaviour"
+      ],
+      "topics": [
+        "judgment"
+      ],
+      "supporting_historical_examples": [],
+      "historical_example_status": "not-established-by-supplied-source",
+      "criticisms": [
+        "A named bias is a hypothesis about judgment, not a measurement of market participants.",
+        "Some social-priming examples have replication limitations, as reported by the secondary synthesis; effects are not universally generalised here.",
+        "Debiasing does not replace fundamentals, calibration or tail-risk analysis."
+      ],
+      "contradictory_frameworks": [
+        "taleb",
+        "graham",
+        "dalio"
+      ],
+      "observable_data_needed": [
+        "Attributable decision/forecast record, original reference point and alternatives considered.",
+        "Disconfirming evidence, external reference sample and dated outcomes; no motives inferred from candles."
+      ],
+      "disregard_conditions": [
+        "Disregard claims about participant motives inferred from price alone.",
+        "Disregard causal bias labels unsupported by a decision record or appropriate experiment."
+      ],
+      "source_provenance": [
+        {
+          "source_id": "five-books-comparative-pdf",
+          "source_type": "secondary-synthesis",
+          "title": "Five Books Comparative Analysis — supplied comparative synthesis",
+          "sha256": "22c1b6d5551ef25f35e1ef6105b2fbde9eae2c1e7bafd09e18b8ef8684ae2850",
+          "pages": [
+            5,
+            13
+          ],
+          "available_at": "2026-10-22T02:09:20.251Z",
+          "original_work_consulted": false
+        }
+      ],
+      "applicability_rules_kind": "strata-inference",
+      "influence_level": 1,
+      "quantitative_signal_weight": 0,
+      "execution_authority": false,
+      "empirical_validation": "not-tested",
+      "required_evidence_topics": [
+        "judgment"
+      ]
+    },
+    {
+      "concept_id": "kahneman:anchoring",
+      "framework_id": "kahneman",
+      "name": "Anchoring",
+      "author": "Daniel Kahneman",
+      "originating_work": "Thinking, Fast and Slow",
+      "original_claim": "Initial estimates can influence later judgments.",
+      "claim_kind": "secondary-summary",
+      "mechanism": "Compare the initial reference with independent estimates and recorded revisions.",
+      "relevant_market_conditions": [
+        "Auditing an attributable decision or forecast",
+        "Checking assumptions, reference points and disconfirming evidence"
+      ],
+      "appropriate_timescales": [
+        "intraday",
+        "multiday",
+        "macro",
+        "investment",
+        "decision-review"
+      ],
+      "relevant_circles": [
+        "behaviour"
+      ],
+      "topics": [
+        "judgment"
+      ],
+      "supporting_historical_examples": [],
+      "historical_example_status": "not-established-by-supplied-source",
+      "criticisms": [
+        "A named bias is a hypothesis about judgment, not a measurement of market participants.",
+        "Some social-priming examples have replication limitations, as reported by the secondary synthesis; effects are not universally generalised here.",
+        "Debiasing does not replace fundamentals, calibration or tail-risk analysis."
+      ],
+      "contradictory_frameworks": [
+        "taleb",
+        "graham",
+        "dalio"
+      ],
+      "observable_data_needed": [
+        "Attributable decision/forecast record, original reference point and alternatives considered.",
+        "Disconfirming evidence, external reference sample and dated outcomes; no motives inferred from candles."
+      ],
+      "disregard_conditions": [
+        "Disregard claims about participant motives inferred from price alone.",
+        "Disregard causal bias labels unsupported by a decision record or appropriate experiment."
+      ],
+      "source_provenance": [
+        {
+          "source_id": "five-books-comparative-pdf",
+          "source_type": "secondary-synthesis",
+          "title": "Five Books Comparative Analysis — supplied comparative synthesis",
+          "sha256": "22c1b6d5551ef25f35e1ef6105b2fbde9eae2c1e7bafd09e18b8ef8684ae2850",
+          "pages": [
+            5,
+            13
+          ],
+          "available_at": "2026-10-22T02:09:20.251Z",
+          "original_work_consulted": false
+        }
+      ],
+      "applicability_rules_kind": "strata-inference",
+      "influence_level": 1,
+      "quantitative_signal_weight": 0,
+      "execution_authority": false,
+      "empirical_validation": "not-tested",
+      "required_evidence_topics": [
+        "judgment"
+      ]
+    },
+    {
+      "concept_id": "kahneman:confirmation",
+      "framework_id": "kahneman",
+      "name": "Confirmation bias",
+      "author": "Daniel Kahneman",
+      "originating_work": "Thinking, Fast and Slow",
+      "original_claim": "An interpretation may favour supporting material and neglect contradictions.",
+      "claim_kind": "secondary-summary",
+      "mechanism": "Audit the evidence considered and excluded, with an explicit disconfirming case.",
+      "relevant_market_conditions": [
+        "Auditing an attributable decision or forecast",
+        "Checking assumptions, reference points and disconfirming evidence"
+      ],
+      "appropriate_timescales": [
+        "intraday",
+        "multiday",
+        "macro",
+        "investment",
+        "decision-review"
+      ],
+      "relevant_circles": [
+        "behaviour"
+      ],
+      "topics": [
+        "judgment"
+      ],
+      "supporting_historical_examples": [],
+      "historical_example_status": "not-established-by-supplied-source",
+      "criticisms": [
+        "A named bias is a hypothesis about judgment, not a measurement of market participants.",
+        "Some social-priming examples have replication limitations, as reported by the secondary synthesis; effects are not universally generalised here.",
+        "Debiasing does not replace fundamentals, calibration or tail-risk analysis."
+      ],
+      "contradictory_frameworks": [
+        "taleb",
+        "graham",
+        "dalio"
+      ],
+      "observable_data_needed": [
+        "Attributable decision/forecast record, original reference point and alternatives considered.",
+        "Disconfirming evidence, external reference sample and dated outcomes; no motives inferred from candles."
+      ],
+      "disregard_conditions": [
+        "Disregard claims about participant motives inferred from price alone.",
+        "Disregard causal bias labels unsupported by a decision record or appropriate experiment."
+      ],
+      "source_provenance": [
+        {
+          "source_id": "five-books-comparative-pdf",
+          "source_type": "secondary-synthesis",
+          "title": "Five Books Comparative Analysis — supplied comparative synthesis",
+          "sha256": "22c1b6d5551ef25f35e1ef6105b2fbde9eae2c1e7bafd09e18b8ef8684ae2850",
+          "pages": [
+            3,
+            5,
+            10,
+            13
+          ],
+          "available_at": "2026-10-22T02:09:20.251Z",
+          "original_work_consulted": false
+        }
+      ],
+      "applicability_rules_kind": "strata-inference",
+      "influence_level": 1,
+      "quantitative_signal_weight": 0,
+      "execution_authority": false,
+      "empirical_validation": "not-tested",
+      "required_evidence_topics": [
+        "judgment"
+      ]
+    },
+    {
+      "concept_id": "kahneman:overconfidence",
+      "framework_id": "kahneman",
+      "name": "Overconfidence",
+      "author": "Daniel Kahneman",
+      "originating_work": "Thinking, Fast and Slow",
+      "original_claim": "Narrative certainty can exceed measured forecasting skill.",
+      "claim_kind": "secondary-summary",
+      "mechanism": "Compare recorded forecasts with outcomes and calibration rather than language strength.",
+      "relevant_market_conditions": [
+        "Auditing an attributable decision or forecast",
+        "Checking assumptions, reference points and disconfirming evidence"
+      ],
+      "appropriate_timescales": [
+        "intraday",
+        "multiday",
+        "macro",
+        "investment",
+        "decision-review"
+      ],
+      "relevant_circles": [
+        "behaviour"
+      ],
+      "topics": [
+        "judgment"
+      ],
+      "supporting_historical_examples": [],
+      "historical_example_status": "not-established-by-supplied-source",
+      "criticisms": [
+        "A named bias is a hypothesis about judgment, not a measurement of market participants.",
+        "Some social-priming examples have replication limitations, as reported by the secondary synthesis; effects are not universally generalised here.",
+        "Debiasing does not replace fundamentals, calibration or tail-risk analysis."
+      ],
+      "contradictory_frameworks": [
+        "taleb",
+        "graham",
+        "dalio"
+      ],
+      "observable_data_needed": [
+        "Attributable decision/forecast record, original reference point and alternatives considered.",
+        "Disconfirming evidence, external reference sample and dated outcomes; no motives inferred from candles."
+      ],
+      "disregard_conditions": [
+        "Disregard claims about participant motives inferred from price alone.",
+        "Disregard causal bias labels unsupported by a decision record or appropriate experiment."
+      ],
+      "source_provenance": [
+        {
+          "source_id": "five-books-comparative-pdf",
+          "source_type": "secondary-synthesis",
+          "title": "Five Books Comparative Analysis — supplied comparative synthesis",
+          "sha256": "22c1b6d5551ef25f35e1ef6105b2fbde9eae2c1e7bafd09e18b8ef8684ae2850",
+          "pages": [
+            5,
+            13
+          ],
+          "available_at": "2026-10-22T02:09:20.251Z",
+          "original_work_consulted": false
+        }
+      ],
+      "applicability_rules_kind": "strata-inference",
+      "influence_level": 1,
+      "quantitative_signal_weight": 0,
+      "execution_authority": false,
+      "empirical_validation": "not-tested",
+      "required_evidence_topics": [
+        "judgment"
+      ]
+    },
+    {
+      "concept_id": "kahneman:availability",
+      "framework_id": "kahneman",
+      "name": "Availability heuristics",
+      "author": "Daniel Kahneman",
+      "originating_work": "Thinking, Fast and Slow",
+      "original_claim": "Memorable information can receive disproportionate attention.",
+      "claim_kind": "secondary-summary",
+      "mechanism": "Compare the cited case with a documented broader reference sample.",
+      "relevant_market_conditions": [
+        "Auditing an attributable decision or forecast",
+        "Checking assumptions, reference points and disconfirming evidence"
+      ],
+      "appropriate_timescales": [
+        "intraday",
+        "multiday",
+        "macro",
+        "investment",
+        "decision-review"
+      ],
+      "relevant_circles": [
+        "behaviour"
+      ],
+      "topics": [
+        "judgment"
+      ],
+      "supporting_historical_examples": [],
+      "historical_example_status": "not-established-by-supplied-source",
+      "criticisms": [
+        "A named bias is a hypothesis about judgment, not a measurement of market participants.",
+        "Some social-priming examples have replication limitations, as reported by the secondary synthesis; effects are not universally generalised here.",
+        "Debiasing does not replace fundamentals, calibration or tail-risk analysis."
+      ],
+      "contradictory_frameworks": [
+        "taleb",
+        "graham",
+        "dalio"
+      ],
+      "observable_data_needed": [
+        "Attributable decision/forecast record, original reference point and alternatives considered.",
+        "Disconfirming evidence, external reference sample and dated outcomes; no motives inferred from candles."
+      ],
+      "disregard_conditions": [
+        "Disregard claims about participant motives inferred from price alone.",
+        "Disregard causal bias labels unsupported by a decision record or appropriate experiment."
+      ],
+      "source_provenance": [
+        {
+          "source_id": "five-books-comparative-pdf",
+          "source_type": "secondary-synthesis",
+          "title": "Five Books Comparative Analysis — supplied comparative synthesis",
+          "sha256": "22c1b6d5551ef25f35e1ef6105b2fbde9eae2c1e7bafd09e18b8ef8684ae2850",
+          "pages": [
+            5,
+            13
+          ],
+          "available_at": "2026-10-22T02:09:20.251Z",
+          "original_work_consulted": false
+        }
+      ],
+      "applicability_rules_kind": "strata-inference",
+      "influence_level": 1,
+      "quantitative_signal_weight": 0,
+      "execution_authority": false,
+      "empirical_validation": "not-tested",
+      "required_evidence_topics": [
+        "judgment"
+      ]
+    },
+    {
+      "concept_id": "kahneman:narratives",
+      "framework_id": "kahneman",
+      "name": "Narrative coherence",
+      "author": "Daniel Kahneman",
+      "originating_work": "Thinking, Fast and Slow",
+      "original_claim": "A coherent account can be constructed from incomplete information.",
+      "claim_kind": "secondary-summary",
+      "mechanism": "List omitted evidence and alternative explanations before treating a story as sufficient.",
+      "relevant_market_conditions": [
+        "Auditing an attributable decision or forecast",
+        "Checking assumptions, reference points and disconfirming evidence"
+      ],
+      "appropriate_timescales": [
+        "intraday",
+        "multiday",
+        "macro",
+        "investment",
+        "decision-review"
+      ],
+      "relevant_circles": [
+        "behaviour"
+      ],
+      "topics": [
+        "judgment"
+      ],
+      "supporting_historical_examples": [],
+      "historical_example_status": "not-established-by-supplied-source",
+      "criticisms": [
+        "A named bias is a hypothesis about judgment, not a measurement of market participants.",
+        "Some social-priming examples have replication limitations, as reported by the secondary synthesis; effects are not universally generalised here.",
+        "Debiasing does not replace fundamentals, calibration or tail-risk analysis."
+      ],
+      "contradictory_frameworks": [
+        "taleb",
+        "graham",
+        "dalio"
+      ],
+      "observable_data_needed": [
+        "Attributable decision/forecast record, original reference point and alternatives considered.",
+        "Disconfirming evidence, external reference sample and dated outcomes; no motives inferred from candles."
+      ],
+      "disregard_conditions": [
+        "Disregard claims about participant motives inferred from price alone.",
+        "Disregard causal bias labels unsupported by a decision record or appropriate experiment."
+      ],
+      "source_provenance": [
+        {
+          "source_id": "five-books-comparative-pdf",
+          "source_type": "secondary-synthesis",
+          "title": "Five Books Comparative Analysis — supplied comparative synthesis",
+          "sha256": "22c1b6d5551ef25f35e1ef6105b2fbde9eae2c1e7bafd09e18b8ef8684ae2850",
+          "pages": [
+            5,
+            13
+          ],
+          "available_at": "2026-10-22T02:09:20.251Z",
+          "original_work_consulted": false
+        }
+      ],
+      "applicability_rules_kind": "strata-inference",
+      "influence_level": 1,
+      "quantitative_signal_weight": 0,
+      "execution_authority": false,
+      "empirical_validation": "not-tested",
+      "required_evidence_topics": [
+        "judgment"
+      ]
+    },
+    {
+      "concept_id": "kahneman:base-rates",
+      "framework_id": "kahneman",
+      "name": "Base-rate neglect",
+      "author": "Daniel Kahneman",
+      "originating_work": "Thinking, Fast and Slow",
+      "original_claim": "Inside-view narratives can omit outcomes from comparable cases.",
+      "claim_kind": "secondary-summary",
+      "mechanism": "Compare recorded assumptions with a defined external reference class.",
+      "relevant_market_conditions": [
+        "Auditing an attributable decision or forecast",
+        "Checking assumptions, reference points and disconfirming evidence"
+      ],
+      "appropriate_timescales": [
+        "intraday",
+        "multiday",
+        "macro",
+        "investment",
+        "decision-review"
+      ],
+      "relevant_circles": [
+        "behaviour"
+      ],
+      "topics": [
+        "judgment"
+      ],
+      "supporting_historical_examples": [],
+      "historical_example_status": "not-established-by-supplied-source",
+      "criticisms": [
+        "A named bias is a hypothesis about judgment, not a measurement of market participants.",
+        "Some social-priming examples have replication limitations, as reported by the secondary synthesis; effects are not universally generalised here.",
+        "Debiasing does not replace fundamentals, calibration or tail-risk analysis."
+      ],
+      "contradictory_frameworks": [
+        "taleb",
+        "graham",
+        "dalio"
+      ],
+      "observable_data_needed": [
+        "Attributable decision/forecast record, original reference point and alternatives considered.",
+        "Disconfirming evidence, external reference sample and dated outcomes; no motives inferred from candles."
+      ],
+      "disregard_conditions": [
+        "Disregard claims about participant motives inferred from price alone.",
+        "Disregard causal bias labels unsupported by a decision record or appropriate experiment."
+      ],
+      "source_provenance": [
+        {
+          "source_id": "five-books-comparative-pdf",
+          "source_type": "secondary-synthesis",
+          "title": "Five Books Comparative Analysis — supplied comparative synthesis",
+          "sha256": "22c1b6d5551ef25f35e1ef6105b2fbde9eae2c1e7bafd09e18b8ef8684ae2850",
+          "pages": [
+            5,
+            13
+          ],
+          "available_at": "2026-10-22T02:09:20.251Z",
+          "original_work_consulted": false
+        }
+      ],
+      "applicability_rules_kind": "strata-inference",
+      "influence_level": 1,
+      "quantitative_signal_weight": 0,
+      "execution_authority": false,
+      "empirical_validation": "not-tested",
+      "required_evidence_topics": [
+        "judgment"
+      ]
+    },
+    {
+      "concept_id": "kahneman:sunk-costs",
+      "framework_id": "kahneman",
+      "name": "Sunk-cost reasoning",
+      "author": "Daniel Kahneman",
+      "originating_work": "Thinking, Fast and Slow",
+      "original_claim": "Irrecoverable past commitments should be distinguished from future costs and benefits.",
+      "claim_kind": "secondary-summary",
+      "mechanism": "Review decision rationale against prospective alternatives and incremental consequences.",
+      "relevant_market_conditions": [
+        "Auditing an attributable decision or forecast",
+        "Checking assumptions, reference points and disconfirming evidence"
+      ],
+      "appropriate_timescales": [
+        "intraday",
+        "multiday",
+        "macro",
+        "investment",
+        "decision-review"
+      ],
+      "relevant_circles": [
+        "behaviour"
+      ],
+      "topics": [
+        "judgment"
+      ],
+      "supporting_historical_examples": [],
+      "historical_example_status": "not-established-by-supplied-source",
+      "criticisms": [
+        "A named bias is a hypothesis about judgment, not a measurement of market participants.",
+        "Some social-priming examples have replication limitations, as reported by the secondary synthesis; effects are not universally generalised here.",
+        "Debiasing does not replace fundamentals, calibration or tail-risk analysis."
+      ],
+      "contradictory_frameworks": [
+        "taleb",
+        "graham",
+        "dalio"
+      ],
+      "observable_data_needed": [
+        "Attributable decision/forecast record, original reference point and alternatives considered.",
+        "Disconfirming evidence, external reference sample and dated outcomes; no motives inferred from candles."
+      ],
+      "disregard_conditions": [
+        "Disregard claims about participant motives inferred from price alone.",
+        "Disregard causal bias labels unsupported by a decision record or appropriate experiment."
+      ],
+      "source_provenance": [
+        {
+          "source_id": "five-books-comparative-pdf",
+          "source_type": "secondary-synthesis",
+          "title": "Five Books Comparative Analysis — supplied comparative synthesis",
+          "sha256": "22c1b6d5551ef25f35e1ef6105b2fbde9eae2c1e7bafd09e18b8ef8684ae2850",
+          "pages": [
+            5,
+            13
+          ],
+          "available_at": "2026-10-22T02:09:20.251Z",
+          "original_work_consulted": false
+        }
+      ],
+      "applicability_rules_kind": "strata-inference",
+      "influence_level": 1,
+      "quantitative_signal_weight": 0,
+      "execution_authority": false,
+      "empirical_validation": "not-tested",
+      "required_evidence_topics": [
+        "judgment"
+      ]
+    },
+    {
+      "concept_id": "taleb:tails",
+      "framework_id": "taleb",
+      "name": "Fat-tail risk",
+      "author": "Nassim Nicholas Taleb",
+      "originating_work": "The Black Swan",
+      "original_claim": "Some systems can be dominated by unusually large outcomes.",
+      "claim_kind": "secondary-summary",
+      "mechanism": "Inspect empirical tails, dependence and scenario loss; do not assume a fitted tail law.",
+      "relevant_market_conditions": [
+        "Review of leverage, gaps, liquidity, dependence or hidden downside",
+        "Stress testing assumptions and model failure"
+      ],
+      "appropriate_timescales": [
+        "intraday",
+        "multiday",
+        "macro",
+        "investment",
+        "decision-review"
+      ],
+      "relevant_circles": [
+        "market",
+        "expectations",
+        "behaviour"
+      ],
+      "topics": [
+        "tail-risk"
+      ],
+      "supporting_historical_examples": [],
+      "historical_example_status": "not-established-by-supplied-source",
+      "criticisms": [
+        "Extreme-event possibility supplies neither timing nor an automatic bearish direction.",
+        "Not every setting lacks measurable probabilities or useful stable feedback.",
+        "Insurance, convexity and persistent hedging can have material costs."
+      ],
+      "contradictory_frameworks": [
+        "graham",
+        "dalio",
+        "kahneman",
+        "institutions"
+      ],
+      "observable_data_needed": [
+        "Observed exposure, leverage, gap/illiquidity history and dependence across regimes.",
+        "Documented stress-loss and execution-cost assumptions, including hedging drag; no invented tail probabilities."
+      ],
+      "disregard_conditions": [
+        "Disregard a trade direction derived solely from the possibility of an extreme event.",
+        "Disregard a numerical tail probability unsupported by a calibrated distribution and sample."
+      ],
+      "source_provenance": [
+        {
+          "source_id": "five-books-comparative-pdf",
+          "source_type": "secondary-synthesis",
+          "title": "Five Books Comparative Analysis — supplied comparative synthesis",
+          "sha256": "22c1b6d5551ef25f35e1ef6105b2fbde9eae2c1e7bafd09e18b8ef8684ae2850",
+          "pages": [
+            6,
+            13
+          ],
+          "available_at": "2026-10-22T02:09:20.251Z",
+          "original_work_consulted": false
+        }
+      ],
+      "applicability_rules_kind": "strata-inference",
+      "influence_level": 1,
+      "quantitative_signal_weight": 0,
+      "execution_authority": false,
+      "empirical_validation": "not-tested",
+      "required_evidence_topics": [
+        "tail-risk"
+      ]
+    },
+    {
+      "concept_id": "taleb:rare-events",
+      "framework_id": "taleb",
+      "name": "Rare high-impact events",
+      "author": "Nassim Nicholas Taleb",
+      "originating_work": "The Black Swan",
+      "original_claim": "An event may lie outside prior expectations and acquire a retrospective explanation.",
+      "claim_kind": "secondary-summary",
+      "mechanism": "Preserve pre-event expectations and test whether the supposed foresight existed before the outcome.",
+      "relevant_market_conditions": [
+        "Review of leverage, gaps, liquidity, dependence or hidden downside",
+        "Stress testing assumptions and model failure"
+      ],
+      "appropriate_timescales": [
+        "intraday",
+        "multiday",
+        "macro",
+        "investment",
+        "decision-review"
+      ],
+      "relevant_circles": [
+        "market",
+        "expectations",
+        "behaviour"
+      ],
+      "topics": [
+        "tail-risk"
+      ],
+      "supporting_historical_examples": [],
+      "historical_example_status": "not-established-by-supplied-source",
+      "criticisms": [
+        "Extreme-event possibility supplies neither timing nor an automatic bearish direction.",
+        "Not every setting lacks measurable probabilities or useful stable feedback.",
+        "Insurance, convexity and persistent hedging can have material costs."
+      ],
+      "contradictory_frameworks": [
+        "graham",
+        "dalio",
+        "kahneman",
+        "institutions"
+      ],
+      "observable_data_needed": [
+        "Observed exposure, leverage, gap/illiquidity history and dependence across regimes.",
+        "Documented stress-loss and execution-cost assumptions, including hedging drag; no invented tail probabilities."
+      ],
+      "disregard_conditions": [
+        "Disregard a trade direction derived solely from the possibility of an extreme event.",
+        "Disregard a numerical tail probability unsupported by a calibrated distribution and sample."
+      ],
+      "source_provenance": [
+        {
+          "source_id": "five-books-comparative-pdf",
+          "source_type": "secondary-synthesis",
+          "title": "Five Books Comparative Analysis — supplied comparative synthesis",
+          "sha256": "22c1b6d5551ef25f35e1ef6105b2fbde9eae2c1e7bafd09e18b8ef8684ae2850",
+          "pages": [
+            6,
+            13
+          ],
+          "available_at": "2026-10-22T02:09:20.251Z",
+          "original_work_consulted": false
+        }
+      ],
+      "applicability_rules_kind": "strata-inference",
+      "influence_level": 1,
+      "quantitative_signal_weight": 0,
+      "execution_authority": false,
+      "empirical_validation": "not-tested",
+      "required_evidence_topics": [
+        "tail-risk"
+      ]
+    },
+    {
+      "concept_id": "taleb:survivorship",
+      "framework_id": "taleb",
+      "name": "Survivorship bias",
+      "author": "Nassim Nicholas Taleb",
+      "originating_work": "The Black Swan",
+      "original_claim": "Visible survivors can omit failed or destroyed comparators.",
+      "claim_kind": "secondary-summary",
+      "mechanism": "Audit the sampling frame and excluded outcomes before interpreting a successful history.",
+      "relevant_market_conditions": [
+        "Review of leverage, gaps, liquidity, dependence or hidden downside",
+        "Stress testing assumptions and model failure"
+      ],
+      "appropriate_timescales": [
+        "intraday",
+        "multiday",
+        "macro",
+        "investment",
+        "decision-review"
+      ],
+      "relevant_circles": [
+        "market",
+        "expectations",
+        "behaviour"
+      ],
+      "topics": [
+        "model-risk"
+      ],
+      "supporting_historical_examples": [],
+      "historical_example_status": "not-established-by-supplied-source",
+      "criticisms": [
+        "Extreme-event possibility supplies neither timing nor an automatic bearish direction.",
+        "Not every setting lacks measurable probabilities or useful stable feedback.",
+        "Insurance, convexity and persistent hedging can have material costs."
+      ],
+      "contradictory_frameworks": [
+        "graham",
+        "dalio",
+        "kahneman",
+        "institutions"
+      ],
+      "observable_data_needed": [
+        "Model version, training/sample boundaries, selection exclusions and pre-event assumptions.",
+        "Documented failures, omitted comparators and counterexamples with availability timestamps."
+      ],
+      "disregard_conditions": [
+        "Disregard a trade direction derived solely from the possibility of an extreme event.",
+        "Disregard a numerical tail probability unsupported by a calibrated distribution and sample."
+      ],
+      "source_provenance": [
+        {
+          "source_id": "five-books-comparative-pdf",
+          "source_type": "secondary-synthesis",
+          "title": "Five Books Comparative Analysis — supplied comparative synthesis",
+          "sha256": "22c1b6d5551ef25f35e1ef6105b2fbde9eae2c1e7bafd09e18b8ef8684ae2850",
+          "pages": [
+            6,
+            13
+          ],
+          "available_at": "2026-10-22T02:09:20.251Z",
+          "original_work_consulted": false
+        }
+      ],
+      "applicability_rules_kind": "strata-inference",
+      "influence_level": 1,
+      "quantitative_signal_weight": 0,
+      "execution_authority": false,
+      "empirical_validation": "not-tested",
+      "required_evidence_topics": [
+        "model-risk"
+      ]
+    },
+    {
+      "concept_id": "taleb:narrative",
+      "framework_id": "taleb",
+      "name": "Narrative fallacy",
+      "author": "Nassim Nicholas Taleb",
+      "originating_work": "The Black Swan",
+      "original_claim": "A retrospective causal story can hide contingency and missing causes.",
+      "claim_kind": "secondary-summary",
+      "mechanism": "Compare alternative explanations and the information available before the event.",
+      "relevant_market_conditions": [
+        "Review of leverage, gaps, liquidity, dependence or hidden downside",
+        "Stress testing assumptions and model failure"
+      ],
+      "appropriate_timescales": [
+        "intraday",
+        "multiday",
+        "macro",
+        "investment",
+        "decision-review"
+      ],
+      "relevant_circles": [
+        "market",
+        "expectations",
+        "behaviour"
+      ],
+      "topics": [
+        "model-risk"
+      ],
+      "supporting_historical_examples": [],
+      "historical_example_status": "not-established-by-supplied-source",
+      "criticisms": [
+        "Extreme-event possibility supplies neither timing nor an automatic bearish direction.",
+        "Not every setting lacks measurable probabilities or useful stable feedback.",
+        "Insurance, convexity and persistent hedging can have material costs."
+      ],
+      "contradictory_frameworks": [
+        "graham",
+        "dalio",
+        "kahneman",
+        "institutions"
+      ],
+      "observable_data_needed": [
+        "Model version, training/sample boundaries, selection exclusions and pre-event assumptions.",
+        "Documented failures, omitted comparators and counterexamples with availability timestamps."
+      ],
+      "disregard_conditions": [
+        "Disregard a trade direction derived solely from the possibility of an extreme event.",
+        "Disregard a numerical tail probability unsupported by a calibrated distribution and sample."
+      ],
+      "source_provenance": [
+        {
+          "source_id": "five-books-comparative-pdf",
+          "source_type": "secondary-synthesis",
+          "title": "Five Books Comparative Analysis — supplied comparative synthesis",
+          "sha256": "22c1b6d5551ef25f35e1ef6105b2fbde9eae2c1e7bafd09e18b8ef8684ae2850",
+          "pages": [
+            6,
+            13
+          ],
+          "available_at": "2026-10-22T02:09:20.251Z",
+          "original_work_consulted": false
+        }
+      ],
+      "applicability_rules_kind": "strata-inference",
+      "influence_level": 1,
+      "quantitative_signal_weight": 0,
+      "execution_authority": false,
+      "empirical_validation": "not-tested",
+      "required_evidence_topics": [
+        "model-risk"
+      ]
+    },
+    {
+      "concept_id": "taleb:model",
+      "framework_id": "taleb",
+      "name": "Model risk",
+      "author": "Nassim Nicholas Taleb",
+      "originating_work": "The Black Swan",
+      "original_claim": "Clean model assumptions can misrepresent an open-ended environment.",
+      "claim_kind": "secondary-summary",
+      "mechanism": "Identify parameter, distribution and boundary failures using documented stress conditions.",
+      "relevant_market_conditions": [
+        "Review of leverage, gaps, liquidity, dependence or hidden downside",
+        "Stress testing assumptions and model failure"
+      ],
+      "appropriate_timescales": [
+        "intraday",
+        "multiday",
+        "macro",
+        "investment",
+        "decision-review"
+      ],
+      "relevant_circles": [
+        "market",
+        "expectations",
+        "behaviour"
+      ],
+      "topics": [
+        "model-risk"
+      ],
+      "supporting_historical_examples": [],
+      "historical_example_status": "not-established-by-supplied-source",
+      "criticisms": [
+        "Extreme-event possibility supplies neither timing nor an automatic bearish direction.",
+        "Not every setting lacks measurable probabilities or useful stable feedback.",
+        "Insurance, convexity and persistent hedging can have material costs."
+      ],
+      "contradictory_frameworks": [
+        "graham",
+        "dalio",
+        "kahneman",
+        "institutions"
+      ],
+      "observable_data_needed": [
+        "Model version, training/sample boundaries, selection exclusions and pre-event assumptions.",
+        "Documented failures, omitted comparators and counterexamples with availability timestamps."
+      ],
+      "disregard_conditions": [
+        "Disregard a trade direction derived solely from the possibility of an extreme event.",
+        "Disregard a numerical tail probability unsupported by a calibrated distribution and sample."
+      ],
+      "source_provenance": [
+        {
+          "source_id": "five-books-comparative-pdf",
+          "source_type": "secondary-synthesis",
+          "title": "Five Books Comparative Analysis — supplied comparative synthesis",
+          "sha256": "22c1b6d5551ef25f35e1ef6105b2fbde9eae2c1e7bafd09e18b8ef8684ae2850",
+          "pages": [
+            6,
+            13
+          ],
+          "available_at": "2026-10-22T02:09:20.251Z",
+          "original_work_consulted": false
+        }
+      ],
+      "applicability_rules_kind": "strata-inference",
+      "influence_level": 1,
+      "quantitative_signal_weight": 0,
+      "execution_authority": false,
+      "empirical_validation": "not-tested",
+      "required_evidence_topics": [
+        "model-risk"
+      ]
+    },
+    {
+      "concept_id": "taleb:unknowns",
+      "framework_id": "taleb",
+      "name": "Unknown unknowns",
+      "author": "Nassim Nicholas Taleb",
+      "originating_work": "The Black Swan",
+      "original_claim": "The tested scenario space may omit consequential possibilities.",
+      "claim_kind": "secondary-summary",
+      "mechanism": "Record model limits and failure exposure without pretending to enumerate all possible shocks.",
+      "relevant_market_conditions": [
+        "Review of leverage, gaps, liquidity, dependence or hidden downside",
+        "Stress testing assumptions and model failure"
+      ],
+      "appropriate_timescales": [
+        "intraday",
+        "multiday",
+        "macro",
+        "investment",
+        "decision-review"
+      ],
+      "relevant_circles": [
+        "market",
+        "expectations",
+        "behaviour"
+      ],
+      "topics": [
+        "model-risk"
+      ],
+      "supporting_historical_examples": [],
+      "historical_example_status": "not-established-by-supplied-source",
+      "criticisms": [
+        "Extreme-event possibility supplies neither timing nor an automatic bearish direction.",
+        "Not every setting lacks measurable probabilities or useful stable feedback.",
+        "Insurance, convexity and persistent hedging can have material costs."
+      ],
+      "contradictory_frameworks": [
+        "graham",
+        "dalio",
+        "kahneman",
+        "institutions"
+      ],
+      "observable_data_needed": [
+        "Model version, training/sample boundaries, selection exclusions and pre-event assumptions.",
+        "Documented failures, omitted comparators and counterexamples with availability timestamps."
+      ],
+      "disregard_conditions": [
+        "Disregard a trade direction derived solely from the possibility of an extreme event.",
+        "Disregard a numerical tail probability unsupported by a calibrated distribution and sample."
+      ],
+      "source_provenance": [
+        {
+          "source_id": "five-books-comparative-pdf",
+          "source_type": "secondary-synthesis",
+          "title": "Five Books Comparative Analysis — supplied comparative synthesis",
+          "sha256": "22c1b6d5551ef25f35e1ef6105b2fbde9eae2c1e7bafd09e18b8ef8684ae2850",
+          "pages": [
+            6,
+            13
+          ],
+          "available_at": "2026-10-22T02:09:20.251Z",
+          "original_work_consulted": false
+        }
+      ],
+      "applicability_rules_kind": "strata-inference",
+      "influence_level": 1,
+      "quantitative_signal_weight": 0,
+      "execution_authority": false,
+      "empirical_validation": "not-tested",
+      "required_evidence_topics": [
+        "model-risk"
+      ]
+    },
+    {
+      "concept_id": "taleb:robustness",
+      "framework_id": "taleb",
+      "name": "Robustness under uncertainty",
+      "author": "Nassim Nicholas Taleb",
+      "originating_work": "The Black Swan",
+      "original_claim": "Survivable exposures can matter more than apparent predictive precision.",
+      "claim_kind": "secondary-summary",
+      "mechanism": "Review independently defined loss capacity and sensitivity to gaps or illiquidity.",
+      "relevant_market_conditions": [
+        "Review of leverage, gaps, liquidity, dependence or hidden downside",
+        "Stress testing assumptions and model failure"
+      ],
+      "appropriate_timescales": [
+        "intraday",
+        "multiday",
+        "macro",
+        "investment",
+        "decision-review"
+      ],
+      "relevant_circles": [
+        "market",
+        "expectations",
+        "behaviour"
+      ],
+      "topics": [
+        "tail-risk"
+      ],
+      "supporting_historical_examples": [],
+      "historical_example_status": "not-established-by-supplied-source",
+      "criticisms": [
+        "Extreme-event possibility supplies neither timing nor an automatic bearish direction.",
+        "Not every setting lacks measurable probabilities or useful stable feedback.",
+        "Insurance, convexity and persistent hedging can have material costs."
+      ],
+      "contradictory_frameworks": [
+        "graham",
+        "dalio",
+        "kahneman",
+        "institutions"
+      ],
+      "observable_data_needed": [
+        "Observed exposure, leverage, gap/illiquidity history and dependence across regimes.",
+        "Documented stress-loss and execution-cost assumptions, including hedging drag; no invented tail probabilities."
+      ],
+      "disregard_conditions": [
+        "Disregard a trade direction derived solely from the possibility of an extreme event.",
+        "Disregard a numerical tail probability unsupported by a calibrated distribution and sample."
+      ],
+      "source_provenance": [
+        {
+          "source_id": "five-books-comparative-pdf",
+          "source_type": "secondary-synthesis",
+          "title": "Five Books Comparative Analysis — supplied comparative synthesis",
+          "sha256": "22c1b6d5551ef25f35e1ef6105b2fbde9eae2c1e7bafd09e18b8ef8684ae2850",
+          "pages": [
+            6,
+            13
+          ],
+          "available_at": "2026-10-22T02:09:20.251Z",
+          "original_work_consulted": false
+        }
+      ],
+      "applicability_rules_kind": "strata-inference",
+      "influence_level": 1,
+      "quantitative_signal_weight": 0,
+      "execution_authority": false,
+      "empirical_validation": "not-tested",
+      "required_evidence_topics": [
+        "tail-risk"
+      ]
+    },
+    {
+      "concept_id": "taleb:asymmetry",
+      "framework_id": "taleb",
+      "name": "Asymmetric payoffs",
+      "author": "Nassim Nicholas Taleb",
+      "originating_work": "The Black Swan",
+      "original_claim": "Limited downside and potential upside are different from a high hit rate.",
+      "claim_kind": "secondary-summary",
+      "mechanism": "Inspect actual payoff and costs rather than equating a displayed target with realised asymmetry.",
+      "relevant_market_conditions": [
+        "Review of leverage, gaps, liquidity, dependence or hidden downside",
+        "Stress testing assumptions and model failure"
+      ],
+      "appropriate_timescales": [
+        "intraday",
+        "multiday",
+        "macro",
+        "investment",
+        "decision-review"
+      ],
+      "relevant_circles": [
+        "market",
+        "expectations",
+        "behaviour"
+      ],
+      "topics": [
+        "tail-risk"
+      ],
+      "supporting_historical_examples": [],
+      "historical_example_status": "not-established-by-supplied-source",
+      "criticisms": [
+        "Extreme-event possibility supplies neither timing nor an automatic bearish direction.",
+        "Not every setting lacks measurable probabilities or useful stable feedback.",
+        "Insurance, convexity and persistent hedging can have material costs."
+      ],
+      "contradictory_frameworks": [
+        "graham",
+        "dalio",
+        "kahneman",
+        "institutions"
+      ],
+      "observable_data_needed": [
+        "Observed exposure, leverage, gap/illiquidity history and dependence across regimes.",
+        "Documented stress-loss and execution-cost assumptions, including hedging drag; no invented tail probabilities."
+      ],
+      "disregard_conditions": [
+        "Disregard a trade direction derived solely from the possibility of an extreme event.",
+        "Disregard a numerical tail probability unsupported by a calibrated distribution and sample."
+      ],
+      "source_provenance": [
+        {
+          "source_id": "five-books-comparative-pdf",
+          "source_type": "secondary-synthesis",
+          "title": "Five Books Comparative Analysis — supplied comparative synthesis",
+          "sha256": "22c1b6d5551ef25f35e1ef6105b2fbde9eae2c1e7bafd09e18b8ef8684ae2850",
+          "pages": [
+            6,
+            13
+          ],
+          "available_at": "2026-10-22T02:09:20.251Z",
+          "original_work_consulted": false
+        }
+      ],
+      "applicability_rules_kind": "strata-inference",
+      "influence_level": 1,
+      "quantitative_signal_weight": 0,
+      "execution_authority": false,
+      "empirical_validation": "not-tested",
+      "required_evidence_topics": [
+        "tail-risk"
+      ]
+    },
+    {
+      "concept_id": "taleb:exposure",
+      "framework_id": "taleb",
+      "name": "Tail-risk exposure",
+      "author": "Nassim Nicholas Taleb",
+      "originating_work": "The Black Swan",
+      "original_claim": "Leverage and hidden dependence can create nonlinear loss exposure.",
+      "claim_kind": "secondary-summary",
+      "mechanism": "Inspect actual exposure and stress paths; a calm sample is not proof of safety.",
+      "relevant_market_conditions": [
+        "Review of leverage, gaps, liquidity, dependence or hidden downside",
+        "Stress testing assumptions and model failure"
+      ],
+      "appropriate_timescales": [
+        "intraday",
+        "multiday",
+        "macro",
+        "investment",
+        "decision-review"
+      ],
+      "relevant_circles": [
+        "market",
+        "expectations",
+        "behaviour"
+      ],
+      "topics": [
+        "tail-risk"
+      ],
+      "supporting_historical_examples": [],
+      "historical_example_status": "not-established-by-supplied-source",
+      "criticisms": [
+        "Extreme-event possibility supplies neither timing nor an automatic bearish direction.",
+        "Not every setting lacks measurable probabilities or useful stable feedback.",
+        "Insurance, convexity and persistent hedging can have material costs."
+      ],
+      "contradictory_frameworks": [
+        "graham",
+        "dalio",
+        "kahneman",
+        "institutions"
+      ],
+      "observable_data_needed": [
+        "Observed exposure, leverage, gap/illiquidity history and dependence across regimes.",
+        "Documented stress-loss and execution-cost assumptions, including hedging drag; no invented tail probabilities."
+      ],
+      "disregard_conditions": [
+        "Disregard a trade direction derived solely from the possibility of an extreme event.",
+        "Disregard a numerical tail probability unsupported by a calibrated distribution and sample."
+      ],
+      "source_provenance": [
+        {
+          "source_id": "five-books-comparative-pdf",
+          "source_type": "secondary-synthesis",
+          "title": "Five Books Comparative Analysis — supplied comparative synthesis",
+          "sha256": "22c1b6d5551ef25f35e1ef6105b2fbde9eae2c1e7bafd09e18b8ef8684ae2850",
+          "pages": [
+            6,
+            13
+          ],
+          "available_at": "2026-10-22T02:09:20.251Z",
+          "original_work_consulted": false
+        }
+      ],
+      "applicability_rules_kind": "strata-inference",
+      "influence_level": 1,
+      "quantitative_signal_weight": 0,
+      "execution_authority": false,
+      "empirical_validation": "not-tested",
+      "required_evidence_topics": [
+        "tail-risk"
+      ]
+    },
+    {
+      "concept_id": "institutions:inclusive-extractive",
+      "framework_id": "institutions",
+      "name": "Inclusive and extractive institutions",
+      "author": "Daron Acemoglu & James A. Robinson",
+      "originating_work": "Why Nations Fail",
+      "original_claim": "Rules governing opportunity and power can shape participation and incentives.",
+      "claim_kind": "secondary-summary",
+      "mechanism": "Evaluate documented rights, constraints and access rather than treating a label as a growth forecast.",
+      "relevant_market_conditions": [
+        "Long-horizon country, productivity and political-economy research",
+        "Verified changes in competition, rights, incentives or power"
+      ],
+      "appropriate_timescales": [
+        "macro",
+        "investment"
+      ],
+      "relevant_circles": [
+        "market",
+        "expectations"
+      ],
+      "topics": [
+        "institutions"
+      ],
+      "supporting_historical_examples": [],
+      "historical_example_status": "not-established-by-supplied-source",
+      "criticisms": [
+        "Broad institutional categories can obscure heterogeneity and reverse causality.",
+        "Geography, technology, culture and contingency can offer alternative explanations.",
+        "Long-horizon institutional analysis cannot time an intraday price move."
+      ],
+      "contradictory_frameworks": [
+        "dalio",
+        "taleb",
+        "kahneman"
+      ],
+      "observable_data_needed": [
+        "Dated legal, ownership, rights, enforcement and policy implementation records.",
+        "Comparable country/history evidence and alternative explanations; explicit causal-identification limitations."
+      ],
+      "disregard_conditions": [
+        "Disregard short-term price predictions derived only from institutional labels.",
+        "Disregard causal institutional claims without comparative evidence or where alternatives dominate."
+      ],
+      "source_provenance": [
+        {
+          "source_id": "five-books-comparative-pdf",
+          "source_type": "secondary-synthesis",
+          "title": "Five Books Comparative Analysis — supplied comparative synthesis",
+          "sha256": "22c1b6d5551ef25f35e1ef6105b2fbde9eae2c1e7bafd09e18b8ef8684ae2850",
+          "pages": [
+            7,
+            13
+          ],
+          "available_at": "2026-10-22T02:09:20.251Z",
+          "original_work_consulted": false
+        }
+      ],
+      "applicability_rules_kind": "strata-inference",
+      "influence_level": 1,
+      "quantitative_signal_weight": 0,
+      "execution_authority": false,
+      "empirical_validation": "not-tested",
+      "required_evidence_topics": [
+        "institutions"
+      ]
+    },
+    {
+      "concept_id": "institutions:incentives",
+      "framework_id": "institutions",
+      "name": "Political incentives",
+      "author": "Daron Acemoglu & James A. Robinson",
+      "originating_work": "Why Nations Fail",
+      "original_claim": "Groups may resist economically productive changes that threaten their position.",
+      "claim_kind": "secondary-summary",
+      "mechanism": "Compare policy effects with documented coalitions and interests, without attributing unobserved intent.",
+      "relevant_market_conditions": [
+        "Long-horizon country, productivity and political-economy research",
+        "Verified changes in competition, rights, incentives or power"
+      ],
+      "appropriate_timescales": [
+        "macro",
+        "investment"
+      ],
+      "relevant_circles": [
+        "market",
+        "expectations"
+      ],
+      "topics": [
+        "institutions"
+      ],
+      "supporting_historical_examples": [],
+      "historical_example_status": "not-established-by-supplied-source",
+      "criticisms": [
+        "Broad institutional categories can obscure heterogeneity and reverse causality.",
+        "Geography, technology, culture and contingency can offer alternative explanations.",
+        "Long-horizon institutional analysis cannot time an intraday price move."
+      ],
+      "contradictory_frameworks": [
+        "dalio",
+        "taleb",
+        "kahneman"
+      ],
+      "observable_data_needed": [
+        "Dated legal, ownership, rights, enforcement and policy implementation records.",
+        "Comparable country/history evidence and alternative explanations; explicit causal-identification limitations."
+      ],
+      "disregard_conditions": [
+        "Disregard short-term price predictions derived only from institutional labels.",
+        "Disregard causal institutional claims without comparative evidence or where alternatives dominate."
+      ],
+      "source_provenance": [
+        {
+          "source_id": "five-books-comparative-pdf",
+          "source_type": "secondary-synthesis",
+          "title": "Five Books Comparative Analysis — supplied comparative synthesis",
+          "sha256": "22c1b6d5551ef25f35e1ef6105b2fbde9eae2c1e7bafd09e18b8ef8684ae2850",
+          "pages": [
+            7,
+            13
+          ],
+          "available_at": "2026-10-22T02:09:20.251Z",
+          "original_work_consulted": false
+        }
+      ],
+      "applicability_rules_kind": "strata-inference",
+      "influence_level": 1,
+      "quantitative_signal_weight": 0,
+      "execution_authority": false,
+      "empirical_validation": "not-tested",
+      "required_evidence_topics": [
+        "institutions"
+      ]
+    },
+    {
+      "concept_id": "institutions:persistence",
+      "framework_id": "institutions",
+      "name": "Institutional persistence",
+      "author": "Daron Acemoglu & James A. Robinson",
+      "originating_work": "Why Nations Fail",
+      "original_claim": "Power arrangements and incentives can reinforce inherited rules.",
+      "claim_kind": "secondary-summary",
+      "mechanism": "Use longitudinal institutional evidence and counterexamples to test persistence.",
+      "relevant_market_conditions": [
+        "Long-horizon country, productivity and political-economy research",
+        "Verified changes in competition, rights, incentives or power"
+      ],
+      "appropriate_timescales": [
+        "macro",
+        "investment"
+      ],
+      "relevant_circles": [
+        "market",
+        "expectations"
+      ],
+      "topics": [
+        "institutions"
+      ],
+      "supporting_historical_examples": [],
+      "historical_example_status": "not-established-by-supplied-source",
+      "criticisms": [
+        "Broad institutional categories can obscure heterogeneity and reverse causality.",
+        "Geography, technology, culture and contingency can offer alternative explanations.",
+        "Long-horizon institutional analysis cannot time an intraday price move."
+      ],
+      "contradictory_frameworks": [
+        "dalio",
+        "taleb",
+        "kahneman"
+      ],
+      "observable_data_needed": [
+        "Dated legal, ownership, rights, enforcement and policy implementation records.",
+        "Comparable country/history evidence and alternative explanations; explicit causal-identification limitations."
+      ],
+      "disregard_conditions": [
+        "Disregard short-term price predictions derived only from institutional labels.",
+        "Disregard causal institutional claims without comparative evidence or where alternatives dominate."
+      ],
+      "source_provenance": [
+        {
+          "source_id": "five-books-comparative-pdf",
+          "source_type": "secondary-synthesis",
+          "title": "Five Books Comparative Analysis — supplied comparative synthesis",
+          "sha256": "22c1b6d5551ef25f35e1ef6105b2fbde9eae2c1e7bafd09e18b8ef8684ae2850",
+          "pages": [
+            7,
+            13
+          ],
+          "available_at": "2026-10-22T02:09:20.251Z",
+          "original_work_consulted": false
+        }
+      ],
+      "applicability_rules_kind": "strata-inference",
+      "influence_level": 1,
+      "quantitative_signal_weight": 0,
+      "execution_authority": false,
+      "empirical_validation": "not-tested",
+      "required_evidence_topics": [
+        "institutions"
+      ]
+    },
+    {
+      "concept_id": "institutions:destruction",
+      "framework_id": "institutions",
+      "name": "Creative destruction",
+      "author": "Daron Acemoglu & James A. Robinson",
+      "originating_work": "Why Nations Fail",
+      "original_claim": "Innovation may displace incumbents where rules permit entry and competition.",
+      "claim_kind": "secondary-summary",
+      "mechanism": "Track entry, competition and productivity with alternative technology explanations.",
+      "relevant_market_conditions": [
+        "Long-horizon country, productivity and political-economy research",
+        "Verified changes in competition, rights, incentives or power"
+      ],
+      "appropriate_timescales": [
+        "macro",
+        "investment"
+      ],
+      "relevant_circles": [
+        "market",
+        "expectations"
+      ],
+      "topics": [
+        "innovation"
+      ],
+      "supporting_historical_examples": [],
+      "historical_example_status": "not-established-by-supplied-source",
+      "criticisms": [
+        "Broad institutional categories can obscure heterogeneity and reverse causality.",
+        "Geography, technology, culture and contingency can offer alternative explanations.",
+        "Long-horizon institutional analysis cannot time an intraday price move."
+      ],
+      "contradictory_frameworks": [
+        "dalio",
+        "taleb",
+        "kahneman"
+      ],
+      "observable_data_needed": [
+        "Dated entry/competition, productivity and technology observations with source and units.",
+        "Institutional mechanism and comparison cases that separate competing productivity explanations."
+      ],
+      "disregard_conditions": [
+        "Disregard short-term price predictions derived only from institutional labels.",
+        "Disregard causal institutional claims without comparative evidence or where alternatives dominate."
+      ],
+      "source_provenance": [
+        {
+          "source_id": "five-books-comparative-pdf",
+          "source_type": "secondary-synthesis",
+          "title": "Five Books Comparative Analysis — supplied comparative synthesis",
+          "sha256": "22c1b6d5551ef25f35e1ef6105b2fbde9eae2c1e7bafd09e18b8ef8684ae2850",
+          "pages": [
+            7,
+            13
+          ],
+          "available_at": "2026-10-22T02:09:20.251Z",
+          "original_work_consulted": false
+        }
+      ],
+      "applicability_rules_kind": "strata-inference",
+      "influence_level": 1,
+      "quantitative_signal_weight": 0,
+      "execution_authority": false,
+      "empirical_validation": "not-tested",
+      "required_evidence_topics": [
+        "innovation"
+      ]
+    },
+    {
+      "concept_id": "institutions:concentration",
+      "framework_id": "institutions",
+      "name": "Concentration of political and economic power",
+      "author": "Daron Acemoglu & James A. Robinson",
+      "originating_work": "Why Nations Fail",
+      "original_claim": "Concentrated power may restrict competition or allocate benefits selectively.",
+      "claim_kind": "secondary-summary",
+      "mechanism": "Review ownership, legal constraints and policy evidence rather than ideology.",
+      "relevant_market_conditions": [
+        "Long-horizon country, productivity and political-economy research",
+        "Verified changes in competition, rights, incentives or power"
+      ],
+      "appropriate_timescales": [
+        "macro",
+        "investment"
+      ],
+      "relevant_circles": [
+        "market",
+        "expectations"
+      ],
+      "topics": [
+        "institutions"
+      ],
+      "supporting_historical_examples": [],
+      "historical_example_status": "not-established-by-supplied-source",
+      "criticisms": [
+        "Broad institutional categories can obscure heterogeneity and reverse causality.",
+        "Geography, technology, culture and contingency can offer alternative explanations.",
+        "Long-horizon institutional analysis cannot time an intraday price move."
+      ],
+      "contradictory_frameworks": [
+        "dalio",
+        "taleb",
+        "kahneman"
+      ],
+      "observable_data_needed": [
+        "Dated legal, ownership, rights, enforcement and policy implementation records.",
+        "Comparable country/history evidence and alternative explanations; explicit causal-identification limitations."
+      ],
+      "disregard_conditions": [
+        "Disregard short-term price predictions derived only from institutional labels.",
+        "Disregard causal institutional claims without comparative evidence or where alternatives dominate."
+      ],
+      "source_provenance": [
+        {
+          "source_id": "five-books-comparative-pdf",
+          "source_type": "secondary-synthesis",
+          "title": "Five Books Comparative Analysis — supplied comparative synthesis",
+          "sha256": "22c1b6d5551ef25f35e1ef6105b2fbde9eae2c1e7bafd09e18b8ef8684ae2850",
+          "pages": [
+            7,
+            13
+          ],
+          "available_at": "2026-10-22T02:09:20.251Z",
+          "original_work_consulted": false
+        }
+      ],
+      "applicability_rules_kind": "strata-inference",
+      "influence_level": 1,
+      "quantitative_signal_weight": 0,
+      "execution_authority": false,
+      "empirical_validation": "not-tested",
+      "required_evidence_topics": [
+        "institutions"
+      ]
+    },
+    {
+      "concept_id": "institutions:reform",
+      "framework_id": "institutions",
+      "name": "Institutional reform",
+      "author": "Daron Acemoglu & James A. Robinson",
+      "originating_work": "Why Nations Fail",
+      "original_claim": "Changes in rules can alter opportunities and incentives.",
+      "claim_kind": "secondary-summary",
+      "mechanism": "Compare enacted reform, implementation and observed outcomes with an appropriate counterfactual.",
+      "relevant_market_conditions": [
+        "Long-horizon country, productivity and political-economy research",
+        "Verified changes in competition, rights, incentives or power"
+      ],
+      "appropriate_timescales": [
+        "macro",
+        "investment"
+      ],
+      "relevant_circles": [
+        "market",
+        "expectations"
+      ],
+      "topics": [
+        "institutions"
+      ],
+      "supporting_historical_examples": [],
+      "historical_example_status": "not-established-by-supplied-source",
+      "criticisms": [
+        "Broad institutional categories can obscure heterogeneity and reverse causality.",
+        "Geography, technology, culture and contingency can offer alternative explanations.",
+        "Long-horizon institutional analysis cannot time an intraday price move."
+      ],
+      "contradictory_frameworks": [
+        "dalio",
+        "taleb",
+        "kahneman"
+      ],
+      "observable_data_needed": [
+        "Dated legal, ownership, rights, enforcement and policy implementation records.",
+        "Comparable country/history evidence and alternative explanations; explicit causal-identification limitations."
+      ],
+      "disregard_conditions": [
+        "Disregard short-term price predictions derived only from institutional labels.",
+        "Disregard causal institutional claims without comparative evidence or where alternatives dominate."
+      ],
+      "source_provenance": [
+        {
+          "source_id": "five-books-comparative-pdf",
+          "source_type": "secondary-synthesis",
+          "title": "Five Books Comparative Analysis — supplied comparative synthesis",
+          "sha256": "22c1b6d5551ef25f35e1ef6105b2fbde9eae2c1e7bafd09e18b8ef8684ae2850",
+          "pages": [
+            7,
+            13
+          ],
+          "available_at": "2026-10-22T02:09:20.251Z",
+          "original_work_consulted": false
+        }
+      ],
+      "applicability_rules_kind": "strata-inference",
+      "influence_level": 1,
+      "quantitative_signal_weight": 0,
+      "execution_authority": false,
+      "empirical_validation": "not-tested",
+      "required_evidence_topics": [
+        "institutions"
+      ]
+    },
+    {
+      "concept_id": "institutions:junctures",
+      "framework_id": "institutions",
+      "name": "Critical historical junctures",
+      "author": "Daron Acemoglu & James A. Robinson",
+      "originating_work": "Why Nations Fail",
+      "original_claim": "Crises can interact with inherited institutions to produce divergent paths.",
+      "claim_kind": "secondary-summary",
+      "mechanism": "Use dated comparative cases; historical storytelling alone does not identify causality.",
+      "relevant_market_conditions": [
+        "Long-horizon country, productivity and political-economy research",
+        "Verified changes in competition, rights, incentives or power"
+      ],
+      "appropriate_timescales": [
+        "macro",
+        "investment"
+      ],
+      "relevant_circles": [
+        "market",
+        "expectations"
+      ],
+      "topics": [
+        "institutions"
+      ],
+      "supporting_historical_examples": [],
+      "historical_example_status": "not-established-by-supplied-source",
+      "criticisms": [
+        "Broad institutional categories can obscure heterogeneity and reverse causality.",
+        "Geography, technology, culture and contingency can offer alternative explanations.",
+        "Long-horizon institutional analysis cannot time an intraday price move."
+      ],
+      "contradictory_frameworks": [
+        "dalio",
+        "taleb",
+        "kahneman"
+      ],
+      "observable_data_needed": [
+        "Dated legal, ownership, rights, enforcement and policy implementation records.",
+        "Comparable country/history evidence and alternative explanations; explicit causal-identification limitations."
+      ],
+      "disregard_conditions": [
+        "Disregard short-term price predictions derived only from institutional labels.",
+        "Disregard causal institutional claims without comparative evidence or where alternatives dominate."
+      ],
+      "source_provenance": [
+        {
+          "source_id": "five-books-comparative-pdf",
+          "source_type": "secondary-synthesis",
+          "title": "Five Books Comparative Analysis — supplied comparative synthesis",
+          "sha256": "22c1b6d5551ef25f35e1ef6105b2fbde9eae2c1e7bafd09e18b8ef8684ae2850",
+          "pages": [
+            7,
+            13
+          ],
+          "available_at": "2026-10-22T02:09:20.251Z",
+          "original_work_consulted": false
+        }
+      ],
+      "applicability_rules_kind": "strata-inference",
+      "influence_level": 1,
+      "quantitative_signal_weight": 0,
+      "execution_authority": false,
+      "empirical_validation": "not-tested",
+      "required_evidence_topics": [
+        "institutions"
+      ]
+    },
+    {
+      "concept_id": "institutions:productivity",
+      "framework_id": "institutions",
+      "name": "Long-term productivity",
+      "author": "Daron Acemoglu & James A. Robinson",
+      "originating_work": "Why Nations Fail",
+      "original_claim": "Institutional incentives may contribute to long-run innovation and growth.",
+      "claim_kind": "secondary-summary",
+      "mechanism": "Compare productivity and incentive evidence while considering competing causes.",
+      "relevant_market_conditions": [
+        "Long-horizon country, productivity and political-economy research",
+        "Verified changes in competition, rights, incentives or power"
+      ],
+      "appropriate_timescales": [
+        "macro",
+        "investment"
+      ],
+      "relevant_circles": [
+        "market",
+        "expectations"
+      ],
+      "topics": [
+        "innovation"
+      ],
+      "supporting_historical_examples": [],
+      "historical_example_status": "not-established-by-supplied-source",
+      "criticisms": [
+        "Broad institutional categories can obscure heterogeneity and reverse causality.",
+        "Geography, technology, culture and contingency can offer alternative explanations.",
+        "Long-horizon institutional analysis cannot time an intraday price move."
+      ],
+      "contradictory_frameworks": [
+        "dalio",
+        "taleb",
+        "kahneman"
+      ],
+      "observable_data_needed": [
+        "Dated entry/competition, productivity and technology observations with source and units.",
+        "Institutional mechanism and comparison cases that separate competing productivity explanations."
+      ],
+      "disregard_conditions": [
+        "Disregard short-term price predictions derived only from institutional labels.",
+        "Disregard causal institutional claims without comparative evidence or where alternatives dominate."
+      ],
+      "source_provenance": [
+        {
+          "source_id": "five-books-comparative-pdf",
+          "source_type": "secondary-synthesis",
+          "title": "Five Books Comparative Analysis — supplied comparative synthesis",
+          "sha256": "22c1b6d5551ef25f35e1ef6105b2fbde9eae2c1e7bafd09e18b8ef8684ae2850",
+          "pages": [
+            7,
+            13
+          ],
+          "available_at": "2026-10-22T02:09:20.251Z",
+          "original_work_consulted": false
+        }
+      ],
+      "applicability_rules_kind": "strata-inference",
+      "influence_level": 1,
+      "quantitative_signal_weight": 0,
+      "execution_authority": false,
+      "empirical_validation": "not-tested",
+      "required_evidence_topics": [
+        "innovation"
+      ]
+    }
+  ]
+}

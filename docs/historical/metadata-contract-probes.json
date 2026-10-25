@@ -1,0 +1,210 @@
+{
+  "schemaVersion": "strata.historical-contract-research.v1",
+  "researchDate": "2026-10-21",
+  "scope": "Bounded read-only chat-native capability and metadata research. Existing owner selection: Live GBP spread-betting account. No broker writes, price-history re-download, purchases, deployment, hosted integration or app changes.",
+  "sourceObservationTime": null,
+  "recordingNote": "Metadata read occurred before the recorded 2026-10-21 12:35:16 UTC clock check; the provider did not return metadata observation times. No precise receipt time is fabricated.",
+  "capabilitySource": "cmc://tool/get_price_history",
+  "capabilityFindings": {
+    "dateOnlyRequestBounds": "from becomes start of day UTC; to becomes end of day UTC",
+    "oneDayIntervalAvailable": true,
+    "priceFields": [
+      "bid OHLC",
+      "ask OHLC",
+      "mid OHLC"
+    ],
+    "sourceTimestampDescription": "Source timestamp for the OHLC point",
+    "barOpenCloseAnchoring": "not specified",
+    "closedFlag": "not exposed",
+    "dailySessionBoundary": "not specified",
+    "historicalTradingCalendar": "not exposed by discovered tool schema",
+    "historicalCarryRateSeries": "not exposed by discovered tool schema",
+    "livePricing": "disabled; delayed price route declared 15 minutes"
+  },
+  "metadataProbes": [
+    {
+      "action": "get_products",
+      "request": {
+        "product": "Silver - Cash",
+        "publicProductType": "SB",
+        "fields": [
+          "financialConfiguration",
+          "tradingHours"
+        ],
+        "timezone": "Europe/London",
+        "includeCurrentSession": true,
+        "typicalTradingHours": false
+      },
+      "sourceObservedAt": null,
+      "returnedTimezone": "Europe/London",
+      "products": [
+        {
+          "publicProductType": "SB",
+          "holdingCosts": {
+            "buy": null,
+            "sell": null,
+            "effective_at": null,
+            "status": "not_applicable"
+          },
+          "conversion": {
+            "conversion_factor_to_units": "158.73015873",
+            "fractional_part_ratio": null,
+            "lot_size": null,
+            "point_multiplier": 100,
+            "price_number_of_decimals": 3,
+            "quantity_number_of_decimals": 2,
+            "status": "available"
+          },
+          "tradeSize": {
+            "minimum": "5.00",
+            "maximum": "120000.00",
+            "status": "available"
+          },
+          "tradingHours": [
+            {
+              "open_time": "2026-10-19T23:00:00.000",
+              "close_time": "2026-10-20T22:00:00.000"
+            },
+            {
+              "open_time": "2026-10-20T23:00:00.000",
+              "close_time": "2026-10-21T22:00:00.000"
+            },
+            {
+              "open_time": "2026-10-21T23:00:00.000",
+              "close_time": "2026-10-22T22:00:00.000"
+            },
+            {
+              "open_time": "2026-10-22T23:00:00.000",
+              "close_time": "2026-10-23T22:00:00.000"
+            },
+            {
+              "open_time": "2026-10-25T22:00:00.000",
+              "close_time": "2026-10-26T21:00:00.000"
+            },
+            {
+              "open_time": "2026-10-26T22:00:00.000",
+              "close_time": "2026-10-27T21:00:00.000"
+            },
+            {
+              "open_time": "2026-10-27T22:00:00.000",
+              "close_time": "2026-10-28T21:00:00.000"
+            },
+            {
+              "open_time": "2026-10-28T22:00:00.000",
+              "close_time": "2026-10-29T21:00:00.000"
+            },
+            {
+              "open_time": "2026-10-29T22:00:00.000",
+              "close_time": "2026-10-30T21:00:00.000"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "action": "get_products",
+      "request": {
+        "product": "Silver - Cash",
+        "publicProductType": "SB",
+        "fields": [
+          "financialConfiguration",
+          "tradingHours"
+        ],
+        "timezone": "Europe/London",
+        "includeCurrentSession": true,
+        "typicalTradingHours": true
+      },
+      "sourceObservedAt": null,
+      "returnedTimezone": "Europe/London",
+      "products": [
+        {
+          "publicProductType": "SB",
+          "holdingCosts": {
+            "buy": null,
+            "sell": null,
+            "effective_at": null,
+            "status": "not_applicable"
+          },
+          "conversion": {
+            "conversion_factor_to_units": "158.73015873",
+            "fractional_part_ratio": null,
+            "lot_size": null,
+            "point_multiplier": 100,
+            "price_number_of_decimals": 3,
+            "quantity_number_of_decimals": 2,
+            "status": "available"
+          },
+          "tradeSize": {
+            "minimum": "5.00",
+            "maximum": "120000.00",
+            "status": "available"
+          },
+          "tradingHours": [
+            {
+              "open_time": "2026-10-18T18:00:00.000",
+              "close_time": "2026-10-19T17:00:00.000"
+            },
+            {
+              "open_time": "2026-10-19T18:00:00.000",
+              "close_time": "2026-10-20T17:00:00.000"
+            },
+            {
+              "open_time": "2026-10-20T18:00:00.000",
+              "close_time": "2026-10-21T17:00:00.000"
+            },
+            {
+              "open_time": "2026-10-21T18:00:00.000",
+              "close_time": "2026-10-22T17:00:00.000"
+            },
+            {
+              "open_time": "2026-10-22T18:00:00.000",
+              "close_time": "2026-10-23T17:00:00.000"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "conflicts": [
+    {
+      "id": "silver-session-timezone",
+      "detail": "Same Europe/London request/response timezone: current/upcoming Oct20 23:00 to Oct21 22:00; typical Oct20 18:00 to Oct21 17:00. Five-hour mismatch. Both timestamp strings lack UTC offsets. No correction inferred."
+    },
+    {
+      "id": "silver-carry",
+      "detail": "Silver holdingCosts status not_applicable with null buy/sell/effectiveAt; cannot supply historical rates or prove historical cash carry was zero. Public CMC spread-bet costs documentation describes cash-commodity carry and historical rates on platform."
+    }
+  ],
+  "existingAuditVerification": {
+    "file": "cmc-daily-research.json",
+    "series": [
+      {
+        "name": "GBP/USD",
+        "rows": 727,
+        "bidAskMidRows": 727
+      },
+      {
+        "name": "Silver - Cash",
+        "rows": 723,
+        "bidAskMidRows": 723
+      },
+      {
+        "name": "US NDAQ 100 - Cash",
+        "rows": 722,
+        "bidAskMidRows": 722
+      }
+    ],
+    "firstSourceTimestamp": "2024-01-02T00:00:00Z",
+    "lastSourceTimestamp": "2026-10-20T00:00:00Z",
+    "closedFlagCount": 0,
+    "warning": "Mid returns omit execution spread/carry. OHLC extrema on bid and ask are not synchronized ticks; no historical fill/slippage model was validated."
+  },
+  "unresolved": [
+    "Authoritative per-interval timestamp anchoring and closure",
+    "Historical exchange/broker calendar, exceptions, DST and session cutoff",
+    "Typical/upcoming timezone conflict",
+    "Historical bid/ask quote timing, costs, carry, rollover/cash adjustments and slippage",
+    "Per-release first-vintage actuals and exact publication time",
+    "Archived pre-release market consensus, provider vintage, deadline, contributors and licensing"
+  ]
+}

@@ -1,0 +1,1240 @@
+{
+  "baselineCommit": "bedbe6bf54e1f89adb6a5ff5460ad814d7f15446",
+  "capturedAt": "2026-10-21T17:45:25.043Z",
+  "accountScope": "Previously selected Live GBP spread betting; no broker writes",
+  "products": [
+    {
+      "query": "Gold - Cash",
+      "matches": [
+        {
+          "display_name": "Gold - Cash",
+          "product_key": "CFD:A-AUMK",
+          "instrument_id": "A-AUMK",
+          "product_type": "SB",
+          "ticker": "GC",
+          "currency": "USD",
+          "exchange": "",
+          "exchange_timezone": "America/New_York",
+          "asset_class": "Commodities",
+          "asset_class_code": "A-BCEV",
+          "asset_sector": "Precious Metals",
+          "asset_sector_code": "A-H",
+          "country": "Global",
+          "country_code": "ZZ",
+          "region": "Global",
+          "trading_view": {
+            "code": "GOLD",
+            "description": "Gold - Cash, Gold Spot, XAU, XAU/USD, Precious Metal, Bullion, COMEX Gold",
+            "group": "Commodities"
+          },
+          "label": "Gold - Cash"
+        },
+        {
+          "display_name": "Gold Weekend (rolls into Gold - Cash at close)",
+          "product_key": "CFD:X-BSOOH",
+          "instrument_id": "X-BSOOH",
+          "product_type": "SB",
+          "ticker": "",
+          "currency": "USD",
+          "exchange": "",
+          "exchange_timezone": "America/New_York",
+          "asset_class": "Commodities",
+          "asset_class_code": "A-BCEV",
+          "asset_sector": "Precious Metals",
+          "asset_sector_code": "A-H",
+          "country": "Global",
+          "country_code": "ZZ",
+          "region": "Global",
+          "label": "Gold Weekend (rolls into Gold - Cash at close)"
+        }
+      ],
+      "page_info": {
+        "page": 1,
+        "pageSize": 100
+      },
+      "products_summary": {
+        "assetClass": [
+          {
+            "code": "A-BCEV",
+            "name": "Commodities",
+            "instrumentsCount": 2,
+            "productsCount": 2
+          }
+        ],
+        "assetSector": [
+          {
+            "code": "A-H",
+            "name": "Precious Metals",
+            "instrumentsCount": 2,
+            "productsCount": 2
+          }
+        ],
+        "country": [
+          {
+            "code": "ZZ",
+            "name": "Global",
+            "instrumentsCount": 2,
+            "productsCount": 2
+          }
+        ],
+        "productType": [
+          {
+            "code": "CFD",
+            "name": "CFD",
+            "instrumentsCount": 2,
+            "productsCount": 2,
+            "summaries": [
+              {
+                "code": "CFD",
+                "name": "isCFDCash",
+                "instrumentsCount": 2,
+                "productsCount": 2
+              },
+              {
+                "code": "CFD",
+                "name": "isCFDForwards",
+                "instrumentsCount": 0,
+                "productsCount": 0
+              }
+            ]
+          }
+        ],
+        "region": [
+          {
+            "code": "0",
+            "name": "Global",
+            "instrumentsCount": 2,
+            "productsCount": 2
+          }
+        ],
+        "totalCount": 2,
+        "totalProductsCount": 2
+      },
+      "search_metadata": {
+        "page": 1,
+        "page_size": 100,
+        "total_instruments": 2,
+        "total_products": 2,
+        "continuation_state": {
+          "has_next_page": false
+        },
+        "applied_filters": {
+          "query": "Gold - Cash",
+          "product_types": [
+            "SB"
+          ]
+        }
+      }
+    },
+    {
+      "query": "Silver - Cash",
+      "matches": [
+        {
+          "display_name": "Silver - Cash",
+          "product_key": "CFD:K-GWOT",
+          "instrument_id": "K-GWOT",
+          "product_type": "SB",
+          "ticker": "SI",
+          "currency": "USD",
+          "exchange": "",
+          "exchange_timezone": "America/New_York",
+          "asset_class": "Commodities",
+          "asset_class_code": "A-BCEV",
+          "asset_sector": "Precious Metals",
+          "asset_sector_code": "A-H",
+          "country": "Global",
+          "country_code": "ZZ",
+          "region": "Global",
+          "trading_view": {
+            "code": "SILVER",
+            "description": "Silver - Cash, Silver Spot, XAG, XAG/USD, Precious Metal, Bullion, COMEX Silver",
+            "group": "Commodities"
+          },
+          "label": "Silver - Cash"
+        }
+      ],
+      "page_info": {
+        "page": 1,
+        "pageSize": 100
+      },
+      "products_summary": {
+        "assetClass": [
+          {
+            "code": "A-BCEV",
+            "name": "Commodities",
+            "instrumentsCount": 1,
+            "productsCount": 1
+          }
+        ],
+        "assetSector": [
+          {
+            "code": "A-H",
+            "name": "Precious Metals",
+            "instrumentsCount": 1,
+            "productsCount": 1
+          }
+        ],
+        "country": [
+          {
+            "code": "ZZ",
+            "name": "Global",
+            "instrumentsCount": 1,
+            "productsCount": 1
+          }
+        ],
+        "productType": [
+          {
+            "code": "CFD",
+            "name": "CFD",
+            "instrumentsCount": 1,
+            "productsCount": 1,
+            "summaries": [
+              {
+                "code": "CFD",
+                "name": "isCFDCash",
+                "instrumentsCount": 1,
+                "productsCount": 1
+              },
+              {
+                "code": "CFD",
+                "name": "isCFDForwards",
+                "instrumentsCount": 0,
+                "productsCount": 0
+              }
+            ]
+          }
+        ],
+        "region": [
+          {
+            "code": "0",
+            "name": "Global",
+            "instrumentsCount": 1,
+            "productsCount": 1
+          }
+        ],
+        "totalCount": 1,
+        "totalProductsCount": 1
+      },
+      "search_metadata": {
+        "page": 1,
+        "page_size": 100,
+        "total_instruments": 1,
+        "total_products": 1,
+        "continuation_state": {
+          "has_next_page": false
+        },
+        "applied_filters": {
+          "query": "Silver - Cash",
+          "product_types": [
+            "SB"
+          ]
+        }
+      }
+    },
+    {
+      "query": "US NDAQ 100 - Cash",
+      "matches": [
+        {
+          "display_name": "US NDAQ 100 - Cash",
+          "product_key": "CFD:A-AUNH",
+          "instrument_id": "A-AUNH",
+          "product_type": "SB",
+          "ticker": "NDX",
+          "currency": "USD",
+          "exchange": "CME",
+          "exchange_timezone": "America/Chicago",
+          "asset_class": "Indices",
+          "asset_class_code": "A-BCFA",
+          "asset_sector": "Developed Markets",
+          "asset_sector_code": "A-AK",
+          "country": "US",
+          "country_code": "US",
+          "region": "America",
+          "trading_view": {
+            "code": "NDAQ100",
+            "description": "US NDAQ 100 - Cash, Nasdaq 100, NDX, Nasdaq, US Tech 100, US100",
+            "group": "Indices"
+          },
+          "label": "US NDAQ 100 - Cash"
+        }
+      ],
+      "page_info": {
+        "page": 1,
+        "pageSize": 100
+      },
+      "products_summary": {
+        "assetClass": [
+          {
+            "code": "A-BCFA",
+            "name": "Indices",
+            "instrumentsCount": 1,
+            "productsCount": 1
+          }
+        ],
+        "assetSector": [
+          {
+            "code": "A-AK",
+            "name": "Developed Markets",
+            "instrumentsCount": 1,
+            "productsCount": 1
+          }
+        ],
+        "country": [
+          {
+            "code": "US",
+            "name": "US",
+            "instrumentsCount": 1,
+            "productsCount": 1
+          }
+        ],
+        "productType": [
+          {
+            "code": "CFD",
+            "name": "CFD",
+            "instrumentsCount": 1,
+            "productsCount": 1,
+            "summaries": [
+              {
+                "code": "CFD",
+                "name": "isCFDCash",
+                "instrumentsCount": 1,
+                "productsCount": 1
+              },
+              {
+                "code": "CFD",
+                "name": "isCFDForwards",
+                "instrumentsCount": 0,
+                "productsCount": 0
+              }
+            ]
+          }
+        ],
+        "region": [
+          {
+            "code": "105",
+            "name": "America",
+            "instrumentsCount": 1,
+            "productsCount": 1
+          }
+        ],
+        "totalCount": 1,
+        "totalProductsCount": 1
+      },
+      "search_metadata": {
+        "page": 1,
+        "page_size": 100,
+        "total_instruments": 1,
+        "total_products": 1,
+        "continuation_state": {
+          "has_next_page": false
+        },
+        "applied_filters": {
+          "query": "US NDAQ 100 - Cash",
+          "product_types": [
+            "SB"
+          ]
+        }
+      }
+    },
+    {
+      "query": "Sugar Raw - Cash",
+      "matches": [],
+      "page_info": {
+        "page": 1,
+        "pageSize": 100
+      },
+      "products_summary": {
+        "assetClass": [],
+        "assetSector": [],
+        "country": [],
+        "productType": [],
+        "region": [],
+        "totalCount": 0,
+        "totalProductsCount": 0
+      },
+      "search_metadata": {
+        "page": 1,
+        "page_size": 100,
+        "total_instruments": 0,
+        "total_products": 0,
+        "continuation_state": {
+          "has_next_page": false
+        },
+        "applied_filters": {
+          "query": "Sugar Raw - Cash",
+          "product_types": [
+            "SB"
+          ]
+        }
+      }
+    },
+    {
+      "query": "Crude Oil - Cash",
+      "matches": [],
+      "page_info": {
+        "page": 1,
+        "pageSize": 100
+      },
+      "products_summary": {
+        "assetClass": [],
+        "assetSector": [],
+        "country": [],
+        "productType": [],
+        "region": [],
+        "totalCount": 0,
+        "totalProductsCount": 0
+      },
+      "search_metadata": {
+        "page": 1,
+        "page_size": 100,
+        "total_instruments": 0,
+        "total_products": 0,
+        "continuation_state": {
+          "has_next_page": false
+        },
+        "applied_filters": {
+          "query": "Crude Oil - Cash",
+          "product_types": [
+            "SB"
+          ]
+        }
+      }
+    }
+  ],
+  "broaderSearches": [
+    {
+      "matches": [
+        {
+          "display_name": "Ensuiko Sugar Refining Co",
+          "product_key": "CFD:X-CHMLD",
+          "instrument_id": "X-CHMLD",
+          "product_type": "SB",
+          "ticker": "2112",
+          "currency": "JPY",
+          "exchange": "JPX",
+          "exchange_timezone": "Asia/Tokyo",
+          "asset_class": "Shares",
+          "asset_class_code": "A-BCFC",
+          "asset_sector": "None",
+          "asset_sector_code": "None",
+          "country": "Japan",
+          "country_code": "JP",
+          "region": "Asia",
+          "label": "Ensuiko Sugar Refining Co"
+        },
+        {
+          "display_name": "Mitsui DM Sugar Co Ltd",
+          "product_key": "CFD:X-JQVN",
+          "instrument_id": "X-JQVN",
+          "product_type": "SB",
+          "ticker": "2109",
+          "currency": "JPY",
+          "exchange": "JPX",
+          "exchange_timezone": "Asia/Tokyo",
+          "asset_class": "Shares",
+          "asset_class_code": "A-BCFC",
+          "asset_sector": "None",
+          "asset_sector_code": "None",
+          "country": "Japan",
+          "country_code": "JP",
+          "region": "Asia",
+          "trading_view": {
+            "code": "TKS_2109",
+            "description": "Mitsui DM Sugar Co Ltd, 2109, Mitsui DM Sugar Co Ltd T, 2109 JP, TKS_2109",
+            "group": "Shares_APAC"
+          },
+          "label": "Mitsui DM Sugar Co Ltd"
+        },
+        {
+          "display_name": "Nitten Co Ltd",
+          "product_key": "CFD:X-JQQM",
+          "instrument_id": "X-JQQM",
+          "product_type": "SB",
+          "ticker": "2108",
+          "currency": "JPY",
+          "exchange": "JPX",
+          "exchange_timezone": "Asia/Tokyo",
+          "asset_class": "Shares",
+          "asset_class_code": "A-BCFC",
+          "asset_sector": "Food & Staples",
+          "asset_sector_code": "A-Y",
+          "country": "Japan",
+          "country_code": "JP",
+          "region": "Asia",
+          "trading_view": {
+            "code": "TKS_2108",
+            "description": "Nippon Beet Sugar Manufacturing Co Ltd, 2108, Nippon Beet Sugar Manufacturing Co Ltd T, 2108 JP, TKS_2108",
+            "group": "Shares_APAC"
+          },
+          "label": "Nitten Co Ltd"
+        },
+        {
+          "display_name": "Rogers Sugar Inc",
+          "product_key": "CFD:X-GPEL",
+          "instrument_id": "X-GPEL",
+          "product_type": "SB",
+          "ticker": "RSI",
+          "currency": "CAD",
+          "exchange": "TSX",
+          "exchange_timezone": "America/New_York",
+          "asset_class": "Shares",
+          "asset_class_code": "A-BCFC",
+          "asset_sector": "Food & Staples",
+          "asset_sector_code": "A-Y",
+          "country": "Canada",
+          "country_code": "CA",
+          "region": "America",
+          "trading_view": {
+            "code": "TSX_RSI",
+            "description": "Rogers Sugar Inc, RSI, Rogers Sugar Inc TO, RSI CN, TSX_RSI",
+            "group": "Shares_North_America"
+          },
+          "label": "Rogers Sugar Inc"
+        }
+      ],
+      "page_info": {
+        "page": 1,
+        "pageSize": 100
+      },
+      "products_summary": {
+        "assetClass": [
+          {
+            "code": "A-BCFC",
+            "name": "Shares",
+            "instrumentsCount": 4,
+            "productsCount": 4
+          }
+        ],
+        "assetSector": [
+          {
+            "code": "A-Y",
+            "name": "Food & Staples",
+            "instrumentsCount": 2,
+            "productsCount": 2
+          },
+          {
+            "code": "",
+            "name": "None",
+            "instrumentsCount": 2,
+            "productsCount": 2
+          }
+        ],
+        "country": [
+          {
+            "code": "CA",
+            "name": "Canada",
+            "instrumentsCount": 1,
+            "productsCount": 1
+          },
+          {
+            "code": "JP",
+            "name": "Japan",
+            "instrumentsCount": 3,
+            "productsCount": 3
+          }
+        ],
+        "productType": [
+          {
+            "code": "CFD",
+            "name": "CFD",
+            "instrumentsCount": 4,
+            "productsCount": 4,
+            "summaries": [
+              {
+                "code": "CFD",
+                "name": "isCFDCash",
+                "instrumentsCount": 4,
+                "productsCount": 4
+              },
+              {
+                "code": "CFD",
+                "name": "isCFDForwards",
+                "instrumentsCount": 0,
+                "productsCount": 0
+              }
+            ]
+          }
+        ],
+        "region": [
+          {
+            "code": "105",
+            "name": "America",
+            "instrumentsCount": 1,
+            "productsCount": 1
+          },
+          {
+            "code": "103",
+            "name": "Asia",
+            "instrumentsCount": 3,
+            "productsCount": 3
+          }
+        ],
+        "totalCount": 4,
+        "totalProductsCount": 4
+      },
+      "search_metadata": {
+        "page": 1,
+        "page_size": 100,
+        "total_instruments": 4,
+        "total_products": 4,
+        "continuation_state": {
+          "has_next_page": false
+        },
+        "applied_filters": {
+          "query": "Sugar",
+          "product_types": [
+            "SB"
+          ],
+          "is_cfd_cash": true,
+          "is_cfd_forwards": false
+        }
+      }
+    },
+    {
+      "matches": [
+        {
+          "display_name": "ETFS WTI Crude Oil",
+          "product_key": "CFD:X-JOJN",
+          "instrument_id": "X-JOJN",
+          "product_type": "SB",
+          "ticker": "CRUD",
+          "currency": "USD",
+          "exchange": "LSE",
+          "exchange_timezone": "Europe/London",
+          "asset_class": "ETFs",
+          "asset_class_code": "X-ALRMB",
+          "asset_sector": "Commodity",
+          "asset_sector_code": "X-AESFW",
+          "country": "UK",
+          "country_code": "GB",
+          "region": "Europe",
+          "trading_view": {
+            "code": "LSE_CRUD",
+            "description": "ETFS WTI Crude Oil",
+            "group": "Shares_Europe"
+          },
+          "label": "ETFS WTI Crude Oil"
+        },
+        {
+          "display_name": "NEXT FUNDS NOMURA Crude Oil Long Index Linked Exchange Traded Fund",
+          "product_key": "CFD:X-NGMM",
+          "instrument_id": "X-NGMM",
+          "product_type": "SB",
+          "ticker": "1699",
+          "currency": "JPY",
+          "exchange": "JPX",
+          "exchange_timezone": "Asia/Tokyo",
+          "asset_class": "ETFs",
+          "asset_class_code": "X-ALRMB",
+          "asset_sector": "Commodity",
+          "asset_sector_code": "X-AESFW",
+          "country": "Japan",
+          "country_code": "JP",
+          "region": "Asia",
+          "trading_view": {
+            "code": "TKS_1699",
+            "description": "NEXT FUNDS NOMURA Crude Oil Long Index Linked Exchange Traded Fund",
+            "group": "Shares_APAC"
+          },
+          "label": "NEXT FUNDS NOMURA Crude Oil Long Index Linked Exchange Traded Fund"
+        },
+        {
+          "display_name": "Onyx Spot Return Crude Oil",
+          "product_key": "CFD:X-CRSXO",
+          "instrument_id": "X-CRSXO",
+          "product_type": "SB",
+          "ticker": "OIL",
+          "currency": "USD",
+          "exchange": "LSE",
+          "exchange_timezone": "Europe/London",
+          "asset_class": "ETFs",
+          "asset_class_code": "X-ALRMB",
+          "asset_sector": "Equity",
+          "asset_sector_code": "X-AESFX",
+          "country": "UK",
+          "country_code": "GB",
+          "region": "Europe",
+          "trading_view": {
+            "code": "LSE_OIL",
+            "description": "Alerian Midstream Energy Dividend UCITS ETF Dis (USD)",
+            "group": "Shares_Europe"
+          },
+          "label": "Onyx Spot Return Crude Oil"
+        },
+        {
+          "display_name": "ProShares K-1 Free Crude Oil Strategy ETF",
+          "product_key": "CFD:X-APPGX",
+          "instrument_id": "X-APPGX",
+          "product_type": "SB",
+          "ticker": "OILK",
+          "currency": "USD",
+          "exchange": "CBOE",
+          "exchange_timezone": "America/New_York",
+          "asset_class": "ETFs",
+          "asset_class_code": "X-ALRMB",
+          "asset_sector": "Equity",
+          "asset_sector_code": "X-AESFX",
+          "country": "US",
+          "country_code": "US",
+          "region": "America",
+          "trading_view": {
+            "code": "BZX_OILK",
+            "description": "ProShares K-1 Free Crude Oil Strategy ETF",
+            "group": "Shares_North_America"
+          },
+          "label": "ProShares K-1 Free Crude Oil Strategy ETF"
+        },
+        {
+          "display_name": "WisdomTree Brent Crude Oil - GBP Daily Hedged",
+          "product_key": "CFD:X-BURDB",
+          "instrument_id": "X-BURDB",
+          "product_type": "SB",
+          "ticker": "PBRT",
+          "currency": "GBP",
+          "exchange": "LSE",
+          "exchange_timezone": "Europe/London",
+          "asset_class": "ETFs",
+          "asset_class_code": "X-ALRMB",
+          "asset_sector": "None",
+          "asset_sector_code": "None",
+          "country": "UK",
+          "country_code": "GB",
+          "region": "Europe",
+          "trading_view": {
+            "code": "LSE_PBRT",
+            "description": "",
+            "group": "Shares_Europe"
+          },
+          "label": "WisdomTree Brent Crude Oil - GBP Daily Hedged"
+        },
+        {
+          "display_name": "WisdomTree WTI Crude Oil (DE)",
+          "product_key": "CFD:X-NGCO",
+          "instrument_id": "X-NGCO",
+          "product_type": "SB",
+          "ticker": "OD7F",
+          "currency": "EUR",
+          "exchange": "XETRA",
+          "exchange_timezone": "Europe/Berlin",
+          "asset_class": "ETFs",
+          "asset_class_code": "X-ALRMB",
+          "asset_sector": "Commodity",
+          "asset_sector_code": "X-AESFW",
+          "country": "Germany",
+          "country_code": "DE",
+          "region": "Europe",
+          "trading_view": {
+            "code": "ETR_OD7F",
+            "description": "WisdomTree WTI Crude Oil (DE)",
+            "group": "Shares_Europe"
+          },
+          "label": "WisdomTree WTI Crude Oil (DE)"
+        },
+        {
+          "display_name": "Wt Wti Crude Oil",
+          "product_key": "CFD:X-CJNEJ",
+          "instrument_id": "X-CJNEJ",
+          "product_type": "SB",
+          "ticker": "1690",
+          "currency": "JPY",
+          "exchange": "JPX",
+          "exchange_timezone": "Asia/Tokyo",
+          "asset_class": "ETFs",
+          "asset_class_code": "X-ALRMB",
+          "asset_sector": "Equity",
+          "asset_sector_code": "X-AESFX",
+          "country": "Japan",
+          "country_code": "JP",
+          "region": "Asia",
+          "label": "Wt Wti Crude Oil"
+        },
+        {
+          "display_name": "WTI Crude Oil Price Linked ETF",
+          "product_key": "CFD:X-NGNK",
+          "instrument_id": "X-NGNK",
+          "product_type": "SB",
+          "ticker": "1671",
+          "currency": "JPY",
+          "exchange": "JPX",
+          "exchange_timezone": "Asia/Tokyo",
+          "asset_class": "ETFs",
+          "asset_class_code": "X-ALRMB",
+          "asset_sector": "Commodity",
+          "asset_sector_code": "X-AESFW",
+          "country": "Japan",
+          "country_code": "JP",
+          "region": "Asia",
+          "trading_view": {
+            "code": "TKS_1671",
+            "description": "WTI Crude Oil Price Linked ETF",
+            "group": "Shares_APAC"
+          },
+          "label": "WTI Crude Oil Price Linked ETF"
+        }
+      ],
+      "page_info": {
+        "page": 1,
+        "pageSize": 100
+      },
+      "products_summary": {
+        "assetClass": [
+          {
+            "code": "X-ALRMB",
+            "name": "ETFs",
+            "instrumentsCount": 8,
+            "productsCount": 8
+          }
+        ],
+        "assetSector": [
+          {
+            "code": "X-AESFW",
+            "name": "Commodity",
+            "instrumentsCount": 4,
+            "productsCount": 4
+          },
+          {
+            "code": "X-AESFX",
+            "name": "Equity",
+            "instrumentsCount": 3,
+            "productsCount": 3
+          },
+          {
+            "code": "",
+            "name": "None",
+            "instrumentsCount": 1,
+            "productsCount": 1
+          }
+        ],
+        "country": [
+          {
+            "code": "DE",
+            "name": "Germany",
+            "instrumentsCount": 1,
+            "productsCount": 1
+          },
+          {
+            "code": "JP",
+            "name": "Japan",
+            "instrumentsCount": 3,
+            "productsCount": 3
+          },
+          {
+            "code": "GB",
+            "name": "UK",
+            "instrumentsCount": 3,
+            "productsCount": 3
+          },
+          {
+            "code": "US",
+            "name": "US",
+            "instrumentsCount": 1,
+            "productsCount": 1
+          }
+        ],
+        "productType": [
+          {
+            "code": "CFD",
+            "name": "CFD",
+            "instrumentsCount": 8,
+            "productsCount": 8,
+            "summaries": [
+              {
+                "code": "CFD",
+                "name": "isCFDCash",
+                "instrumentsCount": 8,
+                "productsCount": 8
+              },
+              {
+                "code": "CFD",
+                "name": "isCFDForwards",
+                "instrumentsCount": 0,
+                "productsCount": 0
+              }
+            ]
+          }
+        ],
+        "region": [
+          {
+            "code": "105",
+            "name": "America",
+            "instrumentsCount": 1,
+            "productsCount": 1
+          },
+          {
+            "code": "103",
+            "name": "Asia",
+            "instrumentsCount": 3,
+            "productsCount": 3
+          },
+          {
+            "code": "101",
+            "name": "Europe",
+            "instrumentsCount": 4,
+            "productsCount": 4
+          }
+        ],
+        "totalCount": 8,
+        "totalProductsCount": 8
+      },
+      "search_metadata": {
+        "page": 1,
+        "page_size": 100,
+        "total_instruments": 8,
+        "total_products": 8,
+        "continuation_state": {
+          "has_next_page": false
+        },
+        "applied_filters": {
+          "query": "Crude",
+          "product_types": [
+            "SB"
+          ],
+          "is_cfd_cash": true,
+          "is_cfd_forwards": false
+        }
+      }
+    }
+  ],
+  "sessions": {
+    "products": [
+      {
+        "product_key": "CFD:A-AUMK",
+        "product_type": "SB",
+        "trading_hours": [
+          {
+            "open_time": "2026-10-20T18:00:02.000",
+            "close_time": "2026-10-21T16:59:58.000"
+          },
+          {
+            "open_time": "2026-10-21T18:00:02.000",
+            "close_time": "2026-10-22T16:59:58.000"
+          },
+          {
+            "open_time": "2026-10-22T18:00:02.000",
+            "close_time": "2026-10-23T16:59:58.000"
+          },
+          {
+            "open_time": "2026-10-25T17:00:02.000",
+            "close_time": "2026-10-26T15:59:58.000"
+          },
+          {
+            "open_time": "2026-10-26T17:00:02.000",
+            "close_time": "2026-10-27T15:59:58.000"
+          },
+          {
+            "open_time": "2026-10-27T17:00:02.000",
+            "close_time": "2026-10-28T15:59:58.000"
+          }
+        ],
+        "trade_size": {
+          "minimum": "0.100",
+          "maximum": "7500.000",
+          "status": "available"
+        },
+        "margin_rates": {
+          "tiers": [
+            {
+              "from": "0",
+              "to": "9223372036854775807",
+              "margin_rate": "100"
+            }
+          ],
+          "status": "available"
+        },
+        "holding_costs": {
+          "buy": null,
+          "sell": null,
+          "effective_at": null,
+          "status": "not_applicable"
+        },
+        "conversion": {
+          "conversion_factor_to_units": "1.58730159",
+          "fractional_part_ratio": null,
+          "lot_size": null,
+          "point_multiplier": 1,
+          "price_number_of_decimals": 2,
+          "quantity_number_of_decimals": 3,
+          "status": "available"
+        }
+      },
+      {
+        "product_key": "CFD:K-GWOT",
+        "product_type": "SB",
+        "trading_hours": [
+          {
+            "open_time": "2026-10-21T18:00:00.000",
+            "close_time": "2026-10-22T17:00:00.000"
+          },
+          {
+            "open_time": "2026-10-22T18:00:00.000",
+            "close_time": "2026-10-23T17:00:00.000"
+          },
+          {
+            "open_time": "2026-10-25T17:00:00.000",
+            "close_time": "2026-10-26T16:00:00.000"
+          },
+          {
+            "open_time": "2026-10-26T17:00:00.000",
+            "close_time": "2026-10-27T16:00:00.000"
+          },
+          {
+            "open_time": "2026-10-27T17:00:00.000",
+            "close_time": "2026-10-28T16:00:00.000"
+          }
+        ],
+        "trade_size": {
+          "minimum": "5.00",
+          "maximum": "120000.00",
+          "status": "available"
+        },
+        "margin_rates": {
+          "tiers": [
+            {
+              "from": "0",
+              "to": "9223372036854775807",
+              "margin_rate": "100"
+            }
+          ],
+          "status": "available"
+        },
+        "holding_costs": {
+          "buy": null,
+          "sell": null,
+          "effective_at": null,
+          "status": "not_applicable"
+        },
+        "conversion": {
+          "conversion_factor_to_units": "158.73015873",
+          "fractional_part_ratio": null,
+          "lot_size": null,
+          "point_multiplier": 100,
+          "price_number_of_decimals": 3,
+          "quantity_number_of_decimals": 2,
+          "status": "available"
+        }
+      },
+      {
+        "product_key": "CFD:A-AUNH",
+        "product_type": "SB",
+        "trading_hours": [
+          {
+            "open_time": "2026-10-20T17:00:00.000",
+            "close_time": "2026-10-21T16:59:00.000"
+          },
+          {
+            "open_time": "2026-10-21T17:00:00.000",
+            "close_time": "2026-10-22T16:59:00.000"
+          },
+          {
+            "open_time": "2026-10-22T17:00:00.000",
+            "close_time": "2026-10-23T16:00:00.000"
+          },
+          {
+            "open_time": "2026-10-25T16:00:00.000",
+            "close_time": "2026-10-26T15:59:00.000"
+          },
+          {
+            "open_time": "2026-10-26T16:00:00.000",
+            "close_time": "2026-10-27T15:59:00.000"
+          },
+          {
+            "open_time": "2026-10-27T16:00:00.000",
+            "close_time": "2026-10-28T15:59:00.000"
+          }
+        ],
+        "trade_size": {
+          "minimum": "0.0100",
+          "maximum": "3200.0000",
+          "status": "available"
+        },
+        "margin_rates": {
+          "tiers": [
+            {
+              "from": "0",
+              "to": "9223372036854775807",
+              "margin_rate": "100"
+            }
+          ],
+          "status": "available"
+        },
+        "holding_costs": {
+          "buy": null,
+          "sell": null,
+          "effective_at": null,
+          "status": "not_applicable"
+        },
+        "conversion": {
+          "conversion_factor_to_units": "1.58730159",
+          "fractional_part_ratio": null,
+          "lot_size": null,
+          "point_multiplier": 1,
+          "price_number_of_decimals": 2,
+          "quantity_number_of_decimals": 4,
+          "status": "available"
+        }
+      }
+    ],
+    "timezone": "Europe/London"
+  },
+  "sessionLimitation": "Current/upcoming local timestamps only, with Europe/London timezone. Not a historical holiday calendar.",
+  "hosted": {
+    "projectId": "appgprj_6aa2cfb5d1688191bdf3a8a9ca6365b0",
+    "version": 25,
+    "commit": "bedbe6bf54e1f89adb6a5ff5460ad814d7f15446",
+    "deployment": "appgdep_6ad8ec26706c81919dc4e2d7391853a3",
+    "status": "succeeded",
+    "environmentRevision": 0,
+    "credentialKeys": [],
+    "ownerOnly": true,
+    "accessRevision": 1
+  },
+  "reads": [
+    {
+      "id": "r2-gold_cash-2m-20261021",
+      "requestedFrom": "2026-09-01T00:00:00Z",
+      "requestedTo": "2026-10-21T16:00:00Z",
+      "returnedBars": 1953,
+      "from": "2026-10-16T19:56:00Z",
+      "to": "2026-10-21T16:00:00Z",
+      "receivedAt": "2026-10-21T17:37:34.648Z"
+    },
+    {
+      "id": "r2-gold_cash-5m-20261021",
+      "requestedFrom": "2026-09-01T00:00:00Z",
+      "requestedTo": "2026-10-21T16:00:00Z",
+      "returnedBars": 8906,
+      "from": "2026-09-07T07:25:00.000Z",
+      "to": "2026-10-21T16:00:00.000Z",
+      "receivedAt": "2026-10-21T18:01:48.447Z",
+      "maxIntervals": 10000
+    },
+    {
+      "id": "r2-gold_cash-15m-20261021",
+      "requestedFrom": "2026-09-01T00:00:00Z",
+      "requestedTo": "2026-10-21T16:00:00Z",
+      "returnedBars": 1995,
+      "from": "2026-09-22T00:30:00Z",
+      "to": "2026-10-21T16:00:00Z",
+      "receivedAt": "2026-10-21T17:37:34.839Z"
+    },
+    {
+      "id": "r2-gold_cash-60m-20261021",
+      "requestedFrom": "2026-09-01T00:00:00Z",
+      "requestedTo": "2026-10-21T16:00:00Z",
+      "returnedBars": 843,
+      "from": "2026-09-01T00:00:00Z",
+      "to": "2026-10-21T16:00:00Z",
+      "receivedAt": "2026-10-21T17:37:34.420Z"
+    },
+    {
+      "id": "r2-gold_cash-120m-20261021",
+      "requestedFrom": "2026-09-01T00:00:00Z",
+      "requestedTo": "2026-10-21T16:00:00Z",
+      "returnedBars": 439,
+      "from": "2026-09-01T01:00:00Z",
+      "to": "2026-10-21T15:00:00Z",
+      "receivedAt": "2026-10-21T17:37:34.117Z"
+    },
+    {
+      "id": "r2-silver_cash-2m-20261021",
+      "requestedFrom": "2026-09-01T00:00:00Z",
+      "requestedTo": "2026-10-21T16:00:00Z",
+      "returnedBars": 1952,
+      "from": "2026-10-16T19:58:00Z",
+      "to": "2026-10-21T16:00:00Z",
+      "receivedAt": "2026-10-21T17:38:33.100Z"
+    },
+    {
+      "id": "r2-silver_cash-5m-20261021",
+      "requestedFrom": "2026-09-01T00:00:00Z",
+      "requestedTo": "2026-10-21T16:00:00Z",
+      "returnedBars": 8906,
+      "from": "2026-09-07T07:25:00Z",
+      "to": "2026-10-21T16:00:00Z",
+      "receivedAt": "2026-10-21T17:38:36.744Z"
+    },
+    {
+      "id": "r2-silver_cash-15m-20261021",
+      "requestedFrom": "2026-09-01T00:00:00Z",
+      "requestedTo": "2026-10-21T16:00:00Z",
+      "returnedBars": 1995,
+      "from": "2026-09-22T00:30:00Z",
+      "to": "2026-10-21T16:00:00Z",
+      "receivedAt": "2026-10-21T17:38:33.505Z"
+    },
+    {
+      "id": "r2-silver_cash-60m-20261021",
+      "requestedFrom": "2026-09-01T00:00:00Z",
+      "requestedTo": "2026-10-21T16:00:00Z",
+      "returnedBars": 843,
+      "from": "2026-09-01T00:00:00Z",
+      "to": "2026-10-21T16:00:00Z",
+      "receivedAt": "2026-10-21T17:37:34.479Z"
+    },
+    {
+      "id": "r2-silver_cash-120m-20261021",
+      "requestedFrom": "2026-09-01T00:00:00Z",
+      "requestedTo": "2026-10-21T16:00:00Z",
+      "returnedBars": 439,
+      "from": "2026-09-01T01:00:00Z",
+      "to": "2026-10-21T15:00:00Z",
+      "receivedAt": "2026-10-21T17:38:32.805Z"
+    },
+    {
+      "id": "r2-nq-2m-20261021",
+      "requestedFrom": "2026-09-01T00:00:00Z",
+      "requestedTo": "2026-10-21T16:00:00Z",
+      "returnedBars": 1953,
+      "from": "2026-10-18T22:56:00Z",
+      "to": "2026-10-21T16:00:00Z",
+      "receivedAt": "2026-10-21T17:37:35.000Z"
+    },
+    {
+      "id": "r2-nq-5m-20261021",
+      "requestedFrom": "2026-09-01T00:00:00Z",
+      "requestedTo": "2026-10-21T16:00:00Z",
+      "returnedBars": 8982,
+      "from": "2026-09-08T05:25:00Z",
+      "to": "2026-10-21T16:00:00Z",
+      "receivedAt": "2026-10-21T17:38:36.978Z"
+    },
+    {
+      "id": "r2-nq-15m-20261021",
+      "requestedFrom": "2026-09-01T00:00:00Z",
+      "requestedTo": "2026-10-21T16:00:00Z",
+      "returnedBars": 1995,
+      "from": "2026-09-22T17:30:00Z",
+      "to": "2026-10-21T16:00:00Z",
+      "receivedAt": "2026-10-21T17:38:34.505Z"
+    },
+    {
+      "id": "r2-nq-60m-20261021",
+      "requestedFrom": "2026-09-01T00:00:00Z",
+      "requestedTo": "2026-10-21T16:00:00Z",
+      "returnedBars": 866,
+      "from": "2026-09-01T00:00:00Z",
+      "to": "2026-10-21T16:00:00Z",
+      "receivedAt": "2026-10-21T17:37:34.887Z"
+    },
+    {
+      "id": "r2-nq-120m-20261021",
+      "requestedFrom": "2026-09-01T00:00:00Z",
+      "requestedTo": "2026-10-21T16:00:00Z",
+      "returnedBars": 438,
+      "from": "2026-09-01T01:00:00Z",
+      "to": "2026-10-21T15:00:00Z",
+      "receivedAt": "2026-10-21T17:38:32.676Z"
+    }
+  ],
+  "priorBoundedRequests": [
+    {
+      "id": "r2-gold_cash-5m-20261021",
+      "requestedFrom": "2026-09-01T00:00:00Z",
+      "requestedTo": "2026-10-21T16:00:00Z",
+      "returnedBars": 5000,
+      "from": "2026-09-25T13:25:00Z",
+      "to": "2026-10-21T16:00:00Z",
+      "receivedAt": "2026-10-21T17:37:37.154Z"
+    }
+  ]
+}

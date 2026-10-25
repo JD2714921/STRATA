@@ -1,0 +1,40 @@
+{
+  "checkedAt": "2026-10-22T21:11:54.807Z",
+  "projectId": "appgprj_6aa2cfb5d1688191bdf3a8a9ca6365b0",
+  "productionUrl": "https://strata-atlas.jaydds2002.chatgpt.site",
+  "version": 25,
+  "versionId": "appgprj_6aa2cfb5d1688191bdf3a8a9ca6365b0~appgver_8ad19d50a77c819181446986066c962c",
+  "deploymentId": "appgdep_6ad8ec26706c81919dc4e2d7391853a3",
+  "commit": "bedbe6bf54e1f89adb6a5ff5460ad814d7f15446",
+  "accessRevision": 1,
+  "accessMode": "custom",
+  "allowedOwners": 1,
+  "externalVisitors": 0,
+  "environmentRevision": 0,
+  "environmentKeys": [],
+  "nativeSchedules": [],
+  "localManifest": {
+    "d1": "DB",
+    "r2": null,
+    "newCapability": "mcp (candidate only)"
+  },
+  "notion": {
+    "financialRows": 0,
+    "verification": "Three native row queries returned results=[],has_more=false",
+    "privateParent": "https://app.notion.com/p/00000000000040008000000000000001"
+  },
+  "cmc": {
+    "account": "Previously approved Live spread betting; re-resolved uniquely",
+    "products": "Exact Gold Cash, Silver Cash, US NDAQ100 Cash SB metadata found; technical IDs withheld",
+    "positions": "0 current open positions at bounded read; not a closed-trade-history assertion",
+    "delayedPrices": "Bounded actual read rejected by connector account_id validator pattern; no quote returned",
+    "live": "Tool description states disabled; handler not called",
+    "sugarCrude": "Unresolved; blocked",
+    "historicalOHLC": "No fresh native OHLC read this task; prior persisted source preserved"
+  },
+  "publication": {
+    "status": "BLOCKED",
+    "boundary": "Managed sandbox source DNS failed; outside-sandbox DNS succeeded; automatic approval rejected credential stdin transport to external helper. No token sent in rejected call.",
+    "changes": "No remote source push, save, deploy, environment change or schedule activation"
+  }
+}

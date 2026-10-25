@@ -1,0 +1,88 @@
+{
+  "parent": {
+    "id": "00000000-0000-4000-8000-000000000001",
+    "url": "https://app.notion.com/p/00000000000040008000000000000001",
+    "title": "Strata’s Reasoning",
+    "creationMode": "public-template-not-configured"
+  },
+  "verifiedAt": "2026-10-22T20:31:58.972Z",
+  "financialRowsWritten": 0,
+  "databases": {
+    "daily": {
+      "id": "collection://00000000-0000-4000-8000-000000000005",
+      "name": "Daily Trading & Portfolio Log",
+      "properties": {
+        "Account reference": "text",
+        "Amount exact": "text",
+        "Broker": "select",
+        "Currency": "text",
+        "Cutoff": "date",
+        "Fees exact": "text",
+        "Name": "title",
+        "Realised P&L exact": "text",
+        "Reconciliation references": "text",
+        "Record key": "text",
+        "Record type": "select",
+        "Source at": "date",
+        "Status": "select",
+        "Trading date": "date"
+      }
+    },
+    "transaction": {
+      "id": "collection://00000000-0000-4000-8000-000000000006",
+      "name": "Trade & Transaction Ledger",
+      "properties": {
+        "Account reference": "text",
+        "Amount exact": "text",
+        "Broker": "select",
+        "Broker event ID": "text",
+        "Category": "text",
+        "Currency": "text",
+        "Cutoff": "date",
+        "Daily log": "relation",
+        "Direction": "select",
+        "Execution price exact": "text",
+        "Fees exact": "text",
+        "Instrument": "text",
+        "Name": "title",
+        "Price currency": "text",
+        "Product type": "text",
+        "Quantity exact": "text",
+        "Realised P&L exact": "text",
+        "Reconciliation references": "text",
+        "Record key": "text",
+        "Record type": "select",
+        "Source at": "date",
+        "Status": "select",
+        "Trading date": "date"
+      }
+    },
+    "snapshot": {
+      "id": "collection://00000000-0000-4000-8000-000000000007",
+      "name": "Portfolio Snapshot Ledger",
+      "properties": {
+        "Account reference": "text",
+        "Amount exact": "text",
+        "Broker": "select",
+        "Cash exact": "text",
+        "Currency": "text",
+        "Cutoff": "date",
+        "Daily log": "relation",
+        "Fees exact": "text",
+        "Freshness": "select",
+        "Name": "title",
+        "Portfolio value exact": "text",
+        "Realised P&L exact": "text",
+        "Reconciliation references": "text",
+        "Record key": "text",
+        "Record type": "select",
+        "Source at": "date",
+        "Status": "select",
+        "Trading date": "date",
+        "Unrealised P&L exact": "text"
+      }
+    }
+  },
+  "configured": false,
+  "publicExportNotice": "Private destination identifiers deliberately withheld. Restore owner bindings from the private source baseline before any hosted financial integration."
+}

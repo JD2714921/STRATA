@@ -1,0 +1,142 @@
+{
+  "mode": "Bounded read-only historical research; not production runtime wiring",
+  "date": "2026-10-21",
+  "account": "Owner-selected Live GBP spread betting; no arbitrary choice among accounts",
+  "history": [
+    {
+      "instrument": "SILVER_CASH",
+      "interval": "TWO_MIN",
+      "intervalMinutes": 2,
+      "requestedFrom": "2026-10-01",
+      "requestedTo": "2026-10-20",
+      "requestedMaximum": 15000,
+      "result": "successful historical OHLC read",
+      "scope": "Owner-selected Live GBP spread-betting account; internal identifiers omitted",
+      "returned": 1623
+    },
+    {
+      "instrument": "SILVER_CASH",
+      "interval": "FIVE_MIN",
+      "intervalMinutes": 5,
+      "requestedFrom": "2026-08-01",
+      "requestedTo": "2026-10-20",
+      "requestedMaximum": 12000,
+      "result": "successful historical OHLC read",
+      "scope": "Owner-selected Live GBP spread-betting account; internal identifiers omitted",
+      "returned": 8713
+    },
+    {
+      "instrument": "SILVER_CASH",
+      "interval": "FIFTEEN_MIN",
+      "intervalMinutes": 15,
+      "requestedFrom": "2026-06-01",
+      "requestedTo": "2026-10-20",
+      "requestedMaximum": 9000,
+      "result": "successful historical OHLC read",
+      "scope": "Owner-selected Live GBP spread-betting account; internal identifiers omitted",
+      "returned": 1950
+    },
+    {
+      "instrument": "SILVER_CASH",
+      "interval": "TWO_HOUR",
+      "intervalMinutes": 120,
+      "requestedFrom": "2026-01-01",
+      "requestedTo": "2026-10-20",
+      "requestedMaximum": 3000,
+      "result": "successful historical OHLC read",
+      "scope": "Owner-selected Live GBP spread-betting account; internal identifiers omitted",
+      "returned": 1995
+    },
+    {
+      "instrument": "NDAQ_CASH_RESEARCH",
+      "interval": "FIVE_MIN",
+      "intervalMinutes": 5,
+      "requestedFrom": "2026-08-01",
+      "requestedTo": "2026-10-20",
+      "requestedMaximum": 12000,
+      "result": "successful historical OHLC read",
+      "scope": "Owner-selected Live GBP spread-betting account; internal identifiers omitted",
+      "returned": 8840
+    },
+    {
+      "instrument": "NDAQ_CASH_RESEARCH",
+      "interval": "FIFTEEN_MIN",
+      "intervalMinutes": 15,
+      "requestedFrom": "2026-06-01",
+      "requestedTo": "2026-10-20",
+      "requestedMaximum": 9000,
+      "result": "successful historical OHLC read",
+      "scope": "Owner-selected Live GBP spread-betting account; internal identifiers omitted",
+      "returned": 1950
+    },
+    {
+      "instrument": "NDAQ_CASH_RESEARCH",
+      "interval": "TWO_HOUR",
+      "intervalMinutes": 120,
+      "requestedFrom": "2026-01-01",
+      "requestedTo": "2026-10-20",
+      "requestedMaximum": 3000,
+      "result": "successful historical OHLC read",
+      "scope": "Owner-selected Live GBP spread-betting account; internal identifiers omitted",
+      "returned": 1995
+    },
+    {
+      "instrument": "GBPUSD",
+      "interval": "FIFTEEN_MIN",
+      "intervalMinutes": 15,
+      "requestedFrom": "2026-06-01",
+      "requestedTo": "2026-10-20",
+      "requestedMaximum": 9000,
+      "result": "successful historical OHLC read",
+      "scope": "Owner-selected Live GBP spread-betting account; internal identifiers omitted",
+      "returned": 1950
+    }
+  ],
+  "productResolution": [
+    {
+      "ownerLabel": "Silver Cash",
+      "result": "Exact Silver - Cash SB product resolved for historical reads; full execution metadata incomplete"
+    },
+    {
+      "ownerLabel": "NQ",
+      "result": "US NDAQ 100 - Cash SB resolved; unconfirmed proxy, execution mapping unresolved"
+    },
+    {
+      "ownerLabel": "Sugar Raw Cash",
+      "result": "Exact-name product lookup returned no match; no substitute series used"
+    },
+    {
+      "ownerLabel": "Crude Oil Cash",
+      "result": "Exact-name product lookup returned no match; no ETF or Brent/WTI substitute used"
+    },
+    {
+      "ownerLabel": "GBP/USD",
+      "result": "Exact SB FX instrument resolved for context reads"
+    }
+  ],
+  "economic": {
+    "provider": "Bigdata.com",
+    "upstream": "FXStreet",
+    "countries": [
+      "US",
+      "GB"
+    ],
+    "impact": "HIGH",
+    "requestedFrom": "2026-10-01",
+    "requestedTo": "2026-10-20",
+    "events": 20,
+    "vintage": "Retrospective; first-release actual and pre-release consensus timestamps unverified"
+  },
+  "currentComparison": {
+    "provider": "CMC Markets",
+    "batch": "Failed",
+    "singleSilverRetry": "Succeeded",
+    "source": "data/historical/current-receipt.json",
+    "declaredDelayMinutes": 15,
+    "operationalEntryEligible": false
+  },
+  "metadata": "See metadata-contract-probes.json and METADATA_CONTRACT_RESEARCH.md",
+  "secretsPersisted": false,
+  "brokerWrites": false,
+  "monitoringScheduled": false
+}

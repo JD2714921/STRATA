@@ -1,0 +1,28 @@
+'use client';
+import {useEffect,useState} from 'react';
+import {Panel,Badge,Export} from './workspace-v2';
+import type manifestData from '../data/round2/manifest.json';
+type Manifest=typeof manifestData;
+type Bar={time:string;open:number;high:number;low:number;close:number;index:number};
+type Page={rows?:unknown[];chart?:Bar[];total?:number;error?:string;elastication?:unknown;data?:unknown};
+function HistoryChart({bars}:{bars:Bar[]}){
+ const low=Math.min(...bars.map(b=>b.low)),high=Math.max(...bars.map(b=>b.high)),span=high-low||1,y=(v:number)=>170-(v-low)/span*150;
+ return <figure><svg viewBox="0 0 900 200" role="img" aria-label="Observed CMC midpoint candles for selected historical rows" style={{width:'100%',maxHeight:240}}><text x="5" y="12" fill="currentColor" fontSize="11">{high.toFixed(3)}</text><text x="5" y="188" fill="currentColor" fontSize="11">{low.toFixed(3)}</text>{bars.map((b,i)=>{const x=70+i*820/Math.max(1,bars.length),colour=b.close>=b.open?'#8bd5b5':'#f2a48d';return <g key={b.time}><title>{b.time} — O {b.open} H {b.high} L {b.low} C {b.close}</title><line x1={x} x2={x} y1={y(b.high)} y2={y(b.low)} stroke={colour}/><rect x={x-3} y={Math.min(y(b.open),y(b.close))} width="6" height={Math.max(1,Math.abs(y(b.open)-y(b.close)))} fill={colour}/></g>;})}</svg><figcaption>{bars[0]?.time} → {bars.at(-1)?.time}. Equal candle spacing; gaps are not filled. Candle anchoring unverified.</figcaption></figure>;
+}
+export default function ExecutionHistory(){
+ const [manifest,setManifest]=useState<Manifest|null>(null),[id,setId]=useState('r2-silver_cash-2m-20261021'),[kind,setKind]=useState('bindings'),[page,setPage]=useState(0),[data,setData]=useState<Page|null>(null),[error,setError]=useState('');
+ useEffect(()=>{let active=true;fetch('/api/execution-history').then(async r=>{const x=await r.json() as Page & {manifest:Manifest};if(!r.ok)throw Error(x.error);if(active)setManifest(x.manifest);}).catch(e=>{if(active)setError(e.message);});return()=>{active=false;};},[]);
+ useEffect(()=>{let active=true;fetch('/api/execution-history?kind='+kind+'&datasetId='+encodeURIComponent(id)+'&page='+page).then(async r=>{const x=await r.json() as Page;if(!r.ok)throw Error(x.error);if(active)setData(x);}).catch(e=>{if(active)setError(e.message);});return()=>{active=false;};},[id,kind,page]);
+ function change(nextPage=0){setPage(nextPage);setData(null);setError('');}
+ return <Panel title="V25 historical execution bindings" eyebrow="ROUND 2 / OBSERVED SOURCE DATA" action={<Badge tone="amber">STAND DOWN</Badge>}>
+ <p>2m and 5m entry structure links to 5m liquidity and gaps, 15m direction, ATR(9)/5m, ATR(14)/15m, ATR(27)/1H and 2H holding context. Definitions await operational validation.</p>
+ {manifest&&<><p>E_d: {manifest.edValid} valid / {manifest.edUnavailable} unavailable directional windows. First-release actual vintages: {manifest.events.firstReleaseActualVintages}; complete point-in-time surprise vintages: {manifest.events.fullPointInTimeVintages}. Sugar and Crude cash mappings remain blocked.</p><div className="table-scroll"><table><thead><tr><th>Exact CMC cash product</th><th>Timeframe</th><th>Bars</th><th>ATR period / available</th><th>Gaps</th></tr></thead><tbody>{manifest.datasets.map(s=><tr key={s.id}><td>{s.displayName}</td><td>{s.timeframe}m</td><td>{s.bars}</td><td>{s.atrPeriod} / {s.atrAvailable}</td><td>{s.gaps}</td></tr>)}</tbody></table></div></>}
+ <div className="callout">Q_d has no verified directional observations or units. Total volume is not signed order flow. E_d stays unavailable. Historical bar boundaries and calendars are unverified; these views cannot authorise BUY/SELL.</div>
+ <div className="toolbar"><select aria-label="Round 2 dataset" value={id} onChange={e=>{setId(e.target.value);change();}}>{manifest?.datasets.map(s=><option key={s.id} value={s.id}>{s.displayName} · {s.timeframe}m</option>)}</select><select aria-label="Round 2 calculation view" value={kind} onChange={e=>{setKind(e.target.value);change();}}>{[['bindings','2m / 5m execution bindings'],['features','Historical price features'],['elastication','Directional E_d inputs and safeguards'],['gaps','Unclassified source gaps'],['events','Scheduled releases / separate unscheduled news'],['comparisons','Correlation and divergence research']].map(([v,t])=><option key={v} value={v}>{t}</option>)}</select><Export data={data||manifest} name={'strata-v25-round2-'+kind+'.json'}/></div>
+ {error&&<p role="alert">{error}</p>}{!data&&!error&&<p role="status">Loading observed history…</p>}
+ {!!data?.chart?.length&&<HistoryChart bars={data.chart}/>}
+ {data?.rows&&<><p>{data.total} stored rows · page {page+1}. Feature indices refer to the same source candles as the chart.</p>{data.elastication!=null&&<details><summary>Q_d definition, units and stored column names</summary><pre>{JSON.stringify(data.elastication,null,2)}</pre></details>}<div className="table-scroll"><table><thead><tr><th>Source row</th><th>Historical evidence</th></tr></thead><tbody>{data.rows.map((row,i)=><tr key={i}><td>{page*50+i}</td><td><details><summary>Inspect {kind} · research only</summary><pre>{JSON.stringify(row,null,2)}</pre></details></td></tr>)}</tbody></table></div><div className="pagination"><button disabled={!page} onClick={()=>change(page-1)}>Previous</button><button disabled={(page+1)*50>=(data.total||0)} onClick={()=>change(page+1)}>Next</button></div></>}
+ {data?.data!=null&&<details open><summary>Source records, vintage status and unavailable responses</summary><pre>{JSON.stringify(data.data,null,2)}</pre></details>}
+ <details><summary>Coverage, source hashes and remaining blockers</summary><pre>{JSON.stringify(manifest,null,2)}</pre></details>
+ </Panel>;
+}

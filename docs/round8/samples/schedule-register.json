@@ -1,0 +1,125 @@
+{
+  "asOf": "2026-10-22T16:00:00.000Z",
+  "deployment": "Production V25 unchanged; candidate unpublished",
+  "definitions": [
+    {
+      "time": "01:15",
+      "name": "Overnight intelligence",
+      "timezone": "Europe/London",
+      "trigger": "Sites cloud task → authenticated Site MCP",
+      "taskId": null,
+      "status": "BLOCKED / NOT REGISTERED",
+      "previousExecution": null,
+      "nextOccurrence": {
+        "id": "strata:2026-10-23:01:15",
+        "day": "2026-10-23",
+        "time": "01:15",
+        "scheduledAt": "2026-10-23T00:15:00.000Z",
+        "timezone": "Europe/London"
+      },
+      "unattendedReceipt": null
+    },
+    {
+      "time": "07:45",
+      "name": "London / European opening assessment",
+      "timezone": "Europe/London",
+      "trigger": "Sites cloud task → authenticated Site MCP",
+      "taskId": null,
+      "status": "BLOCKED / NOT REGISTERED",
+      "previousExecution": null,
+      "nextOccurrence": {
+        "id": "strata:2026-10-23:07:45",
+        "day": "2026-10-23",
+        "time": "07:45",
+        "scheduledAt": "2026-10-23T06:45:00.000Z",
+        "timezone": "Europe/London"
+      },
+      "unattendedReceipt": null
+    },
+    {
+      "time": "10:15",
+      "name": "European session review",
+      "timezone": "Europe/London",
+      "trigger": "Sites cloud task → authenticated Site MCP",
+      "taskId": null,
+      "status": "BLOCKED / NOT REGISTERED",
+      "previousExecution": null,
+      "nextOccurrence": {
+        "id": "strata:2026-10-23:10:15",
+        "day": "2026-10-23",
+        "time": "10:15",
+        "scheduledAt": "2026-10-23T09:15:00.000Z",
+        "timezone": "Europe/London"
+      },
+      "unattendedReceipt": null
+    },
+    {
+      "time": "13:30",
+      "name": "US data and pre-market assessment",
+      "timezone": "Europe/London",
+      "trigger": "Sites cloud task → authenticated Site MCP",
+      "taskId": null,
+      "status": "BLOCKED / NOT REGISTERED",
+      "previousExecution": null,
+      "nextOccurrence": {
+        "id": "strata:2026-10-23:13:30",
+        "day": "2026-10-23",
+        "time": "13:30",
+        "scheduledAt": "2026-10-23T12:30:00.000Z",
+        "timezone": "Europe/London"
+      },
+      "unattendedReceipt": null
+    },
+    {
+      "time": "14:25",
+      "name": "US opening preparation",
+      "timezone": "Europe/London",
+      "trigger": "Sites cloud task → authenticated Site MCP",
+      "taskId": null,
+      "status": "BLOCKED / NOT REGISTERED",
+      "previousExecution": null,
+      "nextOccurrence": {
+        "id": "strata:2026-10-23:14:25",
+        "day": "2026-10-23",
+        "time": "14:25",
+        "scheduledAt": "2026-10-23T13:25:00.000Z",
+        "timezone": "Europe/London"
+      },
+      "unattendedReceipt": null
+    },
+    {
+      "time": "16:45",
+      "name": "Intraday assessment and bookkeeping",
+      "timezone": "Europe/London",
+      "trigger": "Sites cloud task → authenticated Site MCP",
+      "taskId": null,
+      "status": "BLOCKED / NOT REGISTERED",
+      "previousExecution": null,
+      "nextOccurrence": {
+        "id": "strata:2026-10-23:16:45",
+        "day": "2026-10-23",
+        "time": "16:45",
+        "scheduledAt": "2026-10-23T15:45:00.000Z",
+        "timezone": "Europe/London"
+      },
+      "unattendedReceipt": null
+    },
+    {
+      "time": "21:15",
+      "name": "US review and next-session preparation",
+      "timezone": "Europe/London",
+      "trigger": "Sites cloud task → authenticated Site MCP",
+      "taskId": null,
+      "status": "BLOCKED / NOT REGISTERED",
+      "previousExecution": null,
+      "nextOccurrence": {
+        "id": "strata:2026-10-22:21:15",
+        "day": "2026-10-22",
+        "time": "21:15",
+        "scheduledAt": "2026-10-22T20:15:00.000Z",
+        "timezone": "Europe/London"
+      },
+      "unattendedReceipt": null
+    }
+  ]
+}

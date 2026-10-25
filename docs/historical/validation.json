@@ -1,0 +1,426 @@
+{
+  "baselineCommit": "2291f967342ecf4b72a0fef9103623857e0f71de",
+  "definitionVersion": "research-definitions-v1-unapproved",
+  "counts": {
+    "priorityFamilies": 9,
+    "implemented": 9,
+    "executedOnObservedData": 9,
+    "persisted": 9,
+    "operationallyValidated": 0,
+    "partiallyCompleted": 9,
+    "originalAuditFamilies": 23,
+    "originalFamiliesWithResearchImplementation": 15,
+    "notImplementedOriginalFamilies": 8
+  },
+  "dataBars": 31188,
+  "methodParametersLockedBeforeFirstHistoricalRun": true,
+  "holdoutDesign": "Chronological final 20%, 72-bar purge; no parameter optimisation. Engineering holdout only; no independent validation.",
+  "replay": [
+    {
+      "id": "cmc-ndaq_cash_research-5m-20261021",
+      "baseScenario": {
+        "version": "scenario-1R-half-5R-remainder-v1",
+        "approvedForExecution": false,
+        "pivotLeft": 2,
+        "pivotRight": 2,
+        "retestBars": 10,
+        "retestAtr": 0.1,
+        "openingRangeMinutes": 30,
+        "openingReversalMinutes": 90,
+        "correlationWindows": [
+          20,
+          60,
+          120,
+          252
+        ],
+        "correlationBreak": 0.3,
+        "slippagePoints": 0,
+        "commissionPoints": 0,
+        "carryPerDayPoints": null,
+        "tp1R": 1,
+        "tp1Fraction": 0.5,
+        "maxHoldingBars": 72,
+        "holdoutFraction": 0.2,
+        "purgeBars": 72,
+        "minHistoryForOperational": 100
+      },
+      "overall": {
+        "candidates": 1170,
+        "rejected": 1161,
+        "scored": 9,
+        "meanNetR": -0.5,
+        "targetReached": 0,
+        "losses": 6,
+        "unscored": 0
+      },
+      "development": {
+        "candidates": 917,
+        "rejected": 911,
+        "scored": 6,
+        "meanNetR": -0.5,
+        "targetReached": 0,
+        "losses": 4,
+        "unscored": 0
+      },
+      "holdout": {
+        "candidates": 244,
+        "rejected": 241,
+        "scored": 3,
+        "meanNetR": -0.5,
+        "targetReached": 0,
+        "losses": 2,
+        "unscored": 0
+      },
+      "regimes": [
+        {
+          "regime": "low",
+          "candidates": 247,
+          "rejected": 247,
+          "scored": 0,
+          "meanNetR": null,
+          "targetReached": 0,
+          "losses": 0,
+          "unscored": 0
+        },
+        {
+          "regime": "normal",
+          "candidates": 647,
+          "rejected": 645,
+          "scored": 2,
+          "meanNetR": -0.25,
+          "targetReached": 0,
+          "losses": 1,
+          "unscored": 0
+        },
+        {
+          "regime": "high",
+          "candidates": 258,
+          "rejected": 251,
+          "scored": 7,
+          "meanNetR": -0.5714285714285714,
+          "targetReached": 0,
+          "losses": 5,
+          "unscored": 0
+        },
+        {
+          "regime": "warmup",
+          "candidates": 18,
+          "rejected": 18,
+          "scored": 0,
+          "meanNetR": null,
+          "targetReached": 0,
+          "losses": 0,
+          "unscored": 0
+        }
+      ],
+      "slippageSensitivity": {
+        "candidates": 1170,
+        "rejected": 1161,
+        "scored": 9,
+        "meanNetR": -0.5392218193741584,
+        "targetReached": 0,
+        "losses": 6,
+        "unscored": 0
+      },
+      "costLimit": "Observed historical bid/ask. Zero slippage/commission baseline is a labelled scenario, not a verified cost model. Sensitivity uses one maximum first-100-bar spread per fill. Unknown carry across NY17:00 makes net R unavailable."
+    },
+    {
+      "id": "cmc-silver_cash-5m-20261021",
+      "baseScenario": {
+        "version": "scenario-1R-half-5R-remainder-v1",
+        "approvedForExecution": false,
+        "pivotLeft": 2,
+        "pivotRight": 2,
+        "retestBars": 10,
+        "retestAtr": 0.1,
+        "openingRangeMinutes": 30,
+        "openingReversalMinutes": 90,
+        "correlationWindows": [
+          20,
+          60,
+          120,
+          252
+        ],
+        "correlationBreak": 0.3,
+        "slippagePoints": 0,
+        "commissionPoints": 0,
+        "carryPerDayPoints": null,
+        "tp1R": 1,
+        "tp1Fraction": 0.5,
+        "maxHoldingBars": 72,
+        "holdoutFraction": 0.2,
+        "purgeBars": 72,
+        "minHistoryForOperational": 100
+      },
+      "overall": {
+        "candidates": 1347,
+        "rejected": 1330,
+        "scored": 17,
+        "meanNetR": -0.4221944019446068,
+        "targetReached": 0,
+        "losses": 11,
+        "unscored": 0
+      },
+      "development": {
+        "candidates": 1034,
+        "rejected": 1021,
+        "scored": 13,
+        "meanNetR": -0.24440806408140886,
+        "targetReached": 0,
+        "losses": 7,
+        "unscored": 0
+      },
+      "holdout": {
+        "candidates": 292,
+        "rejected": 288,
+        "scored": 4,
+        "meanNetR": -1,
+        "targetReached": 0,
+        "losses": 4,
+        "unscored": 0
+      },
+      "regimes": [
+        {
+          "regime": "low",
+          "candidates": 282,
+          "rejected": 282,
+          "scored": 0,
+          "meanNetR": null,
+          "targetReached": 0,
+          "losses": 0,
+          "unscored": 0
+        },
+        {
+          "regime": "normal",
+          "candidates": 672,
+          "rejected": 664,
+          "scored": 8,
+          "meanNetR": -0.4375,
+          "targetReached": 0,
+          "losses": 5,
+          "unscored": 0
+        },
+        {
+          "regime": "high",
+          "candidates": 305,
+          "rejected": 296,
+          "scored": 9,
+          "meanNetR": -0.40858942589536834,
+          "targetReached": 0,
+          "losses": 6,
+          "unscored": 0
+        },
+        {
+          "regime": "warmup",
+          "candidates": 88,
+          "rejected": 88,
+          "scored": 0,
+          "meanNetR": null,
+          "targetReached": 0,
+          "losses": 0,
+          "unscored": 0
+        }
+      ],
+      "slippageSensitivity": {
+        "candidates": 1347,
+        "rejected": 1330,
+        "scored": 17,
+        "meanNetR": -0.7533519484250311,
+        "targetReached": 0,
+        "losses": 13,
+        "unscored": 0
+      },
+      "costLimit": "Observed historical bid/ask. Zero slippage/commission baseline is a labelled scenario, not a verified cost model. Sensitivity uses one maximum first-100-bar spread per fill. Unknown carry across NY17:00 makes net R unavailable."
+    }
+  ],
+  "correlations": [
+    {
+      "id": "cmc-gbpusd-1440m-20261021--cmc-ndaq_cash_research-1440m-20261021",
+      "timeframe": 1440,
+      "returnPairs": 721,
+      "rolling60": 662,
+      "minimum": -0.3399989041796554,
+      "maximum": 0.6424286798058603,
+      "breakdowns": 74,
+      "yearBuckets": [
+        {
+          "year": "2024",
+          "n": 197,
+          "meanCorrelation": 0.3652099220069614
+        },
+        {
+          "year": "2025",
+          "n": 257,
+          "meanCorrelation": 0.10640099460038956
+        },
+        {
+          "year": "2026",
+          "n": 208,
+          "meanCorrelation": 0.34861806665979933
+        }
+      ],
+      "smtProxyEvents": 1,
+      "conclusion": "Descriptive; directions/pairs unapproved; no causal or predictive calibration"
+    },
+    {
+      "id": "cmc-gbpusd-1440m-20261021--cmc-silver_cash-1440m-20261021",
+      "timeframe": 1440,
+      "returnPairs": 722,
+      "rolling60": 663,
+      "minimum": 0.04886130472034598,
+      "maximum": 0.6297748644735179,
+      "breakdowns": 0,
+      "yearBuckets": [
+        {
+          "year": "2024",
+          "n": 199,
+          "meanCorrelation": 0.41720104083620946
+        },
+        {
+          "year": "2025",
+          "n": 257,
+          "meanCorrelation": 0.29115928274120645
+        },
+        {
+          "year": "2026",
+          "n": 207,
+          "meanCorrelation": 0.45985399826811396
+        }
+      ],
+      "smtProxyEvents": 4,
+      "conclusion": "Descriptive; directions/pairs unapproved; no causal or predictive calibration"
+    },
+    {
+      "id": "cmc-gbpusd-15m-20261021--cmc-ndaq_cash_research-15m-20261021",
+      "timeframe": 15,
+      "returnPairs": 1919,
+      "rolling60": 1860,
+      "minimum": -0.34005245386315863,
+      "maximum": 0.768075670695757,
+      "breakdowns": 194,
+      "yearBuckets": [
+        {
+          "year": "2026",
+          "n": 1860,
+          "meanCorrelation": 0.26044236669883164
+        }
+      ],
+      "smtProxyEvents": 123,
+      "conclusion": "Descriptive; directions/pairs unapproved; no causal or predictive calibration"
+    },
+    {
+      "id": "cmc-gbpusd-15m-20261021--cmc-silver_cash-15m-20261021",
+      "timeframe": 15,
+      "returnPairs": 1851,
+      "rolling60": 1792,
+      "minimum": 0.03010617803836287,
+      "maximum": 0.779939216918795,
+      "breakdowns": 49,
+      "yearBuckets": [
+        {
+          "year": "2026",
+          "n": 1792,
+          "meanCorrelation": 0.4662584270024444
+        }
+      ],
+      "smtProxyEvents": 100,
+      "conclusion": "Descriptive; directions/pairs unapproved; no causal or predictive calibration"
+    },
+    {
+      "id": "cmc-ndaq_cash_research-120m-20261021--cmc-silver_cash-120m-20261021",
+      "timeframe": 120,
+      "returnPairs": 1985,
+      "rolling60": 1926,
+      "minimum": 0.07490648652627559,
+      "maximum": 0.9101969895390012,
+      "breakdowns": 83,
+      "yearBuckets": [
+        {
+          "year": "2026",
+          "n": 1926,
+          "meanCorrelation": 0.5464364131400863
+        }
+      ],
+      "smtProxyEvents": 111,
+      "conclusion": "Descriptive; directions/pairs unapproved; no causal or predictive calibration"
+    },
+    {
+      "id": "cmc-ndaq_cash_research-1440m-20261021--cmc-silver_cash-1440m-20261021",
+      "timeframe": 1440,
+      "returnPairs": 720,
+      "rolling60": 661,
+      "minimum": -0.26524967297648644,
+      "maximum": 0.7092176690918338,
+      "breakdowns": 45,
+      "yearBuckets": [
+        {
+          "year": "2024",
+          "n": 197,
+          "meanCorrelation": 0.25987616652933204
+        },
+        {
+          "year": "2025",
+          "n": 257,
+          "meanCorrelation": 0.2210778467748917
+        },
+        {
+          "year": "2026",
+          "n": 207,
+          "meanCorrelation": 0.46389566514018427
+        }
+      ],
+      "smtProxyEvents": 3,
+      "conclusion": "Descriptive; directions/pairs unapproved; no causal or predictive calibration"
+    },
+    {
+      "id": "cmc-ndaq_cash_research-15m-20261021--cmc-silver_cash-15m-20261021",
+      "timeframe": 15,
+      "returnPairs": 1881,
+      "rolling60": 1822,
+      "minimum": -0.1888400040726077,
+      "maximum": 0.8436329446688472,
+      "breakdowns": 130,
+      "yearBuckets": [
+        {
+          "year": "2026",
+          "n": 1822,
+          "meanCorrelation": 0.42030370168718995
+        }
+      ],
+      "smtProxyEvents": 97,
+      "conclusion": "Descriptive; directions/pairs unapproved; no causal or predictive calibration"
+    },
+    {
+      "id": "cmc-ndaq_cash_research-5m-20261021--cmc-silver_cash-5m-20261021",
+      "timeframe": 5,
+      "returnPairs": 8539,
+      "rolling60": 8480,
+      "minimum": -0.15140744263432468,
+      "maximum": 0.8829415385611648,
+      "breakdowns": 309,
+      "yearBuckets": [
+        {
+          "year": "2026",
+          "n": 8480,
+          "meanCorrelation": 0.44796562728593425
+        }
+      ],
+      "smtProxyEvents": 475,
+      "conclusion": "Descriptive; directions/pairs unapproved; no causal or predictive calibration"
+    }
+  ],
+  "events": {
+    "calendarEvents": 20,
+    "instrumentEventInstances": 60,
+    "measuredResponseWindows": 180,
+    "verifiedPointInTime": 0
+  },
+  "states": {
+    "STAND DOWN": 17553,
+    "CAUTION": 0,
+    "BUY": 0,
+    "SELL": 0
+  },
+  "readiness": "PARTIAL",
+  "operationallyValidated": 0
+}

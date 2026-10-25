@@ -1,0 +1,3082 @@
+{
+  "baselineCommit": "f6448813b1db558e88edffe21572b1f3c8966ecd",
+  "fixtureOnly": true,
+  "hashes": {
+    "lib/historical/catalog.ts": "8b8760574975f1d5fe21b439a029fedd9b9dbaa865e5dea95da77b14dd6ee709",
+    "lib/historical/confluence.ts": "19262383daaac048d3d0942c3bc52d6c0cae4b557e6e91447c09771ce485c770",
+    "lib/historical/elastication.ts": "e0b04dced00a3f9b2c6bf8c3a13abfa28965872768a092715441f3d1b601141b",
+    "lib/historical/engine.ts": "7e25b6cc62b8623f0dcd74b08b3af495909322983344d948e71270e27a6a709f",
+    "lib/historical/event-vintages.ts": "31af997e676d43070421845219bf49a35e92f81213bbca8f9e2b131f25f11121",
+    "lib/historical/execution-binding.ts": "185ccbd3a8f1ecb1f4e2deaf42e642b2be0108de5e662fad2fcdda128e2edc99",
+    "lib/historical/features.ts": "0f2256c1f69c3128e3fc5f2717a608764c03715d711d8a1a891bf8890fd159bd",
+    "lib/historical/plan.ts": "cd75050fae53a14c2b3192095c35646e5fdbff183977863747cb4a93f2174a6e",
+    "lib/historical/private-store.ts": "52d349b1edb8aafacb0e3de1d701746da3ed3f936af5e85128a687b3317a7385",
+    "lib/historical/raw-json.d.ts": "5a4f981e2761e733fd281a95796db293c017d91c8b94952de244a97d016bfc8a",
+    "lib/historical/round2-catalog.ts": "cd443a653f5ce8c6937633d1cd8d474e49fd683dd7b11fe316c1288b66ac95eb",
+    "lib/historical/simulation.ts": "7f86f763397691fdeb86c45e310f399e9474a95579b4b03a12b1aa90bca60634",
+    "lib/historical/statistics.ts": "b1f32580b9bd049a365b9ed99d6f399af11d8245c858d3adb47f72d6c4cc99f8",
+    "lib/historical/types.ts": "8e8891e13ad4ef715a4046fda495ee157d1e4c8748b5fd8e77c45e2064b24067",
+    "lib/strata-v2/contracts.ts": "9443296027c5822e5d72a114fd1990f4ff2a3aed8bd3dc939272e9fb80ce1fae",
+    "lib/strata-v2/interpretation.ts": "da94607540ee3aa40f8cbf450f27add3c79b5c1bd2bd03106b4350d46e2f183c",
+    "lib/strata-v2/providers.ts": "84dbdaee0f6eaf06ed7a080249d9afb7cf16908f9169509758f86090b7eafe1b",
+    "lib/strata-v2/registry.ts": "2c36fce3f97f0516ef4f944cc9af732998ecde0cab8d2e66f38775683a16effb",
+    "lib/strata-v2/research.ts": "abc05619c5185de8356fa9ff64b1ecafe7fdb7b83c0fec8636e7510f0d3d304f",
+    "lib/strata-v2/rules.ts": "01648c79b51e5e00b88afa1c6ce2e68de8d49f428e1af1d6bc02c7cfb0a56395",
+    "lib/strata-v2/services.ts": "5597347f4ae54e2ccefdca67abae86dc0d76a68d73f6b81af464fcec7d8332cf",
+    "lib/strata-v2/source-policy.ts": "acf786b45d120f370b42fa778685b029a6bf1ef367e86afb945580bfe7ac2323",
+    "lib/strata-v2/targets.ts": "72b8f0c52ede64c044b5065ab8f7b6a42787945cb0070c57fcd0543ff73efaef",
+    "lib/strata-v2/trading212.ts": "af3d7a8648ea252248f3c0e2c6c76034c0886c242dff35ca7acfc3b6e6289b9e",
+    "lib/strata-v2/workspace-state.ts": "0b207b4b95f684a32fffb0733679cc382e7a4a586c973036081b399bbe64e430",
+    "app/api/execution-history/route.ts": "c9ea7e51037aeeecdab51d3aea55c5aaa77b8249e9f1a0748e84f87153a5de72",
+    "app/api/historical/route.ts": "134f6cac36de58709ccb9dcfa5b0b0f0a0027d741913b1a790a7cf04fa36e8ff",
+    "app/api/round1/route.ts": "2c8772c5cba6d0e74226eee1eef951737d62d6834552723b37e754b18985b671",
+    "app/api/trading212/route.ts": "947fa166870c79258bff4826075bce8eca6e547a9dfb6a7d204a88f41c0b7c57",
+    ".openai/hosting.json": "71dd6f6235904cf94b50960d2ffdd1c0e42d136b9331fb2932b4d1b290c8933e",
+    "package.json": "5bb651a1c53999461b208d647e4764b869c670238b7d88f97ac6e515e8923868",
+    "pnpm-lock.yaml": "dc57aa50e31a360e14df90593cdb352b2f4cdee2d3cddce3454e8b8a0bda99d0"
+  },
+  "confluence": [
+    {
+      "id": "buy",
+      "input": {
+        "instrumentId": "SILVER_CASH",
+        "asOf": "2026-10-22T08:00:00.000Z",
+        "feature": {
+          "index": 40,
+          "sourceTime": "2026-10-22T08:00:00.000Z",
+          "availableAt": "2026-10-22T08:00:00.000Z",
+          "atr": 2,
+          "atrPeriod": 9,
+          "atrPercentile": 0.5,
+          "volatility": "normal",
+          "direction": "Bullish",
+          "pivots": [],
+          "sweep": "BUY",
+          "level": 100,
+          "retest": "BUY",
+          "fvg": null,
+          "ifvg": null,
+          "gapOutcome": [],
+          "openingReversal": null,
+          "gapBefore": false
+        },
+        "directional": {
+          "index": 40,
+          "sourceTime": "2026-10-22T08:00:00.000Z",
+          "availableAt": "2026-10-22T08:00:00.000Z",
+          "atr": 2,
+          "atrPeriod": 9,
+          "atrPercentile": 0.5,
+          "volatility": "normal",
+          "direction": "Bullish",
+          "pivots": [],
+          "sweep": "BUY",
+          "level": 100,
+          "retest": "BUY",
+          "fvg": null,
+          "ifvg": null,
+          "gapOutcome": [],
+          "openingReversal": null,
+          "gapBefore": false
+        },
+        "higher": {
+          "index": 40,
+          "sourceTime": "2026-10-22T08:00:00.000Z",
+          "availableAt": "2026-10-22T08:00:00.000Z",
+          "atr": 2,
+          "atrPeriod": 9,
+          "atrPercentile": 0.5,
+          "volatility": "normal",
+          "direction": "Bullish",
+          "pivots": [],
+          "sweep": "BUY",
+          "level": 100,
+          "retest": "BUY",
+          "fvg": null,
+          "ifvg": null,
+          "gapOutcome": [],
+          "openingReversal": null,
+          "gapBefore": false
+        },
+        "circle2": {
+          "coverage": true,
+          "vintageVerified": true,
+          "contradiction": false,
+          "expectedDirection": "BUY"
+        },
+        "mappingVerified": true,
+        "timingVerified": true,
+        "methodsApproved": true,
+        "validated": true,
+        "fresh": true,
+        "riskConfigured": true,
+        "positionsKnown": true,
+        "newPositionsToday": 0,
+        "ownerDirection": "BUY",
+        "ownerEvidenceComplete": true,
+        "invalidation": false,
+        "proposedR": 5
+      },
+      "output": {
+        "version": "owner-plan-routing-2026-10-21-v2",
+        "asOf": "2026-10-22T08:00:00.000Z",
+        "instrumentId": "SILVER_CASH",
+        "strata": {
+          "actor": "Strata",
+          "state": "BUY",
+          "candidate": "BUY",
+          "hardGates": [],
+          "cautions": []
+        },
+        "ownerPlan": {
+          "actor": "Owner plan evaluator",
+          "state": "BUY",
+          "declaredDirection": "BUY",
+          "hardGates": []
+        },
+        "disagreement": false,
+        "sharedEvidenceIsIndependentConfirmation": false,
+        "circles": {
+          "market": {
+            "featureAt": "2026-10-22T08:00:00.000Z",
+            "direction": "Bullish",
+            "atr": 2,
+            "comparisons": []
+          },
+          "expectation": {
+            "coverage": true,
+            "vintageVerified": true,
+            "contradiction": false,
+            "expectedDirection": "BUY"
+          },
+          "behaviour": {
+            "sweep": "BUY",
+            "retest": "BUY",
+            "openingReversal": null,
+            "intentMeasured": false
+          }
+        },
+        "invalidation": "A failed hard gate, stale evidence, opposite structure, breached stop or contradictory expectation requires Stand Down.",
+        "nextConditions": [],
+        "statisticalConfidence": null,
+        "canSubmitOrder": false
+      }
+    },
+    {
+      "id": "sell",
+      "input": {
+        "instrumentId": "SILVER_CASH",
+        "asOf": "2026-10-22T08:00:00.000Z",
+        "feature": {
+          "index": 40,
+          "sourceTime": "2026-10-22T08:00:00.000Z",
+          "availableAt": "2026-10-22T08:00:00.000Z",
+          "atr": 2,
+          "atrPeriod": 9,
+          "atrPercentile": 0.5,
+          "volatility": "normal",
+          "direction": "Bearish",
+          "pivots": [],
+          "sweep": "SELL",
+          "level": 100,
+          "retest": "SELL",
+          "fvg": null,
+          "ifvg": null,
+          "gapOutcome": [],
+          "openingReversal": null,
+          "gapBefore": false
+        },
+        "directional": {
+          "index": 40,
+          "sourceTime": "2026-10-22T08:00:00.000Z",
+          "availableAt": "2026-10-22T08:00:00.000Z",
+          "atr": 2,
+          "atrPeriod": 9,
+          "atrPercentile": 0.5,
+          "volatility": "normal",
+          "direction": "Bearish",
+          "pivots": [],
+          "sweep": "SELL",
+          "level": 100,
+          "retest": "SELL",
+          "fvg": null,
+          "ifvg": null,
+          "gapOutcome": [],
+          "openingReversal": null,
+          "gapBefore": false
+        },
+        "higher": {
+          "index": 40,
+          "sourceTime": "2026-10-22T08:00:00.000Z",
+          "availableAt": "2026-10-22T08:00:00.000Z",
+          "atr": 2,
+          "atrPeriod": 9,
+          "atrPercentile": 0.5,
+          "volatility": "normal",
+          "direction": "Bearish",
+          "pivots": [],
+          "sweep": "SELL",
+          "level": 100,
+          "retest": "SELL",
+          "fvg": null,
+          "ifvg": null,
+          "gapOutcome": [],
+          "openingReversal": null,
+          "gapBefore": false
+        },
+        "circle2": {
+          "coverage": true,
+          "vintageVerified": true,
+          "contradiction": false,
+          "expectedDirection": "SELL"
+        },
+        "mappingVerified": true,
+        "timingVerified": true,
+        "methodsApproved": true,
+        "validated": true,
+        "fresh": true,
+        "riskConfigured": true,
+        "positionsKnown": true,
+        "newPositionsToday": 0,
+        "ownerDirection": "SELL",
+        "ownerEvidenceComplete": true,
+        "invalidation": false,
+        "proposedR": 5
+      },
+      "output": {
+        "version": "owner-plan-routing-2026-10-21-v2",
+        "asOf": "2026-10-22T08:00:00.000Z",
+        "instrumentId": "SILVER_CASH",
+        "strata": {
+          "actor": "Strata",
+          "state": "SELL",
+          "candidate": "SELL",
+          "hardGates": [],
+          "cautions": []
+        },
+        "ownerPlan": {
+          "actor": "Owner plan evaluator",
+          "state": "SELL",
+          "declaredDirection": "SELL",
+          "hardGates": []
+        },
+        "disagreement": false,
+        "sharedEvidenceIsIndependentConfirmation": false,
+        "circles": {
+          "market": {
+            "featureAt": "2026-10-22T08:00:00.000Z",
+            "direction": "Bearish",
+            "atr": 2,
+            "comparisons": []
+          },
+          "expectation": {
+            "coverage": true,
+            "vintageVerified": true,
+            "contradiction": false,
+            "expectedDirection": "SELL"
+          },
+          "behaviour": {
+            "sweep": "SELL",
+            "retest": "SELL",
+            "openingReversal": null,
+            "intentMeasured": false
+          }
+        },
+        "invalidation": "A failed hard gate, stale evidence, opposite structure, breached stop or contradictory expectation requires Stand Down.",
+        "nextConditions": [],
+        "statisticalConfidence": null,
+        "canSubmitOrder": false
+      }
+    },
+    {
+      "id": "caution",
+      "input": {
+        "instrumentId": "SILVER_CASH",
+        "asOf": "2026-10-22T08:00:00.000Z",
+        "feature": {
+          "index": 40,
+          "sourceTime": "2026-10-22T08:00:00.000Z",
+          "availableAt": "2026-10-22T08:00:00.000Z",
+          "atr": 2,
+          "atrPeriod": 9,
+          "atrPercentile": 0.5,
+          "volatility": "high",
+          "direction": "Bearish",
+          "pivots": [],
+          "sweep": "SELL",
+          "level": 100,
+          "retest": "SELL",
+          "fvg": null,
+          "ifvg": null,
+          "gapOutcome": [],
+          "openingReversal": null,
+          "gapBefore": false
+        },
+        "directional": {
+          "index": 40,
+          "sourceTime": "2026-10-22T08:00:00.000Z",
+          "availableAt": "2026-10-22T08:00:00.000Z",
+          "atr": 2,
+          "atrPeriod": 9,
+          "atrPercentile": 0.5,
+          "volatility": "normal",
+          "direction": "Bearish",
+          "pivots": [],
+          "sweep": "SELL",
+          "level": 100,
+          "retest": "SELL",
+          "fvg": null,
+          "ifvg": null,
+          "gapOutcome": [],
+          "openingReversal": null,
+          "gapBefore": false
+        },
+        "higher": {
+          "index": 40,
+          "sourceTime": "2026-10-22T08:00:00.000Z",
+          "availableAt": "2026-10-22T08:00:00.000Z",
+          "atr": 2,
+          "atrPeriod": 9,
+          "atrPercentile": 0.5,
+          "volatility": "normal",
+          "direction": "Bearish",
+          "pivots": [],
+          "sweep": "SELL",
+          "level": 100,
+          "retest": "SELL",
+          "fvg": null,
+          "ifvg": null,
+          "gapOutcome": [],
+          "openingReversal": null,
+          "gapBefore": false
+        },
+        "circle2": {
+          "coverage": true,
+          "vintageVerified": true,
+          "contradiction": false,
+          "expectedDirection": "SELL"
+        },
+        "mappingVerified": true,
+        "timingVerified": true,
+        "methodsApproved": true,
+        "validated": true,
+        "fresh": true,
+        "riskConfigured": true,
+        "positionsKnown": true,
+        "newPositionsToday": 0,
+        "ownerDirection": "SELL",
+        "ownerEvidenceComplete": true,
+        "invalidation": false,
+        "proposedR": 5
+      },
+      "output": {
+        "version": "owner-plan-routing-2026-10-21-v2",
+        "asOf": "2026-10-22T08:00:00.000Z",
+        "instrumentId": "SILVER_CASH",
+        "strata": {
+          "actor": "Strata",
+          "state": "CAUTION",
+          "candidate": "SELL",
+          "hardGates": [],
+          "cautions": [
+            "High realised volatility; risk review required"
+          ]
+        },
+        "ownerPlan": {
+          "actor": "Owner plan evaluator",
+          "state": "CAUTION",
+          "declaredDirection": "SELL",
+          "hardGates": []
+        },
+        "disagreement": false,
+        "sharedEvidenceIsIndependentConfirmation": false,
+        "circles": {
+          "market": {
+            "featureAt": "2026-10-22T08:00:00.000Z",
+            "direction": "Bearish",
+            "atr": 2,
+            "comparisons": []
+          },
+          "expectation": {
+            "coverage": true,
+            "vintageVerified": true,
+            "contradiction": false,
+            "expectedDirection": "SELL"
+          },
+          "behaviour": {
+            "sweep": "SELL",
+            "retest": "SELL",
+            "openingReversal": null,
+            "intentMeasured": false
+          }
+        },
+        "invalidation": "A failed hard gate, stale evidence, opposite structure, breached stop or contradictory expectation requires Stand Down.",
+        "nextConditions": [],
+        "statisticalConfidence": null,
+        "canSubmitOrder": false
+      }
+    },
+    {
+      "id": "missing",
+      "input": {
+        "instrumentId": "SILVER_CASH",
+        "asOf": "2026-10-22T08:00:00.000Z",
+        "feature": null,
+        "directional": {
+          "index": 40,
+          "sourceTime": "2026-10-22T08:00:00.000Z",
+          "availableAt": "2026-10-22T08:00:00.000Z",
+          "atr": 2,
+          "atrPeriod": 9,
+          "atrPercentile": 0.5,
+          "volatility": "normal",
+          "direction": "Bearish",
+          "pivots": [],
+          "sweep": "SELL",
+          "level": 100,
+          "retest": "SELL",
+          "fvg": null,
+          "ifvg": null,
+          "gapOutcome": [],
+          "openingReversal": null,
+          "gapBefore": false
+        },
+        "higher": {
+          "index": 40,
+          "sourceTime": "2026-10-22T08:00:00.000Z",
+          "availableAt": "2026-10-22T08:00:00.000Z",
+          "atr": 2,
+          "atrPeriod": 9,
+          "atrPercentile": 0.5,
+          "volatility": "normal",
+          "direction": "Bearish",
+          "pivots": [],
+          "sweep": "SELL",
+          "level": 100,
+          "retest": "SELL",
+          "fvg": null,
+          "ifvg": null,
+          "gapOutcome": [],
+          "openingReversal": null,
+          "gapBefore": false
+        },
+        "circle2": {
+          "coverage": true,
+          "vintageVerified": true,
+          "contradiction": false,
+          "expectedDirection": "SELL"
+        },
+        "mappingVerified": true,
+        "timingVerified": true,
+        "methodsApproved": true,
+        "validated": false,
+        "fresh": true,
+        "riskConfigured": true,
+        "positionsKnown": true,
+        "newPositionsToday": 0,
+        "ownerDirection": "SELL",
+        "ownerEvidenceComplete": true,
+        "invalidation": false,
+        "proposedR": 5
+      },
+      "output": {
+        "version": "owner-plan-routing-2026-10-21-v2",
+        "asOf": "2026-10-22T08:00:00.000Z",
+        "instrumentId": "SILVER_CASH",
+        "strata": {
+          "actor": "Strata",
+          "state": "STAND DOWN",
+          "candidate": null,
+          "hardGates": [
+            "No qualifying observable structural candidate",
+            "Research definitions lack execution approval / historical validation",
+            "Entry feature missing valid freshness",
+            "15m+ directional confluence absent or contradictory"
+          ],
+          "cautions": []
+        },
+        "ownerPlan": {
+          "actor": "Owner plan evaluator",
+          "state": "STAND DOWN",
+          "declaredDirection": "SELL",
+          "hardGates": [
+            "No qualifying observable structural candidate",
+            "Research definitions lack execution approval / historical validation",
+            "Entry feature missing valid freshness",
+            "15m+ directional confluence absent or contradictory"
+          ]
+        },
+        "disagreement": false,
+        "sharedEvidenceIsIndependentConfirmation": false,
+        "circles": {
+          "market": {
+            "featureAt": null,
+            "direction": "Bearish",
+            "atr": null,
+            "comparisons": []
+          },
+          "expectation": {
+            "coverage": true,
+            "vintageVerified": true,
+            "contradiction": false,
+            "expectedDirection": "SELL"
+          },
+          "behaviour": {
+            "sweep": null,
+            "retest": null,
+            "openingReversal": null,
+            "intentMeasured": false
+          }
+        },
+        "invalidation": "A failed hard gate, stale evidence, opposite structure, breached stop or contradictory expectation requires Stand Down.",
+        "nextConditions": [
+          "No qualifying observable structural candidate",
+          "Research definitions lack execution approval / historical validation",
+          "Entry feature missing valid freshness",
+          "15m+ directional confluence absent or contradictory"
+        ],
+        "statisticalConfidence": null,
+        "canSubmitOrder": false
+      }
+    },
+    {
+      "id": "contradiction",
+      "input": {
+        "instrumentId": "SILVER_CASH",
+        "asOf": "2026-10-22T08:00:00.000Z",
+        "feature": {
+          "index": 40,
+          "sourceTime": "2026-10-22T08:00:00.000Z",
+          "availableAt": "2026-10-22T08:00:00.000Z",
+          "atr": 2,
+          "atrPeriod": 9,
+          "atrPercentile": 0.5,
+          "volatility": "normal",
+          "direction": "Bearish",
+          "pivots": [],
+          "sweep": "SELL",
+          "level": 100,
+          "retest": "SELL",
+          "fvg": null,
+          "ifvg": null,
+          "gapOutcome": [],
+          "openingReversal": null,
+          "gapBefore": false
+        },
+        "directional": {
+          "index": 40,
+          "sourceTime": "2026-10-22T08:00:00.000Z",
+          "availableAt": "2026-10-22T08:00:00.000Z",
+          "atr": 2,
+          "atrPeriod": 9,
+          "atrPercentile": 0.5,
+          "volatility": "normal",
+          "direction": "Bearish",
+          "pivots": [],
+          "sweep": "SELL",
+          "level": 100,
+          "retest": "SELL",
+          "fvg": null,
+          "ifvg": null,
+          "gapOutcome": [],
+          "openingReversal": null,
+          "gapBefore": false
+        },
+        "higher": {
+          "index": 40,
+          "sourceTime": "2026-10-22T08:00:00.000Z",
+          "availableAt": "2026-10-22T08:00:00.000Z",
+          "atr": 2,
+          "atrPeriod": 9,
+          "atrPercentile": 0.5,
+          "volatility": "normal",
+          "direction": "Bearish",
+          "pivots": [],
+          "sweep": "SELL",
+          "level": 100,
+          "retest": "SELL",
+          "fvg": null,
+          "ifvg": null,
+          "gapOutcome": [],
+          "openingReversal": null,
+          "gapBefore": false
+        },
+        "circle2": {
+          "coverage": true,
+          "vintageVerified": true,
+          "contradiction": true,
+          "expectedDirection": "SELL"
+        },
+        "mappingVerified": true,
+        "timingVerified": true,
+        "methodsApproved": true,
+        "validated": true,
+        "fresh": true,
+        "riskConfigured": true,
+        "positionsKnown": true,
+        "newPositionsToday": 0,
+        "ownerDirection": "SELL",
+        "ownerEvidenceComplete": true,
+        "invalidation": false,
+        "proposedR": 5
+      },
+      "output": {
+        "version": "owner-plan-routing-2026-10-21-v2",
+        "asOf": "2026-10-22T08:00:00.000Z",
+        "instrumentId": "SILVER_CASH",
+        "strata": {
+          "actor": "Strata",
+          "state": "STAND DOWN",
+          "candidate": "SELL",
+          "hardGates": [
+            "Contradiction or invalidation unresolved"
+          ],
+          "cautions": []
+        },
+        "ownerPlan": {
+          "actor": "Owner plan evaluator",
+          "state": "STAND DOWN",
+          "declaredDirection": "SELL",
+          "hardGates": [
+            "Contradiction or invalidation unresolved"
+          ]
+        },
+        "disagreement": false,
+        "sharedEvidenceIsIndependentConfirmation": false,
+        "circles": {
+          "market": {
+            "featureAt": "2026-10-22T08:00:00.000Z",
+            "direction": "Bearish",
+            "atr": 2,
+            "comparisons": []
+          },
+          "expectation": {
+            "coverage": true,
+            "vintageVerified": true,
+            "contradiction": true,
+            "expectedDirection": "SELL"
+          },
+          "behaviour": {
+            "sweep": "SELL",
+            "retest": "SELL",
+            "openingReversal": null,
+            "intentMeasured": false
+          }
+        },
+        "invalidation": "A failed hard gate, stale evidence, opposite structure, breached stop or contradictory expectation requires Stand Down.",
+        "nextConditions": [
+          "Contradiction or invalidation unresolved"
+        ],
+        "statisticalConfidence": null,
+        "canSubmitOrder": false
+      }
+    },
+    {
+      "id": "nq-buy",
+      "input": {
+        "instrumentId": "NQ",
+        "asOf": "2026-10-22T08:00:00.000Z",
+        "feature": {
+          "index": 40,
+          "sourceTime": "2026-10-22T08:00:00.000Z",
+          "availableAt": "2026-10-22T08:00:00.000Z",
+          "atr": 2,
+          "atrPeriod": 9,
+          "atrPercentile": 0.5,
+          "volatility": "normal",
+          "direction": "Bullish",
+          "pivots": [],
+          "sweep": "BUY",
+          "level": 100,
+          "retest": "BUY",
+          "fvg": null,
+          "ifvg": null,
+          "gapOutcome": [],
+          "openingReversal": null,
+          "gapBefore": false
+        },
+        "directional": {
+          "index": 40,
+          "sourceTime": "2026-10-22T08:00:00.000Z",
+          "availableAt": "2026-10-22T08:00:00.000Z",
+          "atr": 2,
+          "atrPeriod": 9,
+          "atrPercentile": 0.5,
+          "volatility": "normal",
+          "direction": "Bullish",
+          "pivots": [],
+          "sweep": "BUY",
+          "level": 100,
+          "retest": "BUY",
+          "fvg": null,
+          "ifvg": null,
+          "gapOutcome": [],
+          "openingReversal": null,
+          "gapBefore": false
+        },
+        "higher": {
+          "index": 40,
+          "sourceTime": "2026-10-22T08:00:00.000Z",
+          "availableAt": "2026-10-22T08:00:00.000Z",
+          "atr": 2,
+          "atrPeriod": 9,
+          "atrPercentile": 0.5,
+          "volatility": "normal",
+          "direction": "Bullish",
+          "pivots": [],
+          "sweep": "BUY",
+          "level": 100,
+          "retest": "BUY",
+          "fvg": null,
+          "ifvg": null,
+          "gapOutcome": [],
+          "openingReversal": null,
+          "gapBefore": false
+        },
+        "circle2": {
+          "coverage": true,
+          "vintageVerified": true,
+          "contradiction": false,
+          "expectedDirection": "BUY"
+        },
+        "mappingVerified": true,
+        "timingVerified": true,
+        "methodsApproved": true,
+        "validated": true,
+        "fresh": true,
+        "riskConfigured": true,
+        "positionsKnown": true,
+        "newPositionsToday": 0,
+        "ownerDirection": "BUY",
+        "ownerEvidenceComplete": true,
+        "invalidation": false,
+        "proposedR": 5
+      },
+      "output": {
+        "version": "owner-plan-routing-2026-10-21-v2",
+        "asOf": "2026-10-22T08:00:00.000Z",
+        "instrumentId": "NQ",
+        "strata": {
+          "actor": "Strata",
+          "state": "STAND DOWN",
+          "candidate": "BUY",
+          "hardGates": [
+            "Instrument / direction outside execution allowlist"
+          ],
+          "cautions": []
+        },
+        "ownerPlan": {
+          "actor": "Owner plan evaluator",
+          "state": "STAND DOWN",
+          "declaredDirection": "BUY",
+          "hardGates": [
+            "Instrument / direction outside execution allowlist"
+          ]
+        },
+        "disagreement": false,
+        "sharedEvidenceIsIndependentConfirmation": false,
+        "circles": {
+          "market": {
+            "featureAt": "2026-10-22T08:00:00.000Z",
+            "direction": "Bullish",
+            "atr": 2,
+            "comparisons": []
+          },
+          "expectation": {
+            "coverage": true,
+            "vintageVerified": true,
+            "contradiction": false,
+            "expectedDirection": "BUY"
+          },
+          "behaviour": {
+            "sweep": "BUY",
+            "retest": "BUY",
+            "openingReversal": null,
+            "intentMeasured": false
+          }
+        },
+        "invalidation": "A failed hard gate, stale evidence, opposite structure, breached stop or contradictory expectation requires Stand Down.",
+        "nextConditions": [
+          "Instrument / direction outside execution allowlist"
+        ],
+        "statisticalConfidence": null,
+        "canSubmitOrder": false
+      }
+    },
+    {
+      "id": "unmapped-sugar",
+      "input": {
+        "instrumentId": "SUGAR_RAW_CASH",
+        "asOf": "2026-10-22T08:00:00.000Z",
+        "feature": {
+          "index": 40,
+          "sourceTime": "2026-10-22T08:00:00.000Z",
+          "availableAt": "2026-10-22T08:00:00.000Z",
+          "atr": 2,
+          "atrPeriod": 9,
+          "atrPercentile": 0.5,
+          "volatility": "normal",
+          "direction": "Bullish",
+          "pivots": [],
+          "sweep": "BUY",
+          "level": 100,
+          "retest": "BUY",
+          "fvg": null,
+          "ifvg": null,
+          "gapOutcome": [],
+          "openingReversal": null,
+          "gapBefore": false
+        },
+        "directional": {
+          "index": 40,
+          "sourceTime": "2026-10-22T08:00:00.000Z",
+          "availableAt": "2026-10-22T08:00:00.000Z",
+          "atr": 2,
+          "atrPeriod": 9,
+          "atrPercentile": 0.5,
+          "volatility": "normal",
+          "direction": "Bullish",
+          "pivots": [],
+          "sweep": "BUY",
+          "level": 100,
+          "retest": "BUY",
+          "fvg": null,
+          "ifvg": null,
+          "gapOutcome": [],
+          "openingReversal": null,
+          "gapBefore": false
+        },
+        "higher": {
+          "index": 40,
+          "sourceTime": "2026-10-22T08:00:00.000Z",
+          "availableAt": "2026-10-22T08:00:00.000Z",
+          "atr": 2,
+          "atrPeriod": 9,
+          "atrPercentile": 0.5,
+          "volatility": "normal",
+          "direction": "Bullish",
+          "pivots": [],
+          "sweep": "BUY",
+          "level": 100,
+          "retest": "BUY",
+          "fvg": null,
+          "ifvg": null,
+          "gapOutcome": [],
+          "openingReversal": null,
+          "gapBefore": false
+        },
+        "circle2": {
+          "coverage": true,
+          "vintageVerified": true,
+          "contradiction": false,
+          "expectedDirection": "BUY"
+        },
+        "mappingVerified": false,
+        "timingVerified": true,
+        "methodsApproved": true,
+        "validated": true,
+        "fresh": true,
+        "riskConfigured": true,
+        "positionsKnown": true,
+        "newPositionsToday": 0,
+        "ownerDirection": "BUY",
+        "ownerEvidenceComplete": true,
+        "invalidation": false,
+        "proposedR": 5
+      },
+      "output": {
+        "version": "owner-plan-routing-2026-10-21-v2",
+        "asOf": "2026-10-22T08:00:00.000Z",
+        "instrumentId": "SUGAR_RAW_CASH",
+        "strata": {
+          "actor": "Strata",
+          "state": "STAND DOWN",
+          "candidate": "BUY",
+          "hardGates": [
+            "Exact execution product unresolved"
+          ],
+          "cautions": []
+        },
+        "ownerPlan": {
+          "actor": "Owner plan evaluator",
+          "state": "STAND DOWN",
+          "declaredDirection": "BUY",
+          "hardGates": [
+            "Exact execution product unresolved"
+          ]
+        },
+        "disagreement": false,
+        "sharedEvidenceIsIndependentConfirmation": false,
+        "circles": {
+          "market": {
+            "featureAt": "2026-10-22T08:00:00.000Z",
+            "direction": "Bullish",
+            "atr": 2,
+            "comparisons": []
+          },
+          "expectation": {
+            "coverage": true,
+            "vintageVerified": true,
+            "contradiction": false,
+            "expectedDirection": "BUY"
+          },
+          "behaviour": {
+            "sweep": "BUY",
+            "retest": "BUY",
+            "openingReversal": null,
+            "intentMeasured": false
+          }
+        },
+        "invalidation": "A failed hard gate, stale evidence, opposite structure, breached stop or contradictory expectation requires Stand Down.",
+        "nextConditions": [
+          "Exact execution product unresolved"
+        ],
+        "statisticalConfidence": null,
+        "canSubmitOrder": false
+      }
+    },
+    {
+      "id": "unmapped-crude",
+      "input": {
+        "instrumentId": "CRUDE_OIL_CASH",
+        "asOf": "2026-10-22T08:00:00.000Z",
+        "feature": {
+          "index": 40,
+          "sourceTime": "2026-10-22T08:00:00.000Z",
+          "availableAt": "2026-10-22T08:00:00.000Z",
+          "atr": 2,
+          "atrPeriod": 9,
+          "atrPercentile": 0.5,
+          "volatility": "normal",
+          "direction": "Bearish",
+          "pivots": [],
+          "sweep": "SELL",
+          "level": 100,
+          "retest": "SELL",
+          "fvg": null,
+          "ifvg": null,
+          "gapOutcome": [],
+          "openingReversal": null,
+          "gapBefore": false
+        },
+        "directional": {
+          "index": 40,
+          "sourceTime": "2026-10-22T08:00:00.000Z",
+          "availableAt": "2026-10-22T08:00:00.000Z",
+          "atr": 2,
+          "atrPeriod": 9,
+          "atrPercentile": 0.5,
+          "volatility": "normal",
+          "direction": "Bearish",
+          "pivots": [],
+          "sweep": "SELL",
+          "level": 100,
+          "retest": "SELL",
+          "fvg": null,
+          "ifvg": null,
+          "gapOutcome": [],
+          "openingReversal": null,
+          "gapBefore": false
+        },
+        "higher": {
+          "index": 40,
+          "sourceTime": "2026-10-22T08:00:00.000Z",
+          "availableAt": "2026-10-22T08:00:00.000Z",
+          "atr": 2,
+          "atrPeriod": 9,
+          "atrPercentile": 0.5,
+          "volatility": "normal",
+          "direction": "Bearish",
+          "pivots": [],
+          "sweep": "SELL",
+          "level": 100,
+          "retest": "SELL",
+          "fvg": null,
+          "ifvg": null,
+          "gapOutcome": [],
+          "openingReversal": null,
+          "gapBefore": false
+        },
+        "circle2": {
+          "coverage": true,
+          "vintageVerified": true,
+          "contradiction": false,
+          "expectedDirection": "SELL"
+        },
+        "mappingVerified": false,
+        "timingVerified": true,
+        "methodsApproved": true,
+        "validated": true,
+        "fresh": true,
+        "riskConfigured": true,
+        "positionsKnown": true,
+        "newPositionsToday": 0,
+        "ownerDirection": "SELL",
+        "ownerEvidenceComplete": true,
+        "invalidation": false,
+        "proposedR": 5
+      },
+      "output": {
+        "version": "owner-plan-routing-2026-10-21-v2",
+        "asOf": "2026-10-22T08:00:00.000Z",
+        "instrumentId": "CRUDE_OIL_CASH",
+        "strata": {
+          "actor": "Strata",
+          "state": "STAND DOWN",
+          "candidate": "SELL",
+          "hardGates": [
+            "Exact execution product unresolved"
+          ],
+          "cautions": []
+        },
+        "ownerPlan": {
+          "actor": "Owner plan evaluator",
+          "state": "STAND DOWN",
+          "declaredDirection": "SELL",
+          "hardGates": [
+            "Exact execution product unresolved"
+          ]
+        },
+        "disagreement": false,
+        "sharedEvidenceIsIndependentConfirmation": false,
+        "circles": {
+          "market": {
+            "featureAt": "2026-10-22T08:00:00.000Z",
+            "direction": "Bearish",
+            "atr": 2,
+            "comparisons": []
+          },
+          "expectation": {
+            "coverage": true,
+            "vintageVerified": true,
+            "contradiction": false,
+            "expectedDirection": "SELL"
+          },
+          "behaviour": {
+            "sweep": "SELL",
+            "retest": "SELL",
+            "openingReversal": null,
+            "intentMeasured": false
+          }
+        },
+        "invalidation": "A failed hard gate, stale evidence, opposite structure, breached stop or contradictory expectation requires Stand Down.",
+        "nextConditions": [
+          "Exact execution product unresolved"
+        ],
+        "statisticalConfidence": null,
+        "canSubmitOrder": false
+      }
+    },
+    {
+      "id": "owner-disagrees",
+      "input": {
+        "instrumentId": "SILVER_CASH",
+        "asOf": "2026-10-22T08:00:00.000Z",
+        "feature": {
+          "index": 40,
+          "sourceTime": "2026-10-22T08:00:00.000Z",
+          "availableAt": "2026-10-22T08:00:00.000Z",
+          "atr": 2,
+          "atrPeriod": 9,
+          "atrPercentile": 0.5,
+          "volatility": "normal",
+          "direction": "Bearish",
+          "pivots": [],
+          "sweep": "SELL",
+          "level": 100,
+          "retest": "SELL",
+          "fvg": null,
+          "ifvg": null,
+          "gapOutcome": [],
+          "openingReversal": null,
+          "gapBefore": false
+        },
+        "directional": {
+          "index": 40,
+          "sourceTime": "2026-10-22T08:00:00.000Z",
+          "availableAt": "2026-10-22T08:00:00.000Z",
+          "atr": 2,
+          "atrPeriod": 9,
+          "atrPercentile": 0.5,
+          "volatility": "normal",
+          "direction": "Bearish",
+          "pivots": [],
+          "sweep": "SELL",
+          "level": 100,
+          "retest": "SELL",
+          "fvg": null,
+          "ifvg": null,
+          "gapOutcome": [],
+          "openingReversal": null,
+          "gapBefore": false
+        },
+        "higher": {
+          "index": 40,
+          "sourceTime": "2026-10-22T08:00:00.000Z",
+          "availableAt": "2026-10-22T08:00:00.000Z",
+          "atr": 2,
+          "atrPeriod": 9,
+          "atrPercentile": 0.5,
+          "volatility": "normal",
+          "direction": "Bearish",
+          "pivots": [],
+          "sweep": "SELL",
+          "level": 100,
+          "retest": "SELL",
+          "fvg": null,
+          "ifvg": null,
+          "gapOutcome": [],
+          "openingReversal": null,
+          "gapBefore": false
+        },
+        "circle2": {
+          "coverage": true,
+          "vintageVerified": true,
+          "contradiction": false,
+          "expectedDirection": "SELL"
+        },
+        "mappingVerified": true,
+        "timingVerified": true,
+        "methodsApproved": true,
+        "validated": true,
+        "fresh": true,
+        "riskConfigured": true,
+        "positionsKnown": true,
+        "newPositionsToday": 0,
+        "ownerDirection": "BUY",
+        "ownerEvidenceComplete": true,
+        "invalidation": false,
+        "proposedR": 5
+      },
+      "output": {
+        "version": "owner-plan-routing-2026-10-21-v2",
+        "asOf": "2026-10-22T08:00:00.000Z",
+        "instrumentId": "SILVER_CASH",
+        "strata": {
+          "actor": "Strata",
+          "state": "SELL",
+          "candidate": "SELL",
+          "hardGates": [],
+          "cautions": []
+        },
+        "ownerPlan": {
+          "actor": "Owner plan evaluator",
+          "state": "STAND DOWN",
+          "declaredDirection": "BUY",
+          "hardGates": [
+            "Owner direction disagrees with computed structural candidate"
+          ]
+        },
+        "disagreement": true,
+        "sharedEvidenceIsIndependentConfirmation": false,
+        "circles": {
+          "market": {
+            "featureAt": "2026-10-22T08:00:00.000Z",
+            "direction": "Bearish",
+            "atr": 2,
+            "comparisons": []
+          },
+          "expectation": {
+            "coverage": true,
+            "vintageVerified": true,
+            "contradiction": false,
+            "expectedDirection": "SELL"
+          },
+          "behaviour": {
+            "sweep": "SELL",
+            "retest": "SELL",
+            "openingReversal": null,
+            "intentMeasured": false
+          }
+        },
+        "invalidation": "A failed hard gate, stale evidence, opposite structure, breached stop or contradictory expectation requires Stand Down.",
+        "nextConditions": [
+          "Owner direction disagrees with computed structural candidate"
+        ],
+        "statisticalConfidence": null,
+        "canSubmitOrder": false
+      }
+    },
+    {
+      "id": "risk-missing",
+      "input": {
+        "instrumentId": "SILVER_CASH",
+        "asOf": "2026-10-22T08:00:00.000Z",
+        "feature": {
+          "index": 40,
+          "sourceTime": "2026-10-22T08:00:00.000Z",
+          "availableAt": "2026-10-22T08:00:00.000Z",
+          "atr": 2,
+          "atrPeriod": 9,
+          "atrPercentile": 0.5,
+          "volatility": "normal",
+          "direction": "Bearish",
+          "pivots": [],
+          "sweep": "SELL",
+          "level": 100,
+          "retest": "SELL",
+          "fvg": null,
+          "ifvg": null,
+          "gapOutcome": [],
+          "openingReversal": null,
+          "gapBefore": false
+        },
+        "directional": {
+          "index": 40,
+          "sourceTime": "2026-10-22T08:00:00.000Z",
+          "availableAt": "2026-10-22T08:00:00.000Z",
+          "atr": 2,
+          "atrPeriod": 9,
+          "atrPercentile": 0.5,
+          "volatility": "normal",
+          "direction": "Bearish",
+          "pivots": [],
+          "sweep": "SELL",
+          "level": 100,
+          "retest": "SELL",
+          "fvg": null,
+          "ifvg": null,
+          "gapOutcome": [],
+          "openingReversal": null,
+          "gapBefore": false
+        },
+        "higher": {
+          "index": 40,
+          "sourceTime": "2026-10-22T08:00:00.000Z",
+          "availableAt": "2026-10-22T08:00:00.000Z",
+          "atr": 2,
+          "atrPeriod": 9,
+          "atrPercentile": 0.5,
+          "volatility": "normal",
+          "direction": "Bearish",
+          "pivots": [],
+          "sweep": "SELL",
+          "level": 100,
+          "retest": "SELL",
+          "fvg": null,
+          "ifvg": null,
+          "gapOutcome": [],
+          "openingReversal": null,
+          "gapBefore": false
+        },
+        "circle2": {
+          "coverage": true,
+          "vintageVerified": true,
+          "contradiction": false,
+          "expectedDirection": "SELL"
+        },
+        "mappingVerified": true,
+        "timingVerified": true,
+        "methodsApproved": true,
+        "validated": true,
+        "fresh": true,
+        "riskConfigured": false,
+        "positionsKnown": true,
+        "newPositionsToday": 0,
+        "ownerDirection": "SELL",
+        "ownerEvidenceComplete": true,
+        "invalidation": false,
+        "proposedR": 5
+      },
+      "output": {
+        "version": "owner-plan-routing-2026-10-21-v2",
+        "asOf": "2026-10-22T08:00:00.000Z",
+        "instrumentId": "SILVER_CASH",
+        "strata": {
+          "actor": "Strata",
+          "state": "STAND DOWN",
+          "candidate": "SELL",
+          "hardGates": [
+            "Risk sizing, stop/target or TP1 configuration incomplete"
+          ],
+          "cautions": []
+        },
+        "ownerPlan": {
+          "actor": "Owner plan evaluator",
+          "state": "STAND DOWN",
+          "declaredDirection": "SELL",
+          "hardGates": [
+            "Risk sizing, stop/target or TP1 configuration incomplete"
+          ]
+        },
+        "disagreement": false,
+        "sharedEvidenceIsIndependentConfirmation": false,
+        "circles": {
+          "market": {
+            "featureAt": "2026-10-22T08:00:00.000Z",
+            "direction": "Bearish",
+            "atr": 2,
+            "comparisons": []
+          },
+          "expectation": {
+            "coverage": true,
+            "vintageVerified": true,
+            "contradiction": false,
+            "expectedDirection": "SELL"
+          },
+          "behaviour": {
+            "sweep": "SELL",
+            "retest": "SELL",
+            "openingReversal": null,
+            "intentMeasured": false
+          }
+        },
+        "invalidation": "A failed hard gate, stale evidence, opposite structure, breached stop or contradictory expectation requires Stand Down.",
+        "nextConditions": [
+          "Risk sizing, stop/target or TP1 configuration incomplete"
+        ],
+        "statisticalConfidence": null,
+        "canSubmitOrder": false
+      }
+    },
+    {
+      "id": "daily-cap",
+      "input": {
+        "instrumentId": "SILVER_CASH",
+        "asOf": "2026-10-22T08:00:00.000Z",
+        "feature": {
+          "index": 40,
+          "sourceTime": "2026-10-22T08:00:00.000Z",
+          "availableAt": "2026-10-22T08:00:00.000Z",
+          "atr": 2,
+          "atrPeriod": 9,
+          "atrPercentile": 0.5,
+          "volatility": "normal",
+          "direction": "Bearish",
+          "pivots": [],
+          "sweep": "SELL",
+          "level": 100,
+          "retest": "SELL",
+          "fvg": null,
+          "ifvg": null,
+          "gapOutcome": [],
+          "openingReversal": null,
+          "gapBefore": false
+        },
+        "directional": {
+          "index": 40,
+          "sourceTime": "2026-10-22T08:00:00.000Z",
+          "availableAt": "2026-10-22T08:00:00.000Z",
+          "atr": 2,
+          "atrPeriod": 9,
+          "atrPercentile": 0.5,
+          "volatility": "normal",
+          "direction": "Bearish",
+          "pivots": [],
+          "sweep": "SELL",
+          "level": 100,
+          "retest": "SELL",
+          "fvg": null,
+          "ifvg": null,
+          "gapOutcome": [],
+          "openingReversal": null,
+          "gapBefore": false
+        },
+        "higher": {
+          "index": 40,
+          "sourceTime": "2026-10-22T08:00:00.000Z",
+          "availableAt": "2026-10-22T08:00:00.000Z",
+          "atr": 2,
+          "atrPeriod": 9,
+          "atrPercentile": 0.5,
+          "volatility": "normal",
+          "direction": "Bearish",
+          "pivots": [],
+          "sweep": "SELL",
+          "level": 100,
+          "retest": "SELL",
+          "fvg": null,
+          "ifvg": null,
+          "gapOutcome": [],
+          "openingReversal": null,
+          "gapBefore": false
+        },
+        "circle2": {
+          "coverage": true,
+          "vintageVerified": true,
+          "contradiction": false,
+          "expectedDirection": "SELL"
+        },
+        "mappingVerified": true,
+        "timingVerified": true,
+        "methodsApproved": true,
+        "validated": true,
+        "fresh": true,
+        "riskConfigured": true,
+        "positionsKnown": true,
+        "newPositionsToday": 1,
+        "ownerDirection": "SELL",
+        "ownerEvidenceComplete": true,
+        "invalidation": false,
+        "proposedR": 5
+      },
+      "output": {
+        "version": "owner-plan-routing-2026-10-21-v2",
+        "asOf": "2026-10-22T08:00:00.000Z",
+        "instrumentId": "SILVER_CASH",
+        "strata": {
+          "actor": "Strata",
+          "state": "STAND DOWN",
+          "candidate": "SELL",
+          "hardGates": [
+            "Daily new-position limit reached"
+          ],
+          "cautions": []
+        },
+        "ownerPlan": {
+          "actor": "Owner plan evaluator",
+          "state": "STAND DOWN",
+          "declaredDirection": "SELL",
+          "hardGates": [
+            "Daily new-position limit reached"
+          ]
+        },
+        "disagreement": false,
+        "sharedEvidenceIsIndependentConfirmation": false,
+        "circles": {
+          "market": {
+            "featureAt": "2026-10-22T08:00:00.000Z",
+            "direction": "Bearish",
+            "atr": 2,
+            "comparisons": []
+          },
+          "expectation": {
+            "coverage": true,
+            "vintageVerified": true,
+            "contradiction": false,
+            "expectedDirection": "SELL"
+          },
+          "behaviour": {
+            "sweep": "SELL",
+            "retest": "SELL",
+            "openingReversal": null,
+            "intentMeasured": false
+          }
+        },
+        "invalidation": "A failed hard gate, stale evidence, opposite structure, breached stop or contradictory expectation requires Stand Down.",
+        "nextConditions": [
+          "Daily new-position limit reached"
+        ],
+        "statisticalConfidence": null,
+        "canSubmitOrder": false
+      }
+    }
+  ],
+  "readiness": [
+    {
+      "instrumentId": "GOLD_CASH",
+      "output": {
+        "id": "assessment-GOLD_CASH-2026-10-22T08:00:00.000Z",
+        "actor": "Strata",
+        "instrumentId": "GOLD_CASH",
+        "evaluatedAt": "2026-10-22T08:00:00.000Z",
+        "direction": "Unknown",
+        "readiness": "Incomplete",
+        "evidenceHealth": "unavailable",
+        "supporting": [],
+        "against": [],
+        "unknowns": [
+          "riskPerTrade: missing; mandatory owner configuration.",
+          "totalOpenRisk: missing; mandatory owner configuration.",
+          "dailyLossLimit: missing; mandatory owner configuration.",
+          "stopPolicy: missing; mandatory owner configuration.",
+          "targetPolicy: missing; mandatory owner configuration.",
+          "unknownDataPolicy: missing; mandatory owner configuration.",
+          "directionDefinition: missing; mandatory owner configuration.",
+          "structuralSmt: missing; mandatory owner configuration.",
+          "sweepDefinition: missing; mandatory owner configuration.",
+          "gapDefinition: missing; mandatory owner configuration.",
+          "calendarPolicy: missing; mandatory owner configuration.",
+          "newsBlackout: missing; mandatory owner configuration.",
+          "freshnessPolicy: missing; mandatory owner configuration.",
+          "positionScope: missing; mandatory owner configuration.",
+          "instrumentMapping: missing; mandatory owner configuration.",
+          "tp1Policy: missing; mandatory owner configuration.",
+          "GMT/BST versus fixed GMT is unresolved; current window display uses Europe/London.",
+          "Verified session/holiday calendar coverage is required; proposed weekend default is inactive.",
+          "Resolved customer-facing CMC Spread Betting account required; backend selector does not establish wrapper.",
+          "Maximum one new position per instrument per UK trading day; a current open count is not opening history.",
+          "Open positions unknown or not freshly reconciled for the correct spread-bet account.",
+          "Entry timing requires native 2-minute or 5-minute bars.",
+          "Thesis must be established on 15 minutes or higher.",
+          "Qualifying liquidity needs 5m+; exact structural definition remains separately gated.",
+          "Exact broker product, basis, units and mapping evidence remain unresolved.",
+          "No current verified 2m/5m BarSeries.",
+          "No thesis; None. 6/10 is Silver-only, never a win probability.",
+          "Approved pivots, quote direction and per-pair synchronisation tolerances remain unconfigured; no implicit one-bar rule."
+        ],
+        "invalidation": "Contradictory/stale evidence, loss of the qualifying thesis, failed risk gates, capacity or closed entry window invalidates readiness.",
+        "nextConditions": [
+          "riskPerTrade: missing; mandatory owner configuration.",
+          "totalOpenRisk: missing; mandatory owner configuration.",
+          "dailyLossLimit: missing; mandatory owner configuration.",
+          "stopPolicy: missing; mandatory owner configuration.",
+          "targetPolicy: missing; mandatory owner configuration.",
+          "unknownDataPolicy: missing; mandatory owner configuration."
+        ],
+        "gates": [
+          {
+            "id": "allowlist",
+            "name": "Execution universe",
+            "state": "pass",
+            "hard": true,
+            "reason": "Only Gold - Cash, Silver - Cash, Sugar Raw - Cash, Crude Oil - Cash (BUY/SELL), and US NDAQ 100 - Cash (SELL ONLY) are execution eligible.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-riskPerTrade",
+            "name": "riskPerTrade",
+            "state": "unknown",
+            "hard": true,
+            "reason": "riskPerTrade: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-totalOpenRisk",
+            "name": "totalOpenRisk",
+            "state": "unknown",
+            "hard": true,
+            "reason": "totalOpenRisk: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-dailyLossLimit",
+            "name": "dailyLossLimit",
+            "state": "unknown",
+            "hard": true,
+            "reason": "dailyLossLimit: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-stopPolicy",
+            "name": "stopPolicy",
+            "state": "unknown",
+            "hard": true,
+            "reason": "stopPolicy: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-targetPolicy",
+            "name": "targetPolicy",
+            "state": "unknown",
+            "hard": true,
+            "reason": "targetPolicy: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-unknownDataPolicy",
+            "name": "unknownDataPolicy",
+            "state": "unknown",
+            "hard": true,
+            "reason": "unknownDataPolicy: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-directionDefinition",
+            "name": "directionDefinition",
+            "state": "unknown",
+            "hard": true,
+            "reason": "directionDefinition: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-structuralSmt",
+            "name": "structuralSmt",
+            "state": "unknown",
+            "hard": true,
+            "reason": "structuralSmt: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-sweepDefinition",
+            "name": "sweepDefinition",
+            "state": "unknown",
+            "hard": true,
+            "reason": "sweepDefinition: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-gapDefinition",
+            "name": "gapDefinition",
+            "state": "unknown",
+            "hard": true,
+            "reason": "gapDefinition: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-calendarPolicy",
+            "name": "calendarPolicy",
+            "state": "unknown",
+            "hard": true,
+            "reason": "calendarPolicy: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-newsBlackout",
+            "name": "newsBlackout",
+            "state": "unknown",
+            "hard": true,
+            "reason": "newsBlackout: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-freshnessPolicy",
+            "name": "freshnessPolicy",
+            "state": "unknown",
+            "hard": true,
+            "reason": "freshnessPolicy: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-positionScope",
+            "name": "positionScope",
+            "state": "unknown",
+            "hard": true,
+            "reason": "positionScope: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-instrumentMapping",
+            "name": "instrumentMapping",
+            "state": "unknown",
+            "hard": true,
+            "reason": "instrumentMapping: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-tp1Policy",
+            "name": "tp1Policy",
+            "state": "unknown",
+            "hard": true,
+            "reason": "tp1Policy: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "timezone-policy",
+            "name": "London clock policy",
+            "state": "unknown",
+            "hard": true,
+            "reason": "GMT/BST versus fixed GMT is unresolved; current window display uses Europe/London.",
+            "evidenceIds": []
+          },
+          {
+            "id": "session",
+            "name": "Entry window",
+            "state": "pass",
+            "hard": true,
+            "reason": "London 09:00; 08:00–10:00 / 14:00–16:30, end exclusive.",
+            "evidenceIds": []
+          },
+          {
+            "id": "calendar",
+            "name": "Market calendar",
+            "state": "unknown",
+            "hard": true,
+            "reason": "Verified session/holiday calendar coverage is required; proposed weekend default is inactive.",
+            "evidenceIds": []
+          },
+          {
+            "id": "venue",
+            "name": "Resolved account",
+            "state": "unknown",
+            "hard": true,
+            "reason": "Resolved customer-facing CMC Spread Betting account required; backend selector does not establish wrapper.",
+            "evidenceIds": []
+          },
+          {
+            "id": "new-position-cap",
+            "name": "UK daily opening limit",
+            "state": "unknown",
+            "hard": true,
+            "reason": "Maximum one new position per instrument per UK trading day; a current open count is not opening history.",
+            "evidenceIds": []
+          },
+          {
+            "id": "nq-side",
+            "name": "NQ sell-only",
+            "state": "pass",
+            "hard": true,
+            "reason": "NQ permits SELL only.",
+            "evidenceIds": []
+          },
+          {
+            "id": "position-cap",
+            "name": "Position visibility/cap",
+            "state": "unknown",
+            "hard": true,
+            "reason": "Open positions unknown or not freshly reconciled for the correct spread-bet account.",
+            "evidenceIds": []
+          },
+          {
+            "id": "entry-timeframe",
+            "name": "Entry timeframe",
+            "state": "unknown",
+            "hard": true,
+            "reason": "Entry timing requires native 2-minute or 5-minute bars.",
+            "evidenceIds": []
+          },
+          {
+            "id": "thesis-timeframe",
+            "name": "Thesis timeframe",
+            "state": "unknown",
+            "hard": true,
+            "reason": "Thesis must be established on 15 minutes or higher.",
+            "evidenceIds": []
+          },
+          {
+            "id": "liquidity",
+            "name": "Liquidity relevance",
+            "state": "unknown",
+            "hard": true,
+            "reason": "Qualifying liquidity needs 5m+; exact structural definition remains separately gated.",
+            "evidenceIds": []
+          },
+          {
+            "id": "gap",
+            "name": "Optional gap",
+            "state": "pass",
+            "hard": true,
+            "reason": "FVG/IFVG optional; no gap is required.",
+            "evidenceIds": []
+          },
+          {
+            "id": "broker-mapping",
+            "name": "Broker mapping",
+            "state": "unknown",
+            "hard": true,
+            "reason": "Exact broker product, basis, units and mapping evidence remain unresolved.",
+            "evidenceIds": []
+          },
+          {
+            "id": "market-data",
+            "name": "Current mapped bars",
+            "state": "unknown",
+            "hard": true,
+            "reason": "No current verified 2m/5m BarSeries.",
+            "evidenceIds": []
+          },
+          {
+            "id": "conviction",
+            "name": "Owner conviction",
+            "state": "unknown",
+            "hard": true,
+            "reason": "No thesis; None. 6/10 is Silver-only, never a win probability.",
+            "evidenceIds": []
+          },
+          {
+            "id": "alignment-definition",
+            "name": "Structural comparison definition",
+            "state": "unknown",
+            "hard": true,
+            "reason": "Approved pivots, quote direction and per-pair synchronisation tolerances remain unconfigured; no implicit one-bar rule.",
+            "evidenceIds": []
+          }
+        ],
+        "evidenceIds": [],
+        "ruleVersion": "owner-plan-routing-2026-10-21-v2",
+        "inputVersion": "unversioned-no-production-readiness",
+        "hypothetical": false,
+        "canSubmitOrder": false
+      }
+    },
+    {
+      "instrumentId": "SILVER_CASH",
+      "output": {
+        "id": "assessment-SILVER_CASH-2026-10-22T08:00:00.000Z",
+        "actor": "Strata",
+        "instrumentId": "SILVER_CASH",
+        "evaluatedAt": "2026-10-22T08:00:00.000Z",
+        "direction": "Unknown",
+        "readiness": "Incomplete",
+        "evidenceHealth": "unavailable",
+        "supporting": [],
+        "against": [],
+        "unknowns": [
+          "riskPerTrade: missing; mandatory owner configuration.",
+          "totalOpenRisk: missing; mandatory owner configuration.",
+          "dailyLossLimit: missing; mandatory owner configuration.",
+          "stopPolicy: missing; mandatory owner configuration.",
+          "targetPolicy: missing; mandatory owner configuration.",
+          "unknownDataPolicy: missing; mandatory owner configuration.",
+          "directionDefinition: missing; mandatory owner configuration.",
+          "structuralSmt: missing; mandatory owner configuration.",
+          "sweepDefinition: missing; mandatory owner configuration.",
+          "gapDefinition: missing; mandatory owner configuration.",
+          "calendarPolicy: missing; mandatory owner configuration.",
+          "newsBlackout: missing; mandatory owner configuration.",
+          "freshnessPolicy: missing; mandatory owner configuration.",
+          "positionScope: missing; mandatory owner configuration.",
+          "instrumentMapping: missing; mandatory owner configuration.",
+          "tp1Policy: missing; mandatory owner configuration.",
+          "GMT/BST versus fixed GMT is unresolved; current window display uses Europe/London.",
+          "Verified session/holiday calendar coverage is required; proposed weekend default is inactive.",
+          "Resolved customer-facing CMC Spread Betting account required; backend selector does not establish wrapper.",
+          "Maximum one new position per instrument per UK trading day; a current open count is not opening history.",
+          "Open positions unknown or not freshly reconciled for the correct spread-bet account.",
+          "Entry timing requires native 2-minute or 5-minute bars.",
+          "Thesis must be established on 15 minutes or higher.",
+          "Qualifying liquidity needs 5m+; exact structural definition remains separately gated.",
+          "Exact broker product, basis, units and mapping evidence remain unresolved.",
+          "No current verified 2m/5m BarSeries.",
+          "No thesis; None. 6/10 is Silver-only, never a win probability.",
+          "Approved pivots, quote direction and per-pair synchronisation tolerances remain unconfigured; no implicit one-bar rule."
+        ],
+        "invalidation": "Contradictory/stale evidence, loss of the qualifying thesis, failed risk gates, capacity or closed entry window invalidates readiness.",
+        "nextConditions": [
+          "riskPerTrade: missing; mandatory owner configuration.",
+          "totalOpenRisk: missing; mandatory owner configuration.",
+          "dailyLossLimit: missing; mandatory owner configuration.",
+          "stopPolicy: missing; mandatory owner configuration.",
+          "targetPolicy: missing; mandatory owner configuration.",
+          "unknownDataPolicy: missing; mandatory owner configuration."
+        ],
+        "gates": [
+          {
+            "id": "allowlist",
+            "name": "Execution universe",
+            "state": "pass",
+            "hard": true,
+            "reason": "Only Gold - Cash, Silver - Cash, Sugar Raw - Cash, Crude Oil - Cash (BUY/SELL), and US NDAQ 100 - Cash (SELL ONLY) are execution eligible.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-riskPerTrade",
+            "name": "riskPerTrade",
+            "state": "unknown",
+            "hard": true,
+            "reason": "riskPerTrade: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-totalOpenRisk",
+            "name": "totalOpenRisk",
+            "state": "unknown",
+            "hard": true,
+            "reason": "totalOpenRisk: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-dailyLossLimit",
+            "name": "dailyLossLimit",
+            "state": "unknown",
+            "hard": true,
+            "reason": "dailyLossLimit: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-stopPolicy",
+            "name": "stopPolicy",
+            "state": "unknown",
+            "hard": true,
+            "reason": "stopPolicy: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-targetPolicy",
+            "name": "targetPolicy",
+            "state": "unknown",
+            "hard": true,
+            "reason": "targetPolicy: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-unknownDataPolicy",
+            "name": "unknownDataPolicy",
+            "state": "unknown",
+            "hard": true,
+            "reason": "unknownDataPolicy: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-directionDefinition",
+            "name": "directionDefinition",
+            "state": "unknown",
+            "hard": true,
+            "reason": "directionDefinition: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-structuralSmt",
+            "name": "structuralSmt",
+            "state": "unknown",
+            "hard": true,
+            "reason": "structuralSmt: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-sweepDefinition",
+            "name": "sweepDefinition",
+            "state": "unknown",
+            "hard": true,
+            "reason": "sweepDefinition: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-gapDefinition",
+            "name": "gapDefinition",
+            "state": "unknown",
+            "hard": true,
+            "reason": "gapDefinition: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-calendarPolicy",
+            "name": "calendarPolicy",
+            "state": "unknown",
+            "hard": true,
+            "reason": "calendarPolicy: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-newsBlackout",
+            "name": "newsBlackout",
+            "state": "unknown",
+            "hard": true,
+            "reason": "newsBlackout: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-freshnessPolicy",
+            "name": "freshnessPolicy",
+            "state": "unknown",
+            "hard": true,
+            "reason": "freshnessPolicy: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-positionScope",
+            "name": "positionScope",
+            "state": "unknown",
+            "hard": true,
+            "reason": "positionScope: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-instrumentMapping",
+            "name": "instrumentMapping",
+            "state": "unknown",
+            "hard": true,
+            "reason": "instrumentMapping: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-tp1Policy",
+            "name": "tp1Policy",
+            "state": "unknown",
+            "hard": true,
+            "reason": "tp1Policy: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "timezone-policy",
+            "name": "London clock policy",
+            "state": "unknown",
+            "hard": true,
+            "reason": "GMT/BST versus fixed GMT is unresolved; current window display uses Europe/London.",
+            "evidenceIds": []
+          },
+          {
+            "id": "session",
+            "name": "Entry window",
+            "state": "pass",
+            "hard": true,
+            "reason": "London 09:00; 08:00–10:00 / 14:00–16:30, end exclusive.",
+            "evidenceIds": []
+          },
+          {
+            "id": "calendar",
+            "name": "Market calendar",
+            "state": "unknown",
+            "hard": true,
+            "reason": "Verified session/holiday calendar coverage is required; proposed weekend default is inactive.",
+            "evidenceIds": []
+          },
+          {
+            "id": "venue",
+            "name": "Resolved account",
+            "state": "unknown",
+            "hard": true,
+            "reason": "Resolved customer-facing CMC Spread Betting account required; backend selector does not establish wrapper.",
+            "evidenceIds": []
+          },
+          {
+            "id": "new-position-cap",
+            "name": "UK daily opening limit",
+            "state": "unknown",
+            "hard": true,
+            "reason": "Maximum one new position per instrument per UK trading day; a current open count is not opening history.",
+            "evidenceIds": []
+          },
+          {
+            "id": "nq-side",
+            "name": "NQ sell-only",
+            "state": "pass",
+            "hard": true,
+            "reason": "NQ permits SELL only.",
+            "evidenceIds": []
+          },
+          {
+            "id": "position-cap",
+            "name": "Position visibility/cap",
+            "state": "unknown",
+            "hard": true,
+            "reason": "Open positions unknown or not freshly reconciled for the correct spread-bet account.",
+            "evidenceIds": []
+          },
+          {
+            "id": "entry-timeframe",
+            "name": "Entry timeframe",
+            "state": "unknown",
+            "hard": true,
+            "reason": "Entry timing requires native 2-minute or 5-minute bars.",
+            "evidenceIds": []
+          },
+          {
+            "id": "thesis-timeframe",
+            "name": "Thesis timeframe",
+            "state": "unknown",
+            "hard": true,
+            "reason": "Thesis must be established on 15 minutes or higher.",
+            "evidenceIds": []
+          },
+          {
+            "id": "liquidity",
+            "name": "Liquidity relevance",
+            "state": "unknown",
+            "hard": true,
+            "reason": "Qualifying liquidity needs 5m+; exact structural definition remains separately gated.",
+            "evidenceIds": []
+          },
+          {
+            "id": "gap",
+            "name": "Optional gap",
+            "state": "pass",
+            "hard": true,
+            "reason": "FVG/IFVG optional; no gap is required.",
+            "evidenceIds": []
+          },
+          {
+            "id": "broker-mapping",
+            "name": "Broker mapping",
+            "state": "unknown",
+            "hard": true,
+            "reason": "Exact broker product, basis, units and mapping evidence remain unresolved.",
+            "evidenceIds": []
+          },
+          {
+            "id": "market-data",
+            "name": "Current mapped bars",
+            "state": "unknown",
+            "hard": true,
+            "reason": "No current verified 2m/5m BarSeries.",
+            "evidenceIds": []
+          },
+          {
+            "id": "conviction",
+            "name": "Owner conviction",
+            "state": "unknown",
+            "hard": true,
+            "reason": "No thesis; None. 6/10 is Silver-only, never a win probability.",
+            "evidenceIds": []
+          },
+          {
+            "id": "alignment-definition",
+            "name": "Structural comparison definition",
+            "state": "unknown",
+            "hard": true,
+            "reason": "Approved pivots, quote direction and per-pair synchronisation tolerances remain unconfigured; no implicit one-bar rule.",
+            "evidenceIds": []
+          }
+        ],
+        "evidenceIds": [],
+        "ruleVersion": "owner-plan-routing-2026-10-21-v2",
+        "inputVersion": "unversioned-no-production-readiness",
+        "hypothetical": false,
+        "canSubmitOrder": false
+      }
+    },
+    {
+      "instrumentId": "SUGAR_RAW_CASH",
+      "output": {
+        "id": "assessment-SUGAR_RAW_CASH-2026-10-22T08:00:00.000Z",
+        "actor": "Strata",
+        "instrumentId": "SUGAR_RAW_CASH",
+        "evaluatedAt": "2026-10-22T08:00:00.000Z",
+        "direction": "Unknown",
+        "readiness": "Incomplete",
+        "evidenceHealth": "unavailable",
+        "supporting": [],
+        "against": [],
+        "unknowns": [
+          "riskPerTrade: missing; mandatory owner configuration.",
+          "totalOpenRisk: missing; mandatory owner configuration.",
+          "dailyLossLimit: missing; mandatory owner configuration.",
+          "stopPolicy: missing; mandatory owner configuration.",
+          "targetPolicy: missing; mandatory owner configuration.",
+          "unknownDataPolicy: missing; mandatory owner configuration.",
+          "directionDefinition: missing; mandatory owner configuration.",
+          "structuralSmt: missing; mandatory owner configuration.",
+          "sweepDefinition: missing; mandatory owner configuration.",
+          "gapDefinition: missing; mandatory owner configuration.",
+          "calendarPolicy: missing; mandatory owner configuration.",
+          "newsBlackout: missing; mandatory owner configuration.",
+          "freshnessPolicy: missing; mandatory owner configuration.",
+          "positionScope: missing; mandatory owner configuration.",
+          "instrumentMapping: missing; mandatory owner configuration.",
+          "tp1Policy: missing; mandatory owner configuration.",
+          "GMT/BST versus fixed GMT is unresolved; current window display uses Europe/London.",
+          "Verified session/holiday calendar coverage is required; proposed weekend default is inactive.",
+          "Resolved customer-facing CMC Spread Betting account required; backend selector does not establish wrapper.",
+          "Maximum one new position per instrument per UK trading day; a current open count is not opening history.",
+          "Open positions unknown or not freshly reconciled for the correct spread-bet account.",
+          "Entry timing requires native 2-minute or 5-minute bars.",
+          "Thesis must be established on 15 minutes or higher.",
+          "Qualifying liquidity needs 5m+; exact structural definition remains separately gated.",
+          "Exact broker product, basis, units and mapping evidence remain unresolved.",
+          "No current verified 2m/5m BarSeries.",
+          "No thesis; None. 6/10 is Silver-only, never a win probability.",
+          "Approved pivots, quote direction and per-pair synchronisation tolerances remain unconfigured; no implicit one-bar rule."
+        ],
+        "invalidation": "Contradictory/stale evidence, loss of the qualifying thesis, failed risk gates, capacity or closed entry window invalidates readiness.",
+        "nextConditions": [
+          "riskPerTrade: missing; mandatory owner configuration.",
+          "totalOpenRisk: missing; mandatory owner configuration.",
+          "dailyLossLimit: missing; mandatory owner configuration.",
+          "stopPolicy: missing; mandatory owner configuration.",
+          "targetPolicy: missing; mandatory owner configuration.",
+          "unknownDataPolicy: missing; mandatory owner configuration."
+        ],
+        "gates": [
+          {
+            "id": "allowlist",
+            "name": "Execution universe",
+            "state": "pass",
+            "hard": true,
+            "reason": "Only Gold - Cash, Silver - Cash, Sugar Raw - Cash, Crude Oil - Cash (BUY/SELL), and US NDAQ 100 - Cash (SELL ONLY) are execution eligible.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-riskPerTrade",
+            "name": "riskPerTrade",
+            "state": "unknown",
+            "hard": true,
+            "reason": "riskPerTrade: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-totalOpenRisk",
+            "name": "totalOpenRisk",
+            "state": "unknown",
+            "hard": true,
+            "reason": "totalOpenRisk: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-dailyLossLimit",
+            "name": "dailyLossLimit",
+            "state": "unknown",
+            "hard": true,
+            "reason": "dailyLossLimit: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-stopPolicy",
+            "name": "stopPolicy",
+            "state": "unknown",
+            "hard": true,
+            "reason": "stopPolicy: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-targetPolicy",
+            "name": "targetPolicy",
+            "state": "unknown",
+            "hard": true,
+            "reason": "targetPolicy: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-unknownDataPolicy",
+            "name": "unknownDataPolicy",
+            "state": "unknown",
+            "hard": true,
+            "reason": "unknownDataPolicy: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-directionDefinition",
+            "name": "directionDefinition",
+            "state": "unknown",
+            "hard": true,
+            "reason": "directionDefinition: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-structuralSmt",
+            "name": "structuralSmt",
+            "state": "unknown",
+            "hard": true,
+            "reason": "structuralSmt: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-sweepDefinition",
+            "name": "sweepDefinition",
+            "state": "unknown",
+            "hard": true,
+            "reason": "sweepDefinition: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-gapDefinition",
+            "name": "gapDefinition",
+            "state": "unknown",
+            "hard": true,
+            "reason": "gapDefinition: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-calendarPolicy",
+            "name": "calendarPolicy",
+            "state": "unknown",
+            "hard": true,
+            "reason": "calendarPolicy: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-newsBlackout",
+            "name": "newsBlackout",
+            "state": "unknown",
+            "hard": true,
+            "reason": "newsBlackout: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-freshnessPolicy",
+            "name": "freshnessPolicy",
+            "state": "unknown",
+            "hard": true,
+            "reason": "freshnessPolicy: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-positionScope",
+            "name": "positionScope",
+            "state": "unknown",
+            "hard": true,
+            "reason": "positionScope: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-instrumentMapping",
+            "name": "instrumentMapping",
+            "state": "unknown",
+            "hard": true,
+            "reason": "instrumentMapping: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-tp1Policy",
+            "name": "tp1Policy",
+            "state": "unknown",
+            "hard": true,
+            "reason": "tp1Policy: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "timezone-policy",
+            "name": "London clock policy",
+            "state": "unknown",
+            "hard": true,
+            "reason": "GMT/BST versus fixed GMT is unresolved; current window display uses Europe/London.",
+            "evidenceIds": []
+          },
+          {
+            "id": "session",
+            "name": "Entry window",
+            "state": "pass",
+            "hard": true,
+            "reason": "London 09:00; 08:00–10:00 / 14:00–16:30, end exclusive.",
+            "evidenceIds": []
+          },
+          {
+            "id": "calendar",
+            "name": "Market calendar",
+            "state": "unknown",
+            "hard": true,
+            "reason": "Verified session/holiday calendar coverage is required; proposed weekend default is inactive.",
+            "evidenceIds": []
+          },
+          {
+            "id": "venue",
+            "name": "Resolved account",
+            "state": "unknown",
+            "hard": true,
+            "reason": "Resolved customer-facing CMC Spread Betting account required; backend selector does not establish wrapper.",
+            "evidenceIds": []
+          },
+          {
+            "id": "new-position-cap",
+            "name": "UK daily opening limit",
+            "state": "unknown",
+            "hard": true,
+            "reason": "Maximum one new position per instrument per UK trading day; a current open count is not opening history.",
+            "evidenceIds": []
+          },
+          {
+            "id": "nq-side",
+            "name": "NQ sell-only",
+            "state": "pass",
+            "hard": true,
+            "reason": "NQ permits SELL only.",
+            "evidenceIds": []
+          },
+          {
+            "id": "position-cap",
+            "name": "Position visibility/cap",
+            "state": "unknown",
+            "hard": true,
+            "reason": "Open positions unknown or not freshly reconciled for the correct spread-bet account.",
+            "evidenceIds": []
+          },
+          {
+            "id": "entry-timeframe",
+            "name": "Entry timeframe",
+            "state": "unknown",
+            "hard": true,
+            "reason": "Entry timing requires native 2-minute or 5-minute bars.",
+            "evidenceIds": []
+          },
+          {
+            "id": "thesis-timeframe",
+            "name": "Thesis timeframe",
+            "state": "unknown",
+            "hard": true,
+            "reason": "Thesis must be established on 15 minutes or higher.",
+            "evidenceIds": []
+          },
+          {
+            "id": "liquidity",
+            "name": "Liquidity relevance",
+            "state": "unknown",
+            "hard": true,
+            "reason": "Qualifying liquidity needs 5m+; exact structural definition remains separately gated.",
+            "evidenceIds": []
+          },
+          {
+            "id": "gap",
+            "name": "Optional gap",
+            "state": "pass",
+            "hard": true,
+            "reason": "FVG/IFVG optional; no gap is required.",
+            "evidenceIds": []
+          },
+          {
+            "id": "broker-mapping",
+            "name": "Broker mapping",
+            "state": "unknown",
+            "hard": true,
+            "reason": "Exact broker product, basis, units and mapping evidence remain unresolved.",
+            "evidenceIds": []
+          },
+          {
+            "id": "market-data",
+            "name": "Current mapped bars",
+            "state": "unknown",
+            "hard": true,
+            "reason": "No current verified 2m/5m BarSeries.",
+            "evidenceIds": []
+          },
+          {
+            "id": "conviction",
+            "name": "Owner conviction",
+            "state": "unknown",
+            "hard": true,
+            "reason": "No thesis; None. 6/10 is Silver-only, never a win probability.",
+            "evidenceIds": []
+          },
+          {
+            "id": "alignment-definition",
+            "name": "Structural comparison definition",
+            "state": "unknown",
+            "hard": true,
+            "reason": "Approved pivots, quote direction and per-pair synchronisation tolerances remain unconfigured; no implicit one-bar rule.",
+            "evidenceIds": []
+          }
+        ],
+        "evidenceIds": [],
+        "ruleVersion": "owner-plan-routing-2026-10-21-v2",
+        "inputVersion": "unversioned-no-production-readiness",
+        "hypothetical": false,
+        "canSubmitOrder": false
+      }
+    },
+    {
+      "instrumentId": "CRUDE_OIL_CASH",
+      "output": {
+        "id": "assessment-CRUDE_OIL_CASH-2026-10-22T08:00:00.000Z",
+        "actor": "Strata",
+        "instrumentId": "CRUDE_OIL_CASH",
+        "evaluatedAt": "2026-10-22T08:00:00.000Z",
+        "direction": "Unknown",
+        "readiness": "Incomplete",
+        "evidenceHealth": "unavailable",
+        "supporting": [],
+        "against": [],
+        "unknowns": [
+          "riskPerTrade: missing; mandatory owner configuration.",
+          "totalOpenRisk: missing; mandatory owner configuration.",
+          "dailyLossLimit: missing; mandatory owner configuration.",
+          "stopPolicy: missing; mandatory owner configuration.",
+          "targetPolicy: missing; mandatory owner configuration.",
+          "unknownDataPolicy: missing; mandatory owner configuration.",
+          "directionDefinition: missing; mandatory owner configuration.",
+          "structuralSmt: missing; mandatory owner configuration.",
+          "sweepDefinition: missing; mandatory owner configuration.",
+          "gapDefinition: missing; mandatory owner configuration.",
+          "calendarPolicy: missing; mandatory owner configuration.",
+          "newsBlackout: missing; mandatory owner configuration.",
+          "freshnessPolicy: missing; mandatory owner configuration.",
+          "positionScope: missing; mandatory owner configuration.",
+          "instrumentMapping: missing; mandatory owner configuration.",
+          "tp1Policy: missing; mandatory owner configuration.",
+          "GMT/BST versus fixed GMT is unresolved; current window display uses Europe/London.",
+          "Verified session/holiday calendar coverage is required; proposed weekend default is inactive.",
+          "Resolved customer-facing CMC Spread Betting account required; backend selector does not establish wrapper.",
+          "Maximum one new position per instrument per UK trading day; a current open count is not opening history.",
+          "Open positions unknown or not freshly reconciled for the correct spread-bet account.",
+          "Entry timing requires native 2-minute or 5-minute bars.",
+          "Thesis must be established on 15 minutes or higher.",
+          "Qualifying liquidity needs 5m+; exact structural definition remains separately gated.",
+          "Exact broker product, basis, units and mapping evidence remain unresolved.",
+          "No current verified 2m/5m BarSeries.",
+          "No thesis; None. 6/10 is Silver-only, never a win probability.",
+          "Approved pivots, quote direction and per-pair synchronisation tolerances remain unconfigured; no implicit one-bar rule."
+        ],
+        "invalidation": "Contradictory/stale evidence, loss of the qualifying thesis, failed risk gates, capacity or closed entry window invalidates readiness.",
+        "nextConditions": [
+          "riskPerTrade: missing; mandatory owner configuration.",
+          "totalOpenRisk: missing; mandatory owner configuration.",
+          "dailyLossLimit: missing; mandatory owner configuration.",
+          "stopPolicy: missing; mandatory owner configuration.",
+          "targetPolicy: missing; mandatory owner configuration.",
+          "unknownDataPolicy: missing; mandatory owner configuration."
+        ],
+        "gates": [
+          {
+            "id": "allowlist",
+            "name": "Execution universe",
+            "state": "pass",
+            "hard": true,
+            "reason": "Only Gold - Cash, Silver - Cash, Sugar Raw - Cash, Crude Oil - Cash (BUY/SELL), and US NDAQ 100 - Cash (SELL ONLY) are execution eligible.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-riskPerTrade",
+            "name": "riskPerTrade",
+            "state": "unknown",
+            "hard": true,
+            "reason": "riskPerTrade: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-totalOpenRisk",
+            "name": "totalOpenRisk",
+            "state": "unknown",
+            "hard": true,
+            "reason": "totalOpenRisk: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-dailyLossLimit",
+            "name": "dailyLossLimit",
+            "state": "unknown",
+            "hard": true,
+            "reason": "dailyLossLimit: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-stopPolicy",
+            "name": "stopPolicy",
+            "state": "unknown",
+            "hard": true,
+            "reason": "stopPolicy: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-targetPolicy",
+            "name": "targetPolicy",
+            "state": "unknown",
+            "hard": true,
+            "reason": "targetPolicy: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-unknownDataPolicy",
+            "name": "unknownDataPolicy",
+            "state": "unknown",
+            "hard": true,
+            "reason": "unknownDataPolicy: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-directionDefinition",
+            "name": "directionDefinition",
+            "state": "unknown",
+            "hard": true,
+            "reason": "directionDefinition: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-structuralSmt",
+            "name": "structuralSmt",
+            "state": "unknown",
+            "hard": true,
+            "reason": "structuralSmt: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-sweepDefinition",
+            "name": "sweepDefinition",
+            "state": "unknown",
+            "hard": true,
+            "reason": "sweepDefinition: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-gapDefinition",
+            "name": "gapDefinition",
+            "state": "unknown",
+            "hard": true,
+            "reason": "gapDefinition: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-calendarPolicy",
+            "name": "calendarPolicy",
+            "state": "unknown",
+            "hard": true,
+            "reason": "calendarPolicy: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-newsBlackout",
+            "name": "newsBlackout",
+            "state": "unknown",
+            "hard": true,
+            "reason": "newsBlackout: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-freshnessPolicy",
+            "name": "freshnessPolicy",
+            "state": "unknown",
+            "hard": true,
+            "reason": "freshnessPolicy: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-positionScope",
+            "name": "positionScope",
+            "state": "unknown",
+            "hard": true,
+            "reason": "positionScope: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-instrumentMapping",
+            "name": "instrumentMapping",
+            "state": "unknown",
+            "hard": true,
+            "reason": "instrumentMapping: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-tp1Policy",
+            "name": "tp1Policy",
+            "state": "unknown",
+            "hard": true,
+            "reason": "tp1Policy: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "timezone-policy",
+            "name": "London clock policy",
+            "state": "unknown",
+            "hard": true,
+            "reason": "GMT/BST versus fixed GMT is unresolved; current window display uses Europe/London.",
+            "evidenceIds": []
+          },
+          {
+            "id": "session",
+            "name": "Entry window",
+            "state": "pass",
+            "hard": true,
+            "reason": "London 09:00; 08:00–10:00 / 14:00–16:30, end exclusive.",
+            "evidenceIds": []
+          },
+          {
+            "id": "calendar",
+            "name": "Market calendar",
+            "state": "unknown",
+            "hard": true,
+            "reason": "Verified session/holiday calendar coverage is required; proposed weekend default is inactive.",
+            "evidenceIds": []
+          },
+          {
+            "id": "venue",
+            "name": "Resolved account",
+            "state": "unknown",
+            "hard": true,
+            "reason": "Resolved customer-facing CMC Spread Betting account required; backend selector does not establish wrapper.",
+            "evidenceIds": []
+          },
+          {
+            "id": "new-position-cap",
+            "name": "UK daily opening limit",
+            "state": "unknown",
+            "hard": true,
+            "reason": "Maximum one new position per instrument per UK trading day; a current open count is not opening history.",
+            "evidenceIds": []
+          },
+          {
+            "id": "nq-side",
+            "name": "NQ sell-only",
+            "state": "pass",
+            "hard": true,
+            "reason": "NQ permits SELL only.",
+            "evidenceIds": []
+          },
+          {
+            "id": "position-cap",
+            "name": "Position visibility/cap",
+            "state": "unknown",
+            "hard": true,
+            "reason": "Open positions unknown or not freshly reconciled for the correct spread-bet account.",
+            "evidenceIds": []
+          },
+          {
+            "id": "entry-timeframe",
+            "name": "Entry timeframe",
+            "state": "unknown",
+            "hard": true,
+            "reason": "Entry timing requires native 2-minute or 5-minute bars.",
+            "evidenceIds": []
+          },
+          {
+            "id": "thesis-timeframe",
+            "name": "Thesis timeframe",
+            "state": "unknown",
+            "hard": true,
+            "reason": "Thesis must be established on 15 minutes or higher.",
+            "evidenceIds": []
+          },
+          {
+            "id": "liquidity",
+            "name": "Liquidity relevance",
+            "state": "unknown",
+            "hard": true,
+            "reason": "Qualifying liquidity needs 5m+; exact structural definition remains separately gated.",
+            "evidenceIds": []
+          },
+          {
+            "id": "gap",
+            "name": "Optional gap",
+            "state": "pass",
+            "hard": true,
+            "reason": "FVG/IFVG optional; no gap is required.",
+            "evidenceIds": []
+          },
+          {
+            "id": "broker-mapping",
+            "name": "Broker mapping",
+            "state": "unknown",
+            "hard": true,
+            "reason": "Exact broker product, basis, units and mapping evidence remain unresolved.",
+            "evidenceIds": []
+          },
+          {
+            "id": "market-data",
+            "name": "Current mapped bars",
+            "state": "unknown",
+            "hard": true,
+            "reason": "No current verified 2m/5m BarSeries.",
+            "evidenceIds": []
+          },
+          {
+            "id": "conviction",
+            "name": "Owner conviction",
+            "state": "unknown",
+            "hard": true,
+            "reason": "No thesis; None. 6/10 is Silver-only, never a win probability.",
+            "evidenceIds": []
+          },
+          {
+            "id": "alignment-definition",
+            "name": "Structural comparison definition",
+            "state": "unknown",
+            "hard": true,
+            "reason": "Approved pivots, quote direction and per-pair synchronisation tolerances remain unconfigured; no implicit one-bar rule.",
+            "evidenceIds": []
+          }
+        ],
+        "evidenceIds": [],
+        "ruleVersion": "owner-plan-routing-2026-10-21-v2",
+        "inputVersion": "unversioned-no-production-readiness",
+        "hypothetical": false,
+        "canSubmitOrder": false
+      }
+    },
+    {
+      "instrumentId": "NQ",
+      "output": {
+        "id": "assessment-NQ-2026-10-22T08:00:00.000Z",
+        "actor": "Strata",
+        "instrumentId": "NQ",
+        "evaluatedAt": "2026-10-22T08:00:00.000Z",
+        "direction": "Unknown",
+        "readiness": "Incomplete",
+        "evidenceHealth": "unavailable",
+        "supporting": [],
+        "against": [],
+        "unknowns": [
+          "riskPerTrade: missing; mandatory owner configuration.",
+          "totalOpenRisk: missing; mandatory owner configuration.",
+          "dailyLossLimit: missing; mandatory owner configuration.",
+          "stopPolicy: missing; mandatory owner configuration.",
+          "targetPolicy: missing; mandatory owner configuration.",
+          "unknownDataPolicy: missing; mandatory owner configuration.",
+          "directionDefinition: missing; mandatory owner configuration.",
+          "structuralSmt: missing; mandatory owner configuration.",
+          "sweepDefinition: missing; mandatory owner configuration.",
+          "gapDefinition: missing; mandatory owner configuration.",
+          "calendarPolicy: missing; mandatory owner configuration.",
+          "newsBlackout: missing; mandatory owner configuration.",
+          "freshnessPolicy: missing; mandatory owner configuration.",
+          "positionScope: missing; mandatory owner configuration.",
+          "instrumentMapping: missing; mandatory owner configuration.",
+          "tp1Policy: missing; mandatory owner configuration.",
+          "GMT/BST versus fixed GMT is unresolved; current window display uses Europe/London.",
+          "Verified session/holiday calendar coverage is required; proposed weekend default is inactive.",
+          "Resolved customer-facing CMC Spread Betting account required; backend selector does not establish wrapper.",
+          "Maximum one new position per instrument per UK trading day; a current open count is not opening history.",
+          "NQ permits SELL only.",
+          "Open positions unknown or not freshly reconciled for the correct spread-bet account.",
+          "Entry timing requires native 2-minute or 5-minute bars.",
+          "Thesis must be established on 15 minutes or higher.",
+          "Qualifying liquidity needs 5m+; exact structural definition remains separately gated.",
+          "Exact broker product, basis, units and mapping evidence remain unresolved.",
+          "No current verified 2m/5m BarSeries.",
+          "Separate NQ sell-only structural branch remains unapproved.",
+          "Approved pivots, quote direction and per-pair synchronisation tolerances remain unconfigured; no implicit one-bar rule."
+        ],
+        "invalidation": "Contradictory/stale evidence, loss of the qualifying thesis, failed risk gates, capacity or closed entry window invalidates readiness.",
+        "nextConditions": [
+          "riskPerTrade: missing; mandatory owner configuration.",
+          "totalOpenRisk: missing; mandatory owner configuration.",
+          "dailyLossLimit: missing; mandatory owner configuration.",
+          "stopPolicy: missing; mandatory owner configuration.",
+          "targetPolicy: missing; mandatory owner configuration.",
+          "unknownDataPolicy: missing; mandatory owner configuration."
+        ],
+        "gates": [
+          {
+            "id": "allowlist",
+            "name": "Execution universe",
+            "state": "pass",
+            "hard": true,
+            "reason": "Only Gold - Cash, Silver - Cash, Sugar Raw - Cash, Crude Oil - Cash (BUY/SELL), and US NDAQ 100 - Cash (SELL ONLY) are execution eligible.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-riskPerTrade",
+            "name": "riskPerTrade",
+            "state": "unknown",
+            "hard": true,
+            "reason": "riskPerTrade: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-totalOpenRisk",
+            "name": "totalOpenRisk",
+            "state": "unknown",
+            "hard": true,
+            "reason": "totalOpenRisk: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-dailyLossLimit",
+            "name": "dailyLossLimit",
+            "state": "unknown",
+            "hard": true,
+            "reason": "dailyLossLimit: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-stopPolicy",
+            "name": "stopPolicy",
+            "state": "unknown",
+            "hard": true,
+            "reason": "stopPolicy: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-targetPolicy",
+            "name": "targetPolicy",
+            "state": "unknown",
+            "hard": true,
+            "reason": "targetPolicy: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-unknownDataPolicy",
+            "name": "unknownDataPolicy",
+            "state": "unknown",
+            "hard": true,
+            "reason": "unknownDataPolicy: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-directionDefinition",
+            "name": "directionDefinition",
+            "state": "unknown",
+            "hard": true,
+            "reason": "directionDefinition: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-structuralSmt",
+            "name": "structuralSmt",
+            "state": "unknown",
+            "hard": true,
+            "reason": "structuralSmt: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-sweepDefinition",
+            "name": "sweepDefinition",
+            "state": "unknown",
+            "hard": true,
+            "reason": "sweepDefinition: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-gapDefinition",
+            "name": "gapDefinition",
+            "state": "unknown",
+            "hard": true,
+            "reason": "gapDefinition: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-calendarPolicy",
+            "name": "calendarPolicy",
+            "state": "unknown",
+            "hard": true,
+            "reason": "calendarPolicy: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-newsBlackout",
+            "name": "newsBlackout",
+            "state": "unknown",
+            "hard": true,
+            "reason": "newsBlackout: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-freshnessPolicy",
+            "name": "freshnessPolicy",
+            "state": "unknown",
+            "hard": true,
+            "reason": "freshnessPolicy: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-positionScope",
+            "name": "positionScope",
+            "state": "unknown",
+            "hard": true,
+            "reason": "positionScope: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-instrumentMapping",
+            "name": "instrumentMapping",
+            "state": "unknown",
+            "hard": true,
+            "reason": "instrumentMapping: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "config-tp1Policy",
+            "name": "tp1Policy",
+            "state": "unknown",
+            "hard": true,
+            "reason": "tp1Policy: missing; mandatory owner configuration.",
+            "evidenceIds": []
+          },
+          {
+            "id": "timezone-policy",
+            "name": "London clock policy",
+            "state": "unknown",
+            "hard": true,
+            "reason": "GMT/BST versus fixed GMT is unresolved; current window display uses Europe/London.",
+            "evidenceIds": []
+          },
+          {
+            "id": "session",
+            "name": "Entry window",
+            "state": "pass",
+            "hard": true,
+            "reason": "London 09:00; 08:00–10:00 / 14:00–16:30, end exclusive.",
+            "evidenceIds": []
+          },
+          {
+            "id": "calendar",
+            "name": "Market calendar",
+            "state": "unknown",
+            "hard": true,
+            "reason": "Verified session/holiday calendar coverage is required; proposed weekend default is inactive.",
+            "evidenceIds": []
+          },
+          {
+            "id": "venue",
+            "name": "Resolved account",
+            "state": "unknown",
+            "hard": true,
+            "reason": "Resolved customer-facing CMC Spread Betting account required; backend selector does not establish wrapper.",
+            "evidenceIds": []
+          },
+          {
+            "id": "new-position-cap",
+            "name": "UK daily opening limit",
+            "state": "unknown",
+            "hard": true,
+            "reason": "Maximum one new position per instrument per UK trading day; a current open count is not opening history.",
+            "evidenceIds": []
+          },
+          {
+            "id": "nq-side",
+            "name": "NQ sell-only",
+            "state": "unknown",
+            "hard": true,
+            "reason": "NQ permits SELL only.",
+            "evidenceIds": []
+          },
+          {
+            "id": "position-cap",
+            "name": "Position visibility/cap",
+            "state": "unknown",
+            "hard": true,
+            "reason": "Open positions unknown or not freshly reconciled for the correct spread-bet account.",
+            "evidenceIds": []
+          },
+          {
+            "id": "entry-timeframe",
+            "name": "Entry timeframe",
+            "state": "unknown",
+            "hard": true,
+            "reason": "Entry timing requires native 2-minute or 5-minute bars.",
+            "evidenceIds": []
+          },
+          {
+            "id": "thesis-timeframe",
+            "name": "Thesis timeframe",
+            "state": "unknown",
+            "hard": true,
+            "reason": "Thesis must be established on 15 minutes or higher.",
+            "evidenceIds": []
+          },
+          {
+            "id": "liquidity",
+            "name": "Liquidity relevance",
+            "state": "unknown",
+            "hard": true,
+            "reason": "Qualifying liquidity needs 5m+; exact structural definition remains separately gated.",
+            "evidenceIds": []
+          },
+          {
+            "id": "gap",
+            "name": "Optional gap",
+            "state": "pass",
+            "hard": true,
+            "reason": "FVG/IFVG optional; no gap is required.",
+            "evidenceIds": []
+          },
+          {
+            "id": "broker-mapping",
+            "name": "Broker mapping",
+            "state": "unknown",
+            "hard": true,
+            "reason": "Exact broker product, basis, units and mapping evidence remain unresolved.",
+            "evidenceIds": []
+          },
+          {
+            "id": "market-data",
+            "name": "Current mapped bars",
+            "state": "unknown",
+            "hard": true,
+            "reason": "No current verified 2m/5m BarSeries.",
+            "evidenceIds": []
+          },
+          {
+            "id": "nq",
+            "name": "NQ SELL ONLY confirmation",
+            "state": "unknown",
+            "hard": true,
+            "reason": "Separate NQ sell-only structural branch remains unapproved.",
+            "evidenceIds": []
+          },
+          {
+            "id": "alignment-definition",
+            "name": "Structural comparison definition",
+            "state": "unknown",
+            "hard": true,
+            "reason": "Approved pivots, quote direction and per-pair synchronisation tolerances remain unconfigured; no implicit one-bar rule.",
+            "evidenceIds": []
+          }
+        ],
+        "evidenceIds": [],
+        "ruleVersion": "owner-plan-routing-2026-10-21-v2",
+        "inputVersion": "unversioned-no-production-readiness",
+        "hypothetical": false,
+        "canSubmitOrder": false
+      }
+    }
+  ],
+  "sourceHashesLF": {
+    "lib/historical/catalog.ts": "8b8760574975f1d5fe21b439a029fedd9b9dbaa865e5dea95da77b14dd6ee709",
+    "lib/historical/confluence.ts": "19262383daaac048d3d0942c3bc52d6c0cae4b557e6e91447c09771ce485c770",
+    "lib/historical/elastication.ts": "e0b04dced00a3f9b2c6bf8c3a13abfa28965872768a092715441f3d1b601141b",
+    "lib/historical/engine.ts": "7e25b6cc62b8623f0dcd74b08b3af495909322983344d948e71270e27a6a709f",
+    "lib/historical/event-vintages.ts": "31af997e676d43070421845219bf49a35e92f81213bbca8f9e2b131f25f11121",
+    "lib/historical/execution-binding.ts": "185ccbd3a8f1ecb1f4e2deaf42e642b2be0108de5e662fad2fcdda128e2edc99",
+    "lib/historical/features.ts": "0f2256c1f69c3128e3fc5f2717a608764c03715d711d8a1a891bf8890fd159bd",
+    "lib/historical/plan.ts": "cd75050fae53a14c2b3192095c35646e5fdbff183977863747cb4a93f2174a6e",
+    "lib/historical/private-store.ts": "52d349b1edb8aafacb0e3de1d701746da3ed3f936af5e85128a687b3317a7385",
+    "lib/historical/raw-json.d.ts": "5a4f981e2761e733fd281a95796db293c017d91c8b94952de244a97d016bfc8a",
+    "lib/historical/round2-catalog.ts": "cd443a653f5ce8c6937633d1cd8d474e49fd683dd7b11fe316c1288b66ac95eb",
+    "lib/historical/simulation.ts": "7f86f763397691fdeb86c45e310f399e9474a95579b4b03a12b1aa90bca60634",
+    "lib/historical/statistics.ts": "b1f32580b9bd049a365b9ed99d6f399af11d8245c858d3adb47f72d6c4cc99f8",
+    "lib/historical/types.ts": "8e8891e13ad4ef715a4046fda495ee157d1e4c8748b5fd8e77c45e2064b24067",
+    "lib/strata-v2/contracts.ts": "9443296027c5822e5d72a114fd1990f4ff2a3aed8bd3dc939272e9fb80ce1fae",
+    "lib/strata-v2/interpretation.ts": "da94607540ee3aa40f8cbf450f27add3c79b5c1bd2bd03106b4350d46e2f183c",
+    "lib/strata-v2/providers.ts": "abfa103651215dab07dd0228ae85d1a1b5d126616e19c29eca0770a369d210f8",
+    "lib/strata-v2/registry.ts": "2c36fce3f97f0516ef4f944cc9af732998ecde0cab8d2e66f38775683a16effb",
+    "lib/strata-v2/research.ts": "abc05619c5185de8356fa9ff64b1ecafe7fdb7b83c0fec8636e7510f0d3d304f",
+    "lib/strata-v2/rules.ts": "15dafeb3f0aac4dea9f766904c9547f290a995b19d6845e229868c5da4f2cb15",
+    "lib/strata-v2/services.ts": "5597347f4ae54e2ccefdca67abae86dc0d76a68d73f6b81af464fcec7d8332cf",
+    "lib/strata-v2/source-policy.ts": "acf786b45d120f370b42fa778685b029a6bf1ef367e86afb945580bfe7ac2323",
+    "lib/strata-v2/targets.ts": "72b8f0c52ede64c044b5065ab8f7b6a42787945cb0070c57fcd0543ff73efaef",
+    "lib/strata-v2/trading212.ts": "af3d7a8648ea252248f3c0e2c6c76034c0886c242dff35ca7acfc3b6e6289b9e",
+    "lib/strata-v2/workspace-state.ts": "5ec853fc42857bb5b47095590e625fce416e2fa24d9105c72bb6a57a7f960d30",
+    "app/api/execution-history/route.ts": "c9ea7e51037aeeecdab51d3aea55c5aaa77b8249e9f1a0748e84f87153a5de72",
+    "app/api/historical/route.ts": "134f6cac36de58709ccb9dcfa5b0b0f0a0027d741913b1a790a7cf04fa36e8ff",
+    "app/api/round1/route.ts": "2c8772c5cba6d0e74226eee1eef951737d62d6834552723b37e754b18985b671",
+    "app/api/trading212/route.ts": "947fa166870c79258bff4826075bce8eca6e547a9dfb6a7d204a88f41c0b7c57",
+    ".openai/hosting.json": "217c7f60d671140a4fd78f0dc4f2d7053e4a101a276dd83da818664947e566f3",
+    "package.json": "4ed7a575d772ac52e174ab53a42cf84267fbca39c21ad97669629ae87e8ac0c4",
+    "pnpm-lock.yaml": "3af996b61423dd2bbb4cd97f4df28da28cee34b73aae4e73f48a5100aea6dce4"
+  }
+}

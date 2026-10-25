@@ -1,0 +1,18 @@
+import {z} from 'zod';
+export const ENGINE_VERSION='elastication-history-v1';
+export const stateSchema=z.enum(['STAND DOWN','CAUTION','BUY','SELL']);
+export type AssessmentState=z.infer<typeof stateSchema>;
+export type Side='BUY'|'SELL';
+export const ohlc=z.object({o:z.number().finite(),h:z.number().finite(),l:z.number().finite(),c:z.number().finite()}).strict().refine(b=>b.l<=Math.min(b.o,b.c)&&b.h>=Math.max(b.o,b.c)&&b.h>=b.l,'Invalid OHLC');
+export const candleSchema=z.object({time:z.string().datetime({offset:true}),mid:ohlc,bid:ohlc.nullable(),ask:ohlc.nullable(),volume:z.number().finite().nonnegative().nullable()}).strict();
+export type Candle=z.infer<typeof candleSchema>;
+export const seriesSchema=z.object({id:z.string(),instrumentId:z.string(),displayName:z.string(),provider:z.literal('CMC Markets'),intervalMinutes:z.number().int().positive(),receivedAt:z.string().datetime({offset:true}),timestampMeaning:z.enum(['open','close','unknown']),closedStateVerified:z.boolean(),calendarVerified:z.boolean(),mappingVerified:z.boolean(),mappingNote:z.string(),sourceId:z.string(),candles:z.array(candleSchema).max(20000)}).strict().superRefine((s,c)=>{for(let i=1;i<s.candles.length;i++)if(s.candles[i].time<=s.candles[i-1].time)c.addIssue({code:'custom',message:'Duplicate or unordered timestamps'});for(const b of s.candles)if(Date.parse(b.time)>Date.parse(s.receivedAt))c.addIssue({code:'custom',message:'Observation timestamp exceeds source receipt'});});
+export type HistoricalSeries=z.infer<typeof seriesSchema>;
+export interface ResearchConfig {version:string;approvedForExecution:boolean;pivotLeft:number;pivotRight:number;retestBars:number;retestAtr:number;openingRangeMinutes:number;openingReversalMinutes:number;correlationWindows:number[];correlationBreak:number;slippagePoints:number|null;commissionPoints:number|null;carryPerDayPoints:number|null;tp1R:number|null;tp1Fraction:number|null;maxHoldingBars:number;holdoutFraction:number;purgeBars:number;minHistoryForOperational:number}
+/** Engineering research definitions only, never represented as owner-confirmed structure. */
+export const RESEARCH_CONFIG:ResearchConfig=Object.freeze({version:'research-definitions-v1-unapproved',approvedForExecution:false,pivotLeft:2,pivotRight:2,retestBars:10,retestAtr:0.1,openingRangeMinutes:30,openingReversalMinutes:90,correlationWindows:[20,60,120,252],correlationBreak:0.3,slippagePoints:null,commissionPoints:null,carryPerDayPoints:null,tp1R:null,tp1Fraction:null,maxHoldingBars:72,holdoutFraction:0.2,purgeBars:72,minHistoryForOperational:100});
+export interface Pivot {kind:'high'|'low';price:number;pivotIndex:number;confirmedIndex:number;availableAt:string}
+export interface Feature {index:number;sourceTime:string;availableAt:string;atr:number|null;atrPeriod:number;atrPercentile:number|null;volatility:'warmup'|'low'|'normal'|'high';direction:'Bullish'|'Bearish'|'Neutral'|'Unknown';pivots:Pivot[];sweep:Side|'CONFLICT'|null;level:number|null;retest:Side|null;fvg:{side:Side;low:number;high:number}|null;ifvg:Side|null;gapOutcome:{id:string;state:'filled'|'inverted';at:string}[];openingReversal:Side|null;gapBefore:boolean}
+export function closeAt(s:HistoricalSeries,b:Candle):string{return s.timestampMeaning==='close'?b.time:new Date(Date.parse(b.time)+s.intervalMinutes*60000).toISOString()}
+export const UK_DAY=(t:string)=>new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/London',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date(t));
+export const UK_CLOCK=(t:string)=>new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/London',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).format(new Date(t));

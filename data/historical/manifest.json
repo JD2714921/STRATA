@@ -1,0 +1,856 @@
+{
+  "schemaVersion": "historical-manifest-v1",
+  "engineVersion": "elastication-history-v1",
+  "baselineCommit": "2291f967342ecf4b72a0fef9103623857e0f71de",
+  "methodFamilies": [
+    {
+      "id": "atr-volatility",
+      "name": "Wilder ATR and trailing volatility regime",
+      "circle": 1
+    },
+    {
+      "id": "structure-sweep-retest",
+      "name": "Confirmed structure, liquidity sweep and later retest",
+      "circle": 1
+    },
+    {
+      "id": "fvg-ifvg",
+      "name": "Three-candle gap, full fill and subsequent inversion",
+      "circle": 1
+    },
+    {
+      "id": "smt",
+      "name": "Confirmed-pivot cross-asset divergence proxy",
+      "circle": 1
+    },
+    {
+      "id": "correlation",
+      "name": "Aligned log-return rolling correlation and breakdown",
+      "circle": 1
+    },
+    {
+      "id": "release-response",
+      "name": "Release minus consensus and contiguous event response",
+      "circle": 2
+    },
+    {
+      "id": "opening-reversal",
+      "name": "UK opening range break and subsequent reentry",
+      "circle": 3
+    },
+    {
+      "id": "execution-replay",
+      "name": "Next-bar bid/ask stop/target/TP1 path simulation",
+      "circle": 3
+    },
+    {
+      "id": "confluence",
+      "name": "Three-circle assessments with independent owner-plan gates",
+      "circle": 3
+    }
+  ],
+  "counts": {
+    "priorityFamilies": 9,
+    "implemented": 9,
+    "executedOnObservedData": 9,
+    "persisted": 9,
+    "operationallyValidated": 0,
+    "partiallyCompleted": 9,
+    "originalAuditFamilies": 23,
+    "originalFamiliesWithResearchImplementation": 15,
+    "notImplementedOriginalFamilies": 8
+  },
+  "limitations": [
+    "All bar anchors and calendars unverified",
+    "Definitions and simulation scenarios are research-only",
+    "Unknown TP1 owner trigger/fraction; unknown historical carry/slippage/commission",
+    "Retrospective calendar consensus and actual vintages unverified",
+    "NDAQ cash is an unresolved NQ comparison, not exact futures",
+    "No exact Sugar Raw Cash / Crude Oil Cash history",
+    "FX CNH/SGD/BRL/PKR, DXY and yield histories unavailable",
+    "No calibrated probabilities or authorised BUY/SELL"
+  ],
+  "datasets": [
+    {
+      "id": "cmc-gbpusd-1440m-20261021",
+      "instrumentId": "GBPUSD",
+      "displayName": "GBP/USD",
+      "timeframe": 1440,
+      "from": "2024-01-02T00:00:00.000Z",
+      "to": "2026-10-20T00:00:00.000Z",
+      "bars": 727,
+      "atrAvailable": 0,
+      "atrMissing": 727,
+      "regimeAvailable": 0,
+      "gaps": 149,
+      "pivots": 45,
+      "sweeps": 0,
+      "retests": 0,
+      "fvg": 92,
+      "ifvg": 7,
+      "openingReversals": 0,
+      "volumeAvailable": 0,
+      "timestampMeaning": "unknown",
+      "calendarVerified": false,
+      "mappingVerified": true,
+      "closedStateVerified": false,
+      "sourceId": "cmc-daily-audit-read-20261021",
+      "receivedAt": "2026-10-21T12:48:04.000Z",
+      "split": {
+        "developmentEndExclusive": 509,
+        "purgeStart": 509,
+        "holdoutStart": 581,
+        "total": 727,
+        "untouchedChronologicalHoldout": true
+      },
+      "executionEligible": false,
+      "inputHash": "b9e5a903ba1e918e1d2fa023ab79120b2f87a39f5c611255657140c6368e511f"
+    },
+    {
+      "id": "cmc-gbpusd-15m-20261021",
+      "instrumentId": "GBPUSD",
+      "displayName": "GBP/USD",
+      "timeframe": 15,
+      "from": "2026-09-22T20:00:00.000Z",
+      "to": "2026-10-20T23:45:00.000Z",
+      "bars": 1950,
+      "atrAvailable": 1881,
+      "atrMissing": 69,
+      "regimeAvailable": 1781,
+      "gaps": 6,
+      "pivots": 509,
+      "sweeps": 287,
+      "retests": 245,
+      "fvg": 399,
+      "ifvg": 291,
+      "openingReversals": 7,
+      "volumeAvailable": 0,
+      "timestampMeaning": "unknown",
+      "calendarVerified": false,
+      "mappingVerified": true,
+      "closedStateVerified": false,
+      "sourceId": "cmc-history-read-20261021-GBPUSD-15m",
+      "receivedAt": "2026-10-21T12:43:48Z",
+      "split": {
+        "developmentEndExclusive": 1488,
+        "purgeStart": 1488,
+        "holdoutStart": 1560,
+        "total": 1950,
+        "untouchedChronologicalHoldout": true
+      },
+      "executionEligible": false,
+      "inputHash": "5478dcac6c5427198f678c5dd987d5d8d6480965b0127223a8d0377b0717228c"
+    },
+    {
+      "id": "cmc-ndaq_cash_research-120m-20261021",
+      "instrumentId": "NDAQ_CASH_RESEARCH",
+      "displayName": "US NDAQ 100 - Cash (NQ candidate only)",
+      "timeframe": 120,
+      "from": "2026-03-01T22:00:00.000Z",
+      "to": "2026-10-20T23:00:00.000Z",
+      "bars": 1995,
+      "atrAvailable": 1533,
+      "atrMissing": 462,
+      "regimeAvailable": 860,
+      "gaps": 35,
+      "pivots": 482,
+      "sweeps": 272,
+      "retests": 210,
+      "fvg": 442,
+      "ifvg": 239,
+      "openingReversals": 0,
+      "volumeAvailable": 1993,
+      "timestampMeaning": "unknown",
+      "calendarVerified": false,
+      "mappingVerified": false,
+      "closedStateVerified": false,
+      "sourceId": "cmc-history-read-20261021-NDAQ_CASH_RESEARCH-120m",
+      "receivedAt": "2026-10-21T12:43:48Z",
+      "split": {
+        "developmentEndExclusive": 1524,
+        "purgeStart": 1524,
+        "holdoutStart": 1596,
+        "total": 1995,
+        "untouchedChronologicalHoldout": true
+      },
+      "executionEligible": false,
+      "inputHash": "444e01f5cbca026b90cc3702695edbb6a8af7cab6d0e9d7917874bb27829c4eb"
+    },
+    {
+      "id": "cmc-ndaq_cash_research-1440m-20261021",
+      "instrumentId": "NDAQ_CASH_RESEARCH",
+      "displayName": "US NDAQ 100 - Cash",
+      "timeframe": 1440,
+      "from": "2024-01-02T00:00:00.000Z",
+      "to": "2026-10-20T00:00:00.000Z",
+      "bars": 722,
+      "atrAvailable": 0,
+      "atrMissing": 722,
+      "regimeAvailable": 0,
+      "gaps": 151,
+      "pivots": 41,
+      "sweeps": 0,
+      "retests": 0,
+      "fvg": 104,
+      "ifvg": 10,
+      "openingReversals": 0,
+      "volumeAvailable": 0,
+      "timestampMeaning": "unknown",
+      "calendarVerified": false,
+      "mappingVerified": false,
+      "closedStateVerified": false,
+      "sourceId": "cmc-daily-audit-read-20261021",
+      "receivedAt": "2026-10-21T12:48:04.000Z",
+      "split": {
+        "developmentEndExclusive": 505,
+        "purgeStart": 505,
+        "holdoutStart": 577,
+        "total": 722,
+        "untouchedChronologicalHoldout": true
+      },
+      "executionEligible": false,
+      "inputHash": "ba5f6b1eda06eedd31cba68b1c4a8c7405f3e09da43389e757d96bbfe49da2c2"
+    },
+    {
+      "id": "cmc-ndaq_cash_research-15m-20261021",
+      "instrumentId": "NDAQ_CASH_RESEARCH",
+      "displayName": "US NDAQ 100 - Cash (NQ candidate only)",
+      "timeframe": 15,
+      "from": "2026-09-22T12:30:00.000Z",
+      "to": "2026-10-20T23:45:00.000Z",
+      "bars": 1950,
+      "atrAvailable": 1885,
+      "atrMissing": 65,
+      "regimeAvailable": 1785,
+      "gaps": 4,
+      "pivots": 512,
+      "sweeps": 304,
+      "retests": 285,
+      "fvg": 403,
+      "ifvg": 277,
+      "openingReversals": 12,
+      "volumeAvailable": 1884,
+      "timestampMeaning": "unknown",
+      "calendarVerified": false,
+      "mappingVerified": false,
+      "closedStateVerified": false,
+      "sourceId": "cmc-history-read-20261021-NDAQ_CASH_RESEARCH-15m",
+      "receivedAt": "2026-10-21T12:43:48Z",
+      "split": {
+        "developmentEndExclusive": 1488,
+        "purgeStart": 1488,
+        "holdoutStart": 1560,
+        "total": 1950,
+        "untouchedChronologicalHoldout": true
+      },
+      "executionEligible": false,
+      "inputHash": "7addac35a0675f61fcf4d69d96b9a57417f080337de39b965685f1b958ace06d"
+    },
+    {
+      "id": "cmc-ndaq_cash_research-5m-20261021",
+      "instrumentId": "NDAQ_CASH_RESEARCH",
+      "displayName": "US NDAQ 100 - Cash (NQ candidate only)",
+      "timeframe": 5,
+      "from": "2026-09-08T01:10:00.000Z",
+      "to": "2026-10-20T23:55:00.000Z",
+      "bars": 8840,
+      "atrAvailable": 8776,
+      "atrMissing": 64,
+      "regimeAvailable": 8616,
+      "gaps": 7,
+      "pivots": 2288,
+      "sweeps": 1353,
+      "retests": 1170,
+      "fvg": 1941,
+      "ifvg": 1380,
+      "openingReversals": 32,
+      "volumeAvailable": 1847,
+      "timestampMeaning": "unknown",
+      "calendarVerified": false,
+      "mappingVerified": false,
+      "closedStateVerified": false,
+      "sourceId": "cmc-history-read-20261021-NDAQ_CASH_RESEARCH-5m",
+      "receivedAt": "2026-10-21T12:43:48Z",
+      "split": {
+        "developmentEndExclusive": 7000,
+        "purgeStart": 7000,
+        "holdoutStart": 7072,
+        "total": 8840,
+        "untouchedChronologicalHoldout": true
+      },
+      "executionEligible": false,
+      "inputHash": "4055b552dd26d0f651e6fb59b0391f5edbe169ce2154cc0a9e47aad156ba4291"
+    },
+    {
+      "id": "cmc-silver_cash-120m-20261021",
+      "instrumentId": "SILVER_CASH",
+      "displayName": "Silver - Cash",
+      "timeframe": 120,
+      "from": "2026-02-27T08:00:00.000Z",
+      "to": "2026-10-20T23:00:00.000Z",
+      "bars": 1995,
+      "atrAvailable": 1524,
+      "atrMissing": 471,
+      "regimeAvailable": 851,
+      "gaps": 36,
+      "pivots": 506,
+      "sweeps": 242,
+      "retests": 158,
+      "fvg": 391,
+      "ifvg": 208,
+      "openingReversals": 0,
+      "volumeAvailable": 0,
+      "timestampMeaning": "unknown",
+      "calendarVerified": false,
+      "mappingVerified": true,
+      "closedStateVerified": false,
+      "sourceId": "cmc-history-read-20261021-SILVER_CASH-120m",
+      "receivedAt": "2026-10-21T12:43:48Z",
+      "split": {
+        "developmentEndExclusive": 1524,
+        "purgeStart": 1524,
+        "holdoutStart": 1596,
+        "total": 1995,
+        "untouchedChronologicalHoldout": true
+      },
+      "executionEligible": false,
+      "inputHash": "ecad9254dae50319255761fec90c3817d25e9c1b1226026a8cbed0a72b105d6a"
+    },
+    {
+      "id": "cmc-silver_cash-1440m-20261021",
+      "instrumentId": "SILVER_CASH",
+      "displayName": "Silver - Cash",
+      "timeframe": 1440,
+      "from": "2024-01-02T00:00:00.000Z",
+      "to": "2026-10-20T00:00:00.000Z",
+      "bars": 723,
+      "atrAvailable": 0,
+      "atrMissing": 723,
+      "regimeAvailable": 0,
+      "gaps": 151,
+      "pivots": 42,
+      "sweeps": 0,
+      "retests": 0,
+      "fvg": 93,
+      "ifvg": 10,
+      "openingReversals": 0,
+      "volumeAvailable": 0,
+      "timestampMeaning": "unknown",
+      "calendarVerified": false,
+      "mappingVerified": true,
+      "closedStateVerified": false,
+      "sourceId": "cmc-daily-audit-read-20261021",
+      "receivedAt": "2026-10-21T12:48:04.000Z",
+      "split": {
+        "developmentEndExclusive": 506,
+        "purgeStart": 506,
+        "holdoutStart": 578,
+        "total": 723,
+        "untouchedChronologicalHoldout": true
+      },
+      "executionEligible": false,
+      "inputHash": "d26fa384a60f74ac874095d3894b1fc18904d14f80c9da86c2e5ef857747bff4"
+    },
+    {
+      "id": "cmc-silver_cash-15m-20261021",
+      "instrumentId": "SILVER_CASH",
+      "displayName": "Silver - Cash",
+      "timeframe": 15,
+      "from": "2026-09-21T18:30:00.000Z",
+      "to": "2026-10-20T23:45:00.000Z",
+      "bars": 1950,
+      "atrAvailable": 1659,
+      "atrMissing": 291,
+      "regimeAvailable": 1239,
+      "gaps": 22,
+      "pivots": 497,
+      "sweeps": 336,
+      "retests": 276,
+      "fvg": 338,
+      "ifvg": 196,
+      "openingReversals": 10,
+      "volumeAvailable": 0,
+      "timestampMeaning": "unknown",
+      "calendarVerified": false,
+      "mappingVerified": true,
+      "closedStateVerified": false,
+      "sourceId": "cmc-history-read-20261021-SILVER_CASH-15m",
+      "receivedAt": "2026-10-21T12:43:48Z",
+      "split": {
+        "developmentEndExclusive": 1488,
+        "purgeStart": 1488,
+        "holdoutStart": 1560,
+        "total": 1950,
+        "untouchedChronologicalHoldout": true
+      },
+      "executionEligible": false,
+      "inputHash": "c438314d22f88eb3e3e93a013449c3057733025ea746457d09435061f103eb05"
+    },
+    {
+      "id": "cmc-silver_cash-2m-20261021",
+      "instrumentId": "SILVER_CASH",
+      "displayName": "Silver - Cash",
+      "timeframe": 2,
+      "from": "2026-10-16T14:54:00.000Z",
+      "to": "2026-10-20T23:58:00.000Z",
+      "bars": 1623,
+      "atrAvailable": 1571,
+      "atrMissing": 52,
+      "regimeAvailable": 1491,
+      "gaps": 3,
+      "pivots": 429,
+      "sweeps": 264,
+      "retests": 252,
+      "fvg": 0,
+      "ifvg": 0,
+      "openingReversals": 3,
+      "volumeAvailable": 0,
+      "timestampMeaning": "unknown",
+      "calendarVerified": false,
+      "mappingVerified": true,
+      "closedStateVerified": false,
+      "sourceId": "cmc-history-read-20261021-SILVER_CASH-2m",
+      "receivedAt": "2026-10-21T12:43:48Z",
+      "split": {
+        "developmentEndExclusive": 1226,
+        "purgeStart": 1226,
+        "holdoutStart": 1298,
+        "total": 1623,
+        "untouchedChronologicalHoldout": true
+      },
+      "executionEligible": false,
+      "inputHash": "82b8fa619b82cfad8021aae9a5709781204c6e1dc6e1c754e3659b296d4963c5"
+    },
+    {
+      "id": "cmc-silver_cash-5m-20261021",
+      "instrumentId": "SILVER_CASH",
+      "displayName": "Silver - Cash",
+      "timeframe": 5,
+      "from": "2026-09-07T07:25:00.000Z",
+      "to": "2026-10-20T23:55:00.000Z",
+      "bars": 8713,
+      "atrAvailable": 8449,
+      "atrMissing": 264,
+      "regimeAvailable": 7793,
+      "gaps": 32,
+      "pivots": 2298,
+      "sweeps": 1533,
+      "retests": 1347,
+      "fvg": 1601,
+      "ifvg": 1112,
+      "openingReversals": 25,
+      "volumeAvailable": 0,
+      "timestampMeaning": "unknown",
+      "calendarVerified": false,
+      "mappingVerified": true,
+      "closedStateVerified": false,
+      "sourceId": "cmc-history-read-20261021-SILVER_CASH-5m",
+      "receivedAt": "2026-10-21T12:43:48Z",
+      "split": {
+        "developmentEndExclusive": 6898,
+        "purgeStart": 6898,
+        "holdoutStart": 6970,
+        "total": 8713,
+        "untouchedChronologicalHoldout": true
+      },
+      "executionEligible": false,
+      "inputHash": "f0c009ee285438f6c4277b356b5fd633561860de27d7fb21332eda9c74355553"
+    }
+  ],
+  "artifacts": [
+    {
+      "file": "cmc-gbpusd-1440m-20261021.json",
+      "sha256": "9fed581533b7e7d5777a5747f958c7a2e15feaa9cbb6e54165a6936f6d5b47bc",
+      "bytes": 241815
+    },
+    {
+      "file": "cmc-gbpusd-15m-20261021.json",
+      "sha256": "4021f3427315d898b953bee5482e85d967be3c017b94024babdfbc5a5c7e1586",
+      "bytes": 779963
+    },
+    {
+      "file": "cmc-ndaq_cash_research-120m-20261021.json",
+      "sha256": "f63d94d73dcf1eb07c5426f4148f8b3a08d28e25071941161f6bf65fd34829cc",
+      "bytes": 786263
+    },
+    {
+      "file": "cmc-ndaq_cash_research-1440m-20261021.json",
+      "sha256": "18e181b9042209cad47742fe99999b4d291f083e2066f6d665a0b2f166aacdd2",
+      "bytes": 240917
+    },
+    {
+      "file": "cmc-ndaq_cash_research-15m-20261021.json",
+      "sha256": "9089732d55d45dfd040e85c19da698a127b399336c7e371bd903d737f4833315",
+      "bytes": 783361
+    },
+    {
+      "file": "cmc-ndaq_cash_research-5m-20261021.json",
+      "sha256": "2eb2eff8ad048294636877df4aa5ad7659dcefd1932abd2b2b95753ee4bc01d2",
+      "bytes": 3554025
+    },
+    {
+      "file": "cmc-silver_cash-120m-20261021.json",
+      "sha256": "c273d2c99c9feb0558a96e7db379401dd2940ed8cd1697aa9f01ec1cc4d8583d",
+      "bytes": 772069
+    },
+    {
+      "file": "cmc-silver_cash-1440m-20261021.json",
+      "sha256": "2d2e9c13f84a30ca7e5861682af1a30d82cda4dc5f16b5e8cbef01a21f052a6c",
+      "bytes": 240407
+    },
+    {
+      "file": "cmc-silver_cash-15m-20261021.json",
+      "sha256": "455ffe53edee6714516aad80f9f0e7e1fde2e8d92d7cd401b40a2782745984b5",
+      "bytes": 760752
+    },
+    {
+      "file": "cmc-silver_cash-2m-20261021.json",
+      "sha256": "16b10fb11df98cb510bc002c8503b0bd134a3934183a6deb94c64ed87a7ab84b",
+      "bytes": 590927
+    },
+    {
+      "file": "cmc-silver_cash-5m-20261021.json",
+      "sha256": "4342de5145ae83171401c95315f175d491113f0fa2bbf5a14cd462dbffdfd4f9",
+      "bytes": 3429927
+    },
+    {
+      "file": "comparisons.json",
+      "sha256": "f6721f95a802c31aca1e9007aa85413042bb043b3416977eb8c1b86261a88948",
+      "bytes": 5415906
+    },
+    {
+      "file": "events.json",
+      "sha256": "93523ffed8fb410693cdb0cf35e416d87083fa91e386f28ecb30410d0e9b8506",
+      "bytes": 55254
+    },
+    {
+      "file": "replay.json",
+      "sha256": "fb6ce19d0bf1954de8d98756b70dae93a548c67f49eb72c7e95955deb234a758",
+      "bytes": 1384837
+    },
+    {
+      "file": "confluence.json",
+      "sha256": "b4761dd920b76a180792171cc0de16e0b90998e29bbfeafc5086eb7012fd86cd",
+      "bytes": 14426865
+    }
+  ],
+  "sourceInputs": [
+    {
+      "id": "cmc-gbpusd-1440m-20261021",
+      "hash": "b9e5a903ba1e918e1d2fa023ab79120b2f87a39f5c611255657140c6368e511f",
+      "sourceId": "cmc-daily-audit-read-20261021"
+    },
+    {
+      "id": "cmc-gbpusd-15m-20261021",
+      "hash": "5478dcac6c5427198f678c5dd987d5d8d6480965b0127223a8d0377b0717228c",
+      "sourceId": "cmc-history-read-20261021-GBPUSD-15m"
+    },
+    {
+      "id": "cmc-ndaq_cash_research-120m-20261021",
+      "hash": "444e01f5cbca026b90cc3702695edbb6a8af7cab6d0e9d7917874bb27829c4eb",
+      "sourceId": "cmc-history-read-20261021-NDAQ_CASH_RESEARCH-120m"
+    },
+    {
+      "id": "cmc-ndaq_cash_research-1440m-20261021",
+      "hash": "ba5f6b1eda06eedd31cba68b1c4a8c7405f3e09da43389e757d96bbfe49da2c2",
+      "sourceId": "cmc-daily-audit-read-20261021"
+    },
+    {
+      "id": "cmc-ndaq_cash_research-15m-20261021",
+      "hash": "7addac35a0675f61fcf4d69d96b9a57417f080337de39b965685f1b958ace06d",
+      "sourceId": "cmc-history-read-20261021-NDAQ_CASH_RESEARCH-15m"
+    },
+    {
+      "id": "cmc-ndaq_cash_research-5m-20261021",
+      "hash": "4055b552dd26d0f651e6fb59b0391f5edbe169ce2154cc0a9e47aad156ba4291",
+      "sourceId": "cmc-history-read-20261021-NDAQ_CASH_RESEARCH-5m"
+    },
+    {
+      "id": "cmc-silver_cash-120m-20261021",
+      "hash": "ecad9254dae50319255761fec90c3817d25e9c1b1226026a8cbed0a72b105d6a",
+      "sourceId": "cmc-history-read-20261021-SILVER_CASH-120m"
+    },
+    {
+      "id": "cmc-silver_cash-1440m-20261021",
+      "hash": "d26fa384a60f74ac874095d3894b1fc18904d14f80c9da86c2e5ef857747bff4",
+      "sourceId": "cmc-daily-audit-read-20261021"
+    },
+    {
+      "id": "cmc-silver_cash-15m-20261021",
+      "hash": "c438314d22f88eb3e3e93a013449c3057733025ea746457d09435061f103eb05",
+      "sourceId": "cmc-history-read-20261021-SILVER_CASH-15m"
+    },
+    {
+      "id": "cmc-silver_cash-2m-20261021",
+      "hash": "82b8fa619b82cfad8021aae9a5709781204c6e1dc6e1c754e3659b296d4963c5",
+      "sourceId": "cmc-history-read-20261021-SILVER_CASH-2m"
+    },
+    {
+      "id": "cmc-silver_cash-5m-20261021",
+      "hash": "f0c009ee285438f6c4277b356b5fd633561860de27d7fb21332eda9c74355553",
+      "sourceId": "cmc-history-read-20261021-SILVER_CASH-5m"
+    }
+  ],
+  "eventStudies": 60,
+  "eventWindows": 180,
+  "verifiedPointInTimeEvents": 0,
+  "comparisons": [
+    {
+      "id": "cmc-gbpusd-1440m-20261021--cmc-ndaq_cash_research-1440m-20261021",
+      "timeframe": 1440,
+      "returns": 721,
+      "smt": 1,
+      "latest": {
+        "time": "2026-10-20T00:00:00.000Z",
+        "availableAt": "2026-10-21T00:00:00.000Z",
+        "previous": "2026-10-19T00:00:00.000Z",
+        "n": 721,
+        "values": {
+          "20": 0.1770618734434512,
+          "60": 0.12819744058037302,
+          "120": 0.240982779616612,
+          "252": 0.32033190931774214
+        },
+        "direct": true,
+        "inverse": false,
+        "breakdown": false
+      }
+    },
+    {
+      "id": "cmc-gbpusd-1440m-20261021--cmc-silver_cash-1440m-20261021",
+      "timeframe": 1440,
+      "returns": 722,
+      "smt": 4,
+      "latest": {
+        "time": "2026-10-20T00:00:00.000Z",
+        "availableAt": "2026-10-21T00:00:00.000Z",
+        "previous": "2026-10-19T00:00:00.000Z",
+        "n": 722,
+        "values": {
+          "20": 0.44480484828592487,
+          "60": 0.4643568741929494,
+          "120": 0.4948006075994837,
+          "252": 0.4425084370767394
+        },
+        "direct": true,
+        "inverse": false,
+        "breakdown": false
+      }
+    },
+    {
+      "id": "cmc-gbpusd-15m-20261021--cmc-ndaq_cash_research-15m-20261021",
+      "timeframe": 15,
+      "returns": 1919,
+      "smt": 123,
+      "latest": {
+        "time": "2026-10-20T23:45:00.000Z",
+        "availableAt": "2026-10-21T00:00:00.000Z",
+        "previous": "2026-10-20T23:30:00.000Z",
+        "n": 1919,
+        "values": {
+          "20": -0.01712533425940134,
+          "60": 0.15012755010866127,
+          "120": 0.1360846306447935,
+          "252": 0.06224404189071649
+        },
+        "direct": true,
+        "inverse": false,
+        "breakdown": false
+      }
+    },
+    {
+      "id": "cmc-gbpusd-15m-20261021--cmc-silver_cash-15m-20261021",
+      "timeframe": 15,
+      "returns": 1851,
+      "smt": 100,
+      "latest": {
+        "time": "2026-10-20T23:45:00.000Z",
+        "availableAt": "2026-10-21T00:00:00.000Z",
+        "previous": "2026-10-20T23:30:00.000Z",
+        "n": 1851,
+        "values": {
+          "20": -0.025564906941154555,
+          "60": 0.4409872685139627,
+          "120": 0.3845538241875463,
+          "252": 0.415403323964574
+        },
+        "direct": true,
+        "inverse": false,
+        "breakdown": false
+      }
+    },
+    {
+      "id": "cmc-ndaq_cash_research-120m-20261021--cmc-silver_cash-120m-20261021",
+      "timeframe": 120,
+      "returns": 1985,
+      "smt": 111,
+      "latest": {
+        "time": "2026-10-20T23:00:00.000Z",
+        "availableAt": "2026-10-21T01:00:00.000Z",
+        "previous": "2026-10-20T21:00:00.000Z",
+        "n": 1985,
+        "values": {
+          "20": 0.6966561097560161,
+          "60": 0.5908005837967834,
+          "120": 0.5173841879109419,
+          "252": 0.47275197442751515
+        },
+        "direct": true,
+        "inverse": false,
+        "breakdown": false
+      }
+    },
+    {
+      "id": "cmc-ndaq_cash_research-1440m-20261021--cmc-silver_cash-1440m-20261021",
+      "timeframe": 1440,
+      "returns": 720,
+      "smt": 3,
+      "latest": {
+        "time": "2026-10-20T00:00:00.000Z",
+        "availableAt": "2026-10-21T00:00:00.000Z",
+        "previous": "2026-10-19T00:00:00.000Z",
+        "n": 720,
+        "values": {
+          "20": 0.6099644207887467,
+          "60": 0.45216220353674036,
+          "120": 0.5077221183545958,
+          "252": 0.41129366138233675
+        },
+        "direct": true,
+        "inverse": false,
+        "breakdown": false
+      }
+    },
+    {
+      "id": "cmc-ndaq_cash_research-15m-20261021--cmc-silver_cash-15m-20261021",
+      "timeframe": 15,
+      "returns": 1881,
+      "smt": 97,
+      "latest": {
+        "time": "2026-10-20T23:45:00.000Z",
+        "availableAt": "2026-10-21T00:00:00.000Z",
+        "previous": "2026-10-20T23:30:00.000Z",
+        "n": 1881,
+        "values": {
+          "20": 0.8047520674399861,
+          "60": 0.5212440121297041,
+          "120": 0.5006898988158246,
+          "252": 0.4342361644486296
+        },
+        "direct": true,
+        "inverse": false,
+        "breakdown": false
+      }
+    },
+    {
+      "id": "cmc-ndaq_cash_research-5m-20261021--cmc-silver_cash-5m-20261021",
+      "timeframe": 5,
+      "returns": 8539,
+      "smt": 475,
+      "latest": {
+        "time": "2026-10-20T23:55:00.000Z",
+        "availableAt": "2026-10-21T00:00:00.000Z",
+        "previous": "2026-10-20T23:50:00.000Z",
+        "n": 8539,
+        "values": {
+          "20": 0.6903653395638905,
+          "60": 0.6510591011169916,
+          "120": 0.5328243521501684,
+          "252": 0.5071436731763028
+        },
+        "direct": true,
+        "inverse": false,
+        "breakdown": false
+      }
+    }
+  ],
+  "replay": [
+    {
+      "id": "cmc-ndaq_cash_research-5m-20261021",
+      "candidates": 1170,
+      "rejected": 1161,
+      "partitions": [
+        {
+          "partition": "development",
+          "n": 6,
+          "meanNetR": -0.5,
+          "positive": 2,
+          "negative": 4,
+          "ambiguous": 1,
+          "warning": "Scenario-only descriptive sample; no calibrated predictive validity"
+        },
+        {
+          "partition": "holdout",
+          "n": 3,
+          "meanNetR": -0.5,
+          "positive": 1,
+          "negative": 2,
+          "ambiguous": 1,
+          "warning": "Scenario-only descriptive sample; no calibrated predictive validity"
+        }
+      ],
+      "unscored": 0,
+      "sensitivitySlippagePoints": 1
+    },
+    {
+      "id": "cmc-silver_cash-5m-20261021",
+      "candidates": 1347,
+      "rejected": 1330,
+      "partitions": [
+        {
+          "partition": "development",
+          "n": 13,
+          "meanNetR": -0.24440806408140886,
+          "positive": 6,
+          "negative": 7,
+          "ambiguous": 0,
+          "warning": "Scenario-only descriptive sample; no calibrated predictive validity"
+        },
+        {
+          "partition": "holdout",
+          "n": 4,
+          "meanNetR": -1,
+          "positive": 0,
+          "negative": 4,
+          "ambiguous": 0,
+          "warning": "Scenario-only descriptive sample; no calibrated predictive validity"
+        }
+      ],
+      "unscored": 0,
+      "sensitivitySlippagePoints": 0.025000000000005684
+    }
+  ],
+  "operationalStates": {
+    "STAND DOWN": 17553,
+    "CAUTION": 0,
+    "BUY": 0,
+    "SELL": 0
+  },
+  "validation": "PARTIAL — reproducible descriptive calculations; no execution validation",
+  "researchConfig": {
+    "version": "research-definitions-v1-unapproved",
+    "approvedForExecution": false,
+    "pivotLeft": 2,
+    "pivotRight": 2,
+    "retestBars": 10,
+    "retestAtr": 0.1,
+    "openingRangeMinutes": 30,
+    "openingReversalMinutes": 90,
+    "correlationWindows": [
+      20,
+      60,
+      120,
+      252
+    ],
+    "correlationBreak": 0.3,
+    "slippagePoints": null,
+    "commissionPoints": null,
+    "carryPerDayPoints": null,
+    "tp1R": null,
+    "tp1Fraction": null,
+    "maxHoldingBars": 72,
+    "holdoutFraction": 0.2,
+    "purgeBars": 72,
+    "minHistoryForOperational": 100
+  }
+}

@@ -1,0 +1,41 @@
+[
+  {
+    "instrument": "Gold - Cash",
+    "intervalMinutes": 2,
+    "from": "2026-09-01T00:00:00Z",
+    "to": "2026-10-16T19:54:00Z",
+    "maxIntervals": 10000,
+    "receivedAt": "2026-10-21T18:01:39.858Z",
+    "response": {
+      "currency": "USD",
+      "dateFormat": "dateTime",
+      "data": []
+    }
+  },
+  {
+    "instrument": "Silver - Cash",
+    "intervalMinutes": 2,
+    "from": "2026-09-01T00:00:00Z",
+    "to": "2026-10-16T19:56:00Z",
+    "maxIntervals": 10000,
+    "receivedAt": "2026-10-21T18:01:39.820Z",
+    "response": {
+      "currency": "USD",
+      "dateFormat": "dateTime",
+      "data": []
+    }
+  },
+  {
+    "instrument": "US NDAQ 100 - Cash",
+    "intervalMinutes": 2,
+    "from": "2026-09-01T00:00:00Z",
+    "to": "2026-10-18T22:54:00Z",
+    "maxIntervals": 10000,
+    "receivedAt": "2026-10-21T18:01:39.990Z",
+    "response": {
+      "currency": "USD",
+      "dateFormat": "dateTime",
+      "data": []
+    }
+  }
+]
