@@ -3,8 +3,8 @@ import "./v2.css";
 import "./fonts.css";
 
 export const metadata: Metadata = {
-  title: "STRATA — Global intelligence",
-  description: "Private market and portfolio review built around Elastication Three Circles, inspectable evidence and J’s decisions.",
+  title: "STRATA — Trading intelligence",
+  description: "Private market review. The current decision, Elastication evidence, three circles and stand-down reasons stay visible before any research navigation.",
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
